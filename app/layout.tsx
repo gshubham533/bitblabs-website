@@ -1,6 +1,7 @@
 import type { Metadata } from 'next'
 import './globals.css'
 import { googleSansFlex } from '@/lib/fonts'
+import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   title: {
@@ -24,6 +25,7 @@ export default function RootLayout({
     <html lang="en" className={googleSansFlex.variable}>
       <body className={`${googleSansFlex.className} antialiased`}>
         {children}
+        <Analytics />
       </body>
     </html>
   )
