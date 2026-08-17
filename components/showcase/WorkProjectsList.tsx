@@ -21,9 +21,9 @@ export function WorkProjectsList({
   title = 'Portfolio',
   subtitle = (
     <>
-      Crafted with <b className="font-normal text-zinc-950">structure</b>,{' '}
-      <b className="font-normal text-zinc-950">clarity</b>, and{' '}
-      <b className="font-normal text-zinc-950">purpose</b>.
+      Crafted with <b className="font-normal text-zinc-950">workflows</b>,{' '}
+      <b className="font-normal text-zinc-950">systems</b>, and{' '}
+      <b className="font-normal text-zinc-950">production</b>.
     </>
   ),
   trailingContent,

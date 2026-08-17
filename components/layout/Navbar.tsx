@@ -7,6 +7,7 @@ import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const navLinks = [
+  { href: '/projects', label: 'Work' },
   { href: BOOKING_URL, label: 'Contact', external: true },
 ] as const
 

@@ -15,9 +15,9 @@ export default function ProjectsPage() {
           title="Our work"
           subtitle={
             <>
-              Built with <b className="font-normal text-zinc-950">precision</b>,{' '}
-              <b className="font-normal text-zinc-950">scale</b>, and{' '}
-              <b className="font-normal text-zinc-950">intent</b>.
+              Built with <b className="font-normal text-zinc-950">workflows</b>,{' '}
+              <b className="font-normal text-zinc-950">systems</b>, and{' '}
+              <b className="font-normal text-zinc-950">production</b>.
             </>
           }
           trailingContent={<StudioProducts embedded />}

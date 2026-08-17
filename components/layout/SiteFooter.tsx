@@ -35,7 +35,7 @@ export function SiteFooter({ compact = false, showLegalInfo = false }: SiteFoote
           <div className="flex flex-col items-center space-y-6 md:items-start">
             <div className="space-y-1.5 font-body text-sm leading-relaxed text-white">
               <p className="font-heading text-xs uppercase tracking-[0.2em] text-zinc-500">BitBLabs</p>
-              <p>Digital Product Studio</p>
+              <p>Custom AI for workflows</p>
               <p className="text-zinc-400">Remote · Worldwide</p>
             </div>
 
@@ -69,7 +69,7 @@ export function SiteFooter({ compact = false, showLegalInfo = false }: SiteFoote
             rel="noopener noreferrer"
             className="inline-flex w-fit rounded-full bg-white px-7 py-3 font-heading text-sm font-medium text-black transition-opacity hover:opacity-85 sm:px-8"
           >
-            Book a project discussion
+            Book a workflow discussion
           </a>
         </div>
 
@@ -85,8 +85,7 @@ export function SiteFooter({ compact = false, showLegalInfo = false }: SiteFoote
         >
           <div>
             <p className="max-w-md font-body text-sm leading-relaxed text-zinc-500">
-              From product strategy to launch-ready builds. Our studio designs and engineers digital
-              products that connect brands with their audience.
+              Custom AI systems for the operational workflows mid-market teams already run.
             </p>
 
             <p className="mt-8 font-body text-xs text-zinc-600">© {year} BitBLabs</p>

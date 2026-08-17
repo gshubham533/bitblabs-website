@@ -7,13 +7,11 @@ import { cn } from '@/lib/utils'
 
 /** What we build, aligned with portfolio work */
 const marqueeItems = [
-  'AI Voice Platforms',
-  'Digital Product Passports',
-  'Supply Chain Systems',
-  'Financial Modeling Tools',
-  'Enterprise Dashboards',
-  'Web Applications',
-  'EdTech AI Products',
+  'Hiring',
+  'Sales calling',
+  'Support',
+  'Supply chain',
+  'Finance ops',
 ]
 
 export function ContactCTA() {
@@ -26,12 +24,12 @@ export function ContactCTA() {
               Contact
             </p>
             <h2 className="animate-fade-in-up font-display text-[clamp(2.75rem,8vw,8rem)] font-bold leading-[0.95] tracking-tight text-zinc-950 [animation-delay:200ms]">
-              Let&apos;s build something
+              Let&apos;s start with
               <br />
-              <span className="text-zinc-400">exceptional</span>
+              <span className="text-zinc-400">one workflow</span>
             </h2>
             <p className="animate-fade-in-up font-body text-lg leading-relaxed text-zinc-600 md:text-xl [animation-delay:400ms]">
-              Accepting new projects. Tell us about yours.
+              Tell us the process that&apos;s breaking.
             </p>
             <div className="flex animate-fade-in-up flex-wrap gap-4 [animation-delay:600ms]">
               <a
@@ -40,7 +38,7 @@ export function ContactCTA() {
                 rel="noopener noreferrer"
                 className="group relative overflow-hidden rounded-full bg-zinc-950 px-8 py-3.5 font-heading text-sm font-semibold text-white transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-800"
               >
-                <span className="relative z-10">Book a project discussion</span>
+                <span className="relative z-10">Book a workflow discussion</span>
                 <div className="absolute inset-0 translate-x-[-200%] bg-gradient-to-r from-transparent via-white/20 to-transparent transition-transform duration-700 group-hover:translate-x-[200%]" />
               </a>
               <Link

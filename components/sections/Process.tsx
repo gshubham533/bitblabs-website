@@ -9,55 +9,31 @@ import {
   MetaItem,
   StatementScene,
 } from '@/components/showcase/case-study/CaseStudyScenes'
+import { HOME_PROCESS_STEPS } from '@/lib/home'
 import { sceneThemeClasses } from '@/components/showcase/case-study/utils'
 
-const steps = [
-  {
-    number: '01',
-    title: 'Discover',
-    description:
-      'We immerse in your product vision, users, and constraints, mapping the problem before writing code.',
-  },
-  {
-    number: '02',
-    title: 'Design',
-    description:
-      'Interfaces, flows, and architecture shaped with the same care we bring to our own products.',
-  },
-  {
-    number: '03',
-    title: 'Build',
-    description:
-      'Full-stack execution across AI, web, and cloud, shipped in tight loops with relentless attention to detail.',
-  },
-  {
-    number: '04',
-    title: 'Deliver',
-    description:
-      'Production-ready systems with the polish, performance, and reliability premium products demand.',
-  },
-] as const
+const steps = HOME_PROCESS_STEPS
 
 const principles = [
   {
-    title: 'Strategic discovery',
+    title: 'Map the work',
     description:
-      'Every engagement starts with clarity, user research, constraints, and a shared definition of success.',
+      'Every engagement starts with how the process actually runs, not a template.',
   },
   {
-    title: 'Product-grade UX',
+    title: 'Humans in the loop',
     description:
-      'Interfaces and flows designed to feel intentional, premium, and effortless at every touchpoint.',
+      'The system proposes. Your team approves where it matters.',
   },
   {
-    title: 'Full-stack execution',
+    title: 'In your stack',
     description:
-      'From architecture to deployment, we ship cohesive systems, not handoffs between disconnected teams.',
+      'From architecture to deployment, one team ships a system that fits what you already use.',
   },
   {
-    title: 'Launch & iteration',
+    title: 'Then the next workflow',
     description:
-      'Production-ready delivery with the performance, polish, and reliability premium products demand.',
+      'Production first. Expand only after the first workflow is running.',
   },
 ]
 
@@ -93,7 +69,7 @@ export function Process({ accent = '#7c3aed' }: ProcessProps) {
             <BlurTextAnimation as="span" text="How we work" variant="label" theme="light" />
           </p>
           <BlurTextAnimation
-            text="Craft, not templates"
+            text="One workflow first"
             className="mt-8 whitespace-nowrap md:-translate-x-3"
             textClassName="font-display font-bold text-zinc-950 text-[clamp(1.75rem,calc((100vw-3rem)/10.2),7.5rem)] md:text-[clamp(4rem,11vw,9rem)]"
             theme="light"
@@ -101,7 +77,7 @@ export function Process({ accent = '#7c3aed' }: ProcessProps) {
             startDelay={0.08}
           />
           <BlurTextAnimation
-            text="A focused four-phase process built for premium product work, from discovery through delivery."
+            text="Four phases from the process as it runs today to a system in production."
             className="mt-8 max-w-3xl font-body text-2xl text-zinc-600 md:text-3xl"
             theme="light"
             variant="body"
@@ -112,16 +88,16 @@ export function Process({ accent = '#7c3aed' }: ProcessProps) {
             <MetaItem label="Engagement" value="2–6 months" theme={processTheme} blurText startDelay={0.1} />
             <MetaItem label="Phases" value="4 integrated" theme={processTheme} blurText startDelay={0.14} />
             <MetaItem label="Delivery" value="Production-ready" theme={processTheme} blurText startDelay={0.18} />
-            <MetaItem label="Focus" value="Product craft" theme={processTheme} blurText startDelay={0.22} />
+              <MetaItem label="Focus" value="One workflow" theme={processTheme} blurText startDelay={0.22} />
           </div>
         </div>
       </section>
 
       <StatementScene
         eyebrow="The Philosophy"
-        headline="Premium products deserve a process that matches."
-        body="We treat every engagement like a studio case study, strategic discovery, cinematic design, and engineering that ships. No generic playbooks. No documentation-first delivery."
-        pullQuote="Every phase is designed to create clarity, momentum, and a product you are proud to launch."
+        headline="Off-the-shelf tools stop. Then we build."
+        body="We treat every engagement as one operational workflow: map it, design the system, ship it into your stack. No generic playbooks. No documentation dump."
+        pullQuote="Each phase creates clarity, momentum, and a system your team can run."
         accent={accent}
         align="center"
         theme={processTheme}
@@ -131,7 +107,7 @@ export function Process({ accent = '#7c3aed' }: ProcessProps) {
       <StickyStorySection
         eyebrow="The Process"
         title="Four phases. One cohesive arc."
-        intro="Each phase builds on the last, moving from insight to interface to implementation to launch."
+        intro="Each phase builds on the last, from how the work runs today to a system in production."
         steps={steps.map((step) => ({
           title: step.title,
           description: step.description,
@@ -144,8 +120,8 @@ export function Process({ accent = '#7c3aed' }: ProcessProps) {
       <StatementScene
         eyebrow="In Practice"
         headline="Design and engineering in the same rhythm."
-        body="We work in tight loops, validating flows with real interfaces, refining architecture alongside UX, and shipping incrementally so momentum never stalls."
-        pullQuote="The same visual rigor you see in our portfolio is how we build for clients."
+        body="We work in tight loops: validate the workflow with a real interface, refine the architecture, and ship incrementally so the process keeps moving."
+        pullQuote="The same rigor you see in the work is how we build the system."
         accent={accent}
         align="center"
         theme={processTheme}
@@ -154,8 +130,8 @@ export function Process({ accent = '#7c3aed' }: ProcessProps) {
 
       <FeatureGridScene
         eyebrow="What You Get"
-        title="End-to-end craft across every layer."
-        body="From strategy to shipped product, one team, one standard, one cohesive experience."
+        title="End-to-end across every layer."
+        body="From the first map to a live system: one team, one standard."
         features={principles}
         accent={accent}
         theme={processTheme}
@@ -175,7 +151,7 @@ export function Process({ accent = '#7c3aed' }: ProcessProps) {
       <StatementScene
         eyebrow="Next Step"
         headline="Ready when you are."
-        body="When the case study ends, the conversation begins. Scroll down to connect, or explore more work from the portfolio."
+        body="When the case study ends, the conversation begins. Scroll down to connect, or look at more work."
         accent={accent}
         align="center"
         theme={processTheme}

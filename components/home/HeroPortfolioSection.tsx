@@ -1,29 +1,15 @@
 'use client'
 
-import { useEffect } from 'react'
-import { useSearchParams } from 'next/navigation'
-import { useReducedMotion } from 'framer-motion'
 import { Navbar } from '@/components/layout/Navbar'
+import { SiteFooter } from '@/components/layout/SiteFooter'
 import { HeroContent } from '@/components/showcase/HeroGallery'
-import { SelectedWork } from '@/components/sections/SelectedWork'
+import { ClientStrip } from '@/components/home/ClientStrip'
+import { WorkflowsGrid } from '@/components/home/WorkflowsGrid'
+import { WorkGlimpses } from '@/components/home/WorkGlimpses'
+import { HowWeWorkStrip } from '@/components/home/HowWeWorkStrip'
+import { ContactCTA } from '@/components/sections/ContactCTA'
 
 export function HeroPortfolioSection() {
-  const searchParams = useSearchParams()
-  const openPortfolio = searchParams.get('view') === 'portfolio'
-  const prefersReducedMotion = useReducedMotion()
-
-  useEffect(() => {
-    if (!openPortfolio) return
-
-    const work = document.getElementById('work')
-    if (!work) return
-
-    work.scrollIntoView({
-      behavior: prefersReducedMotion ? 'auto' : 'smooth',
-      block: 'start',
-    })
-  }, [openPortfolio, prefersReducedMotion])
-
   return (
     <>
       <section
@@ -33,7 +19,14 @@ export function HeroPortfolioSection() {
         <Navbar position="absolute" theme="dark" />
         <HeroContent />
       </section>
-      <SelectedWork />
+      <div className="relative z-10 w-full rounded-t-[2rem] bg-white md:rounded-t-[2.5rem]">
+        <ClientStrip />
+        <WorkflowsGrid />
+        <WorkGlimpses />
+        <HowWeWorkStrip />
+        <ContactCTA />
+        <SiteFooter showLegalInfo />
+      </div>
     </>
   )
 }

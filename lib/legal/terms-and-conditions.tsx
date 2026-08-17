@@ -30,9 +30,8 @@ export const termsSections: LegalSection[] = [
     body: (
       <>
         <p>
-          BitBLabs is a digital product studio that designs and builds web applications, AI products,
-          and related digital experiences. This website is operated by {LEGAL_NAME}, a limited
-          liability partnership registered in India.
+          BitBLabs builds custom AI systems for operational workflows. This website is operated by{' '}
+          {LEGAL_NAME}, a limited liability partnership registered in India.
         </p>
         <address className="not-italic space-y-1 text-zinc-400">
           <p>{LEGAL_NAME}</p>

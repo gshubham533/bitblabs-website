@@ -16,7 +16,7 @@ export default function ProjectDetailPage() {
 
   if (!project) {
     return (
-      <CaseStudyNotFound backHref={PORTFOLIO_SECTION_HREF} backLabel="Back to portfolio" />
+      <CaseStudyNotFound backHref={PORTFOLIO_SECTION_HREF} backLabel="Back to work" />
     )
   }
 

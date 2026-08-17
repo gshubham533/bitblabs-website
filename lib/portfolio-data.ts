@@ -97,7 +97,7 @@ export const portfolioProjects: PortfolioProject[] = [
         id: 2,
         type: 'scene',
         title: 'How It Started',
-        content: 'The project was initiated by a young founder, Keishika Mahesh, who approached the BitB Labs team after discovering our work through LinkedIn. After a discovery call and requirement deep-dive, the idea was transformed into a fully functional web application with a clear technical and business roadmap.',
+        content: 'The DigiProPass team approached us after finding our work on LinkedIn. After a discovery call, the idea became a working platform with a clear technical and business roadmap.',
         highlight: 'From LinkedIn connection to fully functional platform.',
       },
       {
@@ -279,9 +279,9 @@ export const portfolioProjects: PortfolioProject[] = [
       {
         id: 2,
         type: 'scene',
-        title: 'Meet Mr. Kamlesh',
-        content: 'The project was referred to BitB Labs through a trusted network and was led by Mr. Kamlesh, a farmer by background and an experienced logistics business owner. His dual exposure to farming realities and logistics operations enabled him to identify deep-rooted inefficiencies in the traditional grocery supply chain.',
-        highlight: 'A farmer who runs a logistics business - the perfect founder for this problem.',
+        title: 'How It Started',
+        content: 'The project came through a trusted network. Healthy Fasal is led by a farmer and logistics operator who saw deep inefficiencies in the traditional grocery supply chain.',
+        highlight: 'Farming and logistics in one operation — the right team for this problem.',
       },
       {
         id: 3,
@@ -649,20 +649,20 @@ export const portfolioProjects: PortfolioProject[] = [
     },
     links: {},
     color: '#EF4444',
-    featured: false,
+    featured: true,
     slides: [
       {
         id: 1,
         type: 'intro',
         title: 'The Café Story',
-        content: 'This project began inside a café. While working on AI voice integrations, our team casually discussed STT and TTS pipelines. Harish Boke, founder of Setoo, overheard the conversation, got curious, and asked what we were building.',
+        content: 'This project began inside a café. While working on AI voice integrations, our team discussed STT and TTS pipelines. The Setoo founder overheard, got curious, and asked what we were building.',
         highlight: 'Visibility + real technical depth = inbound opportunity.',
       },
       {
         id: 2,
         type: 'scene',
-        title: 'Meet Harish Boke',
-        content: 'Harish left for another meeting  but called us back while driving, finalized discussions on the move, and onboarded us for the project. A perfect example of how genuine technical conversations can lead to real business opportunities.',
+        title: 'How It Closed',
+        content: 'They left for another meeting, then called back while driving, finalized the work, and onboarded us. A genuine technical conversation that became an engagement.',
         highlight: 'From overheard conversation to signed engagement.',
       },
       {
@@ -770,15 +770,15 @@ export const portfolioProjects: PortfolioProject[] = [
       {
         id: 2,
         type: 'insight',
-        title: 'Meet Dr. Steven',
-        content: 'The platform was built in collaboration with Dr. Steven, a Malaysia-based investment banker and executive coach who works with C-suite leaders. He brought investment banking experience, executive coaching expertise, and proven revenue-generating Excel-based financial models.',
+        title: 'How It Started',
+        content: 'The platform was built with a Malaysia-based investment banker and executive coach who works with C-suite leaders. They brought investment banking experience and proven Excel-based financial models.',
         highlight: 'Before Axion Plan, forecasting was done using custom Excel templates  it worked, but it wasn\'t scalable.',
       },
       {
         id: 3,
         type: 'problem',
         title: 'The Problem',
-        content: 'Heavy dependence on manual Excel workflows. High learning curve for non-finance users. Difficult to collaborate across teams. No AI-driven insights or explanations. Hard to scale Dr. Steven\'s expertise beyond 1:1 engagements.',
+        content: 'Heavy dependence on manual Excel workflows. High learning curve for non-finance users. Difficult to collaborate across teams. No AI-driven insights or explanations. Hard to scale the founder\'s expertise beyond 1:1 engagements.',
         highlight: 'The system worked and clients were paying  but it was trapped in Excel.',
         backgroundVideo: '/Axion2.mp4',
       },
@@ -844,10 +844,10 @@ export const portfolioProjects: PortfolioProject[] = [
         title: 'Platform Architecture',
         content: 'Axion Plan was designed as a two-front B2C platform.',
         layers: [
-          { name: 'Super Admin Panel', description: 'Dr. Steven manages users, monitors usage, and controls settings', icon: '👨‍💼', color: '#A855F7' },
+          { name: 'Super Admin Panel', description: 'The operator manages users, monitors usage, and controls settings', icon: '👨‍💼', color: '#A855F7' },
           { name: 'Company Panel', description: 'Organizations create projects, input data, and generate forecasts', icon: '🏢', color: '#9333EA' },
         ],
-        highlight: 'Allows Dr. Steven to operate Axion Plan as a business, not just a tool.',
+        highlight: 'Allows Axion Plan to run as a business, not just a tool.',
       },
       {
         id: 6,
@@ -981,8 +981,8 @@ export const portfolioProjects: PortfolioProject[] = [
       {
         id: 2,
         type: 'scene',
-        title: 'Meet Zoheb',
-        content: 'Course Companion was initiated by Zoheb, a highly technical founder with deep academic and industry exposure. PhD in Chemistry from Northwestern University, AI Fellow at Handshake, based in the United States. Despite being deeply embedded in AI, he noticed strong resistance to AI adoption in universities.',
+        title: 'How It Started',
+        content: 'Course Companion was initiated by a technical founder with academic and industry exposure — PhD in Chemistry from Northwestern, AI Fellow at Handshake, based in the United States. Despite working with AI daily, they saw strong resistance to AI adoption in universities.',
         highlight: 'Works closely with cutting-edge AI systems in production environments.',
       },
       {

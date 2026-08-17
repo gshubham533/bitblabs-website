@@ -19,12 +19,12 @@ const INDUSTRY_MAP: Record<string, string> = {
 
 /** Curated homepage / case-study navigation order. */
 const PORTFOLIO_DISPLAY_ORDER = [
-  'healthy-fasal',
-  'course-companion',
-  'axion-plan',
-  'digipropass',
   'natvoiz-ai',
   'setoo-voice-ai',
+  'healthy-fasal',
+  'digipropass',
+  'axion-plan',
+  'course-companion',
 ] as const
 
 export function orderPortfolioProjects(projects: PortfolioProject[]): PortfolioProject[] {

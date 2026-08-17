@@ -19,7 +19,7 @@ interface CaseStudyPageLayoutProps {
 export function CaseStudyPageLayout({
   project,
   backHref = PORTFOLIO_SECTION_HREF,
-  backLabel = 'Back to portfolio',
+  backLabel = 'Back to work',
 }: CaseStudyPageLayoutProps) {
   return (
     <CaseStudyExitTransition

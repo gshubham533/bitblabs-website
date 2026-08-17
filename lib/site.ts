@@ -14,5 +14,5 @@ export const CONTACT_PHONE_DISPLAY = '+91 82089 01203'
 export const PRIVACY_PATH = '/privacy'
 export const TERMS_PATH = '/terms'
 
-/** Home page portfolio section — scrolls to #work via HeroPortfolioSection */
-export const PORTFOLIO_SECTION_HREF = '/?view=portfolio'
+/** Full work listing */
+export const PORTFOLIO_SECTION_HREF = '/projects'

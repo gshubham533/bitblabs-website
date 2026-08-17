@@ -5,11 +5,11 @@ import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   title: {
-    default: 'BitBLabs | Digital Product Studio',
+    default: 'BitBLabs | Custom AI for Workflows',
     template: '%s | BitBLabs',
   },
   description:
-    'BitBLabs designs and builds exceptional digital products: AI platforms, web applications, and premium user experiences.',
+    'BitBLabs builds custom AI systems for operational workflows — hiring, sales, support, supply chain — when off-the-shelf tools stop being enough.',
   icons: {
     icon: '/logos/bitblabs-logo.svg',
     apple: '/logos/bitblabs-logo.svg',

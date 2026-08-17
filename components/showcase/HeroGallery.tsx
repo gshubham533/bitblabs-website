@@ -128,7 +128,7 @@ export function HeroContent() {
                   AI
                 </span>
               </span>{' '}
-              Products
+              For
             </motion.span>
             <motion.span
               className="block font-medium text-zinc-700 [text-shadow:0_1px_18px_rgba(255,255,255,0.95)]"
@@ -136,7 +136,7 @@ export function HeroContent() {
               animate={prefersReducedMotion ? { opacity: 1 } : { opacity: 1, y: 0 }}
               transition={headlineLineTransition(0.36, prefersReducedMotion)}
             >
-              People Remember
+              Your Workflows
             </motion.span>
           </h1>
           <motion.p
@@ -148,9 +148,8 @@ export function HeroContent() {
               'mt-6 mx-auto max-w-3xl text-lg leading-relaxed text-zinc-600 sm:mt-7 sm:text-xl md:mt-8 md:text-2xl md:leading-relaxed'
             )}
           >
-            A digital product studio crafting{' '}
-            <span className="font-medium text-zinc-950">exceptional AI platforms</span>, web
-            applications, and premium user experiences.
+            Custom AI for mid-market ops — hiring, sales, support, supply chain — when{' '}
+            <span className="font-medium text-zinc-950">off-the-shelf tools</span> stop being enough.
           </motion.p>
         </motion.div>
       </div>

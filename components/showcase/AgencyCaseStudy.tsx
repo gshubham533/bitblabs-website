@@ -77,7 +77,7 @@ function CaseStudyBackLink({
 export function AgencyCaseStudy({
   project,
   backHref = PORTFOLIO_SECTION_HREF,
-  backLabel = 'Back to portfolio',
+  backLabel = 'Back to work',
 }: AgencyCaseStudyProps) {
   const slides = project.slides ?? []
   const accent = project.color
