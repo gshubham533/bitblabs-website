@@ -21,7 +21,7 @@
 }
 
 html {
-  background-color: #f3f4f6;
+  background-color: #f5f6f8;
   scroll-padding-top: 5.5rem;
 }
 
@@ -55,7 +55,7 @@ html.lenis body {
 }
 
 body {
-  background-color: #f3f4f6;
+  background-color: #f5f6f8;
   color: var(--text-primary);
   font-family: var(--font-google-sans-flex), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;

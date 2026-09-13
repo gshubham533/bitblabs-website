@@ -9,18 +9,18 @@ export function StrategyToProduction() {
       <ol className="mt-10 flex flex-wrap items-center gap-3">
         {STRATEGY_TO_PRODUCTION.stages.map((stage, index) => (
           <li key={stage} className="flex items-center gap-3">
-            <Chip tone="brand" className="px-4 py-2 font-display text-lg font-semibold md:text-xl">
+            <Chip tone="brand" className="px-4 py-2 font-display text-base font-semibold md:text-lg">
               {stage}
             </Chip>
             {index < STRATEGY_TO_PRODUCTION.stages.length - 1 ? (
-              <span className="font-heading text-zinc-400" aria-hidden>
+              <span className="font-heading text-zinc-300" aria-hidden>
                 →
               </span>
             ) : null}
           </li>
         ))}
       </ol>
-      <p className="mt-8 max-w-3xl font-body text-lg leading-relaxed text-zinc-600 md:text-xl">
+      <p className="mt-8 max-w-3xl font-body text-lg leading-relaxed text-zinc-500 md:text-xl">
         {STRATEGY_TO_PRODUCTION.body}
       </p>
       <div className="mt-10">

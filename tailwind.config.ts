@@ -12,7 +12,7 @@ const config: Config = {
         base: '#050505',
         elevated: '#0c0c0c',
         surface: '#141414',
-        canvas: '#f3f4f6',
+        canvas: '#f5f6f8',
         brand: {
           DEFAULT: '#2563eb',
           dark: '#1d4ed8',
