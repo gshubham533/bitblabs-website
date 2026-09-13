@@ -3,14 +3,14 @@ import Image from 'next/image'
 /** Glossy folded-plane sculpture. Decorative only. */
 export function HeroSculpture() {
   return (
-    <div className="relative mx-auto h-52 w-52 sm:h-64 sm:w-64 md:h-72 md:w-72 lg:h-80 lg:w-80" aria-hidden>
+    <div className="relative mx-auto flex h-44 w-44 items-center justify-center overflow-hidden sm:h-52 sm:w-52 md:h-60 md:w-60">
       <Image
-        src="/images/bitblabs-hero-sculpture.png"
+        src="/images/bitblabs-hero-sculpture.webp"
         alt=""
-        fill
+        width={720}
+        height={720}
         priority
-        sizes="(max-width: 768px) 16rem, 20rem"
-        className="object-contain"
+        className="h-full w-full object-contain"
       />
     </div>
   )

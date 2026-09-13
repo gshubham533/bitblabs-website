@@ -7,9 +7,9 @@ const microcopyChips = HERO.microcopy.split(' · ')
 
 export function LandingHero() {
   return (
-    <section id="hero" className="px-4 pb-6 pt-10 text-center sm:px-8 md:pb-8 md:pt-14">
+    <section id="hero" className="px-4 pb-4 pt-6 text-center sm:px-8 md:pb-6 md:pt-8">
       <HeroSculpture />
-      <p className="mt-8">
+      <p className="mt-5">
         <Chip tone="brand">{HERO.eyebrow}</Chip>
       </p>
       <h1 className="mx-auto mt-6 max-w-4xl font-display text-[clamp(2.1rem,5.6vw,4.6rem)] font-semibold leading-[1.05] tracking-tight text-zinc-950">
