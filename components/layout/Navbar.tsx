@@ -115,7 +115,8 @@ export function Navbar({ theme = 'dark', position = 'fixed', solid = false }: Na
 
       <div
         className={cn(
-          'fixed inset-0 z-[90] bg-[#050505] transition-all duration-300 sm:hidden',
+          'fixed inset-0 z-[90] transition-all duration-300 sm:hidden',
+          light ? 'bg-[#f3f2ee]' : 'bg-[#050505]',
           mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'
         )}
       >
@@ -124,13 +125,16 @@ export function Navbar({ theme = 'dark', position = 'fixed', solid = false }: Na
             <Link
               href={PORTFOLIO_SECTION_HREF}
               onClick={() => setMobileMenuOpen(false)}
-              className="text-2xl font-semibold text-white"
+              className={cn('text-2xl font-semibold', light ? 'text-[#111]' : 'text-white')}
             >
               Work
             </Link>
           </li>
           <li>
-            <a href={BOOK_HREF} className="text-2xl font-semibold text-white">
+            <a
+              href={BOOK_HREF}
+              className={cn('text-2xl font-semibold', light ? 'text-[#111]' : 'text-white')}
+            >
               {BOOK_NAV_LABEL}
             </a>
           </li>
