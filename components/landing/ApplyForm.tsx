@@ -29,7 +29,7 @@ function validate(values: Record<FieldKey, string>) {
 }
 
 const fieldClass =
-  'mt-2 w-full rounded-lg border bg-white px-4 py-3 font-body text-base text-zinc-950 outline-none transition-colors placeholder:text-zinc-400 focus:border-zinc-950'
+  'mt-2 w-full rounded-2xl border bg-zinc-50 px-4 py-3.5 font-body text-base text-zinc-950 outline-none transition-colors placeholder:text-zinc-400 focus:border-brand focus:bg-white'
 
 export function ApplyForm({ className }: { className?: string }) {
   const [values, setValues] = useState(EMPTY)
@@ -99,7 +99,7 @@ export function ApplyForm({ className }: { className?: string }) {
   if (status === 'success') {
     return (
       <div
-        className={cn('rounded-2xl border border-zinc-200 bg-zinc-50 px-6 py-8 md:px-8', className)}
+        className={cn('rounded-4xl bg-zinc-50 px-6 py-8 md:px-8', className)}
         role="status"
         aria-live="polite"
       >
@@ -186,7 +186,7 @@ export function ApplyForm({ className }: { className?: string }) {
       <button
         type="submit"
         disabled={status === 'submitting'}
-        className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-zinc-950 px-8 py-3 font-heading text-sm font-semibold text-white transition-colors hover:bg-zinc-800 disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
+        className="inline-flex min-h-12 w-full items-center justify-center rounded-full bg-brand px-8 py-3 font-heading text-sm font-semibold text-white shadow-[0_8px_20px_rgba(37,99,235,0.22)] transition-colors hover:bg-brand-dark disabled:cursor-not-allowed disabled:opacity-60 sm:w-auto"
       >
         {status === 'submitting' ? 'Submitting…' : APPLY_FORM.submitLabel}
       </button>

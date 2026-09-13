@@ -1,24 +1,34 @@
 import { HERO } from '@/lib/landing'
+import { Chip } from '@/components/landing/Chip'
 import { CtaPair } from '@/components/landing/CtaButtons'
+import { HeroSculpture } from '@/components/landing/HeroSculpture'
+import { SectionFrame } from '@/components/landing/SectionFrame'
+
+const microcopyChips = HERO.microcopy.split(' · ')
 
 export function LandingHero() {
   return (
-    <section className="relative bg-black px-6 pb-20 pt-28 text-white md:px-12 md:pb-28 md:pt-32 lg:px-16 lg:pb-32">
-      <div className="mx-auto max-w-[1400px]">
-        <p className="font-heading text-xs uppercase tracking-[0.2em] text-zinc-400">
-          {HERO.eyebrow}
-        </p>
-        <h1 className="mt-6 max-w-5xl font-display text-[clamp(2.25rem,6.2vw,5.25rem)] font-semibold leading-[1.02] tracking-tight">
-          {HERO.headline}
-        </h1>
-        <p className="mt-6 max-w-2xl font-body text-lg leading-relaxed text-zinc-400 md:mt-8 md:text-xl">
-          {HERO.subhead}
-        </p>
-        <CtaPair tone="onDark" className="mt-10 md:mt-12" />
-        <p className="mt-8 max-w-2xl font-body text-sm leading-relaxed text-zinc-500 md:text-base">
-          {HERO.microcopy}
-        </p>
+    <SectionFrame id="hero" innerClassName="overflow-hidden">
+      <div className="grid items-center gap-12 lg:grid-cols-[minmax(0,1.1fr)_minmax(0,0.9fr)] lg:gap-8">
+        <div>
+          <Chip tone="brand">{HERO.eyebrow}</Chip>
+          <h1 className="mt-6 max-w-3xl font-display text-[clamp(2.15rem,5.4vw,4.35rem)] font-semibold leading-[1.04] tracking-tight text-zinc-950">
+            {HERO.headline}
+          </h1>
+          <p className="mt-6 max-w-xl font-body text-lg leading-relaxed text-zinc-600 md:mt-7 md:text-xl">
+            {HERO.subhead}
+          </p>
+          <CtaPair tone="onLight" className="mt-9 md:mt-10" />
+          <ul className="mt-8 flex flex-wrap gap-2">
+            {microcopyChips.map((item) => (
+              <li key={item}>
+                <Chip>{item}</Chip>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <HeroSculpture />
       </div>
-    </section>
+    </SectionFrame>
   )
 }

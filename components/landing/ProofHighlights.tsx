@@ -5,12 +5,12 @@ import { SectionFrame } from '@/components/landing/SectionFrame'
 export function ProofHighlights() {
   return (
     <SectionFrame id="proof" eyebrow="Proof" tone="dark">
-      <ul className="mt-12 grid gap-6 md:grid-cols-2">
+      <ul className="mt-10 grid gap-4 md:grid-cols-2">
         {PROOF.cases.map((item) => (
           <li key={item.name}>
             <Link
               href={item.href}
-              className="block h-full rounded-2xl border border-white/10 bg-zinc-950 p-6 transition-colors hover:border-white/25 md:p-8"
+              className="block h-full rounded-4xl bg-white/[0.06] p-6 transition-colors hover:bg-white/[0.1] md:p-8"
             >
               <h3 className="font-display text-xl font-semibold tracking-tight text-white md:text-2xl">
                 {item.name}
@@ -24,7 +24,7 @@ export function ProofHighlights() {
           </li>
         ))}
       </ul>
-      <p className="mt-12 max-w-3xl font-display text-2xl font-medium tracking-tight text-white md:text-3xl">
+      <p className="mt-10 max-w-3xl font-display text-2xl font-medium tracking-tight text-white md:text-3xl">
         {PROOF.closing}
       </p>
     </SectionFrame>

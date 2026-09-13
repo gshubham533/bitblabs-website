@@ -10,17 +10,13 @@ import { cn } from '@/lib/utils'
 type Tone = 'onDark' | 'onLight'
 
 const primaryClass: Record<Tone, string> = {
-  onDark:
-    'bg-white text-zinc-950 hover:bg-zinc-100',
-  onLight:
-    'bg-zinc-950 text-white hover:bg-zinc-800',
+  onDark: 'bg-brand text-white hover:bg-brand-dark',
+  onLight: 'bg-brand text-white hover:bg-brand-dark',
 }
 
 const secondaryClass: Record<Tone, string> = {
-  onDark:
-    'border border-white/20 text-white hover:border-white/40 hover:bg-white/5',
-  onLight:
-    'border border-zinc-300 text-zinc-900 hover:border-zinc-400 hover:bg-zinc-50',
+  onDark: 'border border-white/20 bg-white/5 text-white hover:border-white/40 hover:bg-white/10',
+  onLight: 'border border-zinc-200 bg-white text-zinc-800 hover:border-zinc-300 hover:bg-zinc-50',
 }
 
 export function PrimaryApplyLink({
@@ -36,7 +32,7 @@ export function PrimaryApplyLink({
     <a
       href={APPLY_HREF}
       className={cn(
-        'inline-flex min-h-12 items-center justify-center rounded-full px-6 py-3 text-center font-heading text-sm font-semibold transition-colors sm:px-8',
+        'inline-flex min-h-12 items-center justify-center rounded-full px-6 py-3 text-center font-heading text-sm font-semibold shadow-[0_8px_20px_rgba(37,99,235,0.22)] transition-colors sm:px-8',
         primaryClass[tone],
         className
       )}

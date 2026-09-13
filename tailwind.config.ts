@@ -12,6 +12,12 @@ const config: Config = {
         base: '#050505',
         elevated: '#0c0c0c',
         surface: '#141414',
+        canvas: '#f3f4f6',
+        brand: {
+          DEFAULT: '#2563eb',
+          dark: '#1d4ed8',
+          soft: 'rgba(37, 99, 235, 0.1)',
+        },
         accent: {
           DEFAULT: '#7c3aed',
           soft: 'rgba(124, 58, 237, 0.12)',
@@ -32,6 +38,10 @@ const config: Config = {
         editorial: ['var(--font-google-sans-flex)', 'system-ui', 'sans-serif'],
         garamond: ['var(--font-google-sans-flex)', 'system-ui', 'sans-serif'],
         caslon: ['var(--font-google-sans-flex)', 'system-ui', 'sans-serif'],
+      },
+      borderRadius: {
+        '4xl': '2rem',
+        '5xl': '2.75rem',
       },
       fontSize: {
         'display-sm': ['3.5rem', { lineHeight: '1', letterSpacing: '-0.03em' }],

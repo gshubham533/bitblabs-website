@@ -1,18 +1,19 @@
 import { STRATEGY_TO_PRODUCTION } from '@/lib/landing'
+import { Chip } from '@/components/landing/Chip'
 import { SectionFrame } from '@/components/landing/SectionFrame'
 import { SecondaryProjectsLink } from '@/components/landing/CtaButtons'
 
 export function StrategyToProduction() {
   return (
-    <SectionFrame id="production" eyebrow="From strategy to production" tone="muted">
-      <ol className="mt-12 flex flex-col gap-4 sm:flex-row sm:flex-wrap sm:items-center">
+    <SectionFrame id="production" eyebrow="From strategy to production">
+      <ol className="mt-10 flex flex-wrap items-center gap-3">
         {STRATEGY_TO_PRODUCTION.stages.map((stage, index) => (
-          <li key={stage} className="flex items-center gap-4">
-            <span className="font-display text-3xl font-semibold tracking-tight text-zinc-950 md:text-4xl">
+          <li key={stage} className="flex items-center gap-3">
+            <Chip tone="brand" className="px-4 py-2 font-display text-lg font-semibold md:text-xl">
               {stage}
-            </span>
+            </Chip>
             {index < STRATEGY_TO_PRODUCTION.stages.length - 1 ? (
-              <span className="hidden font-heading text-zinc-400 sm:inline" aria-hidden>
+              <span className="font-heading text-zinc-400" aria-hidden>
                 →
               </span>
             ) : null}

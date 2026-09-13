@@ -83,7 +83,7 @@ export function Navbar({ theme = 'dark', position = 'fixed', solid = false }: Na
                     className={cn(
                       'inline-flex min-h-10 items-center rounded-full px-5 py-2 font-heading text-sm font-semibold transition-colors',
                       light
-                        ? 'bg-zinc-950 text-white hover:bg-zinc-800'
+                        ? 'bg-brand text-white shadow-[0_6px_16px_rgba(37,99,235,0.22)] hover:bg-brand-dark'
                         : 'bg-white text-zinc-950 hover:bg-zinc-100'
                     )}
                   >

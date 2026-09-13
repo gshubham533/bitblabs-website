@@ -64,7 +64,7 @@ export function SiteFooter({ compact = false, showLegalInfo = false }: SiteFoote
 
           <a
             href={APPLY_HREF}
-            className="inline-flex w-fit max-w-full rounded-full bg-white px-7 py-3 text-center font-heading text-sm font-medium text-black transition-opacity hover:opacity-85 sm:px-8"
+            className="inline-flex w-fit max-w-full rounded-full bg-brand px-7 py-3 text-center font-heading text-sm font-medium text-white shadow-[0_8px_20px_rgba(37,99,235,0.28)] transition-colors hover:bg-brand-dark sm:px-8"
           >
             {APPLY_CTA_LABEL}
           </a>

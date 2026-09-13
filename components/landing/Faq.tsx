@@ -4,9 +4,9 @@ import { SectionFrame } from '@/components/landing/SectionFrame'
 export function Faq() {
   return (
     <SectionFrame id="faq" eyebrow="FAQ">
-      <dl className="mt-12 divide-y divide-zinc-200 border-y border-zinc-200">
+      <dl className="mt-10 grid gap-4">
         {FAQ.items.map((item) => (
-          <div key={item.question} className="py-6 md:grid md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)] md:gap-12 md:py-8">
+          <div key={item.question} className="rounded-4xl bg-zinc-50 p-6 md:grid md:grid-cols-[minmax(0,0.8fr)_minmax(0,1.4fr)] md:gap-12 md:p-8">
             <dt className="font-display text-xl font-semibold tracking-tight text-zinc-950">
               {item.question}
             </dt>
