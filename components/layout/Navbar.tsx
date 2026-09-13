@@ -1,7 +1,7 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { BOOK_HREF, BOOK_NAV_LABEL, PORTFOLIO_SECTION_HREF } from '@/lib/site'
+import { APPLY_HREF, APPLY_NAV_LABEL, PORTFOLIO_SECTION_HREF } from '@/lib/site'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
@@ -72,13 +72,13 @@ export function Navbar({ theme = 'dark', position = 'fixed', solid = false }: Na
                 Work
               </Link>
               <a
-                href={BOOK_HREF}
+                href={APPLY_HREF}
                 className={cn(
                   'inline-flex min-h-9 items-center px-3 text-[13px] font-semibold',
                   light ? 'bg-zinc-950 text-white' : 'bg-white text-black'
                 )}
               >
-                {BOOK_NAV_LABEL}
+                {APPLY_NAV_LABEL}
               </a>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
@@ -130,8 +130,8 @@ export function Navbar({ theme = 'dark', position = 'fixed', solid = false }: Na
             </Link>
           </li>
           <li>
-            <a href={BOOK_HREF} className="text-2xl font-semibold text-white">
-              {BOOK_NAV_LABEL}
+            <a href={APPLY_HREF} className="text-2xl font-semibold text-white">
+              {APPLY_NAV_LABEL}
             </a>
           </li>
         </ul>

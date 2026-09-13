@@ -1,4 +1,4 @@
-/** Locked homepage copy v2 + Content v2.1 CTA/process. Do not rewrite positioning or claims. */
+/** Locked homepage copy v2. Do not rewrite positioning or claims. */
 
 export const LANDING_SEO = {
   title: 'AI Strategy Session — $2,000 Decision-Grade Roadmap | BitBLabs',
@@ -13,9 +13,7 @@ export const HERO = {
     'If recruiters are still chasing candidates by hand — and sales lead response or support handoffs are in the same mess — you don’t need another AI demo. You need a clear call on what to automate first, and what to leave alone.',
   bridge:
     'BitBLabs runs a paid AI Strategy Session for CEOs and working COOs who want a decision-grade plan in days, not a deck that dies in Drive.',
-  cta: 'Book the AI Strategy Session — $2,000',
-  microcopy:
-    '90 minutes · Written roadmap in 48 hours · Questions + PayPal on the next screen · Led by Shubham Gupta, Founder',
+  cta: 'Apply for the AI Strategy Session',
 } as const
 
 export const OFFER = {
@@ -63,22 +61,25 @@ export const PROOF = {
 
 export const PROCESS = {
   steps: [
-    { title: 'Land here', body: '' },
     {
-      title: 'Book + pay $2,000',
-      body: 'TidyCal: pick slot, answer questions, PayPal $2k (one flow)',
+      title: 'Apply',
+      body: 'Short fit form. We only take sessions we can make useful.',
+    },
+    {
+      title: 'If accepted → pay $2,000 + book',
+      body: 'One step.',
     },
     {
       title: 'Session 90 min',
-      body: 'Shubham Gupta, Founder. Hiring follow-ups primary; sales/support if adjacent.',
+      body: 'Founder-led; hiring follow-ups primary; sales/support if adjacent.',
     },
     {
-      title: 'Written plan in 48 hours + catch-up',
+      title: 'Written plan in 48 hours.',
       body: '',
     },
     {
       title: 'Optional build',
-      body: '$2k credited within 30 days',
+      body: 'Credit if start within 30 days.',
     },
   ] as const,
 } as const
@@ -86,18 +87,18 @@ export const PROCESS = {
 export const FIT = {
   good: [
     'Founder-CEO or working COO',
-    'Ops-heavy/sales-driven service',
+    'ops-heavy/sales-driven service',
     '~20–80 people',
     '~$3M–$20M',
-    'Capacity pressure especially hiring follow-ups',
-    'Need system in 30–90 days',
+    'capacity pressure especially hiring follow-ups',
+    'need system in 30–90 days',
   ] as const,
   bad: [
     'Under ~15',
-    'Free-audit hunters',
-    'Innovation/no budget',
+    'free-audit hunters',
+    'innovation/no budget',
     'IT-only',
-    'Board deck with no build intent',
+    'board deck with no build intent',
   ] as const,
 } as const
 
@@ -105,8 +106,7 @@ export const FAQ = {
   items: [
     {
       question: 'Why paid?',
-      answer:
-        'You pay $2,000 up front when you book. That buys a decision-grade plan — we only take sessions we can make useful.',
+      answer: 'A paid session buys a decision-grade plan. We only take sessions we can make useful.',
     },
     {
       question: 'Can I build elsewhere?',
@@ -114,7 +114,7 @@ export const FAQ = {
     },
     {
       question: 'What’s delivered in 48 hours?',
-      answer: 'Written plan in 48 hours + catch-up.',
+      answer: 'Plan in 48h + catch-up.',
     },
     {
       question: 'Who runs the session?',
@@ -127,11 +127,22 @@ export const FAQ = {
   ] as const,
 } as const
 
-export const FINAL_CTA = {
+export const APPLY = {
   headline: 'Ready to stop guessing which AI project to fund?',
   subhead:
-    'Book the $2,000 AI Strategy Session. Answer a few questions, pay, and lock your slot — all in one step.',
-  button: 'Book & pay for the AI Strategy Session',
+    'Apply for the $2,000 AI Strategy Session. If it’s a fit, you’ll pay and book in one step.',
+  button: 'Apply for the AI Strategy Session',
   microcopy:
-    'No free strategy calls. $2,000 via PayPal when you book. Credited to a BitBLabs build started within 30 days.',
+    'No free strategy calls. Accepted applicants pay $2,000 and book in one step. $2,000 credited to a BitBLabs build started within 30 days.',
+  successTitle: 'Application received.',
+  successBody:
+    'We’ll review fit. If accepted, you’ll get the booking link to pay $2,000 and book in one step.',
+  roles: ['CEO', 'COO', 'other'] as const,
+  workflows: [
+    'hiring follow-ups',
+    'sales lead response',
+    'support handoffs',
+    'other',
+  ] as const,
+  timelines: ['30 days', '60 days', '90 days', 'exploring'] as const,
 } as const
