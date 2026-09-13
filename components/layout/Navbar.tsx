@@ -1,26 +1,27 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { BOOKING_URL } from '@/lib/site'
+import { APPLY_HREF, APPLY_NAV_LABEL } from '@/lib/site'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 const navLinks = [
   { href: '/projects', label: 'Work' },
-  { href: BOOKING_URL, label: 'Contact', external: true },
+  { href: APPLY_HREF, label: 'Apply' },
 ] as const
 
 interface NavbarProps {
   theme?: 'light' | 'dark'
   /** fixed = viewport; absolute = hero overlay; static = scrolls with page */
   position?: 'fixed' | 'absolute' | 'static'
+  /** Solid bar so links stay readable over mixed page backgrounds. */
+  solid?: boolean
 }
 
-export function Navbar({ theme = 'dark', position = 'fixed' }: NavbarProps) {
+export function Navbar({ theme = 'dark', position = 'fixed', solid = false }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const light = theme === 'light'
-  const heroTypography = !light && position === 'absolute'
 
   const headerPositionClass =
     position === 'fixed'
@@ -34,10 +35,19 @@ export function Navbar({ theme = 'dark', position = 'fixed' }: NavbarProps) {
     return () => { document.body.style.overflow = '' }
   }, [mobileMenuOpen])
 
+  const linkClass = light
+    ? 'text-zinc-500 hover:text-zinc-950'
+    : 'text-zinc-400 hover:text-white'
+
   return (
     <>
-      <header className={headerPositionClass}>
-        <nav className="w-full bg-transparent">
+      <header
+        className={cn(
+          headerPositionClass,
+          solid && (light ? 'border-b border-zinc-200 bg-white/95 backdrop-blur' : 'border-b border-white/10 bg-black/90 backdrop-blur')
+        )}
+      >
+        <nav className="w-full bg-transparent" aria-label="Primary">
           <div className="w-full px-6 md:px-12 lg:px-16">
             <div className="flex h-16 items-center justify-between sm:h-20">
               <Link href="/" className="flex items-center gap-3 group" onClick={() => setMobileMenuOpen(false)}>
@@ -59,39 +69,34 @@ export function Navbar({ theme = 'dark', position = 'fixed' }: NavbarProps) {
               </Link>
 
               <ul className="hidden items-center gap-8 md:flex">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    {'external' in link && link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cn(
-                          'font-heading text-sm transition-colors duration-300',
-                          light ? 'text-zinc-500 hover:text-zinc-950' : 'text-zinc-500 hover:text-white'
-                        )}
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        className={cn(
-                          'font-heading text-sm transition-colors duration-300',
-                          light ? 'text-zinc-500 hover:text-zinc-950' : 'text-zinc-500 hover:text-white'
-                        )}
-                      >
-                        {link.label}
-                      </Link>
+                <li>
+                  <Link
+                    href="/projects"
+                    className={cn('font-heading text-sm transition-colors duration-300', linkClass)}
+                  >
+                    Work
+                  </Link>
+                </li>
+                <li>
+                  <a
+                    href={APPLY_HREF}
+                    className={cn(
+                      'inline-flex min-h-10 items-center rounded-full px-5 py-2 font-heading text-sm font-semibold transition-colors',
+                      light
+                        ? 'bg-zinc-950 text-white hover:bg-zinc-800'
+                        : 'bg-white text-zinc-950 hover:bg-zinc-100'
                     )}
-                  </li>
-                ))}
+                  >
+                    {APPLY_NAV_LABEL}
+                  </a>
+                </li>
               </ul>
 
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
                 className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
                 aria-label="Toggle menu"
+                aria-expanded={mobileMenuOpen}
               >
                 <span
                   className={cn(
@@ -129,29 +134,13 @@ export function Navbar({ theme = 'dark', position = 'fixed' }: NavbarProps) {
         <ul className="flex h-full flex-col items-center justify-center gap-8">
           {navLinks.map((link) => (
             <li key={link.href}>
-              {'external' in link && link.external ? (
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    'font-display text-3xl font-bold text-white transition-colors hover:text-zinc-400'
-                  )}
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    'font-display text-3xl font-bold text-white transition-colors hover:text-zinc-400'
-                  )}
-                >
-                  {link.label}
-                </Link>
-              )}
+              <Link
+                href={link.href}
+                onClick={() => setMobileMenuOpen(false)}
+                className="font-display text-3xl font-bold text-white transition-colors hover:text-zinc-400"
+              >
+                {link.label === 'Apply' ? APPLY_NAV_LABEL : link.label}
+              </Link>
             </li>
           ))}
         </ul>

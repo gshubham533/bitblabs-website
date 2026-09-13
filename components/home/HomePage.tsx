@@ -1,9 +1,5 @@
-import { HeroPortfolioSection } from '@/components/home/HeroPortfolioSection'
+import { LandingPage } from '@/components/landing/LandingPage'
 
 export function HomePage() {
-  return (
-    <main className="bg-black overscroll-y-none">
-      <HeroPortfolioSection />
-    </main>
-  )
+  return <LandingPage />
 }

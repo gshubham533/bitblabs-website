@@ -3,7 +3,8 @@
 import Link from 'next/link'
 import { FooterWatermark } from '@/components/layout/FooterWatermark'
 import {
-  BOOKING_URL,
+  APPLY_CTA_LABEL,
+  APPLY_HREF,
   CONTACT_PHONE,
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
@@ -51,12 +52,10 @@ export function SiteFooter({ compact = false, showLegalInfo = false }: SiteFoote
                 </li>
                 <li>
                   <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    href={APPLY_HREF}
                     className="font-body text-sm text-white transition-opacity hover:opacity-60"
                   >
-                    Contact
+                    Apply
                   </a>
                 </li>
               </ul>
@@ -64,12 +63,10 @@ export function SiteFooter({ compact = false, showLegalInfo = false }: SiteFoote
           </div>
 
           <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-fit rounded-full bg-white px-7 py-3 font-heading text-sm font-medium text-black transition-opacity hover:opacity-85 sm:px-8"
+            href={APPLY_HREF}
+            className="inline-flex w-fit max-w-full rounded-full bg-white px-7 py-3 text-center font-heading text-sm font-medium text-black transition-opacity hover:opacity-85 sm:px-8"
           >
-            Book a workflow discussion
+            {APPLY_CTA_LABEL}
           </a>
         </div>
 

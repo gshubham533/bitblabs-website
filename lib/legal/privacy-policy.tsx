@@ -34,8 +34,9 @@ export const privacySections: LegalSection[] = [
         <ul className="list-disc space-y-2 pl-5">
           <li>
             <strong className="font-medium text-zinc-300">Information you provide:</strong> name,
-            email address, phone number, company name, project details, and any other information
-            you submit when booking a consultation through Calendly or contacting us.
+            email address, phone number, company name, role, workflow details, and any other
+            information you submit when applying for an AI Strategy Session, booking a consultation,
+            or contacting us.
           </li>
           <li>
             <strong className="font-medium text-zinc-300">Technical information:</strong> browser

@@ -4,15 +4,21 @@ import { googleSansFlex } from '@/lib/fonts'
 import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
+  metadataBase: new URL('https://bitblabs.com'),
   title: {
-    default: 'BitBLabs | Custom AI for Workflows',
+    default: 'AI Strategy Session for Mid-Market & Enterprise | BitBLabs',
     template: '%s | BitBLabs',
   },
   description:
-    'BitBLabs builds custom AI systems for operational workflows — hiring, sales, support, supply chain — when off-the-shelf tools stop being enough.',
+    'A $2,000 / 90-minute AI strategy session with a written 90-day automation roadmap. Led by BitBLabs’ founder. Optional production build & deploy.',
   icons: {
     icon: '/logos/bitblabs-logo.svg',
     apple: '/logos/bitblabs-logo.svg',
+  },
+  openGraph: {
+    siteName: 'BitBLabs',
+    type: 'website',
+    locale: 'en_US',
   },
 }
 

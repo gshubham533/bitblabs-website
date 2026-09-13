@@ -22,12 +22,18 @@
 
 html {
   background-color: var(--bg-base);
-  scroll-padding-top: 4rem;
+  scroll-padding-top: 5.5rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+  html {
+    scroll-behavior: smooth;
+  }
 }
 
 @media (min-width: 640px) {
   html {
-    scroll-padding-top: 5rem;
+    scroll-padding-top: 6rem;
   }
 }
 
