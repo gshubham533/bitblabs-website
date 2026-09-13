@@ -1,159 +1,197 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { BOOKING_URL } from '@/lib/site'
+import {
+  APPLY_CTA_LABEL,
+  APPLY_NAV_CTA_LABEL,
+  CONTACT_PHONE,
+  CONTACT_PHONE_DISPLAY,
+  STRATEGY_APPLY_PATH,
+} from '@/lib/site'
+import { TrackedCtaLink } from '@/components/ui/TrackedCtaLink'
 import Image from 'next/image'
 import Link from 'next/link'
+import { usePathname } from 'next/navigation'
 import { useEffect, useState } from 'react'
-
-const navLinks = [
-  { href: '/projects', label: 'Work' },
-  { href: BOOKING_URL, label: 'Contact', external: true },
-] as const
 
 interface NavbarProps {
   theme?: 'light' | 'dark'
-  /** fixed = viewport; absolute = hero overlay; static = scrolls with page */
   position?: 'fixed' | 'absolute' | 'static'
+  variant?: 'default' | 'strategy'
 }
 
-export function Navbar({ theme = 'dark', position = 'fixed' }: NavbarProps) {
-  const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-  const light = theme === 'light'
-  const heroTypography = !light && position === 'absolute'
+const NAV_LINKS = [
+  { href: '/projects', label: 'Work' },
+  { href: STRATEGY_APPLY_PATH, label: 'Apply' },
+] as const
 
-  const headerPositionClass =
-    position === 'fixed'
-      ? 'fixed inset-x-0 top-0 z-[100]'
-      : position === 'absolute'
-        ? 'absolute inset-x-0 top-0 z-50'
-        : 'relative z-10'
+export function Navbar({
+  theme: _theme = 'light',
+  position = 'fixed',
+  variant: _variant,
+}: NavbarProps) {
+  const pathname = usePathname()
+  const [menuOpen, setMenuOpen] = useState(false)
+  const [scrolled, setScrolled] = useState(false)
 
   useEffect(() => {
-    document.body.style.overflow = mobileMenuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
-  }, [mobileMenuOpen])
+    document.body.style.overflow = menuOpen ? 'hidden' : ''
+    return () => {
+      document.body.style.overflow = ''
+    }
+  }, [menuOpen])
+
+  useEffect(() => {
+    if (position === 'static') return
+    const onScroll = () => setScrolled(window.scrollY > 24)
+    onScroll()
+    window.addEventListener('scroll', onScroll, { passive: true })
+    return () => window.removeEventListener('scroll', onScroll)
+  }, [position])
+
+  const headerClass =
+    position === 'static'
+      ? 'relative z-nav'
+      : position === 'absolute'
+        ? 'absolute inset-x-0 top-0 z-nav'
+        : 'fixed inset-x-0 top-0 z-nav'
+
+  const ctaButton = (
+    <TrackedCtaLink href={STRATEGY_APPLY_PATH} cta="apply" location="nav">
+      {APPLY_NAV_CTA_LABEL}
+    </TrackedCtaLink>
+  )
 
   return (
     <>
-      <header className={headerPositionClass}>
-        <nav className="w-full bg-transparent">
-          <div className="w-full px-6 md:px-12 lg:px-16">
-            <div className="flex h-16 items-center justify-between sm:h-20">
-              <Link href="/" className="flex items-center gap-3 group" onClick={() => setMobileMenuOpen(false)}>
-                <Image
-                  src="/logos/bitblabs-logo.svg"
-                  alt="BitBLabs"
-                  width={32}
-                  height={32}
-                  className="h-8 w-8 object-contain opacity-90 transition-opacity group-hover:opacity-100"
-                />
-                <span
-                  className={cn(
-                    'font-display text-sm font-bold tracking-tight transition-colors',
-                    light ? 'text-zinc-950' : 'text-white'
-                  )}
-                >
-                  BitBLabs
-                </span>
-              </Link>
+      <header
+        className={cn(
+          headerClass,
+          'border-b border-transparent',
+          scrolled || position === 'static'
+            ? 'border-rule bg-paper/80 backdrop-blur-md'
+            : 'bg-transparent'
+        )}
+      >
+        <div className="page-x">
+          <nav
+            aria-label="Primary"
+            className="page-max grid h-14 grid-cols-[1fr_auto] items-center gap-4 md:h-16 md:grid-cols-[1fr_auto_1fr]"
+          >
+            <Link
+              href="/"
+              className="flex min-w-0 items-center gap-2 justify-self-start"
+              onClick={() => setMenuOpen(false)}
+            >
+              <Image
+                src="/logos/bitblabs-logo.svg"
+                alt=""
+                width={28}
+                height={28}
+                className="h-7 w-8 object-contain"
+              />
+              <span className="font-display text-sm font-bold tracking-tight text-ink">
+                BitBLabs
+              </span>
+            </Link>
 
-              <ul className="hidden items-center gap-8 md:flex">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    {'external' in link && link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cn(
-                          'font-heading text-sm transition-colors duration-300',
-                          light ? 'text-zinc-500 hover:text-zinc-950' : 'text-zinc-500 hover:text-white'
-                        )}
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        className={cn(
-                          'font-heading text-sm transition-colors duration-300',
-                          light ? 'text-zinc-500 hover:text-zinc-950' : 'text-zinc-500 hover:text-white'
-                        )}
-                      >
-                        {link.label}
-                      </Link>
+            <ul className="hidden items-center gap-6 md:flex">
+              {NAV_LINKS.map((link) => (
+                <li key={link.href}>
+                  <Link
+                    href={link.href}
+                    className={cn(
+                      'font-body text-sm whitespace-nowrap',
+                      pathname === link.href ||
+                        (link.href === '/projects' && pathname.startsWith('/projects/'))
+                        ? 'text-ink font-medium'
+                        : 'text-ink-2'
                     )}
-                  </li>
-                ))}
-              </ul>
+                  >
+                    {link.label}
+                  </Link>
+                </li>
+              ))}
+            </ul>
 
-              <button
-                onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
-                aria-label="Toggle menu"
+            <div className="hidden items-center justify-self-end gap-5 md:flex">
+              <a
+                href={`tel:${CONTACT_PHONE}`}
+                className="font-body text-sm text-ink-2 whitespace-nowrap"
               >
-                <span
-                  className={cn(
-                    'block h-px w-5 transition-all',
-                    light ? 'bg-zinc-950' : 'bg-white',
-                    mobileMenuOpen && 'translate-y-[3.5px] rotate-45'
-                  )}
-                />
-                <span
-                  className={cn(
-                    'block h-px w-5 transition-all',
-                    light ? 'bg-zinc-950' : 'bg-white',
-                    mobileMenuOpen && 'opacity-0'
-                  )}
-                />
-                <span
-                  className={cn(
-                    'block h-px w-5 transition-all',
-                    light ? 'bg-zinc-950' : 'bg-white',
-                    mobileMenuOpen && '-translate-y-[3.5px] -rotate-45'
-                  )}
-                />
-              </button>
+                {CONTACT_PHONE_DISPLAY}
+              </a>
+              {ctaButton}
             </div>
-          </div>
-        </nav>
+
+            <button
+              type="button"
+              onClick={() => setMenuOpen((open) => !open)}
+              className="flex h-11 w-11 items-center justify-center justify-self-end md:hidden"
+              aria-expanded={menuOpen}
+              aria-controls="mobile-nav"
+              aria-label={menuOpen ? 'Close menu' : 'Open menu'}
+            >
+              <span className="sr-only">Menu</span>
+              <span className="flex flex-col gap-1.5" aria-hidden>
+                <span
+                  className={cn(
+                    'block h-px w-5 bg-ink transition-transform duration-[var(--dur-micro)] ease-out',
+                    menuOpen && 'translate-y-[5px] rotate-45'
+                  )}
+                />
+                <span
+                  className={cn(
+                    'block h-px w-5 bg-ink transition-opacity duration-[var(--dur-micro)] ease-out',
+                    menuOpen && 'opacity-0'
+                  )}
+                />
+                <span
+                  className={cn(
+                    'block h-px w-5 bg-ink transition-transform duration-[var(--dur-micro)] ease-out',
+                    menuOpen && '-translate-y-[5px] -rotate-45'
+                  )}
+                />
+              </span>
+            </button>
+          </nav>
+        </div>
       </header>
 
       <div
+        id="mobile-nav"
         className={cn(
-          'fixed inset-0 z-[90] bg-base/98 backdrop-blur-xl transition-all duration-300 md:hidden',
-          mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'
+          'fixed inset-0 z-overlay bg-paper px-6 pt-24 transition-opacity duration-[var(--dur-short)] ease-out md:hidden',
+          menuOpen ? 'visible opacity-100' : 'invisible opacity-0'
         )}
       >
-        <ul className="flex h-full flex-col items-center justify-center gap-8">
-          {navLinks.map((link) => (
+        <ul className="flex flex-col gap-6">
+          {NAV_LINKS.map((link) => (
             <li key={link.href}>
-              {'external' in link && link.external ? (
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    'font-display text-3xl font-bold text-white transition-colors hover:text-zinc-400'
-                  )}
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    'font-display text-3xl font-bold text-white transition-colors hover:text-zinc-400'
-                  )}
-                >
-                  {link.label}
-                </Link>
-              )}
+              <Link
+                href={link.href}
+                onClick={() => setMenuOpen(false)}
+                className="font-display text-3xl font-bold text-ink"
+              >
+                {link.label}
+              </Link>
             </li>
           ))}
+          <li>
+            <a href={`tel:${CONTACT_PHONE}`} className="font-body text-lg text-ink-2">
+              {CONTACT_PHONE_DISPLAY}
+            </a>
+          </li>
+          <li>
+            <TrackedCtaLink
+              href={STRATEGY_APPLY_PATH}
+              cta="apply"
+              location="nav"
+              className="w-full"
+            >
+              {APPLY_CTA_LABEL}
+            </TrackedCtaLink>
+          </li>
         </ul>
       </div>
     </>

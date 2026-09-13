@@ -50,7 +50,7 @@ interface ProcessProps {
 
 const processTheme = 'light' as const
 
-export function Process({ accent = '#7c3aed' }: ProcessProps) {
+export function Process({ accent = 'var(--color-accent)' }: ProcessProps) {
   const styles = sceneThemeClasses(processTheme)
 
   return (

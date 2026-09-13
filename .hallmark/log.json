@@ -1,0 +1,26 @@
+[
+  {
+    "date": "2026-03-26",
+    "macrostructure": "Split Studio",
+    "theme": "custom",
+    "theme_axes": "light / grotesk-sans / warm",
+    "vibe": "warm ops studio",
+    "enrichment": "none",
+    "nav": "N1b Canonical SaaS three-section",
+    "footer": "Ft5 Statement",
+    "scope": "app",
+    "brief": "BitBLabs whole-site Split Studio system from studied DNA roles"
+  },
+  {
+    "date": "2026-03-26",
+    "macrostructure": "Narrative Workflow",
+    "theme": "custom",
+    "theme_axes": "light / geometric-sans / cool",
+    "vibe": "austere ops instrument",
+    "enrichment": "none",
+    "nav": "N5 Floating pill",
+    "footer": "Ft2 Inline single line",
+    "scope": "app",
+    "brief": "BitBLabs whole-site austere modern-minimal system"
+  }
+]

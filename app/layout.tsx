@@ -1,15 +1,15 @@
 import type { Metadata } from 'next'
 import './globals.css'
-import { googleSansFlex } from '@/lib/fonts'
+import { fontVariables, spaceGrotesk } from '@/lib/fonts'
 import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
   title: {
-    default: 'BitBLabs | Custom AI for Workflows',
+    default: 'BitBLabs | AI Workflow Strategy Session',
     template: '%s | BitBLabs',
   },
   description:
-    'BitBLabs builds custom AI systems for operational workflows — hiring, sales, support, supply chain — when off-the-shelf tools stop being enough.',
+    'BitBLabs helps mid-market ops leaders find the AI opportunities worth funding — one workflow, a written Opportunity Brief, USD 2,000.',
   icons: {
     icon: '/logos/bitblabs-logo.svg',
     apple: '/logos/bitblabs-logo.svg',
@@ -22,8 +22,8 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={googleSansFlex.variable}>
-      <body className={`${googleSansFlex.className} antialiased`}>
+    <html lang="en" className={fontVariables}>
+      <body className={`${spaceGrotesk.className} bg-paper text-ink antialiased`}>
         {children}
         <Analytics />
       </body>

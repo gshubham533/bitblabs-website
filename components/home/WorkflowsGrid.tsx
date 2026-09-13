@@ -2,20 +2,23 @@ import { HOME_WORKFLOWS } from '@/lib/home'
 
 export function WorkflowsGrid() {
   return (
-    <section className="border-b border-zinc-200 px-6 py-16 md:px-12 md:py-20 lg:px-16">
-      <div className="mx-auto max-w-[1400px]">
-        <p className="font-heading text-xs uppercase tracking-[0.2em] text-zinc-500">
-          What we build
-        </p>
-        <ul className="mt-10 grid gap-10 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-12">
+    <section className="page-x py-16 md:py-24">
+      <div className="page-max grid items-start gap-10 md:grid-cols-12 md:gap-16">
+        <div className="md:col-span-5">
+          <h2 className="font-display text-[length:var(--text-display-s)] font-bold text-ink">
+            Workflows we take on
+          </h2>
+          <p className="mt-4 max-w-[32rem] font-body text-base leading-relaxed text-ink-2 md:text-lg">
+            One operational process at a time — the ones off-the-shelf tools cannot hold.
+          </p>
+        </div>
+        <ul className="min-w-0 divide-y border-y border-rule md:col-span-7">
           {HOME_WORKFLOWS.map((item) => (
-            <li key={item.title}>
-              <h3 className="font-display text-2xl font-medium tracking-tight text-zinc-950 md:text-3xl">
+            <li key={item.title} className="grid gap-1 py-6 md:grid-cols-[minmax(0,0.4fr)_minmax(0,1fr)] md:gap-8 md:py-7">
+              <h3 className="font-display text-xl font-bold tracking-tight text-ink md:text-2xl">
                 {item.title}
               </h3>
-              <p className="mt-3 font-body text-base leading-relaxed text-zinc-500 md:text-lg">
-                {item.line}
-              </p>
+              <p className="font-body text-base leading-relaxed text-ink-2">{item.line}</p>
             </li>
           ))}
         </ul>

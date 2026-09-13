@@ -16,9 +16,9 @@ export default function CaseStudyDetailPage() {
   if (!study) {
     return (
       <CaseStudyNotFound
-        title="Case study not found"
+        title="Note not found"
         backHref="/case-studies"
-        backLabel="Back to case studies"
+        backLabel="Back to notes"
       />
     )
   }
@@ -27,7 +27,7 @@ export default function CaseStudyDetailPage() {
     <CaseStudyPageLayout
       project={fromLegacyCaseStudy(study)}
       backHref="/case-studies"
-      backLabel="Back to case studies"
+      backLabel="Back to notes"
     />
   )
 }

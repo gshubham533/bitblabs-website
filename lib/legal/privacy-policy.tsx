@@ -5,11 +5,12 @@ import {
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
   LEGAL_NAME,
+  PAID_SESSION_URL,
   TERMS_PATH,
 } from '@/lib/site'
 import type { LegalSection } from '@/lib/legal/types'
 
-export const PRIVACY_LAST_UPDATED = 'July 2, 2026'
+export const PRIVACY_LAST_UPDATED = 'September 2, 2026'
 
 export const privacyIntro = (
   <>
@@ -34,8 +35,9 @@ export const privacySections: LegalSection[] = [
         <ul className="list-disc space-y-2 pl-5">
           <li>
             <strong className="font-medium text-zinc-300">Information you provide:</strong> name,
-            email address, phone number, company name, project details, and any other information
-            you submit when booking a consultation through Calendly or contacting us.
+            email address, phone number, company name, role, website, company size, workflow
+            details, and any other information you submit when applying for a Strategy Session,
+            booking a consultation through Calendly or TidyCal, or contacting us.
           </li>
           <li>
             <strong className="font-medium text-zinc-300">Technical information:</strong> browser
@@ -61,6 +63,7 @@ export const privacySections: LegalSection[] = [
       <>
         <p>We use personal information for legitimate business purposes, including to:</p>
         <ul className="list-disc space-y-2 pl-5">
+          <li>Review Strategy Session applications and respond with next steps</li>
           <li>Respond to inquiries and schedule project discussions</li>
           <li>Provide, operate, and improve our website and services</li>
           <li>Communicate with prospective and existing clients</li>
@@ -113,7 +116,7 @@ export const privacySections: LegalSection[] = [
         <ul className="list-disc space-y-2 pl-5">
           <li>
             <strong className="font-medium text-zinc-300">Calendly</strong> — appointment scheduling
-            when you book a project discussion (
+            for occasional operational calls (
             <a
               href={BOOKING_URL}
               target="_blank"
@@ -121,6 +124,20 @@ export const privacySections: LegalSection[] = [
               className="text-zinc-300 transition-opacity hover:opacity-60"
             >
               calendly.com/gshubham
+            </a>
+            )
+          </li>
+          <li>
+            <strong className="font-medium text-zinc-300">TidyCal</strong> — appointment scheduling
+            and payment processing for the AI Workflow Strategy Session after an application is
+            accepted (
+            <a
+              href={PAID_SESSION_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="text-zinc-300 transition-opacity hover:opacity-60"
+            >
+              tidycal.com/shubhamgupta
             </a>
             )
           </li>

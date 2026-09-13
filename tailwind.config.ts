@@ -9,63 +9,44 @@ const config: Config = {
   theme: {
     extend: {
       colors: {
-        base: '#050505',
-        elevated: '#0c0c0c',
-        surface: '#141414',
+        paper: 'var(--color-paper)',
+        'paper-2': 'var(--color-paper-2)',
+        'paper-3': 'var(--color-paper-3)',
+        ink: 'var(--color-ink)',
+        'ink-2': 'var(--color-ink-2)',
+        muted: 'var(--color-muted)',
+        rule: 'var(--color-rule)',
+        'rule-2': 'var(--color-rule-2)',
         accent: {
-          DEFAULT: '#7c3aed',
-          soft: 'rgba(124, 58, 237, 0.12)',
+          DEFAULT: 'var(--color-accent)',
+          ink: 'var(--color-accent-ink)',
+          soft: 'var(--color-accent-soft)',
         },
-        dark: {
-          900: '#050505',
-          800: '#0c0c0c',
-          700: '#141414',
-          600: '#1c1c1c',
-          500: '#27272a',
-        },
+        focus: 'var(--color-focus)',
       },
       fontFamily: {
-        sans: ['var(--font-google-sans-flex)', 'system-ui', 'sans-serif'],
-        display: ['var(--font-google-sans-flex)', 'system-ui', 'sans-serif'],
-        heading: ['var(--font-google-sans-flex)', 'system-ui', 'sans-serif'],
-        body: ['var(--font-google-sans-flex)', 'system-ui', 'sans-serif'],
-        editorial: ['var(--font-google-sans-flex)', 'system-ui', 'sans-serif'],
-        garamond: ['var(--font-google-sans-flex)', 'system-ui', 'sans-serif'],
-        caslon: ['var(--font-google-sans-flex)', 'system-ui', 'sans-serif'],
+        sans: ['var(--font-body)'],
+        display: ['var(--font-display)'],
+        heading: ['var(--font-body)'],
+        body: ['var(--font-body)'],
       },
       fontSize: {
         'display-sm': ['3.5rem', { lineHeight: '1', letterSpacing: '-0.03em' }],
         'display-md': ['5rem', { lineHeight: '0.95', letterSpacing: '-0.04em' }],
         'display-lg': ['7.5rem', { lineHeight: '0.9', letterSpacing: '-0.04em' }],
       },
-      animation: {
-        'fade-up': 'fadeUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'fade-in-up': 'fadeInUp 0.8s cubic-bezier(0.16, 1, 0.3, 1) forwards',
-        'marquee-vertical': 'marqueeVertical var(--duration, 30s) linear infinite',
-        'x-slider': 'xSlider var(--slider-duration, 45s) linear infinite',
-        float: 'float 6s ease-in-out infinite',
+      borderRadius: {
+        card: 'var(--radius-card)',
       },
-      keyframes: {
-        fadeUp: {
-          '0%': { opacity: '0', transform: 'translateY(24px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        fadeInUp: {
-          '0%': { opacity: '0', transform: 'translateY(20px)' },
-          '100%': { opacity: '1', transform: 'translateY(0)' },
-        },
-        marqueeVertical: {
-          '0%': { transform: 'translateY(0)' },
-          '100%': { transform: 'translateY(-50%)' },
-        },
-        xSlider: {
-          '0%': { transform: 'translateX(0)' },
-          '100%': { transform: 'translateX(-50%)' },
-        },
-        float: {
-          '0%, 100%': { transform: 'translateY(0px)' },
-          '50%': { transform: 'translateY(-8px)' },
-        },
+      transitionTimingFunction: {
+        out: 'var(--ease-out)',
+        in: 'var(--ease-in)',
+        'in-out': 'var(--ease-in-out)',
+      },
+      zIndex: {
+        nav: '40',
+        overlay: '50',
+        modal: '60',
       },
     },
   },

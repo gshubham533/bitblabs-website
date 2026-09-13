@@ -1,0 +1,8 @@
+{
+  "date": "2026-08-27",
+  "font_stack": "Syne + Google Sans Flex",
+  "palette": "custom OKLCH cool paper / charcoal ink / cobalt signal",
+  "motion": "framer-motion + Lenis + three (motion-on; home unmounts Three.js)",
+  "spacing": "4pt named scale in tokens.css",
+  "framework": "Next.js 14 app router"
+}

@@ -1,22 +1,19 @@
 'use client'
 
 import Link from 'next/link'
-import { FooterWatermark } from '@/components/layout/FooterWatermark'
 import {
-  BOOKING_URL,
   CONTACT_PHONE,
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
   LEGAL_NAME,
   PRIVACY_PATH,
+  STRATEGY_APPLY_PATH,
   TERMS_PATH,
 } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
 interface SiteFooterProps {
-  /** Spacing when placed directly after portfolio / studio products. */
   compact?: boolean
-  /** Company legal details and policy links (home page only). */
   showLegalInfo?: boolean
 }
 
@@ -26,130 +23,64 @@ export function SiteFooter({ compact = false, showLegalInfo = false }: SiteFoote
   return (
     <footer
       className={cn(
-        'relative bg-black px-6 pb-6 sm:px-10 sm:pb-8 md:px-12 lg:px-16',
-        compact ? 'relative z-30 pt-16 md:mt-12 md:pt-16 lg:mt-16 lg:pt-20' : 'pt-16 lg:pt-20'
+        'border-t border-rule bg-paper-2 px-6 pb-8 md:px-12 lg:px-16',
+        compact ? 'pt-12' : 'pt-16 md:pt-20'
       )}
     >
-      <div className="relative z-10 mx-auto max-w-[1400px]">
-        <div className="flex flex-col items-center gap-10 text-center md:items-stretch md:text-left lg:flex-row lg:items-end lg:justify-between lg:gap-16">
-          <div className="flex flex-col items-center space-y-6 md:items-start">
-            <div className="space-y-1.5 font-body text-sm leading-relaxed text-white">
-              <p className="font-heading text-xs uppercase tracking-[0.2em] text-zinc-500">BitBLabs</p>
-              <p>Custom AI for workflows</p>
-              <p className="text-zinc-400">Remote · Worldwide</p>
-            </div>
+      <div className="page-max">
+        <p className="max-w-[18ch] font-display text-[clamp(1.75rem,5vw,3.25rem)] font-bold leading-[1.05] tracking-tight text-ink">
+          Leave with a priority you can defend.
+        </p>
 
-            <nav aria-label="Footer">
-              <ul className="flex flex-wrap justify-center gap-x-8 gap-y-2 md:justify-start">
-                <li>
-                  <Link
-                    href="/projects"
-                    className="font-body text-sm text-white transition-opacity hover:opacity-60"
-                  >
-                    Work
-                  </Link>
-                </li>
-                <li>
-                  <a
-                    href={BOOKING_URL}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                    className="font-body text-sm text-white transition-opacity hover:opacity-60"
-                  >
-                    Contact
-                  </a>
-                </li>
-              </ul>
-            </nav>
-          </div>
-
-          <a
-            href={BOOKING_URL}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="inline-flex w-fit rounded-full bg-white px-7 py-3 font-heading text-sm font-medium text-black transition-opacity hover:opacity-85 sm:px-8"
-          >
-            Book a workflow discussion
-          </a>
-        </div>
-
-        <div className="relative mt-16 sm:mt-20">
-          <div className="h-px w-full bg-white/20" />
-        </div>
-
-        <div
-          className={cn(
-            'mt-10 flex flex-col gap-10 lg:mt-12',
-            showLegalInfo && 'lg:flex-row lg:items-end lg:justify-between lg:gap-16'
-          )}
-        >
-          <div>
-            <p className="max-w-md font-body text-sm leading-relaxed text-zinc-500">
-              Custom AI systems for the operational workflows mid-market teams already run.
-            </p>
-
-            <p className="mt-8 font-body text-xs text-zinc-600">© {year} BitBLabs</p>
-          </div>
-
-          {showLegalInfo ? (
-            <div className="space-y-4 text-center md:text-left lg:max-w-sm lg:text-right">
-              <div className="space-y-1.5 font-body text-xs leading-relaxed text-zinc-500">
-                <p className="font-heading text-[0.65rem] uppercase tracking-[0.2em] text-zinc-600">
-                  Legal information
-                </p>
-                <p className="text-zinc-400">{LEGAL_NAME}</p>
-                <address className="not-italic text-zinc-500">
-                  {LEGAL_ADDRESS_LINES.map((line) => (
-                    <span key={line} className="block">
-                      {line}
-                    </span>
-                  ))}
-                </address>
-                <p>
-                  <a
-                    href={`tel:${CONTACT_PHONE}`}
-                    className="text-zinc-400 transition-opacity hover:opacity-60"
-                  >
-                    {CONTACT_PHONE_DISPLAY}
-                  </a>
-                </p>
-              </div>
-
-              <nav
-                aria-label="Legal"
-                className="flex flex-wrap justify-center gap-x-4 gap-y-2 md:justify-start lg:justify-end"
-              >
-                <Link
-                  href={PRIVACY_PATH}
-                  className="font-body text-xs text-zinc-500 transition-opacity hover:opacity-60"
-                >
-                  Privacy Policy
+        <div className="mt-10 flex flex-col gap-4 border-t border-rule pt-6 font-body text-sm text-ink-2 md:flex-row md:flex-wrap md:items-baseline md:justify-between">
+          <p className="font-display text-base font-bold tracking-tight text-ink">BitBLabs</p>
+          <nav aria-label="Footer">
+            <ul className="flex flex-wrap items-center gap-x-5 gap-y-2">
+              <li>
+                <Link href="/projects" className="whitespace-nowrap text-ink">
+                  Work
                 </Link>
-                <span className="text-zinc-700" aria-hidden>
-                  ·
+              </li>
+              <li>
+                <Link href={STRATEGY_APPLY_PATH} className="whitespace-nowrap text-ink">
+                  Apply
+                </Link>
+              </li>
+              <li>
+                <Link href="/#contact" className="whitespace-nowrap text-ink">
+                  Contact
+                </Link>
+              </li>
+              <li>
+                <Link href={PRIVACY_PATH} className="whitespace-nowrap">
+                  Privacy
+                </Link>
+              </li>
+              <li>
+                <Link href={TERMS_PATH} className="whitespace-nowrap">
+                  Terms
+                </Link>
+              </li>
+            </ul>
+          </nav>
+          <p className="text-muted">© {year} BitBLabs</p>
+        </div>
+
+        {showLegalInfo ? (
+          <div className="mt-8 max-w-xl space-y-2 font-body text-xs leading-relaxed text-muted">
+            <p>{LEGAL_NAME}</p>
+            <address className="not-italic">
+              {LEGAL_ADDRESS_LINES.map((line) => (
+                <span key={line} className="block">
+                  {line}
                 </span>
-                <Link
-                  href={TERMS_PATH}
-                  className="font-body text-xs text-zinc-500 transition-opacity hover:opacity-60"
-                >
-                  Terms &amp; Conditions
-                </Link>
-              </nav>
-            </div>
-          ) : null}
-        </div>
-      </div>
-
-      <div className="relative mx-auto mt-10 flex max-w-[1400px] justify-center overflow-visible sm:mt-12">
-        <div
-          className="pointer-events-none absolute inset-0"
-          aria-hidden
-          style={{
-            background:
-              'radial-gradient(ellipse 90% 70% at 50% 50%, rgba(255, 170, 50, 0.06) 0%, transparent 65%)',
-          }}
-        />
-        <FooterWatermark />
+              ))}
+            </address>
+            <p>
+              <a href={`tel:${CONTACT_PHONE}`}>{CONTACT_PHONE_DISPLAY}</a>
+            </p>
+          </div>
+        ) : null}
       </div>
     </footer>
   )

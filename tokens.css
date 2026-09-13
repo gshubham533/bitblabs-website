@@ -1,0 +1,101 @@
+/* Hallmark · pre-emit critique: P4 H4 E4 S4 R5 V4 */
+/* Hallmark · genre: modern-minimal · macrostructure: Split Studio · tone: warm-ops · anchor hue: 172
+ * theme: custom (vibe: "warm ops studio") · paper oklch(95.3% 0.010 58) · accent oklch(49% 0.090 172)
+ * display: Space Grotesk + body: Space Grotesk · axes: light / grotesk-sans / warm
+ * nav: N1b Canonical SaaS three-section · footer: Ft5 Statement · enrichment: none
+ * design-system: design.md · designed-as-app
+ */
+
+:root {
+  --color-paper: oklch(95.3% 0.010 58);
+  --color-paper-2: oklch(92.4% 0.014 50);
+  --color-paper-3: oklch(88% 0.018 48);
+  --color-ink: oklch(17.4% 0.006 286);
+  --color-ink-2: oklch(35% 0.012 280);
+  --color-muted: oklch(48% 0.016 70);
+  --color-neutral: oklch(42% 0.014 70);
+  --color-rule: oklch(86% 0.016 58);
+  --color-rule-2: oklch(76% 0.018 58);
+  --color-accent: oklch(49% 0.090 172);
+  --color-accent-ink: oklch(98% 0.008 90);
+  --color-focus: oklch(49% 0.110 172);
+  --color-accent-soft: oklch(49% 0.090 172 / 0.12);
+  --color-error: oklch(46% 0.16 25);
+  --color-error-soft: oklch(46% 0.16 25 / 0.12);
+
+  --color-story-green: oklch(72% 0.16 155);
+  --color-story-grid: oklch(22% 0.04 155);
+  --color-story-grid-line: oklch(35% 0.05 155);
+  --color-story-yellow: oklch(88% 0.18 110);
+
+  --font-story-serif: var(--font-instrument-serif), 'Instrument Serif', Georgia, serif;
+  --font-story-script: var(--font-caveat), 'Caveat', cursive;
+  --font-story-note: var(--font-caveat), 'Caveat', cursive;
+  --font-body: var(--font-space-grotesk), system-ui, sans-serif;
+  --font-outlier: var(--font-body);
+
+  --display-weight: 700;
+  --display-style: normal;
+  --tracking-display: -0.03em;
+  --tracking-label: 0.04em;
+
+  --text-xs: 0.75rem;
+  --text-sm: 0.875rem;
+  --text-md: 1.125rem;
+  --text-lg: 1.375rem;
+  --text-xl: 1.75rem;
+  --text-2xl: 2.25rem;
+  --text-display: clamp(2.5rem, 6vw + 1rem, 4.5rem);
+  --text-display-s: clamp(2rem, 4vw + 0.75rem, 3.25rem);
+  --text-story-hero: clamp(2.75rem, 8vw + 0.5rem, 6.5rem);
+  --text-story-chapter: clamp(2.25rem, 5vw + 0.5rem, 4.5rem);
+  --text-story-script: clamp(2rem, 12vw, 5rem);
+
+  --space-3xs: 0.25rem;
+  --space-2xs: 0.5rem;
+  --space-xs: 0.75rem;
+  --space-sm: 1rem;
+  --space-md: 1.5rem;
+  --space-lg: 2rem;
+  --space-xl: 3rem;
+  --space-2xl: 4.5rem;
+  --space-3xl: 7rem;
+  --space-4xl: 9rem;
+  --space-chapter-min: min(100svh, auto);
+  --space-chapter: var(--space-chapter-min);
+
+  --radius-story-card: 20px;
+  --shadow-story-float: 0 24px 80px oklch(17% 0.02 286 / 0.12);
+  --shadow-story-nav: 0 8px 32px oklch(17% 0.02 286 / 0.2);
+
+  --ease-out: cubic-bezier(0.16, 1, 0.3, 1);
+  --ease-in: cubic-bezier(0.7, 0, 0.84, 0);
+  --ease-in-out: cubic-bezier(0.65, 0, 0.35, 1);
+  --dur-micro: 120ms;
+  --dur-short: 220ms;
+  --dur-long: 420ms;
+
+  --rule-hair: 1px;
+  --rule-fine: 2px;
+  --radius-card: 8px;
+  --radius-pill: 8px;
+  --radius-input: 8px;
+  --shadow-card: none;
+
+  --z-base: 0;
+  --z-nav: 40;
+  --z-overlay: 50;
+  --z-modal: 60;
+
+  --nav-offset: 0;
+  --story-nav-offset: 5.5rem;
+  --measure: 62ch;
+}
+
+@media (prefers-reduced-motion: reduce) {
+  :root {
+    --dur-micro: 0ms;
+    --dur-short: 150ms;
+    --dur-long: 150ms;
+  }
+}

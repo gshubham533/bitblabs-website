@@ -24,9 +24,10 @@ export const caseStudies: CaseStudy[] = [
     id: '1',
     slug: 'genai-high-volume-hiring',
     title: 'How Generative AI Is Transforming High-Volume Hiring',
-    description: 'A deep dive into how GenAI is reshaping recruitment at scale, from resume screening to structured interviews.',
-    subtitle: 'Industry Education: The shift from manual hiring to AI-augmented recruitment',
-    category: 'recruitment',
+    description:
+      'An essay on GenAI in recruitment — resume screening, structured interviews, recruiter judgment. Not a BitBLabs client delivery.',
+    subtitle: 'Note: industry reading, not a shipped engagement',
+    category: 'note',
     readTime: '12 min',
     thumbnail: '',
     color: '#3B82F6',

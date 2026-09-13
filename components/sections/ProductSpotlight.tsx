@@ -193,7 +193,7 @@ function ProductScreenshot({
           'relative w-full overflow-hidden',
           PRODUCT_IMAGE_FRAME_LIGHT_CLASS,
           frameClassName,
-          'transition-all duration-500 ease-[cubic-bezier(0.25,0.46,0.45,0.94)] group-hover/product-img:-translate-y-1 group-hover/product-img:shadow-[0_0_0_3px_#fff,0_38px_110px_-30px_rgba(0,0,0,0.6)]'
+          'transition-shadow duration-[var(--dur-short)] ease-out'
         )}
         style={{ aspectRatio: imageAspect }}
         role={isCarousel ? 'region' : undefined}
@@ -282,7 +282,7 @@ function ProductPanel({
           href={liveUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="inline-flex w-fit items-center gap-2.5 rounded-full bg-white px-7 py-3.5 font-heading text-[0.9375rem] font-medium tracking-[-0.01em] text-zinc-950 transition-all duration-300 hover:scale-[1.02] hover:bg-zinc-100 sm:px-8"
+          className="btn-primary"
         >
           {ctaLabel}
           <span aria-hidden className="text-sm leading-none">

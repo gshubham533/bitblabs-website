@@ -18,6 +18,31 @@ const nextConfig = {
         destination: '/projects/:slug',
         permanent: true,
       },
+      {
+        source: '/ai-workflow-strategy',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/case-studies',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/case-studies/:slug',
+        destination: '/projects',
+        permanent: true,
+      },
+      {
+        source: '/brain-stuff',
+        destination: '/',
+        permanent: true,
+      },
+      {
+        source: '/side-quests',
+        destination: '/',
+        permanent: true,
+      },
     ]
   },
 }

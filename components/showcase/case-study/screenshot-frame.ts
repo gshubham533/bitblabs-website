@@ -52,8 +52,7 @@ export function frameShellClass(
       )
     case 'device':
       return cn(
-        'overflow-hidden rounded-2xl border-[3px] border-black bg-white',
-        'shadow-[0_24px_80px_-36px_rgba(0,0,0,0.55)]'
+        'overflow-hidden rounded-card border border-rule bg-paper',
       )
     case 'rezonna':
       if (sectionTheme === 'dark') {

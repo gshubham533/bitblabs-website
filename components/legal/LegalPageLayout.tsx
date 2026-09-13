@@ -25,46 +25,35 @@ export function LegalPageLayout({
     relatedPage === 'privacy' ? 'Terms & Conditions' : 'Privacy Policy'
 
   return (
-    <main className="relative min-h-screen bg-black">
-      <Navbar theme="dark" position="static" />
+    <main className="relative min-h-screen bg-paper text-ink">
+      <Navbar position="static" />
 
-      <article className="mx-auto max-w-3xl px-6 pb-8 pt-10 md:px-12 md:pt-14 lg:px-16">
-        <Link
-          href="/"
-          className="font-body text-sm text-zinc-500 transition-opacity hover:opacity-60"
-        >
+      <article className="page-x mx-auto max-w-[42rem] pb-16 pt-10 md:pt-14">
+        <Link href="/" className="font-body text-sm text-ink-2">
           ← Back to home
         </Link>
 
         <header className="mt-8 space-y-3 md:mt-10">
-          <h1 className="font-body text-3xl font-normal tracking-[-0.03em] text-white md:text-4xl">
+          <h1 className="font-display text-[length:var(--text-display-s)] font-bold tracking-tight text-ink">
             {title}
           </h1>
-          <p className="font-body text-sm text-zinc-500">Last updated: {lastUpdated}</p>
+          <p className="font-body text-sm text-muted">Last updated: {lastUpdated}</p>
         </header>
 
-        <div className="mt-10 space-y-10 font-body text-sm leading-relaxed text-zinc-400 md:mt-12">
+        <div className="mt-10 space-y-10 font-body text-base leading-relaxed text-ink-2 md:mt-12">
           <p>{intro}</p>
 
           {sections.map((section) => (
             <section key={section.title} className="space-y-3">
-              <h2 className="font-heading text-xs uppercase tracking-[0.2em] text-zinc-500">
-                {section.title}
-              </h2>
+              <h2 className="font-display text-xl font-bold text-ink">{section.title}</h2>
               <div className="space-y-3">{section.body}</div>
             </section>
           ))}
 
-          <nav
-            aria-label="Related legal page"
-            className="border-t border-white/10 pt-10"
-          >
-            <p className="font-body text-sm text-zinc-500">
+          <nav aria-label="Related legal page" className="border-t border-rule pt-10">
+            <p className="font-body text-sm text-muted">
               See also:{' '}
-              <Link
-                href={relatedHref}
-                className="text-zinc-300 transition-opacity hover:opacity-60"
-              >
+              <Link href={relatedHref} className="text-ink">
                 {relatedLabel}
               </Link>
             </p>

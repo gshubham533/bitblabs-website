@@ -5,11 +5,13 @@ import {
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
   LEGAL_NAME,
+  PAID_SESSION_URL,
   PRIVACY_PATH,
+  STRATEGY_APPLY_PATH,
 } from '@/lib/site'
 import type { LegalSection } from '@/lib/legal/types'
 
-export const TERMS_LAST_UPDATED = 'July 2, 2026'
+export const TERMS_LAST_UPDATED = 'September 2, 2026'
 
 export const termsIntro = (
   <>
@@ -86,7 +88,20 @@ export const termsSections: LegalSection[] = [
           signed agreement will prevail for that engagement.
         </p>
         <p>
-          You may schedule an initial discussion through our booking page at{' '}
+          For the AI Workflow Strategy Session, you may{' '}
+          <Link href={STRATEGY_APPLY_PATH} className="text-zinc-300 transition-opacity hover:opacity-60">
+            apply on this website
+          </Link>
+          . If we accept an application, we send a payment and scheduling link processed by{' '}
+          <a
+            href={PAID_SESSION_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="text-zinc-300 transition-opacity hover:opacity-60"
+          >
+            TidyCal
+          </a>
+          . Occasional operational scheduling may use{' '}
           <a
             href={BOOKING_URL}
             target="_blank"
@@ -95,8 +110,8 @@ export const termsSections: LegalSection[] = [
           >
             Calendly
           </a>
-          . Booking a call does not create a client relationship until both parties agree to formal
-          terms.
+          . Submitting an application or booking a session does not create a client relationship
+          until both parties agree to formal terms.
         </p>
       </>
     ),

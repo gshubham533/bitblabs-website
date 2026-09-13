@@ -53,7 +53,7 @@ function CaseStudyBackLink({
   return (
     <Link
       href={href}
-      className="group inline-flex min-h-10 items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-3.5 py-2 font-heading text-xs font-medium uppercase tracking-[0.14em] text-zinc-200 transition-all duration-300 hover:border-white/22 hover:bg-white/[0.1] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
+      className="group inline-flex min-h-10 items-center gap-2 rounded-card border border-white/20 bg-white/[0.05] px-3.5 py-2 font-body text-sm text-zinc-200 transition-colors duration-[var(--dur-short)] ease-out hover:border-white/35 hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
     >
       <svg
         aria-hidden
@@ -316,18 +316,18 @@ export function AgencyCaseStudy({
         <div className="relative mx-auto w-full max-w-[1400px] px-6 pb-14 pt-32 md:px-12 md:pb-20 md:pt-40 lg:px-16">
           <Reveal>
             <div className="flex flex-wrap items-center gap-3">
-              <span className="rounded-full border border-white/15 bg-black/30 px-3 py-1 font-heading text-xs uppercase tracking-[0.16em] text-zinc-300 backdrop-blur-sm">
+              <span className="rounded-card border border-white/20 px-3 py-1 font-body text-xs text-zinc-300">
                 {project.industry}
               </span>
               {project.year && (
-                <span className="rounded-full border border-white/15 bg-black/30 px-3 py-1 font-heading text-xs uppercase tracking-[0.16em] text-zinc-300 backdrop-blur-sm">
+                <span className="rounded-card border border-white/20 px-3 py-1 font-body text-xs text-zinc-300">
                   {project.duration} · {project.year}
                 </span>
               )}
               {project.tech.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-white/10 bg-black/20 px-3 py-1 font-heading text-xs uppercase tracking-[0.16em] text-zinc-400 backdrop-blur-sm"
+                  className="rounded-card border border-white/15 px-3 py-1 font-body text-xs text-zinc-400"
                 >
                   {tag}
                 </span>
@@ -346,7 +346,7 @@ export function AgencyCaseStudy({
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-10 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-7 py-3.5 font-heading text-sm uppercase tracking-[0.18em] text-white backdrop-blur-sm transition-colors hover:border-white/35 hover:bg-white/15"
+                className="mt-10 inline-flex items-center rounded-card border border-white/20 bg-white/10 px-7 py-3.5 font-body text-sm text-white transition-colors hover:border-white/35 hover:bg-white/15"
               >
                 View live product →
               </a>
@@ -426,7 +426,7 @@ export function AgencyCaseStudy({
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full border border-white/15 px-6 py-3 font-heading text-sm uppercase tracking-[0.18em] text-white transition-colors hover:border-white/30 hover:bg-white/[0.04]"
+                className="inline-flex items-center rounded-card border border-white/15 px-6 py-3 font-body text-sm text-white transition-colors hover:border-white/30 hover:bg-white/[0.04]"
               >
                 View live product
               </a>
@@ -434,7 +434,7 @@ export function AgencyCaseStudy({
             {nextProject && (
               <Link
                 href={`/projects/${nextProject.slug}`}
-                className="inline-flex items-center rounded-full px-6 py-3 font-heading text-sm uppercase tracking-[0.18em] text-[#050505] transition-opacity hover:opacity-90"
+                className="inline-flex items-center rounded-card px-6 py-3 font-body text-sm text-paper transition-opacity hover:opacity-90"
                 style={{ backgroundColor: accent }}
               >
                 Next case study: {nextProject.title}

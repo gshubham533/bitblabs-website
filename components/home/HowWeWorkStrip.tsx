@@ -2,23 +2,28 @@ import { HOME_PROCESS_STEPS } from '@/lib/home'
 
 export function HowWeWorkStrip() {
   return (
-    <section className="border-t border-zinc-200 bg-white px-6 py-16 md:px-12 md:py-20 lg:px-16">
-      <div className="mx-auto max-w-[1400px]">
-        <p className="font-heading text-xs uppercase tracking-[0.2em] text-zinc-500">
-          How we work
-        </p>
-        <ol className="mt-10 grid gap-10 sm:grid-cols-2 lg:mt-12 lg:grid-cols-4 lg:gap-12">
+    <section id="how-we-work" className="page-x py-16 md:py-28">
+      <div className="page-max grid items-start gap-10 md:grid-cols-12 md:gap-16">
+        <div className="md:col-span-5">
+          <h2 className="font-display text-[length:var(--text-display-s)] font-bold text-ink">
+            How an engagement runs
+          </h2>
+          <p className="mt-4 max-w-[32rem] font-body text-base leading-relaxed text-ink-2 md:text-lg">
+            A short loop from the broken process to a system your team can run.
+          </p>
+        </div>
+        <ol className="min-w-0 divide-y border-y border-rule md:col-span-7">
           {HOME_PROCESS_STEPS.map((step) => (
-            <li key={step.number}>
-              <p className="font-heading text-xs uppercase tracking-[0.18em] text-zinc-400">
-                {step.number}
-              </p>
-              <h3 className="mt-3 font-display text-2xl font-medium tracking-tight text-zinc-950 md:text-3xl">
-                {step.title}
-              </h3>
-              <p className="mt-3 font-body text-base leading-relaxed text-zinc-500 md:text-lg">
-                {step.description}
-              </p>
+            <li key={step.number} className="grid gap-2 py-6 md:grid-cols-[3rem_minmax(0,1fr)] md:gap-6 md:py-8">
+              <p className="font-display text-sm font-bold text-accent">{step.number}</p>
+              <div className="min-w-0">
+                <h3 className="font-display text-2xl font-bold tracking-tight text-ink">
+                  {step.title}
+                </h3>
+                <p className="mt-2 font-body text-base leading-relaxed text-ink-2 md:text-lg">
+                  {step.description}
+                </p>
+              </div>
             </li>
           ))}
         </ol>

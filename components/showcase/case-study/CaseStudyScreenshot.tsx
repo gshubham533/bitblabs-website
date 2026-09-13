@@ -37,21 +37,6 @@ function isPortraitAspect(aspectRatio: string): boolean {
 export const CASE_STUDY_INLINE_MAX_HEIGHT =
   'calc(min(62vw,960px)*490/1024)' as const
 
-function DeviceChrome({ label }: { label: string }) {
-  return (
-    <div className="flex items-center gap-3 border-b border-black bg-[#f7f7f8] px-4 py-3">
-      <div className="flex shrink-0 items-center gap-1.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-      </div>
-      <div className="flex h-7 min-w-0 flex-1 items-center justify-center rounded-md bg-white px-3 ring-1 ring-zinc-200/90">
-        <span className="truncate font-body text-[11px] tracking-[-0.01em] text-zinc-400">{label}</span>
-      </div>
-    </div>
-  )
-}
-
 interface CaseStudyScreenshotProps {
   /** Poster / still image; optional when `videoSrc` is set. */
   src?: string
@@ -253,7 +238,7 @@ export function CaseStudyScreenshot({
 
     return (
       <figure className={cn('relative mx-auto inline-block w-full', shellClass, className)} style={widthStyle}>
-        {variant === 'device' && <DeviceChrome label={deviceLabel} />}
+        {/* Device chrome omitted — hairline figure only. */}
         <div
           className={cn('relative mx-auto', contentClass, contentRingClass)}
           style={{
@@ -277,7 +262,7 @@ export function CaseStudyScreenshot({
       )}
       style={widthStyle}
     >
-      {variant === 'device' && <DeviceChrome label={deviceLabel} />}
+      {/* Hairline frame only — no reconstructed browser chrome. */}
       <div className={cn('relative w-full', contentClass, contentRingClass)} style={{ aspectRatio }}>
         {mediaNode}
         {variant === 'device' && (
