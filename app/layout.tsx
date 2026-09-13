@@ -2,15 +2,15 @@ import type { Metadata } from 'next'
 import './globals.css'
 import { googleSansFlex } from '@/lib/fonts'
 import { Analytics } from '@vercel/analytics/next'
+import { LANDING_SEO } from '@/lib/landing'
 
 export const metadata: Metadata = {
   metadataBase: new URL('https://bitblabs.com'),
   title: {
-    default: 'AI Strategy Session for Mid-Market & Enterprise | BitBLabs',
+    default: LANDING_SEO.title,
     template: '%s | BitBLabs',
   },
-  description:
-    'A $2,000 / 90-minute AI strategy session with a written 90-day automation roadmap. Led by BitBLabs’ founder. Optional production build & deploy.',
+  description: LANDING_SEO.description,
   icons: {
     icon: '/logos/bitblabs-logo.svg',
     apple: '/logos/bitblabs-logo.svg',

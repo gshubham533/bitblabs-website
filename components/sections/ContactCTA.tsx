@@ -1,18 +1,26 @@
 import { FINAL_CTA } from '@/lib/landing'
-import { APPLY_CTA_LABEL } from '@/lib/site'
-import { CtaPair } from '@/components/landing/CtaButtons'
+import { BOOK_FINAL_CTA_LABEL, PAY_BOOK_URL, PORTFOLIO_SECTION_HREF } from '@/lib/site'
+import Link from 'next/link'
 
 export function ContactCTA() {
   return (
-    <section id="contact" className="relative overflow-hidden bg-canvas px-4 py-16 text-zinc-950 antialiased sm:px-6 sm:py-20 md:px-8">
-      <div className="mx-auto w-full max-w-[1400px] rounded-4xl bg-white px-6 py-16 shadow-[0_1px_2px_rgba(15,23,42,0.04)] md:rounded-5xl md:px-12 md:py-20 lg:px-16">
-        <h2 className="max-w-4xl font-display text-[clamp(2.25rem,6vw,4.5rem)] font-semibold leading-[1.02] tracking-tight text-zinc-950">
-          {FINAL_CTA.headline}
-        </h2>
-        <p className="mt-6 max-w-2xl font-body text-lg leading-relaxed text-zinc-600 md:text-xl">
-          {FINAL_CTA.subhead}
-        </p>
-        <CtaPair tone="onLight" primaryLabel={APPLY_CTA_LABEL} className="mt-10" />
+    <section className="border-t border-white/10 bg-[#050505] px-5 py-16 text-white sm:px-8">
+      <div className="mx-auto max-w-3xl">
+        <h2 className="text-3xl font-semibold tracking-tight">{FINAL_CTA.headline}</h2>
+        <p className="mt-4 text-base leading-relaxed text-white/60">{FINAL_CTA.subhead}</p>
+        <a
+          href={PAY_BOOK_URL}
+          className="mt-8 inline-flex min-h-12 items-center justify-center bg-white px-5 text-sm font-semibold text-black"
+        >
+          {BOOK_FINAL_CTA_LABEL}
+        </a>
+        <p className="mt-4 text-xs leading-relaxed text-white/40">{FINAL_CTA.microcopy}</p>
+        <Link
+          href={PORTFOLIO_SECTION_HREF}
+          className="mt-6 inline-block text-xs text-white/35 underline-offset-4 hover:text-white/70 hover:underline"
+        >
+          Work
+        </Link>
       </div>
     </section>
   )

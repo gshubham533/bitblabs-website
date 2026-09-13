@@ -1,146 +1,104 @@
-/** Locked homepage copy. Do not rewrite positioning or claims. */
+/** Locked homepage copy v2 + Content v2.1 CTA/process. Do not rewrite positioning or claims. */
 
 export const LANDING_SEO = {
-  title: 'AI Strategy Session for Mid-Market & Enterprise | BitBLabs',
+  title: 'AI Strategy Session — $2,000 Decision-Grade Roadmap | BitBLabs',
   description:
-    'A $2,000 / 90-minute AI strategy session with a written 90-day automation roadmap. Led by BitBLabs’ founder. Optional production build & deploy.',
+    'Paid 90-minute session for service-business CEOs and COOs. Walk away with an ops audit, automation map, and 90-day plan — or have BitBLabs build it.',
 } as const
 
 export const HERO = {
-  eyebrow: 'AI Strategy for Mid-Market & Enterprise Teams',
-  headline: 'Stop guessing where AI belongs in your business.',
+  eyebrow: 'For founder-led service businesses',
+  headline: 'Hiring follow-ups are eating your team alive. ChatGPT didn’t fix it.',
   subhead:
-    'In one focused session, we map how your company actually operates, pinpoint the workflows worth automating, and hand you a clear plan — what to build, what to skip, and what it takes to ship.',
+    'If recruiters are still chasing candidates by hand — and sales lead response or support handoffs are in the same mess — you don’t need another AI demo. You need a clear call on what to automate first, and what to leave alone.',
+  bridge:
+    'BitBLabs runs a paid AI Strategy Session for CEOs and working COOs who want a decision-grade plan in days, not a deck that dies in Drive.',
+  cta: 'Book the AI Strategy Session — $2,000',
   microcopy:
-    '90 minutes · Written roadmap in 48 hours · Led by Shubham Gupta, Founder · Optional build & deploy',
+    '90 minutes · Written roadmap in 48 hours · Questions + PayPal on the next screen · Led by Shubham Gupta, Founder',
 } as const
 
-export const SOCIAL_PROOF = {
-  label: 'Production AI built for:',
-  clients: ['Natsoft', 'Setoo', 'Healthy Fasal', 'DigiProPass', 'Axion Plan'] as const,
-  note: 'Including a 2,000+ person US enterprise running AI voice hiring at scale — manual follow-ups down 35–45%.',
-} as const
-
-export const WHO_THIS_IS_FOR = {
-  headline: 'Built for operators who own outcomes — not curiosity calls.',
-  intro: 'Ideal if you are:',
-  ideal: [
-    'A founder, COO, Head of Ops, or product/engineering lead at a mid-size or large company',
-    'Sitting on expensive hiring, sales, support, or supply-chain workflows',
-    'Under pressure to adopt AI without betting the budget on the wrong project',
-    'Ready to work across US / Gulf-friendly hours with a team that can advise and ship',
+export const OFFER = {
+  name: 'The AI Strategy Session — $2,000',
+  promise:
+    'Stop guessing which AI project to fund. Walk away with a roadmap your team can run — or we build it.',
+  includes: [
+    'Prep on your workflows before we meet',
+    '90 minutes with Shubham Gupta, Founder',
+    'A written plan within 48 hours: ops audit · automation map · build vs buy · 90-day plan',
+    'A short catch-up to walk the plan',
   ] as const,
-  notFit:
-    'Not a fit if you want: a free brainstorm, a generic GenAI workshop, or slides with no path to production.',
-} as const
-
-export const WALK_AWAY = {
-  items: [
-    {
-      title: 'Operations clarity',
-      body: 'How work moves today: people, tools, handoffs, bottlenecks.',
-    },
-    {
-      title: 'Automation map',
-      body: 'High-ROI processes to automate first — and what to leave alone.',
-    },
-    {
-      title: 'Build vs buy',
-      body: 'Where off-the-shelf fails, and where custom AI in your stack wins.',
-    },
-    {
-      title: '90-day roadmap',
-      body: 'Priorities, rough effort, risk, and sequence.',
-    },
-    {
-      title: 'Optional next mile',
-      body: 'Same team can design, build, and deploy from that plan.',
-    },
-  ] as const,
-} as const
-
-export const HOW_IT_WORKS = {
-  steps: [
-    {
-      title: 'Short application',
-      body: 'Company, role, and 1–2 workflows that hurt. Confirm fit before payment — no random $2k checkout.',
-    },
-    {
-      title: 'Book & brief',
-      body: 'Once accepted, pay and share context. We prepare before the call.',
-    },
-    {
-      title: 'Strategy session — 90 minutes',
-      body: 'With Shubham Gupta, Founder. Dig into how the company runs and where AI removes cost or latency — and where humans stay in the loop.',
-    },
-    {
-      title: 'Written plan — within 48 hours',
-      body: 'Concise roadmap they can act on internally or with us.',
-    },
-    {
-      title: 'Build path (optional)',
-      body: 'If they proceed with BitBLabs within 30 days, $2,000 is credited toward the build engagement.',
-    },
-  ] as const,
-} as const
-
-export const WORKING_WITH_US = {
-  items: [
-    {
-      title: 'Timezones',
-      body: 'Sessions scheduled for US and Middle East–friendly hours.',
-    },
-    {
-      title: 'NDA',
-      body: 'Standard NDA before internal process detail.',
-    },
-    {
-      title: 'Contracting & payment',
-      body: 'Clear SOW for any build; card or wire for the strategy session.',
-    },
-    {
-      title: 'Who you get',
-      body: 'Strategy led by the founder — not handed to a junior “AI consultant.”',
-    },
-  ] as const,
+  price:
+    '$2,000. If you start a BitBLabs build within 30 days, that $2,000 is credited toward the project.',
+  next:
+    'Builds typically start from ~$10k+, scoped from the same plan — no second discovery circus.',
 } as const
 
 export const PROOF = {
-  cases: [
-    {
-      name: 'Natvoiz (Natsoft)',
-      body: 'Enterprise AI voice hiring for a US firm, 2,000+ employees. Manual follow-ups cut 35–45%.',
-      href: '/projects/natvoiz-ai',
-    },
+  title: 'We’ve shipped this kind of system — not just talked about it',
+  natvoiz: {
+    label: 'Natvoiz / Natsoft',
+    who: 'A large firm drowning in high-volume recruiting follow-ups.',
+    broken: 'Manual hiring chases eating recruiter time and letting candidates go cold.',
+    built:
+      'Production voice AI that runs hiring follow-ups inside the workflow — not a chatbot bolted on the side.',
+    result: 'Manual follow-ups down 35–45%.',
+    href: '/projects/natvoiz-ai',
+  },
+  also: [
     {
       name: 'Setoo',
-      body: 'AI voice backend reused across multiple organisations.',
+      body: 'Voice AI backend reused across multiple organisations.',
       href: '/projects/setoo-voice-ai',
     },
     {
       name: 'Healthy Fasal',
-      body: 'Live farm-to-vendor ops at real volume.',
+      body: 'Live ops workflows running at real volume in farm-to-vendor supply chain.',
       href: '/projects/healthy-fasal',
     },
+  ] as const,
+  closing:
+    'We build systems your team can operate. We don’t sell “AI strategy” that never leaves the slide.',
+} as const
+
+export const PROCESS = {
+  steps: [
+    { title: 'Land here', body: '' },
     {
-      name: 'Also: DigiProPass, Axion Plan, and products like Rezonna (24/7 AI sales caller).',
+      title: 'Book + pay $2,000',
+      body: 'TidyCal: pick slot, answer questions, PayPal $2k (one flow)',
+    },
+    {
+      title: 'Session 90 min',
+      body: 'Shubham Gupta, Founder. Hiring follow-ups primary; sales/support if adjacent.',
+    },
+    {
+      title: 'Written plan in 48 hours + catch-up',
       body: '',
-      href: '/projects',
+    },
+    {
+      title: 'Optional build',
+      body: '$2k credited within 30 days',
     },
   ] as const,
-  closing: 'We ship systems your team can operate — not decks that die in a Drive folder.',
 } as const
 
-export const PRICING = {
-  name: 'AI Strategy Session — $2,000',
-  includes:
-    'Includes: fit review before pay · 90-min session with founder · pre-call prep · written roadmap in 48h · $2,000 credited toward a BitBLabs build if started within 30 days.',
-  guarantee: 'If the session isn’t useful, tell us — we’ll make it right.',
-} as const
-
-export const STRATEGY_TO_PRODUCTION = {
-  stages: ['Discover', 'Design', 'Build', 'Run'] as const,
-  body: 'Hiring follow-ups, sales qualification, support routing, supply-chain ops — production AI in your stack, tight loops, same team that ran the session.',
+export const FIT = {
+  good: [
+    'Founder-CEO or working COO',
+    'Ops-heavy/sales-driven service',
+    '~20–80 people',
+    '~$3M–$20M',
+    'Capacity pressure especially hiring follow-ups',
+    'Need system in 30–90 days',
+  ] as const,
+  bad: [
+    'Under ~15',
+    'Free-audit hunters',
+    'Innovation/no budget',
+    'IT-only',
+    'Board deck with no build intent',
+  ] as const,
 } as const
 
 export const FAQ = {
@@ -148,40 +106,32 @@ export const FAQ = {
     {
       question: 'Why paid?',
       answer:
-        'Free calls attract tyre-kickers. A paid session buys preparation and a deliverable you can use even if you never hire us to build.',
+        'You pay $2,000 up front when you book. That buys a decision-grade plan — we only take sessions we can make useful.',
     },
     {
-      question: 'Who should attend?',
-      answer: 'Someone who owns the workflow and can decide. Ideally ops + a technical counterpart.',
+      question: 'Can I build elsewhere?',
+      answer: 'Fine, roadmap is yours.',
     },
     {
-      question: 'Where do you focus?',
-      answer:
-        'Priority clients are mid-market and enterprise teams in the US, Middle East, and similar markets. Fit matters more than geography.',
+      question: 'What’s delivered in 48 hours?',
+      answer: 'Written plan in 48 hours + catch-up.',
     },
     {
-      question: 'Not ready to build?',
-      answer: 'Fine. You still leave with a roadmap your team or another vendor can use.',
+      question: 'Who runs the session?',
+      answer: 'Shubham Gupta, Founder.',
     },
     {
       question: 'NDA?',
-      answer: 'Yes, before deep process detail.',
+      answer: 'Yes.',
     },
   ] as const,
 } as const
 
 export const FINAL_CTA = {
-  headline: 'Know exactly where AI pays off in your company.',
-  subhead: 'Apply for the session. Bring the messy workflows. Leave with a plan.',
-} as const
-
-export const APPLY_FORM = {
-  companyLabel: 'Company',
-  roleLabel: 'Role',
-  emailLabel: 'Work email',
-  workflowsLabel: '1–2 workflows that hurt',
-  submitLabel: 'Submit application',
-  successTitle: 'Application received.',
-  successBody:
-    'We’ll review fit before any payment. If it’s a match, we’ll follow up with next steps.',
+  headline: 'Ready to stop guessing which AI project to fund?',
+  subhead:
+    'Book the $2,000 AI Strategy Session. Answer a few questions, pay, and lock your slot — all in one step.',
+  button: 'Book & pay for the AI Strategy Session',
+  microcopy:
+    'No free strategy calls. $2,000 via PayPal when you book. Credited to a BitBLabs build started within 30 days.',
 } as const

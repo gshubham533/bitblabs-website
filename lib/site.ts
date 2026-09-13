@@ -1,11 +1,24 @@
+/** Legacy Calendly URL kept for legal-page references only. Not an LP CTA. */
 export const BOOKING_URL = 'https://calendly.com/gshubham/discovery-call'
 
-/** Homepage apply form. Used until payment / scheduling is wired. */
-export const APPLY_HREF = '/#apply'
-export const APPLY_NAV_LABEL = 'Apply — $2,000'
-export const APPLY_CTA_LABEL = 'Apply for an AI Strategy Session — $2,000'
-export const APPLY_FINAL_CTA_LABEL = 'Apply for your $2,000 AI Strategy Session'
-export const PROJECTS_CTA_LABEL = 'See production work'
+/**
+ * Launch v1 primary conversion: TidyCal (slot + questions + PayPal $2,000) in one flow.
+ * Override with NEXT_PUBLIC_PAY_BOOK_URL or NEXT_PUBLIC_TIDYCAL_BOOKING_URL.
+ * To swap later to Stripe Checkout or a payment link, point NEXT_PUBLIC_PAY_BOOK_URL at that URL.
+ */
+export const DEFAULT_PAY_BOOK_URL =
+  'https://tidycal.com/shubhamgupta/ai-workflow-strategy-session'
+
+export const PAY_BOOK_URL =
+  process.env.NEXT_PUBLIC_PAY_BOOK_URL ||
+  process.env.NEXT_PUBLIC_TIDYCAL_BOOKING_URL ||
+  DEFAULT_PAY_BOOK_URL
+
+export const BOOK_HREF = PAY_BOOK_URL
+export const BOOK_NAV_LABEL = 'Book — $2,000'
+export const BOOK_CTA_LABEL = 'Book the AI Strategy Session — $2,000'
+export const BOOK_FINAL_CTA_LABEL = 'Book & pay for the AI Strategy Session'
+export const PROJECTS_CTA_LABEL = 'Work'
 
 export const LEGAL_NAME = 'BitB Labs LLP'
 
