@@ -46,7 +46,10 @@ export function Navbar({ theme = 'dark', position = 'fixed', solid = false }: Na
                 alt=""
                 width={28}
                 height={28}
-                className="h-7 w-7 object-contain opacity-90"
+                className={cn(
+                  'h-7 w-7 object-contain opacity-90',
+                  light && 'invert'
+                )}
               />
               <span
                 className={cn(
