@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import {
-  APPLY_HREF,
-  APPLY_NAV_LABEL,
+  BOOK_HREF,
+  BOOK_NAV_LABEL,
   CONTACT_PHONE,
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
@@ -46,13 +46,13 @@ export function SiteFooter({ compact = false, showLegalInfo = false, tone = 'dar
         </div>
         <div className="flex flex-col items-start gap-4 sm:items-end">
           <a
-            href={APPLY_HREF}
+            href={BOOK_HREF}
             className={cn(
               'inline-flex min-h-10 items-center px-4 text-[13px] font-semibold',
               light ? 'bg-[#111] text-white' : 'bg-white text-black'
             )}
           >
-            {APPLY_NAV_LABEL}
+            {BOOK_NAV_LABEL}
           </a>
           <nav className="flex flex-wrap gap-x-5 gap-y-2 text-xs">
             <Link href={PORTFOLIO_SECTION_HREF} className={light ? 'hover:text-[#111]' : 'hover:text-white'}>

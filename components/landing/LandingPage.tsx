@@ -1,12 +1,10 @@
-import { Suspense } from 'react'
 import Link from 'next/link'
 import { Navbar } from '@/components/layout/Navbar'
 import { SiteFooter } from '@/components/layout/SiteFooter'
-import { ApplyForm } from '@/components/landing/ApplyForm'
-import { APPLY, FAQ, FIT, HERO, OFFER, PROCESS, PROOF } from '@/lib/landing'
-import { APPLY_CTA_LABEL, APPLY_HREF, PAY_BOOK_URL, PORTFOLIO_SECTION_HREF } from '@/lib/site'
+import { FAQ, FINAL_CTA, FIT, HERO, OFFER, PROCESS, PROOF } from '@/lib/landing'
+import { BOOK_FINAL_CTA_LABEL, PAY_BOOK_URL, PORTFOLIO_SECTION_HREF } from '@/lib/site'
 
-function ApplyLink({
+function BookLink({
   children,
   className = '',
 }: {
@@ -15,7 +13,7 @@ function ApplyLink({
 }) {
   return (
     <a
-      href={APPLY_HREF}
+      href={PAY_BOOK_URL}
       className={`inline-flex min-h-12 items-center justify-center bg-white px-5 text-sm font-semibold text-black hover:bg-zinc-200 ${className}`}
     >
       {children}
@@ -66,7 +64,7 @@ export function LandingPage() {
             </p>
             <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-white/50">{HERO.bridge}</p>
             <div className="mt-8">
-              <ApplyLink>{HERO.cta}</ApplyLink>
+              <BookLink>{HERO.cta}</BookLink>
             </div>
           </div>
 
@@ -83,8 +81,8 @@ export function LandingPage() {
                 <dd className="text-white">48 hours</dd>
               </div>
               <div className="flex justify-between gap-4 border-t border-white/10 pt-3">
-                <dt>Next</dt>
-                <dd className="text-white">Apply first</dd>
+                <dt>Pay</dt>
+                <dd className="text-white">PayPal on book</dd>
               </div>
               <div className="flex justify-between gap-4 border-t border-white/10 pt-3">
                 <dt>Lead</dt>
@@ -226,30 +224,23 @@ export function LandingPage() {
         </dl>
       </Section>
 
-      <section id="apply" className="scroll-mt-24 border-t border-white/10">
-        <div className="mx-auto grid max-w-6xl gap-10 px-5 py-16 sm:px-8 sm:py-20 lg:grid-cols-[minmax(0,1fr)_minmax(0,28rem)]">
-          <div>
-            <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/35">07 / Apply</p>
-            <h2 className="mt-4 max-w-3xl text-[clamp(1.85rem,4vw,3.25rem)] font-semibold tracking-tight">
-              {APPLY.headline}
-            </h2>
-            <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/60">{APPLY.subhead}</p>
-            <p className="mt-4 max-w-xl text-xs leading-relaxed text-white/40">{APPLY.microcopy}</p>
-            <Link
-              href={PORTFOLIO_SECTION_HREF}
-              className="mt-8 inline-block text-xs text-white/35 underline-offset-4 hover:text-white/70 hover:underline"
-            >
-              Prefer to skim shipped work first
-            </Link>
+      <section id="book" className="border-t border-white/10">
+        <div className="mx-auto max-w-6xl px-5 py-16 sm:px-8 sm:py-20">
+          <p className="font-mono text-[11px] uppercase tracking-[0.18em] text-white/35">07 / Book</p>
+          <h2 className="mt-4 max-w-3xl text-[clamp(1.85rem,4vw,3.25rem)] font-semibold tracking-tight">
+            {FINAL_CTA.headline}
+          </h2>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-white/60">{FINAL_CTA.subhead}</p>
+          <div className="mt-8 space-y-3">
+            <BookLink>{BOOK_FINAL_CTA_LABEL}</BookLink>
+            <p className="max-w-xl text-xs leading-relaxed text-white/40">{FINAL_CTA.microcopy}</p>
           </div>
-          <div className="border border-white/10 bg-white/[0.03] p-5 sm:p-7">
-            <p className="text-sm font-semibold">{APPLY_CTA_LABEL}</p>
-            <div className="mt-6">
-              <Suspense fallback={<p className="text-sm text-white/40">Loading form…</p>}>
-                <ApplyForm payBookUrl={PAY_BOOK_URL} />
-              </Suspense>
-            </div>
-          </div>
+          <Link
+            href={PORTFOLIO_SECTION_HREF}
+            className="mt-8 inline-block text-xs text-white/35 underline-offset-4 hover:text-white/70 hover:underline"
+          >
+            Prefer to skim shipped work first
+          </Link>
         </div>
       </section>
 

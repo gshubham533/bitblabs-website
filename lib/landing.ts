@@ -13,7 +13,7 @@ export const HERO = {
     'If recruiters are still chasing candidates by hand — and sales lead response or support handoffs are in the same mess — you don’t need another AI demo. You need a clear call on what to automate first, and what to leave alone.',
   bridge:
     'BitBLabs runs a paid AI Strategy Session for CEOs and working COOs who want a decision-grade plan in days, not a deck that dies in Drive.',
-  cta: 'Apply for the AI Strategy Session',
+  cta: 'Book the AI Strategy Session',
 } as const
 
 export const OFFER = {
@@ -62,12 +62,12 @@ export const PROOF = {
 export const PROCESS = {
   steps: [
     {
-      title: 'Apply',
-      body: 'Short fit form. We only take sessions we can make useful.',
+      title: 'Book & pay on TidyCal',
+      body: 'Pick a slot, answer questions, PayPal $2,000 — one flow.',
     },
     {
-      title: 'If accepted → pay $2,000 + book',
-      body: 'One step.',
+      title: 'One step.',
+      body: '',
     },
     {
       title: 'Session 90 min',
@@ -127,22 +127,10 @@ export const FAQ = {
   ] as const,
 } as const
 
-export const APPLY = {
+export const FINAL_CTA = {
   headline: 'Ready to stop guessing which AI project to fund?',
-  subhead:
-    'Apply for the $2,000 AI Strategy Session. If it’s a fit, you’ll pay and book in one step.',
-  button: 'Apply for the AI Strategy Session',
+  subhead: 'Book the $2,000 AI Strategy Session. Pay and lock your slot in one step.',
+  button: 'Pay & book the AI Strategy Session',
   microcopy:
-    'No free strategy calls. Accepted applicants pay $2,000 and book in one step. $2,000 credited to a BitBLabs build started within 30 days.',
-  successTitle: 'Application received',
-  successBody:
-    'We’ll review fit. If accepted, you’ll get the booking link to pay $2,000 and book in one step.',
-  roles: ['CEO', 'COO', 'other'] as const,
-  workflows: [
-    'hiring follow-ups',
-    'sales lead response',
-    'support handoffs',
-    'other',
-  ] as const,
-  timelines: ['30 days', '60 days', '90 days', 'exploring'] as const,
+    'No free strategy calls. $2,000 via PayPal when you book. Credited to a BitBLabs build started within 30 days.',
 } as const
