@@ -35,7 +35,7 @@ export function Navbar({ theme = 'dark', position = 'fixed', solid = false }: Na
       <header
         className={cn(
           headerPositionClass,
-          solid && (light ? 'border-b border-zinc-200 bg-white/90 backdrop-blur-md' : 'border-b border-white/10 bg-[#050505]/92 backdrop-blur')
+          solid && (light ? 'border-b border-[#111]/10 bg-[#f3f2ee]/92 backdrop-blur-md' : 'border-b border-white/10 bg-[#050505]/92 backdrop-blur')
         )}
       >
         <nav className="w-full bg-transparent" aria-label="Primary">
