@@ -134,7 +134,7 @@ export const APPLY = {
   button: 'Apply for the AI Strategy Session',
   microcopy:
     'No free strategy calls. Accepted applicants pay $2,000 and book in one step. $2,000 credited to a BitBLabs build started within 30 days.',
-  successTitle: 'Application received.',
+  successTitle: 'Application received',
   successBody:
     'We’ll review fit. If accepted, you’ll get the booking link to pay $2,000 and book in one step.',
   roles: ['CEO', 'COO', 'other'] as const,

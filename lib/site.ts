@@ -18,6 +18,7 @@ export const DEFAULT_PAY_BOOK_URL =
 export const PAY_BOOK_URL =
   process.env.NEXT_PUBLIC_PAY_BOOK_URL ||
   process.env.NEXT_PUBLIC_TIDYCAL_BOOKING_URL ||
+  process.env.TIDYCAL_BOOKING_URL ||
   DEFAULT_PAY_BOOK_URL
 
 export const APPLY_WEBHOOK_URL =

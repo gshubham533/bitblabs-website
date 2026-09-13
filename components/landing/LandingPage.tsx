@@ -4,7 +4,7 @@ import { Navbar } from '@/components/layout/Navbar'
 import { SiteFooter } from '@/components/layout/SiteFooter'
 import { ApplyForm } from '@/components/landing/ApplyForm'
 import { APPLY, FAQ, FIT, HERO, OFFER, PROCESS, PROOF } from '@/lib/landing'
-import { APPLY_CTA_LABEL, APPLY_HREF, PORTFOLIO_SECTION_HREF } from '@/lib/site'
+import { APPLY_CTA_LABEL, APPLY_HREF, PAY_BOOK_URL, PORTFOLIO_SECTION_HREF } from '@/lib/site'
 
 function ApplyLink({
   children,
@@ -246,7 +246,7 @@ export function LandingPage() {
             <p className="text-sm font-semibold">{APPLY_CTA_LABEL}</p>
             <div className="mt-6">
               <Suspense fallback={<p className="text-sm text-white/40">Loading form…</p>}>
-                <ApplyForm />
+                <ApplyForm payBookUrl={PAY_BOOK_URL} />
               </Suspense>
             </div>
           </div>

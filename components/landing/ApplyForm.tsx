@@ -5,11 +5,16 @@ import { useSearchParams } from 'next/navigation'
 import { APPLY } from '@/lib/landing'
 import { APPLY_CTA_LABEL, PAY_BOOK_URL } from '@/lib/site'
 
+type ApplyFormProps = {
+  /** Accepted-path pay+book URL. Never used as the cold-traffic primary CTA. */
+  payBookUrl?: string
+}
+
 const inputClass =
   'w-full border-b border-white/15 bg-transparent px-0 py-3 text-[15px] text-white outline-none placeholder:text-white/30 focus:border-white'
 const labelClass = 'text-[11px] font-medium uppercase tracking-[0.16em] text-white/40'
 
-export function ApplyForm() {
+export function ApplyForm({ payBookUrl = PAY_BOOK_URL }: ApplyFormProps) {
   const searchParams = useSearchParams()
   const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
   const [error, setError] = useState<string | null>(null)
@@ -58,7 +63,7 @@ export function ApplyForm() {
           the homepage CTA.
         </p>
         <a
-          href={PAY_BOOK_URL}
+          href={payBookUrl}
           className="mt-6 inline-flex min-h-12 items-center justify-center bg-white px-5 text-sm font-semibold text-black"
         >
           Pay $2,000 and book
