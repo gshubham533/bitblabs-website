@@ -87,12 +87,33 @@ async function forwardApplication(payload: ApplyPayload) {
   return 'log'
 }
 
+async function readBody(request: Request) {
+  const contentType = request.headers.get('content-type') ?? ''
+
+  if (contentType.includes('application/json')) {
+    return (await request.json()) as Record<string, unknown>
+  }
+
+  const form = await request.formData()
+  return {
+    company: form.get('company'),
+    role: form.get('role'),
+    email: form.get('email'),
+    workflows: form.get('workflows'),
+    website: form.get('website'),
+  }
+}
+
 export async function POST(request: Request) {
+  const wantsHtml = (request.headers.get('accept') ?? '').includes('text/html')
   let json: Record<string, unknown>
 
   try {
-    json = (await request.json()) as Record<string, unknown>
+    json = await readBody(request)
   } catch {
+    if (wantsHtml) {
+      return NextResponse.redirect(new URL('/#apply', request.url), 303)
+    }
     return NextResponse.json({ ok: false, message: 'Invalid request.' }, { status: 400 })
   }
 
@@ -109,14 +130,23 @@ export async function POST(request: Request) {
 
   const errors = validate(payload)
   if (Object.keys(errors).length > 0) {
+    if (wantsHtml) {
+      return NextResponse.redirect(new URL('/#apply', request.url), 303)
+    }
     return NextResponse.json({ ok: false, errors }, { status: 400 })
   }
 
   try {
     const destination = await forwardApplication(payload)
+    if (wantsHtml) {
+      return NextResponse.redirect(new URL('/?applied=1#apply', request.url), 303)
+    }
     return NextResponse.json({ ok: true, destination })
   } catch (error) {
     console.error('[apply] Failed to forward application', error)
+    if (wantsHtml) {
+      return NextResponse.redirect(new URL('/#apply', request.url), 303)
+    }
     return NextResponse.json(
       { ok: false, message: 'Could not submit right now. Please try again.' },
       { status: 502 }

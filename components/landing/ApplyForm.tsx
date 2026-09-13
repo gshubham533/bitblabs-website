@@ -1,6 +1,7 @@
 'use client'
 
-import { useState } from 'react'
+import { useSearchParams } from 'next/navigation'
+import { Suspense, useState } from 'react'
 import { APPLY_FORM } from '@/lib/landing'
 import { cn } from '@/lib/utils'
 
@@ -32,10 +33,21 @@ const fieldClass =
   'mt-2 w-full rounded-2xl border bg-zinc-50 px-4 py-3.5 font-body text-base text-zinc-950 outline-none transition-colors placeholder:text-zinc-400 focus:border-brand focus:bg-white'
 
 export function ApplyForm({ className }: { className?: string }) {
+  return (
+    <Suspense fallback={null}>
+      <ApplyFormFields className={className} />
+    </Suspense>
+  )
+}
+
+function ApplyFormFields({ className }: { className?: string }) {
+  const searchParams = useSearchParams()
   const [values, setValues] = useState(EMPTY)
   const [errors, setErrors] = useState<Partial<Record<FieldKey, string>>>({})
   const [honeypot, setHoneypot] = useState('')
-  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>('idle')
+  const [status, setStatus] = useState<'idle' | 'submitting' | 'success' | 'error'>(
+    searchParams.get('applied') === '1' ? 'success' : 'idle'
+  )
   const [serverMessage, setServerMessage] = useState('')
 
   function update(field: FieldKey, value: string) {
@@ -114,7 +126,13 @@ export function ApplyForm({ className }: { className?: string }) {
   }
 
   return (
-    <form onSubmit={onSubmit} className={cn('space-y-5', className)} noValidate>
+    <form
+      onSubmit={onSubmit}
+      action="/api/apply"
+      method="post"
+      className={cn('space-y-5', className)}
+      noValidate
+    >
       <div className="grid gap-5 sm:grid-cols-2">
         <Field
           id="apply-company"
