@@ -63,8 +63,9 @@ export function LandingPage() {
               {HERO.subhead}
             </p>
             <p className="mt-5 max-w-2xl text-[15px] leading-relaxed text-white/50">{HERO.bridge}</p>
-            <div className="mt-8">
+            <div className="mt-8 space-y-3">
               <BookLink>{HERO.cta}</BookLink>
+              <p className="max-w-xl text-xs leading-relaxed text-white/40">{HERO.microcopy}</p>
             </div>
           </div>
 

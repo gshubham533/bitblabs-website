@@ -13,7 +13,9 @@ export const HERO = {
     'If recruiters are still chasing candidates by hand — and sales lead response or support handoffs are in the same mess — you don’t need another AI demo. You need a clear call on what to automate first, and what to leave alone.',
   bridge:
     'BitBLabs runs a paid AI Strategy Session for CEOs and working COOs who want a decision-grade plan in days, not a deck that dies in Drive.',
-  cta: 'Book the AI Strategy Session',
+  cta: 'Book the AI Strategy Session — $2,000',
+  microcopy:
+    '90 minutes · Written roadmap in 48 hours · Questions + PayPal on the next screen · Led by Shubham Gupta, Founder',
 } as const
 
 export const OFFER = {
@@ -62,24 +64,24 @@ export const PROOF = {
 export const PROCESS = {
   steps: [
     {
-      title: 'Book & pay on TidyCal',
-      body: 'Pick a slot, answer questions, PayPal $2,000 — one flow.',
-    },
-    {
-      title: 'One step.',
+      title: 'Land here',
       body: '',
     },
     {
-      title: 'Session 90 min',
-      body: 'Founder-led; hiring follow-ups primary; sales/support if adjacent.',
+      title: 'Book + pay $2,000',
+      body: 'TidyCal: pick slot, answer questions, PayPal $2k (one flow)',
     },
     {
-      title: 'Written plan in 48 hours.',
+      title: 'Session 90 min',
+      body: 'Shubham Gupta, Founder',
+    },
+    {
+      title: 'Written plan in 48 hours + catch-up',
       body: '',
     },
     {
       title: 'Optional build',
-      body: 'Credit if start within 30 days.',
+      body: '$2k credited within 30 days',
     },
   ] as const,
 } as const
@@ -106,7 +108,8 @@ export const FAQ = {
   items: [
     {
       question: 'Why paid?',
-      answer: 'A paid session buys a decision-grade plan. We only take sessions we can make useful.',
+      answer:
+        'You pay $2,000 up front when you book. That buys a decision-grade plan — we only take sessions we can make useful.',
     },
     {
       question: 'Can I build elsewhere?',
@@ -129,8 +132,9 @@ export const FAQ = {
 
 export const FINAL_CTA = {
   headline: 'Ready to stop guessing which AI project to fund?',
-  subhead: 'Book the $2,000 AI Strategy Session. Pay and lock your slot in one step.',
-  button: 'Pay & book the AI Strategy Session',
+  subhead:
+    'Book the $2,000 AI Strategy Session. Answer a few questions, pay, and lock your slot — all in one step.',
+  button: 'Book & pay for the AI Strategy Session',
   microcopy:
     'No free strategy calls. $2,000 via PayPal when you book. Credited to a BitBLabs build started within 30 days.',
 } as const
