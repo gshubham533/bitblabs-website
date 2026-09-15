@@ -91,13 +91,13 @@ export function HomeHeader() {
             <div className="flex items-center gap-2">
               <BookButton
                 location="header_mobile"
-                className="inline-flex min-h-10 px-3 text-[13px] md:hidden"
+                className="inline-flex min-h-11 px-3 text-[13px] lg:hidden"
               >
                 Book
               </BookButton>
               <BookButton
                 location="header"
-                className="hidden min-h-10 px-4 text-[13px] md:inline-flex"
+                className="hidden min-h-11 px-4 text-[13px] lg:inline-flex"
               >
                 Book Your Strategy Session
               </BookButton>
@@ -108,6 +108,7 @@ export function HomeHeader() {
                     type="button"
                     className="inline-flex h-11 w-11 items-center justify-center rounded-lg border border-[var(--bb-rail)] bg-[var(--bb-surface)] lg:hidden"
                     aria-label={open ? 'Close menu' : 'Open menu'}
+                    aria-expanded={open}
                   >
                     <span className="sr-only">Menu</span>
                     <span aria-hidden className="flex flex-col gap-1.5">
@@ -128,12 +129,29 @@ export function HomeHeader() {
                 </DialogTrigger>
                 <DialogContent aria-describedby={undefined}>
                   <DialogTitle>Mobile navigation</DialogTitle>
+                  <div className="mb-4 flex justify-end">
+                    <DialogClose asChild>
+                      <button
+                        type="button"
+                        className="inline-flex min-h-11 min-w-11 items-center justify-center rounded-lg border border-[var(--bb-rail)] bg-[var(--bb-surface)] px-3 font-[family-name:var(--font-barlow-condensed)] text-sm font-semibold uppercase tracking-[0.1em] text-[var(--bb-ink)]"
+                        aria-label="Close menu"
+                      >
+                        Close
+                      </button>
+                    </DialogClose>
+                  </div>
                   <div className="mx-auto flex w-full max-w-lg flex-col gap-2">
                     {NAV.map((item) => (
                       <DialogClose asChild key={item.href}>
                         <a
                           href={item.href}
-                          className="rounded-2xl px-4 py-3 text-lg font-semibold text-[var(--bb-ink)]"
+                          className="min-h-11 rounded-2xl px-4 py-3 text-lg font-semibold text-[var(--bb-ink)]"
+                          onClick={() =>
+                            trackEvent('secondary_cta_click', {
+                              location: 'mobile_menu',
+                              label: item.label,
+                            })
+                          }
                         >
                           {item.label}
                         </a>
@@ -142,7 +160,7 @@ export function HomeHeader() {
                     <DialogClose asChild>
                       <a
                         href={HOW_IT_WORKS_HREF}
-                        className="rounded-2xl px-4 py-3 text-base text-[var(--bb-ink-muted)]"
+                        className="min-h-11 rounded-2xl px-4 py-3 text-base text-[var(--bb-ink-muted)]"
                       >
                         See How It Works
                       </a>

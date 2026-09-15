@@ -21,10 +21,10 @@ export function SoftReveal({
   return (
     <motion.div
       className={className}
-      initial={{ opacity: 0.01, y: 20, filter: 'blur(6px)' }}
-      whileInView={{ opacity: 1, y: 0, filter: 'blur(0px)' }}
-      viewport={{ once: true, amount: 0.22 }}
-      transition={{ duration: 0.55, delay, ease: bbEaseNarrative }}
+      initial={{ opacity: 0.01, y: 12 }}
+      whileInView={{ opacity: 1, y: 0 }}
+      viewport={{ once: true, amount: 0.18 }}
+      transition={{ duration: 0.4, delay, ease: bbEaseNarrative }}
     >
       {children}
     </motion.div>

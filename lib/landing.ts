@@ -1,124 +1,124 @@
-/** Homepage copy locked to the design brief. Do not invent metrics or SLAs. */
+/** Homepage copy. Do not invent metrics, logos, testimonials, or SLAs. */
 
 export const LANDING_SEO = {
-  title: 'AI Workflow Strategy & Automation Consulting | BitBlabs',
+  title: 'AI Workflow Strategy Session for Service Businesses | BitBlabs',
   description:
-    'BitBlabs helps growing service businesses find operational bottlenecks, redesign workflows, and build practical AI systems. Book a 90-minute strategy session.',
-  ogTitle: 'Find the Work Your Team Shouldn’t Still Be Doing Manually',
+    'Find where work gets stuck between people, inboxes, and spreadsheets. Book a 90-minute AI Workflow Strategy Session ($2,000) and leave with a practical roadmap.',
+  ogTitle: 'Find where work gets stuck — then redesign that workflow',
   ogDescription:
-    'Map one critical workflow, uncover what is slowing it down, and get a practical plan for using AI to improve it.',
+    'A paid 90-minute session for owners and ops leaders: map one critical workflow, decide where AI belongs, and get a plan you can run.',
 } as const
 
 export const HERO = {
   eyebrow: 'AI workflow strategy + implementation',
-  headline: 'Your business doesn’t need another AI tool. It needs a better way of working.',
+  headline: 'Find where work gets stuck. Then redesign that workflow.',
   supporting: [
-    'If your team is still chasing updates, copying information between systems, answering the same questions, or keeping important processes alive through spreadsheets and follow-ups, there is probably a better way.',
-    'We help growing service businesses find the work slowing them down, redesign the workflow, and build practical AI systems around it.',
+    'If follow-ups wait on an inbox, status lives in a spreadsheet, and growth adds coordination instead of capacity — fix the process before you buy another AI tool.',
+    'BitBlabs maps one high-impact workflow, redesigns how it should move, and builds the system when you want us to implement.',
   ] as const,
   primaryCta: 'Book Your Strategy Session',
   secondaryCta: 'See How It Works',
-  microcopy: '90 minutes · $2,000 · Your fee can be credited toward implementation',
+  microcopy: '90 minutes · $2,000 · Fee credited toward implementation within 30 days',
 } as const
 
 export const FRICTION = {
   eyebrow: 'Does any of this sound familiar?',
-  headline: 'Your team is busy. Important work still gets stuck.',
+  headline: 'Your team is busy. The work still stalls.',
   cards: [
     {
       title: 'Slow lead response',
-      body: 'A new enquiry arrives, but the follow-up depends on someone noticing it.',
+      body: 'A new enquiry sits until someone notices it and decides what happens next.',
     },
     {
       title: 'Repeated coordination',
-      body: 'Candidates, clients, or teammates keep asking what happens next.',
+      body: 'Candidates, clients, or teammates keep asking for the same status update.',
     },
     {
       title: 'Disconnected systems',
-      body: 'People copy the same information between inboxes, spreadsheets, and software.',
+      body: 'People copy the same facts between inbox, spreadsheet, and software.',
     },
     {
       title: 'Buried knowledge',
-      body: 'The answer exists, but finding it requires asking the right person.',
+      body: 'The answer exists — but only if you know whom to ask.',
     },
     {
       title: 'Manual reporting',
-      body: 'Managers spend hours assembling updates that should already be visible.',
+      body: 'Managers rebuild the same update every week from scattered sources.',
     },
     {
       title: 'Growth creates admin',
-      body: 'More customers create more coordination instead of more leverage.',
+      body: 'More customers mean more chasing, not more leverage.',
     },
   ] as const,
   closing:
-    'The problem is not that your team is not working hard enough. The workflow is making them work harder than they should.',
+    'Hard work isn’t the bottleneck. The handoffs are.',
 } as const
 
 export const POINT_OF_VIEW = {
-  headline: 'You probably don’t need more AI. You need to know where it belongs.',
-  lead: 'The question is not, “What can we automate?”',
-  better: 'The better questions are:',
+  headline: 'You don’t need more AI. You need to know where it belongs.',
+  lead: '“What can we automate?” is the wrong first question.',
+  better: 'Ask these instead:',
   questions: [
     'Which process is actually costing us time or money?',
     'Where does work repeatedly slow down?',
     'What still needs human judgment?',
-    'How will a new system fit into the tools we already use?',
-    'Will building it create meaningful value?',
+    'How will a new system fit the tools we already use?',
+    'Is the fix worth building?',
   ] as const,
   closing: 'We start with the workflow, not the technology.',
 } as const
 
 export const METHOD = {
   eyebrow: 'What we actually do',
-  headline: 'We find where work gets stuck. Then we design a better way for it to move.',
+  headline: 'Find the stuck handoff. Redesign the path. Build only what earns its place.',
   supporting:
-    'BitBlabs helps you understand, prioritise, design, and implement AI-powered workflows.',
+    'Map the real process, pick the bottleneck worth fixing first, redesign what people and systems each own, then build if you want BitBlabs to implement.',
   stages: [
     {
       title: 'Understand',
-      body: 'Show us how the work happens today.',
-      example: 'Maps of owners, tools, and handoffs',
+      body: 'Map how the work moves today — owners, tools, and handoffs.',
+      example: 'Current-state map',
     },
     {
       title: 'Prioritise',
-      body: 'Identify the bottleneck worth solving first.',
-      example: 'One high-impact workflow selected',
+      body: 'Choose the bottleneck that is worth solving first.',
+      example: 'One workflow selected',
     },
     {
       title: 'Redesign',
-      body: 'Decide what AI, automation, and people should each handle.',
-      example: 'Clear human checkpoints',
+      body: 'Decide what AI, automation, and people each own.',
+      example: 'Human checkpoints defined',
     },
     {
       title: 'Build',
-      body: 'Create, connect, test, and deploy the working system.',
-      example: 'Live system in your operation',
+      body: 'Connect, test, and deploy into your operation.',
+      example: 'Live system in use',
     },
   ] as const,
   closing:
-    'You do not need to arrive with a fully formed AI idea. You can simply show us how the work happens today.',
+    'You don’t need a finished AI idea to start. You need to show how the work happens today.',
 } as const
 
 export const HOW_WE_WORK = {
-  headline: 'Here’s how we work together.',
+  headline: 'How we work together',
   steps: [
     {
       number: '01',
       title: 'Discover the real bottleneck',
-      body: 'We look closely at how work currently moves through your business: who starts it, which tools are involved, where information comes from, where it slows down, and what requires human judgment.',
-      outcome: 'The right problem, clearly defined.',
+      body: 'We trace one workflow end to end: who starts it, which tools touch it, where information comes from, where it stalls, and what still needs judgment.',
+      outcome: 'The right problem, named clearly.',
     },
     {
       number: '02',
       title: 'Design the better workflow',
-      body: 'We decide what AI can handle, what ordinary automation can handle, what your team should continue controlling, and where safeguards or approvals are required.',
-      outcome: 'A practical future-state workflow.',
+      body: 'We decide what AI can handle, what ordinary automation can handle, what your team keeps, and where approvals stay human.',
+      outcome: 'A future-state path you can run.',
     },
     {
       number: '03',
       title: 'Build and deploy it',
-      body: 'If you want us to implement the plan, we design, integrate, test, and deploy the system into your real operation.',
-      outcome: 'A working system, not another slide deck.',
+      body: 'If you want BitBlabs to implement, we integrate, test, and put the system into real day-to-day use.',
+      outcome: 'A working system — not another deck.',
     },
   ] as const,
 } as const
@@ -126,23 +126,23 @@ export const HOW_WE_WORK = {
 export const OFFER = {
   eyebrow: 'Not sure what to automate first?',
   headline: 'Start with one important workflow.',
-  body: 'The AI Workflow Strategy Session is a focused 90-minute working session for business owners and operational leaders who know something needs to improve but do not want to waste money building the wrong thing.',
-  duringLabel: 'During the session, we will:',
+  body: 'A 90-minute working session for owners and ops leaders who know something is stuck — and will not fund the wrong build.',
+  duringLabel: 'In the session we will:',
   steps: [
     'Select one high-impact workflow',
-    'Map how it currently operates',
-    'Identify delays, repetitive work, and operational leaks',
-    'Evaluate where AI and automation can help',
-    'Separate quick wins from complex projects',
-    'Design a recommended future workflow',
-    'Establish the next implementation steps',
+    'Map how it operates today',
+    'Mark delays, rework, and handoff leaks',
+    'Judge where AI and automation help',
+    'Separate quick wins from heavier builds',
+    'Design the future-state path',
+    'Set the next implementation steps',
   ] as const,
   price: '$2,000',
   duration: '90 minutes',
   primaryCta: 'Book Your Strategy Session',
-  microcopy: '90 minutes · Practical roadmap included · Secure payment through PayPal',
+  microcopy: '90 minutes · Roadmap included · Pay securely through PayPal on TidyCal',
   creditNote:
-    'If you start a BitBlabs implementation within 30 days, your $2,000 strategy fee is credited toward that project.',
+    'Start a BitBlabs implementation within 30 days and your $2,000 session fee is credited toward that project.',
   deliverablesSummary: [
     'Current workflow map',
     'Bottleneck analysis',
@@ -153,18 +153,18 @@ export const OFFER = {
 } as const
 
 export const DELIVERABLES = {
-  headline: 'What will you leave with?',
+  headline: 'What you leave with',
   supporting:
-    'You are paying for a usable plan, whether you implement it with BitBlabs, your internal team, or another partner.',
+    'You pay for a plan you can run — with BitBlabs, your team, or another partner.',
   items: [
     {
       title: 'Current workflow map',
-      body: 'How work actually moves today — owners, tools, and handoffs.',
+      body: 'How work moves today: owners, tools, and handoffs.',
       size: 'lg' as const,
     },
     {
       title: '30/60/90-day roadmap',
-      body: 'A sequenced plan you can run without waiting for a second discovery cycle.',
+      body: 'A sequenced plan so you are not stuck waiting for a second discovery cycle.',
       size: 'lg' as const,
     },
     {
@@ -206,7 +206,7 @@ export const DELIVERABLES = {
 } as const
 
 export const WORKFLOW_EXAMPLES = {
-  headline: 'Workflows teams ask us to improve',
+  headline: 'Workflows teams ask us to fix',
   tabs: [
     {
       id: 'sales',
@@ -279,65 +279,65 @@ export const WORKFLOW_EXAMPLES = {
 
 export const CASE_STUDY = {
   eyebrow: 'One workflow we have already improved',
-  headline: 'From repetitive recruitment coordination to a connected workflow.',
+  headline: 'Recruitment coordination without the endless chase.',
   narrative:
-    'An enterprise recruitment team was coordinating work across candidates, recruiters, interviewers, and internal systems. Important updates depended on people repeatedly checking information, contacting the next person, and moving the process forward manually.',
-  builtForLabel: 'BitBlabs helped rethink the workflow and build a system designed to:',
+    'An enterprise recruitment team moved work across candidates, recruiters, interviewers, and internal systems. Progress depended on people checking status, pinging the next person, and pushing the process forward by hand.',
+  builtForLabel: 'BitBlabs redesigned the workflow and built a system to:',
   capabilities: [
-    'Understand the candidate’s current stage',
+    'Know the candidate’s current stage',
     'Collect required information',
-    'Communicate the next step',
+    'Tell each person the next step',
     'Coordinate follow-ups',
     'Record important details',
-    'Escalate situations requiring human attention',
+    'Escalate only what needs human attention',
   ] as const,
   closing:
-    'The result was not simply another chatbot. It was a more connected way for the work to move.',
-  cta: 'Discuss a Similar Workflow',
+    'Not a chatbot demo. A connected path for the work to move.',
+  cta: 'Book Your Strategy Session',
   beforeNodes: ['Candidate', 'Inbox', 'Spreadsheet', 'Chase', 'Update'],
   afterNodes: ['Candidate', 'Workflow', 'Prompt', 'Human approval', 'Updated'],
 } as const
 
 export const PRINCIPLES = {
-  headline: 'We are not here to sell you AI for the sake of AI.',
+  headline: 'We will not sell you AI for its own sake.',
   items: [
     {
-      title: 'We examine the complete process.',
-      body: 'Automating one isolated task does not help if the rest of the workflow remains broken.',
+      title: 'We examine the full process.',
+      body: 'Fixing one task fails if the surrounding handoffs stay broken.',
     },
     {
-      title: 'We design around your business.',
+      title: 'We design around your operation.',
       body: 'Your team, customers, tools, rules, and constraints shape the solution.',
     },
     {
       title: 'We keep people in control.',
-      body: 'We deliberately design reviews, approvals, and escalation points where judgment matters.',
+      body: 'Reviews, approvals, and escalations sit where judgment matters.',
     },
     {
-      title: 'We build beyond the demo.',
-      body: 'The system must work with real users, imperfect information, exceptions, and existing tools.',
+      title: 'We build past the demo.',
+      body: 'The system has to work with real users, messy inputs, exceptions, and existing tools.',
     },
   ] as const,
 } as const
 
 export const FIT = {
-  headline: 'Is this the right starting point for you?',
-  goodTitle: 'This is likely a good fit if:',
-  badTitle: 'It may not be the right fit if:',
+  headline: 'Is this worth booking?',
+  goodTitle: 'Book if:',
+  badTitle: 'Skip if:',
   good: [
     'You lead a growing service business',
-    'Your team has approximately 20–80 employees',
-    'Important processes depend on email, spreadsheets, or manual follow-ups',
+    'Your team is roughly 20–80 people',
+    'Key processes still run on email, spreadsheets, or manual follow-ups',
     'Growth is creating more coordination work',
-    'You want a practical roadmap connected to business value',
-    'You may need a technical partner to implement the solution',
+    'You want a practical roadmap tied to business value',
+    'You may want a partner to implement after the plan',
   ] as const,
   bad: [
     'You only want a list of popular AI tools',
-    'You are looking for a free introductory consultation',
-    'You want to automate a process with no clear owner',
+    'You want a free introductory consult',
+    'The process has no clear owner',
     'You expect AI to replace every human decision',
-    'You are not ready to explain how the work currently happens',
+    'You are not ready to explain how the work happens today',
   ] as const,
 } as const
 
@@ -346,7 +346,7 @@ export const JOURNEY = {
   steps: [
     {
       title: 'Complete the assessment',
-      body: 'Tell us about your business, workflow, current tools, and operational challenges.',
+      body: 'Tell us about the business, the workflow, current tools, and where work stalls.',
     },
     {
       title: 'Join the strategy session',
@@ -354,50 +354,50 @@ export const JOURNEY = {
     },
     {
       title: 'Receive your roadmap',
-      body: 'We turn the work into a structured implementation plan.',
+      body: 'We turn the session into a structured implementation plan.',
     },
     {
       title: 'Choose how to proceed',
-      body: 'Use the roadmap internally or ask BitBlabs to implement it.',
+      body: 'Run the roadmap internally or ask BitBlabs to build it.',
     },
     {
       title: 'Build and deploy',
-      body: 'If we work together, we scope, build, test, and introduce the system into your operation.',
+      body: 'If we implement, we scope, build, test, and introduce the system into daily use.',
     },
   ] as const,
 } as const
 
 export const ABOUT = {
-  headline: 'You should know who you are trusting with your workflow.',
+  headline: 'Who you are trusting with this workflow',
   paragraphs: [
-    'BitBlabs is an AI consultancy and development partner focused on turning operational problems into working systems.',
-    'We combine process thinking, conversational AI, workflow automation, and custom product development to solve problems that off-the-shelf tools cannot handle properly.',
-    'Our experience includes building voice and workflow AI for real operational environments, including enterprise recruitment coordination.',
-    'We care about what happens after the demo, when real people begin using the system.',
+    'BitBlabs turns operational problems into working systems.',
+    'We combine process design, conversational AI, workflow automation, and custom product work for problems off-the-shelf tools handle poorly.',
+    'That includes voice and workflow systems in live operations, including enterprise recruitment coordination.',
+    'We care what happens after the demo — when real people use the system.',
   ] as const,
 } as const
 
 export const FAQ = {
-  headline: 'Questions before you book',
+  headline: 'Questions that usually come up before booking',
   supportCta: 'Book Your Strategy Session',
   items: [
     {
       id: 'know-what',
       question: 'Do I need to know what I want to automate?',
       answer:
-        'No. You need to be able to show us how an important workflow operates today. We help you decide what is worth improving first.',
+        'No. Show us how an important workflow runs today. We help decide what is worth improving first.',
     },
     {
       id: 'entire-business',
-      question: 'Can we examine my entire business during the session?',
+      question: 'Can we cover my entire business in one session?',
       answer:
-        'The session focuses on one high-impact workflow so the roadmap stays practical. Broader mapping can follow if needed.',
+        'We focus on one high-impact workflow so the roadmap stays usable. Broader mapping can follow.',
     },
     {
       id: 'only-recruitment',
-      question: 'Is this only for recruitment automation?',
+      question: 'Is this only for recruitment?',
       answer:
-        'No. Recruitment is one area we have already improved. The same approach applies to sales, support, delivery, and internal operations.',
+        'No. Recruitment is one workflow we have already improved. The same approach applies to sales, support, delivery, and internal ops.',
     },
     {
       id: 'implementation-included',
@@ -409,47 +409,47 @@ export const FAQ = {
       id: 'credit',
       question: 'Is the strategy fee credited toward implementation?',
       answer:
-        'Yes. If you start a BitBlabs implementation within 30 days, your $2,000 fee is credited toward that project.',
+        'Yes. Start a BitBlabs implementation within 30 days and your $2,000 fee is credited toward that project.',
     },
     {
       id: 'ai-not-right',
       question: 'What if AI is not the right solution?',
       answer:
-        'Then we will say so. The session is meant to find the right fix — which may be process design, ordinary automation, or a clearer human workflow.',
+        'We will say so. The session finds the right fix — process design, ordinary automation, or a clearer human workflow.',
     },
     {
       id: 'existing-tools',
       question: 'Will you work with our existing tools?',
       answer:
-        'Yes. Fit with the tools you already use is one of the questions we answer before recommending anything new.',
+        'Yes. Fit with tools you already use is one of the questions we answer before recommending anything new.',
     },
     {
       id: 'implementation-cost',
       question: 'How much does implementation cost?',
       answer:
-        'It depends on the workflow, integrations, and safeguards required. The roadmap clarifies scope before you commit to a build.',
+        'It depends on the workflow, integrations, and safeguards. The roadmap clarifies scope before you commit to a build.',
     },
     {
       id: 'who-attends',
       question: 'Who should attend the session?',
       answer:
-        'Usually the owner or operational leader who owns the workflow, plus anyone who can explain how the work happens day to day.',
+        'Usually the owner or ops leader who owns the workflow, plus anyone who can explain day-to-day reality.',
     },
     {
       id: 'prep',
-      question: 'What information do you need before the session?',
+      question: 'What do you need before the session?',
       answer:
-        'A short assessment covering your business, the workflow you want to improve, current tools, and where work gets stuck.',
+        'A short assessment: your business, the workflow to improve, current tools, and where work gets stuck.',
     },
   ] as const,
 } as const
 
 export const FINAL_CTA = {
-  intro: 'Your team already knows where the work feels harder than it should.',
-  feel: 'They feel it in every delayed response. Every repeated follow-up. Every spreadsheet that needs another update. Every request that gets lost between people and systems.',
-  headline: 'You do not need to automate your entire company. You need to find the right place to begin.',
-  body: 'Bring us one important workflow. We will help you understand what is slowing it down, where AI belongs, and what you should do next.',
-  primaryCta: 'Book Your AI Workflow Strategy Session',
+  intro: 'Your team already knows where work feels heavier than it should.',
+  feel: 'Delayed replies. Repeated follow-ups. Spreadsheets that need one more pass. Requests lost between people and systems.',
+  headline: 'Don’t automate the whole company. Start with the right workflow.',
+  body: 'Bring one important workflow. We will show what slows it down, where AI belongs, and what to do next.',
+  primaryCta: 'Book Your Strategy Session',
   secondaryCta: 'See What You’ll Receive',
   microcopy: '90 minutes · $2,000 · Practical roadmap included',
 } as const

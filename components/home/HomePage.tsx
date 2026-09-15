@@ -8,25 +8,19 @@
  */
 import { HomeFooter } from '@/components/home/HomeFooter'
 import { HomeHeader } from '@/components/home/HomeHeader'
+import { JsonLd } from '@/components/home/JsonLd'
 import { ScrollDepthTracker } from '@/components/home/ScrollDepthTracker'
-import { AboutSection } from '@/components/home/sections/AboutSection'
-import { DeliverablesBento } from '@/components/home/sections/DeliverablesBento'
-import { EngagementJourney } from '@/components/home/sections/EngagementJourney'
 import { FAQSection } from '@/components/home/sections/FAQSection'
 import { FinalCTA } from '@/components/home/sections/FinalCTA'
 import { FitSection } from '@/components/home/sections/FitSection'
 import { FrictionGrid } from '@/components/home/sections/FrictionGrid'
 import { HeroSection } from '@/components/home/sections/HeroSection'
 import { PointOfViewPanel } from '@/components/home/sections/PointOfViewPanel'
-import { PrinciplesList } from '@/components/home/sections/PrinciplesList'
-import { ProcessSteps } from '@/components/home/sections/ProcessSteps'
 import { RecruitmentCaseStudy } from '@/components/home/sections/RecruitmentCaseStudy'
 import { StickyMobileCTA } from '@/components/home/sections/StickyMobileCTA'
 import { StrategySessionOffer } from '@/components/home/sections/StrategySessionOffer'
-import { WorkflowExamples } from '@/components/home/sections/WorkflowExamples'
 import { WorkflowMethod } from '@/components/home/sections/WorkflowMethod'
 import { archivo, barlowCondensed } from '@/lib/fonts'
-import { JsonLd } from '@/components/home/JsonLd'
 
 export function HomePage() {
   return (
@@ -41,17 +35,10 @@ export function HomePage() {
         </div>
         <FrictionGrid />
         <PointOfViewPanel />
-        {/* Proof early — after POV, still high on the page */}
         <RecruitmentCaseStudy />
         <WorkflowMethod />
-        <ProcessSteps />
         <StrategySessionOffer />
-        <DeliverablesBento />
-        <WorkflowExamples />
-        <PrinciplesList />
         <FitSection />
-        <EngagementJourney />
-        <AboutSection />
         <FAQSection />
         <FinalCTA />
       </main>

@@ -1,5 +1,6 @@
 import type { Metadata } from 'next'
 import './globals.css'
+import { LinkedInInsightTag } from '@/components/LinkedInInsightTag'
 import { googleSansFlex } from '@/lib/fonts'
 import { Analytics } from '@vercel/analytics/next'
 import { LANDING_SEO } from '@/lib/landing'
@@ -44,6 +45,7 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
         />
         {children}
         <Analytics />
+        <LinkedInInsightTag />
       </body>
     </html>
   )

@@ -6,10 +6,10 @@ import { cn } from '@/lib/utils'
 import { useState } from 'react'
 
 export function WorkflowMethod() {
-  const [active, setActive] = useState<number | null>(null)
+  const [active, setActive] = useState<number | null>(0)
 
   return (
-    <section id="method" className="bb-home-section">
+    <section id="how-it-works" className="bb-home-section">
       <div className="bb-home-container">
         <SoftReveal>
           <p className="bb-home-eyebrow">
@@ -22,37 +22,42 @@ export function WorkflowMethod() {
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:text-lg">
             {METHOD.supporting}
           </p>
-        </SoftReveal>
 
-        <ol className="mt-12 grid gap-4 lg:grid-cols-4">
-          {METHOD.stages.map((stage, index) => {
-            const isActive = active === index
-            const isDimmed = active !== null && active !== index
-            return (
-              <li key={stage.title} className="relative">
-                {index < METHOD.stages.length - 1 ? (
-                  <div
-                    aria-hidden
-                    className={cn(
-                      'absolute left-[calc(100%-0.5rem)] top-8 hidden h-px w-[calc(100%-2rem)] transition-colors lg:block',
-                      isActive || active === index + 1
-                        ? 'bg-[var(--bb-brand)]/60'
-                        : 'bg-[var(--bb-brand)]/30'
-                    )}
-                  />
-                ) : null}
-                <SoftReveal delay={index * 0.05}>
+          <ol className="mt-12 grid gap-4 lg:grid-cols-4">
+            {METHOD.stages.map((stage, index) => {
+              const isActive = active === index
+              const isDimmed = active !== null && active !== index
+              return (
+                <li key={stage.title} className="relative">
+                  {index < METHOD.stages.length - 1 ? (
+                    <div
+                      aria-hidden
+                      className={cn(
+                        'absolute left-[calc(100%-0.5rem)] top-8 hidden h-px w-[calc(100%-2rem)] transition-colors lg:block',
+                        isActive || active === index + 1
+                          ? 'bg-[var(--bb-brand)]/60'
+                          : 'bg-[var(--bb-brand)]/30'
+                      )}
+                    />
+                  ) : null}
                   <article
+                    role="button"
                     tabIndex={0}
+                    aria-pressed={isActive}
                     className={cn(
-                      'bb-card bb-method-stage h-full cursor-default p-5 outline-none sm:p-6',
+                      'bb-card bb-method-stage h-full cursor-pointer p-5 outline-none sm:p-6',
                       isActive && 'is-active',
                       isDimmed && 'is-dimmed'
                     )}
+                    onClick={() => setActive(index)}
                     onMouseEnter={() => setActive(index)}
-                    onMouseLeave={() => setActive(null)}
                     onFocus={() => setActive(index)}
-                    onBlur={() => setActive(null)}
+                    onKeyDown={(event) => {
+                      if (event.key === 'Enter' || event.key === ' ') {
+                        event.preventDefault()
+                        setActive(index)
+                      }
+                    }}
                   >
                     <p className="font-mono text-xs text-[var(--bb-ink-muted)]">
                       {String(index + 1).padStart(2, '0')}
@@ -70,13 +75,11 @@ export function WorkflowMethod() {
                       {stage.example}
                     </p>
                   </article>
-                </SoftReveal>
-              </li>
-            )
-          })}
-        </ol>
+                </li>
+              )
+            })}
+          </ol>
 
-        <SoftReveal>
           <p className="mt-8 max-w-3xl text-base leading-relaxed text-[var(--bb-ink)]">
             {METHOD.closing}
           </p>

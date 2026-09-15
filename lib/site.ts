@@ -21,7 +21,7 @@ export const BOOK_FINAL_CTA_LABEL = 'Book Your AI Workflow Strategy Session'
 export const BOOK_OFFER_CTA_LABEL = 'Book the Strategy Session'
 export const PROJECTS_CTA_LABEL = 'Work'
 export const HOW_IT_WORKS_HREF = '#how-it-works'
-export const DELIVERABLES_HREF = '#deliverables'
+export const DELIVERABLES_HREF = '#offer'
 
 export const LEGAL_NAME = 'BitB Labs LLP'
 
