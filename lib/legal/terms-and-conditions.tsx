@@ -17,7 +17,7 @@ export const termsIntro = (
     website operated by {LEGAL_NAME} (&ldquo;BitBlabs&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
     &ldquo;our&rdquo;). By accessing or using this website, you agree to be bound by these Terms. If
     you do not agree, you must not use the website. Our{' '}
-    <Link href={PRIVACY_PATH} className="text-zinc-300 transition-opacity hover:opacity-60">
+    <Link href={PRIVACY_PATH} className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]">
       Privacy Policy
     </Link>{' '}
     explains how we handle personal information.
@@ -34,7 +34,7 @@ export const termsSections: LegalSection[] = [
           workflow, and optionally build practical AI systems around it. This website is operated by{' '}
           {LEGAL_NAME}, a limited liability partnership registered in India.
         </p>
-        <address className="not-italic space-y-1 text-zinc-400">
+        <address className="not-italic space-y-1 text-[var(--bb-ink-muted)]">
           <p>{LEGAL_NAME}</p>
           {LEGAL_ADDRESS_LINES.map((line) => (
             <p key={line}>{line}</p>
@@ -82,8 +82,8 @@ export const termsSections: LegalSection[] = [
         </p>
         <p>
           The primary paid offering on this website is the{' '}
-          <strong className="font-medium text-zinc-300">AI Workflow Strategy Session</strong>: a
-          90-minute working session priced at <strong className="font-medium text-zinc-300">$2,000</strong>{' '}
+          <strong className="font-medium text-[var(--bb-ink)]">AI Workflow Strategy Session</strong>: a
+          90-minute working session priced at <strong className="font-medium text-[var(--bb-ink)]">$2,000</strong>{' '}
           (USD). The fee covers the session and roadmap deliverables. Implementation is not
           included and is scoped separately if you want BitBlabs to build. If you start a BitBlabs
           implementation within 30 days of the session, your $2,000 session fee is credited toward
@@ -95,7 +95,7 @@ export const termsSections: LegalSection[] = [
             href={PAY_BOOK_URL}
             target="_blank"
             rel="noopener noreferrer"
-            className="text-zinc-300 transition-opacity hover:opacity-60"
+            className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]"
           >
             TidyCal
           </a>
@@ -226,7 +226,7 @@ export const termsSections: LegalSection[] = [
     body: (
       <>
         <p>For questions about these Terms, contact {LEGAL_NAME}:</p>
-        <address className="not-italic space-y-1 text-zinc-400">
+        <address className="not-italic space-y-1 text-[var(--bb-ink-muted)]">
           <p>{LEGAL_NAME}</p>
           {LEGAL_ADDRESS_LINES.map((line) => (
             <p key={line}>{line}</p>
@@ -235,7 +235,7 @@ export const termsSections: LegalSection[] = [
             Phone:{' '}
             <a
               href={`tel:${CONTACT_PHONE}`}
-              className="text-zinc-300 transition-opacity hover:opacity-60"
+              className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]"
             >
               {CONTACT_PHONE_DISPLAY}
             </a>

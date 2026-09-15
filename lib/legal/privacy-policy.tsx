@@ -17,7 +17,7 @@ export const privacyIntro = (
     operates the BitBlabs website and related online presence. This Privacy Policy describes how we
     collect, use, store, and protect personal information when you visit our website, contact us,
     or book an AI Workflow Strategy Session. Please also review our{' '}
-    <Link href={TERMS_PATH} className="text-zinc-300 transition-opacity hover:opacity-60">
+    <Link href={TERMS_PATH} className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]">
       Terms &amp; Conditions
     </Link>
     .
@@ -32,24 +32,24 @@ export const privacySections: LegalSection[] = [
         <p>We may collect the following categories of information:</p>
         <ul className="list-disc space-y-2 pl-5">
           <li>
-            <strong className="font-medium text-zinc-300">Information you provide:</strong> name,
+            <strong className="font-medium text-[var(--bb-ink)]">Information you provide:</strong> name,
             email address, phone number, company name, role, and assessment answers you submit when
             booking an AI Workflow Strategy Session (for example, your business, the workflow to
             improve, current tools, and where work stalls), plus any other details you share when
             contacting us.
           </li>
           <li>
-            <strong className="font-medium text-zinc-300">Session materials:</strong> notes,
+            <strong className="font-medium text-[var(--bb-ink)]">Session materials:</strong> notes,
             workflow maps, and a session recording when we record the strategy session as part of
             the deliverables.
           </li>
           <li>
-            <strong className="font-medium text-zinc-300">Technical information:</strong> browser
+            <strong className="font-medium text-[var(--bb-ink)]">Technical information:</strong> browser
             type, device type, operating system, IP address, referring URLs, pages viewed, and
             approximate location derived from IP address.
           </li>
           <li>
-            <strong className="font-medium text-zinc-300">Communications:</strong> records of
+            <strong className="font-medium text-[var(--bb-ink)]">Communications:</strong> records of
             correspondence if you reach out to us by phone, email, or through third-party booking
             tools.
           </li>
@@ -104,11 +104,11 @@ export const privacySections: LegalSection[] = [
         </p>
         <ul className="list-disc space-y-2 pl-5">
           <li>
-            <strong className="font-medium text-zinc-300">Vercel Analytics</strong> to understand
+            <strong className="font-medium text-[var(--bb-ink)]">Vercel Analytics</strong> to understand
             how visitors use the site (for example, pages viewed and conversion events).
           </li>
           <li>
-            <strong className="font-medium text-zinc-300">LinkedIn Insight Tag</strong> for
+            <strong className="font-medium text-[var(--bb-ink)]">LinkedIn Insight Tag</strong> for
             advertising measurement, conversion tracking, and retargeting.
           </li>
         </ul>
@@ -129,32 +129,32 @@ export const privacySections: LegalSection[] = [
         </p>
         <ul className="list-disc space-y-2 pl-5">
           <li>
-            <strong className="font-medium text-zinc-300">TidyCal</strong>: scheduling and intake
+            <strong className="font-medium text-[var(--bb-ink)]">TidyCal</strong>: scheduling and intake
             when you book an AI Workflow Strategy Session (
             <a
               href={PAY_BOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
-              className="text-zinc-300 transition-opacity hover:opacity-60"
+              className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]"
             >
               tidycal.com/shubhamgupta/ai-workflow-strategy-session
             </a>
             )
           </li>
           <li>
-            <strong className="font-medium text-zinc-300">PayPal</strong>: payment processing for
+            <strong className="font-medium text-[var(--bb-ink)]">PayPal</strong>: payment processing for
             the strategy session fee
           </li>
           <li>
-            <strong className="font-medium text-zinc-300">Vercel</strong>: website hosting and
+            <strong className="font-medium text-[var(--bb-ink)]">Vercel</strong>: website hosting and
             analytics
           </li>
           <li>
-            <strong className="font-medium text-zinc-300">LinkedIn</strong>: advertising
+            <strong className="font-medium text-[var(--bb-ink)]">LinkedIn</strong>: advertising
             measurement and retargeting via the LinkedIn Insight Tag
           </li>
           <li>
-            <strong className="font-medium text-zinc-300">Hosting and infrastructure providers</strong>{' '}
+            <strong className="font-medium text-[var(--bb-ink)]">Hosting and infrastructure providers</strong>{' '}
             to deliver and secure the website
           </li>
         </ul>
@@ -247,7 +247,7 @@ export const privacySections: LegalSection[] = [
         <p>
           For privacy-related questions, requests, or complaints, contact {LEGAL_NAME}:
         </p>
-        <address className="not-italic space-y-1 text-zinc-400">
+        <address className="not-italic space-y-1 text-[var(--bb-ink-muted)]">
           <p>{LEGAL_NAME}</p>
           {LEGAL_ADDRESS_LINES.map((line) => (
             <p key={line}>{line}</p>
@@ -256,7 +256,7 @@ export const privacySections: LegalSection[] = [
             Phone:{' '}
             <a
               href={`tel:${CONTACT_PHONE}`}
-              className="text-zinc-300 transition-opacity hover:opacity-60"
+              className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]"
             >
               {CONTACT_PHONE_DISPLAY}
             </a>

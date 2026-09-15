@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import type { ReactNode } from 'react'
-import { Navbar } from '@/components/layout/Navbar'
-import { SiteFooter } from '@/components/layout/SiteFooter'
+import { BbPageShell } from '@/components/home/BbPageShell'
 import type { LegalSection } from '@/lib/legal/types'
 import { PRIVACY_PATH, TERMS_PATH } from '@/lib/site'
 
@@ -25,54 +24,54 @@ export function LegalPageLayout({
     relatedPage === 'privacy' ? 'Terms & Conditions' : 'Privacy Policy'
 
   return (
-    <main className="relative min-h-screen bg-black">
-      <Navbar theme="dark" position="static" />
+    <BbPageShell>
+      <section className="bb-home-section pt-28 sm:pt-32">
+        <div className="bb-home-container">
+          <article className="mx-auto max-w-3xl">
+            <Link
+              href="/"
+              className="text-sm text-[var(--bb-ink-muted)] transition-colors hover:text-[var(--bb-brand)]"
+            >
+              ← Back to home
+            </Link>
 
-      <article className="mx-auto max-w-3xl px-6 pb-8 pt-10 md:px-12 md:pt-14 lg:px-16">
-        <Link
-          href="/"
-          className="font-body text-sm text-zinc-500 transition-opacity hover:opacity-60"
-        >
-          ← Back to home
-        </Link>
+            <header className="mt-8 space-y-3 md:mt-10">
+              <h1 className="font-[family-name:var(--font-barlow-condensed)] text-[clamp(2.4rem,6vw,3.75rem)] font-semibold leading-[0.94] tracking-[-0.01em] text-[var(--bb-ink)]">
+                {title}
+              </h1>
+              <p className="text-sm text-[var(--bb-ink-muted)]">Last updated: {lastUpdated}</p>
+            </header>
 
-        <header className="mt-8 space-y-3 md:mt-10">
-          <h1 className="font-body text-3xl font-normal tracking-[-0.03em] text-white md:text-4xl">
-            {title}
-          </h1>
-          <p className="font-body text-sm text-zinc-500">Last updated: {lastUpdated}</p>
-        </header>
+            <div className="mt-10 space-y-10 text-sm leading-relaxed text-[var(--bb-ink-muted)] md:mt-12 md:text-base">
+              <p>{intro}</p>
 
-        <div className="mt-10 space-y-10 font-body text-sm leading-relaxed text-zinc-400 md:mt-12">
-          <p>{intro}</p>
+              {sections.map((section) => (
+                <section key={section.title} className="space-y-3">
+                  <h2 className="font-[family-name:var(--font-barlow-condensed)] text-xs font-semibold uppercase tracking-[0.14em] text-[var(--bb-ink)]">
+                    {section.title}
+                  </h2>
+                  <div className="space-y-3">{section.body}</div>
+                </section>
+              ))}
 
-          {sections.map((section) => (
-            <section key={section.title} className="space-y-3">
-              <h2 className="font-heading text-xs uppercase tracking-[0.2em] text-zinc-500">
-                {section.title}
-              </h2>
-              <div className="space-y-3">{section.body}</div>
-            </section>
-          ))}
-
-          <nav
-            aria-label="Related legal page"
-            className="border-t border-white/10 pt-10"
-          >
-            <p className="font-body text-sm text-zinc-500">
-              See also:{' '}
-              <Link
-                href={relatedHref}
-                className="text-zinc-300 transition-opacity hover:opacity-60"
+              <nav
+                aria-label="Related legal page"
+                className="border-t border-[var(--bb-line)] pt-10"
               >
-                {relatedLabel}
-              </Link>
-            </p>
-          </nav>
+                <p className="text-sm text-[var(--bb-ink-muted)]">
+                  See also:{' '}
+                  <Link
+                    href={relatedHref}
+                    className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]"
+                  >
+                    {relatedLabel}
+                  </Link>
+                </p>
+              </nav>
+            </div>
+          </article>
         </div>
-      </article>
-
-      <SiteFooter compact />
-    </main>
+      </section>
+    </BbPageShell>
   )
 }
