@@ -2,9 +2,13 @@ import { BookButton } from '@/components/home/BookButton'
 import { FOOTER } from '@/lib/landing'
 import { founders } from '@/lib/founders'
 import {
+  CASE_STUDY_ABSOLUTE_HREF,
   CONTACT_PHONE,
   CONTACT_PHONE_DISPLAY,
+  HOW_IT_WORKS_ABSOLUTE_HREF,
+  OFFER_ABSOLUTE_HREF,
   PRIVACY_PATH,
+  PORTFOLIO_SECTION_HREF,
   TERMS_PATH,
 } from '@/lib/site'
 import Link from 'next/link'
@@ -34,16 +38,28 @@ export function HomeFooter() {
                 Explore
               </p>
               <nav className="mt-3 flex flex-col gap-2 text-sm" aria-label="Footer">
-                <a href="#how-it-works" className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]">
+                <Link
+                  href={HOW_IT_WORKS_ABSOLUTE_HREF}
+                  className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]"
+                >
                   How it works
-                </a>
-                <a href="#offer" className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]">
+                </Link>
+                <Link
+                  href={OFFER_ABSOLUTE_HREF}
+                  className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]"
+                >
                   AI Workflow Strategy Session
-                </a>
-                <a href="#case-study" className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]">
+                </Link>
+                <Link
+                  href={CASE_STUDY_ABSOLUTE_HREF}
+                  className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]"
+                >
                   Case study
-                </a>
-                <Link href="/projects" className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]">
+                </Link>
+                <Link
+                  href={PORTFOLIO_SECTION_HREF}
+                  className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]"
+                >
                   Work
                 </Link>
                 <Link href={PRIVACY_PATH} className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]">

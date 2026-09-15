@@ -1,0 +1,83 @@
+{
+  "version": 1,
+  "skills": {
+    "channels-setup": {
+      "source": "CopilotKit/CopilotKit",
+      "sourceType": "github",
+      "skillPath": "skills/channels-setup/SKILL.md",
+      "computedHash": "8b08bbd9888f53720eb8d9c5aff796f946c28b640c426965b45315dc4406876d"
+    },
+    "copilotkit": {
+      "source": "CopilotKit/CopilotKit",
+      "sourceType": "github",
+      "skillPath": "skills/copilotkit/SKILL.md",
+      "computedHash": "e9c9c2019065cb5947fc2944dea83f42cba0bddd643387dde5944ab63be1cc14"
+    },
+    "copilotkit-channels": {
+      "source": "CopilotKit/CopilotKit",
+      "sourceType": "github",
+      "skillPath": "skills/copilotkit-channels/SKILL.md",
+      "computedHash": "b310e9433979e544ee547d9a4577dd813e53a7c642b3c10b94eea8e891770fff"
+    },
+    "copilotkit-cli": {
+      "source": "CopilotKit/CopilotKit",
+      "sourceType": "github",
+      "skillPath": "skills/copilotkit-cli/SKILL.md",
+      "computedHash": "036eeb8266b3496d4f438667a38afb54d4f4a991f5fe96e556f7ce9904fae04f"
+    },
+    "copy-editing": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/copy-editing/SKILL.md",
+      "computedHash": "ba4e44a8470b3ae2add3e0ffa74c85d8b0357db4ca2cf8cfa7b4abc9d94fc602"
+    },
+    "copywriting": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/copywriting/SKILL.md",
+      "computedHash": "779f05c8be67da475e6a7af78de3e0400b0038e371ce898dd6ff9d3331aab7db"
+    },
+    "cro": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/cro/SKILL.md",
+      "computedHash": "07f7a27c57e48f4b67230712f8efbc5bcc01611b35321b3c2c2e5279c9304bcd"
+    },
+    "frontend-checklist-global": {
+      "source": "thedaviddias/Front-End-Checklist",
+      "sourceType": "github",
+      "skillPath": "skills/frontend-checklist-global/SKILL.md",
+      "computedHash": "1db5150fd6698c9d99490f2d10b01027dee3e1dc9190c86f6a63a050eb2417c5"
+    },
+    "inspector-docs": {
+      "source": "CopilotKit/CopilotKit",
+      "sourceType": "github",
+      "skillPath": "skills/inspector-docs/SKILL.md",
+      "computedHash": "ba21166f4719481a927f923fd90d9e4414d69692039027db9c7a5240b03cc8f4"
+    },
+    "inspector-workbench": {
+      "source": "CopilotKit/CopilotKit",
+      "sourceType": "github",
+      "skillPath": "skills/inspector-workbench/SKILL.md",
+      "computedHash": "1f48902d483c19eae1df6d1c80546f057138b46264c184f67ee036ba25fd5034"
+    },
+    "intelligence-docs": {
+      "source": "CopilotKit/CopilotKit",
+      "sourceType": "github",
+      "skillPath": "skills/intelligence-docs/SKILL.md",
+      "computedHash": "b024d4a0617bc0f4955c18a2e7c2eb4f4857136d88280a19b4a37473b5a5716a"
+    },
+    "product-marketing": {
+      "source": "coreyhaines31/marketingskills",
+      "sourceType": "github",
+      "skillPath": "skills/product-marketing/SKILL.md",
+      "computedHash": "b8a9cd747705923a7a29cda12e478594e3a5062d8f7c7bfbf19d7fc0b24cee76"
+    },
+    "setup-slack-channel": {
+      "source": "CopilotKit/CopilotKit",
+      "sourceType": "github",
+      "skillPath": "skills/setup-slack-channel/SKILL.md",
+      "computedHash": "dbac12de444fc1cd8d34d74d48d817dcb43dd6d6f41347d57462e931ee1ca1ca"
+    }
+  }
+}

@@ -1,10 +1,9 @@
 'use client'
 
 import { Reveal } from '@/components/ui/Reveal'
-import { ChapterMarker } from '@/components/showcase/case-study/CaseStudyScenes'
 import type { StorySlide } from '@/lib/story-slide'
 import { cn } from '@/lib/utils'
-import { sceneThemeClasses, slideChapterLabel } from '@/components/showcase/case-study/utils'
+import { sceneThemeClasses } from '@/components/showcase/case-study/utils'
 
 interface CaseStudyStatsBlockProps {
   slide: StorySlide
@@ -33,36 +32,37 @@ function AccessMatrix({
   ) => (
     <div
       className={cn(
-        'rounded-2xl border p-6 md:p-8',
-        tone === 'allowed' ? 'border-emerald-500/25 bg-emerald-500/[0.04]' : 'border-red-500/20 bg-red-500/[0.03]'
+        'rounded-[0.85rem] border p-6 md:p-8',
+        tone === 'allowed'
+          ? 'border-[var(--bb-rail)] bg-[var(--bb-mint)]/35'
+          : 'border-[var(--bb-rail)] bg-[var(--bb-amber)]/25'
       )}
     >
-      <p
-        className={cn(
-          'font-heading text-xs uppercase tracking-[0.22em]',
-          tone === 'allowed' ? 'text-emerald-400' : 'text-red-400'
-        )}
-      >
+      <p className="font-[family-name:var(--font-barlow-condensed)] text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--bb-ink)]">
         {title}
       </p>
-      <ul className="mt-6 space-y-4">
+      <ul className="mt-6 space-y-3">
         {items.map((item) => (
           <li
             key={item.label}
-            className="flex items-start gap-4 rounded-xl border border-white/[0.06] bg-white/[0.02] px-4 py-4"
+            className="flex items-start gap-4 rounded-md border border-[var(--bb-rail)] bg-[var(--bb-surface)] px-4 py-3"
           >
             <span
               className={cn(
-                'flex h-9 w-9 shrink-0 items-center justify-center rounded-full font-heading text-sm font-semibold',
-                tone === 'allowed' ? 'bg-emerald-500/15 text-emerald-300' : 'bg-red-500/15 text-red-300'
+                'flex h-8 w-8 shrink-0 items-center justify-center rounded-md font-[family-name:var(--font-barlow-condensed)] text-sm font-semibold',
+                tone === 'allowed'
+                  ? 'bg-[var(--bb-mint)] text-[var(--bb-ink)]'
+                  : 'bg-[var(--bb-amber)] text-[var(--bb-ink)]'
               )}
             >
               {item.value}
             </span>
             <div className="min-w-0 pt-1">
-              <p className="font-display text-lg font-semibold tracking-tight text-white">{item.label}</p>
+              <p className="font-[family-name:var(--font-barlow-condensed)] text-lg font-semibold tracking-[0.02em] text-[var(--bb-ink)]">
+                {item.label}
+              </p>
               {item.icon ? (
-                <p className="mt-1 font-body text-sm text-zinc-500">{item.icon}</p>
+                <p className="mt-1 text-sm text-[var(--bb-ink-muted)]">{item.icon}</p>
               ) : null}
             </div>
           </li>
@@ -72,7 +72,7 @@ function AccessMatrix({
   )
 
   return (
-    <div className="mt-14 grid gap-6 md:grid-cols-2">
+    <div className="mt-12 grid gap-5 md:grid-cols-2">
       {column('Visible to super admins', allowed, 'allowed')}
       {column('Intentionally restricted', restricted, 'restricted')}
     </div>
@@ -81,23 +81,19 @@ function AccessMatrix({
 
 function ImpactStats({
   stats,
-  accent,
 }: {
   stats: NonNullable<StorySlide['stats']>
   accent: string
 }) {
   return (
-    <div className="mt-14 grid grid-cols-2 gap-x-6 gap-y-12 md:grid-cols-4 md:gap-y-16">
+    <div className="mt-12 grid grid-cols-2 gap-4 md:grid-cols-4 md:gap-5">
       {stats.map((stat, i) => (
         <Reveal key={`${stat.label}-${stat.value}`} delay={i * 0.06}>
-          <div className="border-t pt-6" style={{ borderColor: `${accent}55` }}>
-            <p
-              className="font-display text-[clamp(2.5rem,7vw,5rem)] font-bold leading-none tracking-[-0.04em]"
-              style={{ color: accent }}
-            >
+          <div className="rounded-[0.85rem] border border-[var(--bb-rail)] bg-[var(--bb-surface)] p-5 shadow-[var(--bb-chip-shadow)] sm:p-6">
+            <p className="font-[family-name:var(--font-barlow-condensed)] text-[clamp(2rem,5vw,3.25rem)] font-semibold leading-none tracking-[-0.01em] text-[var(--bb-brand)]">
               {stat.value}
             </p>
-            <p className="mt-4 font-heading text-xs uppercase tracking-[0.2em] text-zinc-500 md:text-sm">
+            <p className="mt-3 font-[family-name:var(--font-barlow-condensed)] text-[11px] font-semibold uppercase tracking-[0.14em] text-[var(--bb-ink-muted)]">
               {stat.label}
             </p>
           </div>
@@ -107,32 +103,25 @@ function ImpactStats({
   )
 }
 
-export function CaseStudyStatsBlock({ slide, accent, eyebrow, chapterNumber, chapterLabel }: CaseStudyStatsBlockProps) {
+export function CaseStudyStatsBlock({ slide, accent }: CaseStudyStatsBlockProps) {
   const stats = slide.stats ?? []
   if (stats.length === 0) return null
 
-  const styles = sceneThemeClasses('dark')
+  const styles = sceneThemeClasses('board')
   const accessMatrix = isAccessMatrix(stats)
 
   return (
-    <section className={cn('border-t px-6 py-24 md:px-12 md:py-32 lg:px-16', styles.border, styles.sectionAlt)}>
-      <div className="mx-auto max-w-7xl">
+    <section className={cn('bb-home-section border-t', styles.border, styles.sectionAlt)}>
+      <div className="bb-home-container">
         <Reveal>
-          {chapterNumber != null && chapterLabel ? (
-            <ChapterMarker number={chapterNumber} label={chapterLabel} accent={accent} />
-          ) : (
-            <p className="font-heading text-sm uppercase tracking-[0.28em] text-zinc-500">
-              {eyebrow ?? slideChapterLabel(slide.type)}
-            </p>
-          )}
-          <h2 className="mt-8 max-w-3xl font-display text-[clamp(2.25rem,5vw,3.75rem)] font-bold leading-[1.05] tracking-[-0.03em] text-white">
+          <h2 className="max-w-3xl font-[family-name:var(--font-barlow-condensed)] text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.05] tracking-[0.02em] text-[var(--bb-ink)]">
             {slide.title}
           </h2>
-          <p className="mt-6 max-w-2xl font-body text-lg leading-relaxed text-zinc-400 md:text-xl">
+          <p className="mt-5 max-w-2xl text-lg leading-relaxed text-[var(--bb-ink-muted)] md:text-xl">
             {slide.content}
           </p>
           {slide.highlight ? (
-            <p className="mt-6 max-w-2xl font-body text-base leading-relaxed text-zinc-200 md:text-lg">
+            <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink)] md:text-lg">
               {slide.highlight}
             </p>
           ) : null}

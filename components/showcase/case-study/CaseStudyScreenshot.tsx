@@ -39,14 +39,11 @@ export const CASE_STUDY_INLINE_MAX_HEIGHT =
 
 function DeviceChrome({ label }: { label: string }) {
   return (
-    <div className="flex items-center gap-3 border-b border-black bg-[#f7f7f8] px-4 py-3">
-      <div className="flex shrink-0 items-center gap-1.5">
-        <span className="h-2.5 w-2.5 rounded-full bg-[#ff5f57]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#febc2e]" />
-        <span className="h-2.5 w-2.5 rounded-full bg-[#28c840]" />
-      </div>
-      <div className="flex h-7 min-w-0 flex-1 items-center justify-center rounded-md bg-white px-3 ring-1 ring-zinc-200/90">
-        <span className="truncate font-body text-[11px] tracking-[-0.01em] text-zinc-400">{label}</span>
+    <div className="flex items-center gap-3 border-b border-[var(--bb-rail)] bg-[var(--bb-board)] px-4 py-3">
+      <div className="flex h-7 min-w-0 flex-1 items-center justify-center rounded-md border border-[var(--bb-rail)] bg-[var(--bb-surface)] px-3">
+        <span className="truncate font-[family-name:var(--font-barlow-condensed)] text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--bb-ink-muted)]">
+          {label}
+        </span>
       </div>
     </div>
   )

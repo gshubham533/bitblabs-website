@@ -3,7 +3,6 @@
 import type { ReactNode } from 'react'
 import type { PortfolioProject } from '@/lib/portfolio-data'
 import { orderPortfolioProjects } from '@/lib/project-utils'
-import { SiteFooter } from '@/components/layout/SiteFooter'
 import { WorkProjectCard } from '@/components/showcase/WorkProjectCard'
 
 interface WorkProjectsListProps {
@@ -12,51 +11,42 @@ interface WorkProjectsListProps {
   subtitle?: ReactNode
   /** Rendered after the project list (e.g. Rezonna spotlight). */
   trailingContent?: ReactNode
-  /** Show company legal details in footer (home page only). */
-  showLegalInfo?: boolean
 }
 
 export function WorkProjectsList({
   projects,
-  title = 'Portfolio',
+  title = 'Our work',
   subtitle = (
     <>
-      Crafted with <b className="font-normal text-zinc-950">workflows</b>,{' '}
-      <b className="font-normal text-zinc-950">systems</b>, and{' '}
-      <b className="font-normal text-zinc-950">production</b>.
+      Built with workflows, systems, and production.
     </>
   ),
   trailingContent,
-  showLegalInfo = false,
 }: WorkProjectsListProps) {
   const ordered = orderPortfolioProjects(projects)
 
   return (
-    <>
-      <div className="flex w-full flex-col items-center">
-        <header className="mx-auto flex w-full flex-col items-center gap-6 bg-white px-6 pb-12 text-center md:gap-8 md:px-12 md:pb-16 lg:gap-10 lg:px-16 xl:px-20">
-          <h2 className="font-body text-[clamp(3.75rem,11vw,8.5rem)] font-normal leading-[0.9] tracking-[-0.04em] text-zinc-950">
+    <div className="flex w-full flex-col">
+      <header className="bb-home-section pb-0 pt-28 sm:pt-32">
+        <div className="bb-home-container">
+          <h1 className="max-w-3xl font-[family-name:var(--font-barlow-condensed)] text-[clamp(2.4rem,7.2vw,5.4rem)] font-semibold leading-[0.94] tracking-[-0.01em] text-[var(--bb-ink)]">
             {title}
-          </h2>
-          <p className="font-body w-full text-center text-[clamp(0.875rem,calc((100vw-3rem)/18),9rem)] leading-[1.05] tracking-[-0.055em] text-zinc-500 whitespace-nowrap md:text-[clamp(1rem,calc((100vw-6rem)/18),9rem)] lg:text-[clamp(1rem,calc((100vw-8rem)/18),9rem)] xl:text-[clamp(1rem,calc((100vw-10rem)/18),9rem)]">
+          </h1>
+          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:text-lg">
             {subtitle}
           </p>
-        </header>
+        </div>
+      </header>
 
-        <div className="relative w-full overflow-visible">
-          <div className="w-full overflow-visible bg-black">
-            {ordered.map((project, index) => (
-              <WorkProjectCard
-                key={project.slug}
-                project={project}
-                index={index}
-              />
-            ))}
-          </div>
-          {trailingContent ? <div className="w-full">{trailingContent}</div> : null}
+      <div className="bb-home-section pt-10 sm:pt-14">
+        <div className="bb-home-container flex flex-col gap-8 md:gap-10">
+          {ordered.map((project, index) => (
+            <WorkProjectCard key={project.slug} project={project} index={index} />
+          ))}
         </div>
       </div>
-      <SiteFooter compact showLegalInfo={showLegalInfo} />
-    </>
+
+      {trailingContent ? <div className="w-full">{trailingContent}</div> : null}
+    </div>
   )
 }

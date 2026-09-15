@@ -9,7 +9,7 @@ import { LEGAL_NAME } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Terms & Conditions',
-  description: `Terms and Conditions for ${LEGAL_NAME} (BitBLabs). Rules for using our website and services.`,
+  description: `Terms and Conditions for ${LEGAL_NAME} (BitBlabs). Rules for using our website and services.`,
 }
 
 export default function TermsPage() {

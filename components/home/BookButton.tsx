@@ -26,9 +26,11 @@ export function BookButton({
   clearBeatMs = 0,
 }: BookButtonProps) {
   const [href, setHref] = useState(BOOK_HREF)
+  const [pagePath, setPagePath] = useState('/')
 
   useEffect(() => {
     setHref(bookingHrefWithUtm(BOOK_HREF))
+    setPagePath(window.location.pathname || '/')
   }, [])
 
   return (
@@ -41,7 +43,7 @@ export function BookButton({
         trackEvent('cta_click', {
           location,
           label: label ?? String(children),
-          page: '/',
+          page: pagePath,
         })
         trackEvent('booking_open', { source_section: location })
         onNavigate?.()

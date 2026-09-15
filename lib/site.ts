@@ -1,6 +1,3 @@
-/** Legacy Calendly URL kept for legal-page references only. Not an LP CTA. */
-export const BOOKING_URL = 'https://calendly.com/gshubham/discovery-call'
-
 /**
  * Launch v1 primary conversion: TidyCal (slot + questions + PayPal $2,000) in one flow.
  * Override with NEXT_PUBLIC_PAY_BOOK_URL, NEXT_PUBLIC_TIDYCAL_BOOKING_URL, or TIDYCAL_BOOKING_URL.
@@ -22,6 +19,12 @@ export const BOOK_OFFER_CTA_LABEL = 'Book the Strategy Session'
 export const PROJECTS_CTA_LABEL = 'Work'
 export const HOW_IT_WORKS_HREF = '#how-it-works'
 export const DELIVERABLES_HREF = '#offer'
+
+/** Absolute hash links for use from inner routes (footer / inner nav). */
+export const HOW_IT_WORKS_ABSOLUTE_HREF = '/#how-it-works'
+export const OFFER_ABSOLUTE_HREF = '/#offer'
+export const CASE_STUDY_ABSOLUTE_HREF = '/#case-study'
+export const CASE_STUDIES_PATH = '/case-studies'
 
 export const LEGAL_NAME = 'BitB Labs LLP'
 

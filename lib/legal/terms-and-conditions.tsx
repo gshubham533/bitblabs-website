@@ -1,20 +1,20 @@
 import Link from 'next/link'
 import {
-  BOOKING_URL,
   CONTACT_PHONE,
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
   LEGAL_NAME,
+  PAY_BOOK_URL,
   PRIVACY_PATH,
 } from '@/lib/site'
 import type { LegalSection } from '@/lib/legal/types'
 
-export const TERMS_LAST_UPDATED = 'July 2, 2026'
+export const TERMS_LAST_UPDATED = 'September 15, 2026'
 
 export const termsIntro = (
   <>
-    These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern your access to and use of the BitBLabs
-    website operated by {LEGAL_NAME} (&ldquo;BitBLabs&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
+    These Terms &amp; Conditions (&ldquo;Terms&rdquo;) govern your access to and use of the BitBlabs
+    website operated by {LEGAL_NAME} (&ldquo;BitBlabs&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or
     &ldquo;our&rdquo;). By accessing or using this website, you agree to be bound by these Terms. If
     you do not agree, you must not use the website. Our{' '}
     <Link href={PRIVACY_PATH} className="text-zinc-300 transition-opacity hover:opacity-60">
@@ -30,7 +30,8 @@ export const termsSections: LegalSection[] = [
     body: (
       <>
         <p>
-          BitBLabs builds custom AI systems for operational workflows. This website is operated by{' '}
+          BitBlabs helps growing service businesses find where work gets stuck, redesign that
+          workflow, and optionally build practical AI systems around it. This website is operated by{' '}
           {LEGAL_NAME}, a limited liability partnership registered in India.
         </p>
         <address className="not-italic space-y-1 text-zinc-400">
@@ -46,10 +47,10 @@ export const termsSections: LegalSection[] = [
     title: '2. Acceptance of terms',
     body: (
       <p>
-        By visiting this website, submitting an inquiry, or booking a consultation, you confirm that
-        you have read, understood, and agree to these Terms and our Privacy Policy. If you are
-        using the website on behalf of an organization, you represent that you have authority to
-        bind that organization.
+        By visiting this website, booking, or paying for an AI Workflow Strategy Session, you
+        confirm that you have read, understood, and agree to these Terms and our Privacy Policy. If
+        you are using the website or booking on behalf of an organization, you represent that you
+        have authority to bind that organization.
       </p>
     ),
   },
@@ -77,38 +78,59 @@ export const termsSections: LegalSection[] = [
         <p>
           Information on this website, including portfolio work, case studies, and descriptions of
           capabilities, is provided for general information only. It does not constitute a binding
-          offer, quote, or commitment to deliver specific services.
+          offer, quote, or commitment to deliver specific implementation services.
         </p>
         <p>
-          Professional services are provided only under a separate written agreement, statement of
-          work, or contract that defines scope, deliverables, timelines, fees, and other commercial
-          terms. In the event of any conflict between these Terms and a signed client agreement, the
-          signed agreement will prevail for that engagement.
+          The primary paid offering on this website is the{' '}
+          <strong className="font-medium text-zinc-300">AI Workflow Strategy Session</strong>: a
+          90-minute working session priced at <strong className="font-medium text-zinc-300">$2,000</strong>{' '}
+          (USD). The fee covers the session and roadmap deliverables. Implementation is not
+          included and is scoped separately if you want BitBlabs to build. If you start a BitBlabs
+          implementation within 30 days of the session, your $2,000 session fee is credited toward
+          that project.
         </p>
         <p>
-          You may schedule an initial discussion through our booking page at{' '}
+          You book and pay for the session through{' '}
           <a
-            href={BOOKING_URL}
+            href={PAY_BOOK_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="text-zinc-300 transition-opacity hover:opacity-60"
           >
-            Calendly
+            TidyCal
           </a>
-          . Booking a call does not create a client relationship until both parties agree to formal
-          terms.
+          , with payment processed by PayPal. Completing that booking creates a paid engagement for
+          the strategy session only. Any later implementation requires a separate written agreement,
+          statement of work, or contract that defines scope, deliverables, timelines, fees, and
+          other commercial terms. In the event of any conflict between these Terms and a signed
+          client agreement, the signed agreement will prevail for that engagement.
         </p>
       </>
     ),
   },
   {
-    title: '5. Intellectual property',
+    title: '5. Payment, refunds, and rescheduling',
+    body: (
+      <>
+        <p>
+          The AI Workflow Strategy Session fee is non-refundable except where a refund is required
+          by applicable law.
+        </p>
+        <p>
+          Rescheduling is handled through TidyCal using the tools and policies available for your
+          booking.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: '6. Intellectual property',
     body: (
       <>
         <p>
           Unless otherwise stated, all content on this website, including text, graphics, logos,
-          images, layouts, code snippets displayed for demonstration, and design elements, is owned
-          by or licensed to {LEGAL_NAME} and is protected by applicable intellectual property laws.
+          images, layouts, and design elements, is owned by or licensed to {LEGAL_NAME} and is
+          protected by applicable intellectual property laws.
         </p>
         <p>
           You may view and print pages for personal, non-commercial reference. You may not reproduce,
@@ -124,18 +146,18 @@ export const termsSections: LegalSection[] = [
     ),
   },
   {
-    title: '6. Third-party links and tools',
+    title: '7. Third-party links and tools',
     body: (
       <p>
         This website may contain links to third-party websites, tools, or services, including
-        scheduling and communication platforms. We do not control and are not responsible for the
-        content, policies, or practices of third parties. Your use of third-party services is at your
-        own risk and subject to their terms and privacy policies.
+        TidyCal, PayPal, and LinkedIn. We do not control and are not responsible for the content,
+        policies, or practices of third parties. Your use of third-party services is at your own
+        risk and subject to their terms and privacy policies.
       </p>
     ),
   },
   {
-    title: '7. Disclaimers',
+    title: '8. Disclaimers',
     body: (
       <>
         <p>
@@ -152,7 +174,7 @@ export const termsSections: LegalSection[] = [
     ),
   },
   {
-    title: '8. Limitation of liability',
+    title: '9. Limitation of liability',
     body: (
       <p>
         To the maximum extent permitted by applicable law, {LEGAL_NAME}, its partners, employees, and
@@ -162,12 +184,14 @@ export const termsSections: LegalSection[] = [
         possibility of such damages. Our total liability for any claim arising from your use of the
         website shall not exceed INR 10,000 or the amount you paid us directly for services in the
         twelve months preceding the claim, whichever is greater, except where liability cannot be
-        limited under applicable law.
+        limited under applicable law. Paid strategy sessions and implementation engagements remain
+        governed by these Terms and any later signed statement of work; where a signed agreement
+        applies, that agreement prevails for that engagement.
       </p>
     ),
   },
   {
-    title: '9. Indemnification',
+    title: '10. Indemnification',
     body: (
       <p>
         You agree to indemnify and hold harmless {LEGAL_NAME} and its partners, employees, and
@@ -178,7 +202,7 @@ export const termsSections: LegalSection[] = [
     ),
   },
   {
-    title: '10. Governing law and jurisdiction',
+    title: '11. Governing law and jurisdiction',
     body: (
       <p>
         These Terms are governed by the laws of India. Any dispute arising out of or relating to
@@ -188,7 +212,7 @@ export const termsSections: LegalSection[] = [
     ),
   },
   {
-    title: '11. Changes to these terms',
+    title: '12. Changes to these terms',
     body: (
       <p>
         We may revise these Terms at any time by posting an updated version on this page. The
@@ -198,7 +222,7 @@ export const termsSections: LegalSection[] = [
     ),
   },
   {
-    title: '12. Contact us',
+    title: '13. Contact us',
     body: (
       <>
         <p>For questions about these Terms, contact {LEGAL_NAME}:</p>

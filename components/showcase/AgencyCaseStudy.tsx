@@ -17,7 +17,6 @@ import {
 } from '@/components/showcase/case-study/CaseStudyScreenshot'
 import { liveUrlLabel } from '@/components/showcase/case-study/screenshot-frame'
 import {
-  ChapterMarker,
   FeatureGridScene,
   FullBleedVisual,
   MetaItem,
@@ -40,7 +39,7 @@ interface AgencyCaseStudyProps {
 }
 
 function sectionTheme(chapterNumber: number): SceneTheme {
-  return chapterNumber % 2 === 0 ? 'light' : 'dark'
+  return chapterNumber % 2 === 0 ? 'surface' : 'board'
 }
 
 function CaseStudyBackLink({
@@ -51,15 +50,12 @@ function CaseStudyBackLink({
   label?: string
 }) {
   return (
-    <Link
-      href={href}
-      className="group inline-flex min-h-10 items-center gap-2 rounded-full border border-white/12 bg-white/[0.05] px-3.5 py-2 font-heading text-xs font-medium uppercase tracking-[0.14em] text-zinc-200 transition-all duration-300 hover:border-white/22 hover:bg-white/[0.1] hover:text-white focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-white/40"
-    >
+    <Link href={href} className="bb-btn-secondary min-h-10 px-3.5 py-2 text-sm">
       <svg
         aria-hidden
         viewBox="0 0 16 16"
         fill="none"
-        className="h-3.5 w-3.5 shrink-0 transition-transform duration-300 group-hover:-translate-x-0.5"
+        className="h-3.5 w-3.5 shrink-0"
       >
         <path
           d="M10 3.5 5.5 8 10 12.5"
@@ -119,7 +115,6 @@ export function AgencyCaseStudy({
       accent={accent}
       align={align}
       theme={ch.theme}
-      backgroundVideo={slide.backgroundVideo}
     />
   )
 
@@ -204,7 +199,6 @@ export function AgencyCaseStudy({
               features={slide.features}
               accent={accent}
               theme={ch.theme}
-              backgroundVideo={slide.backgroundVideo}
             />
           )
         }
@@ -291,87 +285,80 @@ export function AgencyCaseStudy({
     }
   }
 
-  const metricsChapter = nextChapter(project.metricsSection?.eyebrow ?? 'Results & Impact')
-  const closingChapter = nextChapter('Next Project')
+  const metricsChapter = nextChapter(project.metricsSection?.headline ?? 'Results & Impact')
+  const closingChapter = nextChapter('Next project')
 
   return (
-    <article id="case-study-article" className="bg-[#050505] text-white antialiased">
-      <header className="sticky top-0 z-40 border-b border-white/[0.06] bg-[#050505]/80 backdrop-blur-xl">
-        <div className="mx-auto flex max-w-[1400px] items-center justify-between gap-4 px-6 py-4 md:px-12 lg:px-16">
-          <CaseStudyBackLink href={backHref} label={backLabel} />
-          <p className="truncate font-body text-sm text-zinc-400">{project.title}</p>
-        </div>
-        <div className="h-px w-full" style={{ backgroundColor: `${accent}88` }} />
-      </header>
+    <article id="case-study-article" className="text-[var(--bb-ink)] antialiased">
+      <div className="bb-home-container flex items-center justify-between gap-4 pb-2 pt-28 sm:pt-32">
+        <CaseStudyBackLink href={backHref} label={backLabel} />
+        <p className="truncate text-sm text-[var(--bb-ink-muted)]">{project.title}</p>
+      </div>
 
-      {/* Cinematic hero */}
-      <section className="relative flex min-h-[min(100vh,920px)] flex-col justify-end overflow-hidden">
-        <div
-          className="pointer-events-none absolute inset-0"
-          style={{
-            background: `radial-gradient(ellipse 90% 70% at 70% -10%, ${accent}30 0%, transparent 55%), linear-gradient(to bottom, #0a0a0a 0%, #050505 100%)`,
-          }}
-        />
-
-        <div className="relative mx-auto w-full max-w-[1400px] px-6 pb-14 pt-32 md:px-12 md:pb-20 md:pt-40 lg:px-16">
+      <section className="bb-home-section pt-8 sm:pt-10">
+        <div className="bb-home-container">
           <Reveal>
-            <div className="flex flex-wrap items-center gap-3">
-              <span className="rounded-full border border-white/15 bg-black/30 px-3 py-1 font-heading text-xs uppercase tracking-[0.16em] text-zinc-300 backdrop-blur-sm">
+            <div className="flex flex-wrap items-center gap-2">
+              <span className="rounded-md border border-[var(--bb-rail)] bg-[var(--bb-board)] px-2.5 py-1.5 font-[family-name:var(--font-barlow-condensed)] text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--bb-ink)]">
                 {project.industry}
               </span>
-              {project.year && (
-                <span className="rounded-full border border-white/15 bg-black/30 px-3 py-1 font-heading text-xs uppercase tracking-[0.16em] text-zinc-300 backdrop-blur-sm">
+              {project.year ? (
+                <span className="rounded-md border border-[var(--bb-rail)] bg-[var(--bb-board)] px-2.5 py-1.5 font-[family-name:var(--font-barlow-condensed)] text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--bb-ink)]">
                   {project.duration} · {project.year}
                 </span>
-              )}
+              ) : null}
               {project.tech.slice(0, 3).map((tag) => (
                 <span
                   key={tag}
-                  className="rounded-full border border-white/10 bg-black/20 px-3 py-1 font-heading text-xs uppercase tracking-[0.16em] text-zinc-400 backdrop-blur-sm"
+                  className="rounded-md border border-[var(--bb-rail)] bg-[var(--bb-brand-soft)] px-2.5 py-1.5 font-[family-name:var(--font-barlow-condensed)] text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--bb-brand-dark)]"
                 >
                   {tag}
                 </span>
               ))}
             </div>
 
-            <h1 className="mt-10 max-w-5xl font-display text-[clamp(3.5rem,10vw,8.5rem)] font-bold leading-[0.92] tracking-[-0.05em] text-white">
+            <h1 className="mt-8 max-w-5xl font-[family-name:var(--font-barlow-condensed)] text-[clamp(2.4rem,7.2vw,5.4rem)] font-semibold leading-[0.94] tracking-[-0.01em] text-[var(--bb-ink)]">
               {project.title}
             </h1>
-            <p className="mt-8 max-w-3xl font-body text-xl leading-relaxed text-zinc-300 md:text-2xl md:leading-relaxed lg:text-3xl">
+            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[var(--bb-ink-muted)] md:text-xl">
               {project.tagline}
             </p>
 
-            {project.links?.live && (
+            {project.links?.live ? (
               <a
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="mt-10 inline-flex items-center rounded-full border border-white/20 bg-white/10 px-7 py-3.5 font-heading text-sm uppercase tracking-[0.18em] text-white backdrop-blur-sm transition-colors hover:border-white/35 hover:bg-white/15"
+                className="bb-btn-primary mt-8"
               >
                 View live product →
               </a>
-            )}
+            ) : null}
           </Reveal>
 
-          <Reveal className="mt-14 grid gap-8 border-t border-white/[0.12] pt-10 sm:grid-cols-2 lg:grid-cols-4">
+          <Reveal className="mt-12 grid gap-8 border-t border-[var(--bb-line)] pt-10 sm:grid-cols-2 lg:grid-cols-4">
             <MetaItem label="Industry" value={project.industry} />
             <MetaItem label="Timeline" value={project.duration} />
             <MetaItem label="Role" value={project.role} />
             <MetaItem
               label="Stack"
-              value={project.tech.length > 0 ? project.tech.slice(0, 3).join(' · ') : project.categoryLabel}
+              value={
+                project.tech.length > 0
+                  ? project.tech.slice(0, 3).join(' · ')
+                  : project.categoryLabel
+              }
             />
           </Reveal>
 
-          {(coverSrc || project.coverVideo) && (
-            <Reveal className="mt-14 md:mt-16">
+          {coverSrc || project.coverVideo ? (
+            <Reveal className="mt-12 md:mt-14">
               <CaseStudyScreenshot
                 src={coverSrc ?? project.thumbnail}
                 alt={project.title}
                 layout="cinematic"
                 aspectRatio={project.coverAspect ?? CASE_STUDY_UI_ASPECT}
                 frameTheme={project.screenshotFrame ?? 'light'}
-                sectionTheme="dark"
+                sectionTheme="light"
                 frameVariant={
                   project.coverVideo
                     ? 'minimal'
@@ -386,7 +373,7 @@ export function AgencyCaseStudy({
                 className="mx-auto"
               />
             </Reveal>
-          )}
+          ) : null}
         </div>
       </section>
 
@@ -401,45 +388,35 @@ export function AgencyCaseStudy({
         theme={metricsChapter.theme}
       />
 
-      <section className="relative z-10 border-t border-white/[0.06] bg-[#050505] px-6 pb-24 pt-32 md:px-12 md:pb-32 md:pt-44 lg:px-16 lg:pt-52">
-        <div className="mx-auto max-w-7xl text-center">
+      <section className="bb-home-section border-t border-[var(--bb-line)] bg-[var(--bb-board)]">
+        <div className="bb-home-container text-center">
           <Reveal>
-            <ChapterMarker
-              number={closingChapter.number}
-              label={closingChapter.label}
-              accent={accent}
-              align="center"
-            />
-            <h2 className="mt-8 font-display text-[clamp(2.5rem,6vw,4.75rem)] font-bold tracking-[-0.03em] text-white">
-              {nextProject?.title ?? conclusionSlide?.title ?? 'Continue exploring our work'}
+            <h2 className="font-[family-name:var(--font-barlow-condensed)] text-[clamp(1.75rem,4vw,2.75rem)] font-semibold tracking-[0.02em] text-[var(--bb-ink)]">
+              {nextProject?.title ?? conclusionSlide?.title ?? closingChapter.label}
             </h2>
-            {conclusionSlide?.highlight && (
-              <p className="mx-auto mt-6 max-w-2xl font-body text-xl text-zinc-400 md:text-2xl">
+            {conclusionSlide?.highlight ? (
+              <p className="mx-auto mt-5 max-w-2xl text-lg text-[var(--bb-ink-muted)] md:text-xl">
                 {conclusionSlide.highlight}
               </p>
-            )}
+            ) : null}
           </Reveal>
 
-          <Reveal className="mt-12 flex flex-col items-center justify-center gap-4 sm:flex-row">
-            {project.links?.live && (
+          <Reveal className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
+            {project.links?.live ? (
               <a
                 href={project.links.live}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-flex items-center rounded-full border border-white/15 px-6 py-3 font-heading text-sm uppercase tracking-[0.18em] text-white transition-colors hover:border-white/30 hover:bg-white/[0.04]"
+                className="bb-btn-secondary"
               >
                 View live product
               </a>
-            )}
-            {nextProject && (
-              <Link
-                href={`/projects/${nextProject.slug}`}
-                className="inline-flex items-center rounded-full px-6 py-3 font-heading text-sm uppercase tracking-[0.18em] text-[#050505] transition-opacity hover:opacity-90"
-                style={{ backgroundColor: accent }}
-              >
-                Next case study: {nextProject.title}
+            ) : null}
+            {nextProject ? (
+              <Link href={`/projects/${nextProject.slug}`} className="bb-btn-primary">
+                Next: {nextProject.title}
               </Link>
-            )}
+            ) : null}
           </Reveal>
         </div>
       </section>

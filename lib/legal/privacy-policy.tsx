@@ -1,23 +1,22 @@
 import Link from 'next/link'
 import {
-  BOOKING_URL,
   CONTACT_PHONE,
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
   LEGAL_NAME,
+  PAY_BOOK_URL,
   TERMS_PATH,
 } from '@/lib/site'
 import type { LegalSection } from '@/lib/legal/types'
 
-export const PRIVACY_LAST_UPDATED = 'July 2, 2026'
+export const PRIVACY_LAST_UPDATED = 'September 15, 2026'
 
 export const privacyIntro = (
   <>
-    {LEGAL_NAME} (&ldquo;BitBLabs&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;)
-    operates the BitBLabs website and related online presence. This Privacy Policy describes how we
+    {LEGAL_NAME} (&ldquo;BitBlabs&rdquo;, &ldquo;we&rdquo;, &ldquo;us&rdquo;, or &ldquo;our&rdquo;)
+    operates the BitBlabs website and related online presence. This Privacy Policy describes how we
     collect, use, store, and protect personal information when you visit our website, contact us,
-    or book a consultation. By using our website, you agree to the practices described in this
-    policy. Please also review our{' '}
+    or book an AI Workflow Strategy Session. Please also review our{' '}
     <Link href={TERMS_PATH} className="text-zinc-300 transition-opacity hover:opacity-60">
       Terms &amp; Conditions
     </Link>
@@ -34,9 +33,15 @@ export const privacySections: LegalSection[] = [
         <ul className="list-disc space-y-2 pl-5">
           <li>
             <strong className="font-medium text-zinc-300">Information you provide:</strong> name,
-            email address, phone number, company name, role, workflow details, and any other
-            information you submit when applying for an AI Strategy Session, booking a consultation,
-            or contacting us.
+            email address, phone number, company name, role, and assessment answers you submit when
+            booking an AI Workflow Strategy Session (for example, your business, the workflow to
+            improve, current tools, and where work stalls), plus any other details you share when
+            contacting us.
+          </li>
+          <li>
+            <strong className="font-medium text-zinc-300">Session materials:</strong> notes,
+            workflow maps, and a session recording when we record the strategy session as part of
+            the deliverables.
           </li>
           <li>
             <strong className="font-medium text-zinc-300">Technical information:</strong> browser
@@ -50,8 +55,10 @@ export const privacySections: LegalSection[] = [
           </li>
         </ul>
         <p>
-          We do not intentionally collect sensitive personal data such as financial account
-          credentials, government ID numbers, or health information through this website.
+          Payment for the strategy session is processed by PayPal. We do not collect or store card
+          numbers or other payment credentials on this website. We do not intentionally collect
+          sensitive personal data such as government ID numbers or health information through this
+          website.
         </p>
       </>
     ),
@@ -62,16 +69,16 @@ export const privacySections: LegalSection[] = [
       <>
         <p>We use personal information for legitimate business purposes, including to:</p>
         <ul className="list-disc space-y-2 pl-5">
-          <li>Respond to inquiries and schedule project discussions</li>
+          <li>Respond to inquiries and schedule the AI Workflow Strategy Session</li>
+          <li>Deliver the session, roadmap, and related deliverables</li>
+          <li>Consider a later implementation engagement if you request one</li>
           <li>Provide, operate, and improve our website and services</li>
           <li>Communicate with prospective and existing clients</li>
+          <li>Measure site performance and advertising conversions</li>
           <li>Maintain security, prevent fraud, and troubleshoot technical issues</li>
           <li>Comply with applicable laws, regulations, and legal requests</li>
         </ul>
-        <p>
-          We do not sell your personal information. We do not use your information for automated
-          decision-making that produces legal or similarly significant effects.
-        </p>
+        <p>We do not sell your personal information.</p>
       </>
     ),
   },
@@ -93,12 +100,21 @@ export const privacySections: LegalSection[] = [
       <>
         <p>
           Our website may use essential cookies and similar technologies required for basic site
-          functionality, security, and performance. We do not currently use third-party advertising
-          or behavioral tracking cookies on this website.
+          functionality, security, and performance. We also use:
         </p>
+        <ul className="list-disc space-y-2 pl-5">
+          <li>
+            <strong className="font-medium text-zinc-300">Vercel Analytics</strong> to understand
+            how visitors use the site (for example, pages viewed and conversion events).
+          </li>
+          <li>
+            <strong className="font-medium text-zinc-300">LinkedIn Insight Tag</strong> for
+            advertising measurement, conversion tracking, and retargeting.
+          </li>
+        </ul>
         <p>
           You can control cookies through your browser settings. Disabling certain cookies may
-          affect how parts of the website function.
+          affect how parts of the website function or how accurately we can measure advertising.
         </p>
       </>
     ),
@@ -113,17 +129,29 @@ export const privacySections: LegalSection[] = [
         </p>
         <ul className="list-disc space-y-2 pl-5">
           <li>
-            <strong className="font-medium text-zinc-300">Calendly</strong>: appointment scheduling
-            when you book a project discussion (
+            <strong className="font-medium text-zinc-300">TidyCal</strong>: scheduling and intake
+            when you book an AI Workflow Strategy Session (
             <a
-              href={BOOKING_URL}
+              href={PAY_BOOK_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="text-zinc-300 transition-opacity hover:opacity-60"
             >
-              calendly.com/gshubham
+              tidycal.com/shubhamgupta/ai-workflow-strategy-session
             </a>
             )
+          </li>
+          <li>
+            <strong className="font-medium text-zinc-300">PayPal</strong>: payment processing for
+            the strategy session fee
+          </li>
+          <li>
+            <strong className="font-medium text-zinc-300">Vercel</strong>: website hosting and
+            analytics
+          </li>
+          <li>
+            <strong className="font-medium text-zinc-300">LinkedIn</strong>: advertising
+            measurement and retargeting via the LinkedIn Insight Tag
           </li>
           <li>
             <strong className="font-medium text-zinc-300">Hosting and infrastructure providers</strong>{' '}

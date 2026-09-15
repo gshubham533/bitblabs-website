@@ -647,7 +647,9 @@ export const portfolioProjects: PortfolioProject[] = [
       coverAspect: '1024/490',
       screenshotFrame: 'dark',
     },
-    links: {},
+    links: {
+      live: 'https://setoo.co/',
+    },
     color: '#EF4444',
     featured: true,
     slides: [
@@ -755,7 +757,7 @@ export const portfolioProjects: PortfolioProject[] = [
       screenshotFrame: 'dark',
     },
     links: {
-      live: 'https://axionplan.com/',
+      live: 'https://axionplan.net/',
     },
     color: '#A855F7',
     featured: true,
@@ -967,7 +969,9 @@ export const portfolioProjects: PortfolioProject[] = [
       coverAspect: '1024/492',
       screenshotStyle: 'device',
     },
-    links: {},
+    links: {
+      live: 'https://www.coursecompanion.io/',
+    },
     color: '#14B8A6',
     featured: true,
     slides: [

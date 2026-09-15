@@ -1,0 +1,174 @@
+{
+  "title": "Choose the visual world",
+  "question": "The roll assigned Pin-Up Blueprint Wall. Keep it, take an alternate, or re-roll.",
+  "options": [
+    {
+      "id": "assigned",
+      "label": "Pin-Up Blueprint Wall",
+      "kicker": "THE ROLL",
+      "lineage": "architecture / ops plan review pin-up walls",
+      "thesis": "The homepage is a review wall: tangled markups become one buildable sheet.",
+      "palette": ["#F2EEE6", "#1C2430", "#C45C26", "#2F5D50", "#D7D0C4"],
+      "materials": ["trace paper layers", "graphite markups", "masking tape", "blueprint cyanotype wash"],
+      "viewport": "Full-bleed pin-up wall: fragmented workflow sheets left, BitBlabs wordmark as sheet title, Book CTA as approval stamp.",
+      "risk": "Can read as architecture-agency if markups stay decorative instead of operational.",
+      "raised": [
+        { "from": "challenger-algorave", "raise": "Cinematic Shared Clock — section transitions share one tempo so the wall 'redraws' in sync, not as random fades." },
+        { "from": "challenger-silk-canopy", "raise": "Overlapping Trace Lanes — translucent sheets slide and overlap during scroll, revealing stuck vs resolved states." },
+        { "from": "challenger-mondo", "raise": "Definitional Margin — operational terms (handoff, stuck, system) live as pinned glossary chips on the wall edge." },
+        { "from": "challenger-arcade", "raise": "Session Attract Preview — before Book, a short attract loop previews what the strategy session produces." }
+      ],
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "sheet titles / brand", "x": 0, "y": 0, "w": 12, "h": 1 },
+          { "label": "tangled markup sheets", "x": 0, "y": 1, "w": 7, "h": 7, "accent": true },
+          { "label": "offer stamp + CTA", "x": 7, "y": 1, "w": 5, "h": 3 },
+          { "label": "recognition stickies", "x": 7, "y": 4, "w": 5, "h": 4 },
+          { "label": "glossary margin", "x": 0, "y": 8, "w": 12, "h": 2 }
+        ]
+      }
+    },
+    {
+      "id": "model-pick",
+      "label": "Ops War-Room Swimlanes",
+      "kicker": "IMPECCABLE’S PICK",
+      "lineage": "operations war-room whiteboard swimlanes",
+      "thesis": "Stuck work is a live swimlane board: amber blockers clear into a continuous indigo flow.",
+      "palette": ["#F7F4EF", "#141820", "#E8A317", "#3D5AFE", "#B8F0D8"],
+      "materials": ["matte whiteboard", "magnetic lane rails", "amber blocker chips", "indigo flow tape"],
+      "viewport": "Hero is one giant swimlane: people/inbox/sheet columns with stuck chips; Book clears the lane.",
+      "risk": "Also the direction most AI-workflow consulting pages would choose if honest — familiar but strong for this ICP.",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "nav capsule", "x": 1, "y": 0, "w": 10, "h": 1 },
+          { "label": "headline + recognition", "x": 0, "y": 1, "w": 5, "h": 4 },
+          { "label": "live swimlane board", "x": 5, "y": 1, "w": 7, "h": 7, "accent": true },
+          { "label": "primary CTA", "x": 0, "y": 5, "w": 5, "h": 2 },
+          { "label": "proof strip", "x": 0, "y": 8, "w": 12, "h": 2 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-oscilloscope",
+      "label": "Signal Bench Scope",
+      "verdict": "competitive",
+      "lineage": "CRT oscilloscope on a signal bench",
+      "thesis": "Operational noise becomes a locked workflow waveform you can finally read.",
+      "palette": ["#0B0F0C", "#39FF14", "#6B736C", "#FFB000", "#D7FFE0"],
+      "materials": ["phosphor glass", "etched graticule", "detented knobs", "bench steel"],
+      "viewport": "Near-black scope face: noisy amber trace snaps into a clean green cycle; Book arms the trigger.",
+      "case": "Wins product clarity for stuck→flow; loses audience ID with service-business owners who do not live on a lab bench.",
+      "risk": "Reads as developer/hardware chrome if the phosphor stays literal.",
+      "hero": "https://impeccable.style/worlds/cards/scientific-notation-oscilloscope-signal-bench-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/scientific-notation-oscilloscope-signal-bench.webp",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "bezel + readouts", "x": 0, "y": 0, "w": 12, "h": 1 },
+          { "label": "graticule waveform", "x": 0, "y": 1, "w": 9, "h": 7, "accent": true },
+          { "label": "knobs / CTA", "x": 9, "y": 1, "w": 3, "h": 7 },
+          { "label": "channel labels", "x": 0, "y": 8, "w": 12, "h": 2 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-provenance",
+      "label": "Work Provenance Ribbon",
+      "verdict": "competitive",
+      "lineage": "museum provenance ribbon / custody line",
+      "thesis": "Every stuck job is a custody ribbon: people, inboxes, gaps, then restitution into one system.",
+      "palette": ["#F4EFE6", "#8B1E1E", "#2A2A28", "#A8A29A", "#E8DCC8"],
+      "materials": ["archival buff paper", "red silk custody line", "dealer stamps as system marks", "unwoven gray gaps"],
+      "viewport": "One continuous ribbon across the first viewport; broken segments = stuck handoffs; Book is restitution.",
+      "case": "Holds product clarity for BitBlabs' handoff story; museum lineage is foreign until translated into ops custody.",
+      "risk": "Feels curatorial or nonprofit if the ribbon stays silk-museum instead of operational.",
+      "hero": "https://impeccable.style/worlds/cards/exhibition-museum-curation-provenance-ribbon-hero.webp",
+      "board": "https://impeccable.style/worlds/cards/exhibition-museum-curation-provenance-ribbon.webp",
+      "wireframe": {
+        "cols": 12,
+        "rows": 10,
+        "regions": [
+          { "label": "dated custody marks", "x": 0, "y": 0, "w": 12, "h": 2 },
+          { "label": "ribbon path + gaps", "x": 0, "y": 2, "w": 12, "h": 4, "accent": true },
+          { "label": "claim / proof panel", "x": 0, "y": 6, "w": 7, "h": 4 },
+          { "label": "Book CTA", "x": 7, "y": 6, "w": 5, "h": 4 }
+        ]
+      }
+    },
+    {
+      "id": "challenger-algorave",
+      "label": "Algorave Source Floor",
+      "verdict": "declined",
+      "lineage": "live-coded algorave stage",
+      "palette": ["#050505", "#39FF14", "#FF2BD6", "#FFB000"],
+      "materials": ["projector black", "phosphor syntax", "stage clock"],
+      "case": "Ops leaders do not identify with live-coding nightlife; product clarity collapses into spectacle.",
+      "kept": "Shared cinematic clock — one tempo across the page.",
+      "hero": "https://impeccable.style/worlds/cards/medium-native-algorave-source-floor-hero.webp",
+      "risk": "Nightlife energy fights calm operational trust."
+    },
+    {
+      "id": "challenger-silk",
+      "label": "Courtyard Color Canopy",
+      "verdict": "declined",
+      "lineage": "tensioned silk canopy chords",
+      "palette": ["#FFF8F0", "#3F2A8C", "#9C1F4A", "#E0A100"],
+      "materials": ["translucent silk", "sun-white paving"],
+      "case": "Beautiful but fashion-courtyard identity, not service-ops identity.",
+      "kept": "Overlapping translucent lanes as joint transition states.",
+      "hero": "https://impeccable.style/worlds/cards/generative-art-computational-color-chord-counterpoint-hero.webp",
+      "risk": "Reads as art installation over consulting."
+    },
+    {
+      "id": "challenger-mondo",
+      "label": "Mondo Tech Spread",
+      "verdict": "declined",
+      "lineage": "early-90s fluorescent tech magazine",
+      "palette": ["#FF4D00", "#00E5FF", "#111111"],
+      "materials": ["fluorescent duotone inks", "angled headline slabs"],
+      "case": "Loses audience trust and clarity for a calm $2k strategy offer.",
+      "kept": "Definitional margin — terms pinned beside the argument.",
+      "hero": "https://impeccable.style/worlds/cards/digital-design-canon-mondo-tech-utopian-spread-hero.webp",
+      "risk": "Retro novelty undercuts premium ops consulting."
+    },
+    {
+      "id": "challenger-arcade",
+      "label": "Arcade Marquee Row",
+      "verdict": "declined",
+      "lineage": "backlit arcade cabinet aisle",
+      "palette": ["#0A0A12", "#00E5FF", "#FF2BD6", "#FF7A18"],
+      "materials": ["backlit marquees", "airbrush side art"],
+      "case": "Entertainment aisle identity fights B2B booking seriousness.",
+      "kept": "Attract-preview before commit — show the session payoff before Book.",
+      "hero": "https://impeccable.style/worlds/cards/pop-culture-shelf-arcade-marquee-row-hero.webp",
+      "risk": "Playful cabinet energy misfires for owners spending $2,000."
+    }
+  ],
+  "reroll": { "registers": ["safer", "bolder"] },
+  "buildPath": { "value": "code", "toggle": false },
+  "canon": true,
+  "canonCard": {
+    "label": "Category standard consulting landing",
+    "thesis": "Warm light SaaS consulting page: calm hero, indigo CTA, proof, FAQ — executed at full craft.",
+    "palette": ["#F7F8F5", "#12141A", "#4F46E5", "#FFFFFF"],
+    "materials": ["soft panels", "capsule buttons", "workflow SVG motif"],
+    "viewport": "Split hero with diagram, recognition grid, method, offer, proof, FAQ, final Book.",
+    "risk": "Indistinguishable from other AI consulting sites by design.",
+    "wireframe": {
+      "cols": 12,
+      "rows": 10,
+      "regions": [
+        { "label": "nav", "x": 0, "y": 0, "w": 12, "h": 1 },
+        { "label": "hero copy", "x": 0, "y": 1, "w": 6, "h": 5 },
+        { "label": "hero diagram", "x": 6, "y": 1, "w": 6, "h": 5, "accent": true },
+        { "label": "sections stack", "x": 0, "y": 6, "w": 12, "h": 4 }
+      ]
+    }
+  },
+  "steer": true
+}

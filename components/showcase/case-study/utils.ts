@@ -91,30 +91,43 @@ export function stickyStoryFromSlides(slides: StorySlide[]) {
   return null
 }
 
-export type SceneTheme = 'dark' | 'light'
+/** War-room tonal steps: canvas / board / surface (maps legacy dark|light). */
+export type SceneTheme = 'dark' | 'light' | 'canvas' | 'board' | 'surface'
 
-export function sceneThemeClasses(theme: SceneTheme = 'dark') {
-  const light = theme === 'light'
+function resolveTone(theme: SceneTheme): 'canvas' | 'board' | 'surface' {
+  if (theme === 'light' || theme === 'surface') return 'surface'
+  if (theme === 'board') return 'board'
+  // legacy 'dark' → board field for subtle section rhythm
+  return theme === 'dark' ? 'board' : 'canvas'
+}
+
+export function sceneThemeClasses(theme: SceneTheme = 'board') {
+  const tone = resolveTone(theme)
+
+  const section =
+    tone === 'surface'
+      ? 'bg-[var(--bb-surface)]'
+      : tone === 'board'
+        ? 'bg-[var(--bb-board)]'
+        : 'bg-[var(--bb-canvas)]'
 
   return {
-    section: light ? 'bg-white' : 'bg-[#050505]',
-    sectionAlt: light ? 'bg-white' : 'bg-[#080808]',
-    border: light ? 'border-zinc-200/80' : 'border-white/[0.06]',
-    borderStrong: light ? 'border-zinc-200' : 'border-white/[0.08]',
-    heading: light ? 'text-zinc-950' : 'text-white',
-    body: light ? 'text-zinc-600' : 'text-zinc-400',
-    pullQuote: light ? 'text-zinc-700' : 'text-zinc-200',
-    metaValue: light ? 'text-zinc-900' : 'text-white',
-    card: light ? 'border-zinc-200 bg-zinc-50' : 'border-white/[0.08] bg-white/[0.02]',
-    imageFrame: light
-      ? 'border-zinc-200 bg-zinc-100 shadow-[0_40px_100px_-50px_rgba(0,0,0,0.15)]'
-      : 'border-white/[0.08] bg-zinc-900 shadow-[0_40px_100px_-50px_rgba(0,0,0,0.85)]',
-    heroFrame: light
-      ? 'border-zinc-200 bg-zinc-100 shadow-[0_50px_140px_-70px_rgba(0,0,0,0.18)]'
-      : 'border-white/[0.08] bg-zinc-900 shadow-[0_50px_140px_-70px_rgba(0,0,0,0.95)]',
-    galleryFrame: light
-      ? 'border-zinc-200 bg-zinc-100 shadow-[0_40px_120px_-60px_rgba(0,0,0,0.12)]'
-      : 'border-white/[0.08] bg-zinc-900 shadow-[0_40px_120px_-60px_rgba(0,0,0,0.9)]',
-    stepBadge: light ? 'bg-white text-zinc-900' : 'bg-[#050505] text-white',
+    section,
+    sectionAlt: tone === 'board' ? 'bg-[var(--bb-canvas)]' : 'bg-[var(--bb-board)]',
+    border: 'border-[var(--bb-line)]',
+    borderStrong: 'border-[var(--bb-rail)]',
+    heading: 'text-[var(--bb-ink)]',
+    body: 'text-[var(--bb-ink-muted)]',
+    pullQuote: 'text-[var(--bb-ink)]',
+    metaValue: 'text-[var(--bb-ink)]',
+    card: 'border-[var(--bb-rail)] bg-[var(--bb-surface)] shadow-[var(--bb-chip-shadow)]',
+    imageFrame:
+      'border-[var(--bb-rail)] bg-[var(--bb-surface)] shadow-[var(--bb-chip-shadow)]',
+    heroFrame:
+      'border-[var(--bb-rail)] bg-[var(--bb-surface)] shadow-[var(--bb-chip-shadow)]',
+    galleryFrame:
+      'border-[var(--bb-rail)] bg-[var(--bb-surface)] shadow-[var(--bb-chip-shadow)]',
+    stepBadge:
+      'bg-[var(--bb-brand-soft)] text-[var(--bb-brand-dark)] border-[var(--bb-brand)]',
   }
 }

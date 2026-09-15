@@ -10,9 +10,6 @@ type RyftProductSpotlightProps = Pick<
   'className' | 'style' | 'embedded' | 'stackContinuation'
 >
 
-const RYFT_GLOW =
-  'radial-gradient(circle at 55% 42%, rgba(255, 122, 48, 0.45) 0%, rgba(255, 160, 80, 0.28) 42%, transparent 72%)'
-
 const RYFT_IMAGES = [
   {
     src: '/ryft-slide-hero.png',
@@ -40,10 +37,7 @@ export function RyftProductSpotlight(props: RyftProductSpotlightProps) {
       imageAlt={RYFT_IMAGES[0].alt}
       images={[...RYFT_IMAGES]}
       imageAspect="1024/490"
-      glowGradient={RYFT_GLOW}
       showHeadline={false}
-      showWave={false}
-      backgroundVideoSrc="/Workout1.mp4"
       layout="mirrored"
       {...props}
     />

@@ -9,13 +9,18 @@ import {
   DialogTrigger,
 } from '@/components/home/ui/Dialog'
 import { trackEvent } from '@/lib/analytics'
-import { HOW_IT_WORKS_HREF } from '@/lib/site'
+import {
+  CASE_STUDIES_PATH,
+  HOW_IT_WORKS_ABSOLUTE_HREF,
+  HOW_IT_WORKS_HREF,
+  PORTFOLIO_SECTION_HREF,
+} from '@/lib/site'
 import { cn } from '@/lib/utils'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-const NAV = [
+const HOME_NAV = [
   { href: '#recognition', label: 'Problems' },
   { href: '#how-it-works', label: 'How it works' },
   { href: '#offer', label: 'Session' },
@@ -23,9 +28,22 @@ const NAV = [
   { href: '#faq', label: 'FAQ' },
 ] as const
 
-export function HomeHeader() {
+const INNER_NAV = [
+  { href: PORTFOLIO_SECTION_HREF, label: 'Work' },
+  { href: CASE_STUDIES_PATH, label: 'Case studies' },
+  { href: HOW_IT_WORKS_ABSOLUTE_HREF, label: 'How it works' },
+] as const
+
+type HomeHeaderProps = {
+  /** Home uses hash links; inner uses absolute routes. */
+  variant?: 'home' | 'inner'
+}
+
+export function HomeHeader({ variant = 'home' }: HomeHeaderProps) {
   const [scrolled, setScrolled] = useState(false)
   const [open, setOpen] = useState(false)
+  const nav = variant === 'inner' ? INNER_NAV : HOME_NAV
+  const howItWorksHref = variant === 'inner' ? HOW_IT_WORKS_ABSOLUTE_HREF : HOW_IT_WORKS_HREF
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 56)
@@ -74,18 +92,31 @@ export function HomeHeader() {
             </Link>
 
             <div className="hidden items-center gap-6 lg:flex">
-              {NAV.map((item) => (
-                <a
-                  key={item.href}
-                  href={item.href}
-                  className="text-sm font-medium text-[var(--bb-ink-muted)] transition-colors hover:text-[var(--bb-ink)]"
-                  onClick={() =>
-                    trackEvent('secondary_cta_click', { location: 'header', label: item.label })
-                  }
-                >
-                  {item.label}
-                </a>
-              ))}
+              {nav.map((item) =>
+                item.href.startsWith('#') ? (
+                  <a
+                    key={item.href}
+                    href={item.href}
+                    className="text-sm font-medium text-[var(--bb-ink-muted)] transition-colors hover:text-[var(--bb-ink)]"
+                    onClick={() =>
+                      trackEvent('secondary_cta_click', { location: 'header', label: item.label })
+                    }
+                  >
+                    {item.label}
+                  </a>
+                ) : (
+                  <Link
+                    key={item.href}
+                    href={item.href}
+                    className="text-sm font-medium text-[var(--bb-ink-muted)] transition-colors hover:text-[var(--bb-ink)]"
+                    onClick={() =>
+                      trackEvent('secondary_cta_click', { location: 'header', label: item.label })
+                    }
+                  >
+                    {item.label}
+                  </Link>
+                )
+              )}
             </div>
 
             <div className="flex items-center gap-2">
@@ -141,30 +172,47 @@ export function HomeHeader() {
                     </DialogClose>
                   </div>
                   <div className="mx-auto flex w-full max-w-lg flex-col gap-2">
-                    {NAV.map((item) => (
+                    {nav.map((item) => (
                       <DialogClose asChild key={item.href}>
-                        <a
-                          href={item.href}
-                          className="min-h-11 rounded-2xl px-4 py-3 text-lg font-semibold text-[var(--bb-ink)]"
-                          onClick={() =>
-                            trackEvent('secondary_cta_click', {
-                              location: 'mobile_menu',
-                              label: item.label,
-                            })
-                          }
-                        >
-                          {item.label}
-                        </a>
+                        {item.href.startsWith('#') ? (
+                          <a
+                            href={item.href}
+                            className="min-h-11 rounded-lg px-4 py-3 text-lg font-semibold text-[var(--bb-ink)]"
+                            onClick={() =>
+                              trackEvent('secondary_cta_click', {
+                                location: 'mobile_menu',
+                                label: item.label,
+                              })
+                            }
+                          >
+                            {item.label}
+                          </a>
+                        ) : (
+                          <Link
+                            href={item.href}
+                            className="min-h-11 rounded-lg px-4 py-3 text-lg font-semibold text-[var(--bb-ink)]"
+                            onClick={() =>
+                              trackEvent('secondary_cta_click', {
+                                location: 'mobile_menu',
+                                label: item.label,
+                              })
+                            }
+                          >
+                            {item.label}
+                          </Link>
+                        )}
                       </DialogClose>
                     ))}
-                    <DialogClose asChild>
-                      <a
-                        href={HOW_IT_WORKS_HREF}
-                        className="min-h-11 rounded-2xl px-4 py-3 text-base text-[var(--bb-ink-muted)]"
-                      >
-                        See How It Works
-                      </a>
-                    </DialogClose>
+                    {variant === 'home' ? (
+                      <DialogClose asChild>
+                        <a
+                          href={howItWorksHref}
+                          className="min-h-11 rounded-lg px-4 py-3 text-base text-[var(--bb-ink-muted)]"
+                        >
+                          See How It Works
+                        </a>
+                      </DialogClose>
+                    ) : null}
                     <BookButton
                       location="mobile_menu"
                       className="mt-4 w-full"

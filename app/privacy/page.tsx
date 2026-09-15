@@ -9,7 +9,7 @@ import { LEGAL_NAME } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
-  description: `Privacy Policy for ${LEGAL_NAME} (BitBLabs). Learn how we collect, use, and protect your information.`,
+  description: `Privacy Policy for ${LEGAL_NAME} (BitBlabs). Learn how we collect, use, and protect your information.`,
 }
 
 export default function PrivacyPage() {

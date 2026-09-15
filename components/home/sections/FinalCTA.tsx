@@ -4,7 +4,7 @@ import { BookButton } from '@/components/home/BookButton'
 import { SecondaryCtaLink } from '@/components/home/SecondaryCtaLink'
 import { SwimlaneBoard, type BoardPhase } from '@/components/home/visuals/SwimlaneBoard'
 import { FINAL_CTA } from '@/lib/landing'
-import { HOW_IT_WORKS_HREF } from '@/lib/site'
+import { HOW_IT_WORKS_ABSOLUTE_HREF } from '@/lib/site'
 import { useState } from 'react'
 
 export function FinalCTA() {
@@ -48,7 +48,7 @@ export function FinalCTA() {
               </BookButton>
               <SecondaryCtaLink
                 location="final_cta"
-                href={HOW_IT_WORKS_HREF}
+                href={HOW_IT_WORKS_ABSOLUTE_HREF}
                 className="bb-btn-secondary w-full sm:w-auto"
               >
                 {FINAL_CTA.secondaryCta}

@@ -1,6 +1,6 @@
 ---
-name: BitBlabs Homepage
-description: Ops war-room swimlanes: matte whiteboard, cobalt flow tape, amber blockers, Archivo + Barlow Condensed magnets.
+name: BitBlabs War-Room
+description: Ops war-room swimlanes: matte whiteboard, cobalt flow tape, amber blockers, Archivo + Barlow Condensed magnets. Applies to homepage and work/story routes.
 colors:
   canvas: "#F4F0E8"
   board: "#EBE4D8"
@@ -126,15 +126,15 @@ components:
     padding: "0 1rem"
 ---
 
-# Design System: BitBlabs Homepage
+# Design System: BitBlabs War-Room
 
-**Surface boundary:** Tokens and rules below apply only inside `.bb-home` (homepage). Do not migrate this system onto `/projects` or other site chrome that still uses Google Sans Flex / dark portfolio language.
+**Surface boundary:** Tokens and rules below apply inside `.bb-home` â€” the homepage plus work/story routes (`/projects`, `/projects/[slug]`, `/case-studies`, `/case-studies/[slug]`). Do not migrate this system onto legal or legacy chrome (`/privacy`, `/terms`, `/brain-stuff`, `/side-quests`) that still uses Google Sans Flex / dark portfolio language.
 
 ## Overview
 
 **Creative North Star: "Ops War-Room Swimlanes"**
 
-The homepage reads as a live operations whiteboard, not a SaaS marketing template. Matte warm paper carries a faint 48px grid; work lives as squared magnetic chips on rail-bordered lanes; cobalt flow tape marks continuity when blockers clear. Density is operational and legible: instrument caps for hierarchy, documentation sans for reading. Never neon AI chrome or soft stacked card malls.
+The site reads as a live operations whiteboard, not a SaaS marketing template. Matte warm paper carries a faint 48px grid; work lives as squared magnetic chips on rail-bordered lanes; cobalt flow tape marks continuity when blockers clear. Density is operational and legible: instrument caps for hierarchy, documentation sans for reading. Never neon AI chrome or soft stacked card malls.
 
 Personality is calm, specific, and process-first: stuck work is visible before the offer. Brand signal in the first viewport is the board titled **BitBlabs**, with one headline, one supporting line, and Book / See How It Works. Primary Book clears the lane into flow before navigation completes.
 
@@ -144,7 +144,7 @@ Personality is calm, specific, and process-first: stuck work is visible before t
 - Archivo body + Barlow Condensed display/labels (uppercase magnets)
 - Squared magnet radii, not capsule pills
 - Soft board and chip shadows only; no glow stacks
-- Homepage-scoped `.bb-home` tokens; separate from portfolio chrome
+- Homepage-scoped `.bb-home` tokens; shared with work/story routes
 
 ## Colors
 
@@ -258,7 +258,7 @@ Form language is **squared magnets**: button radius `0.55rem`, chips `0.375rem`â
 ## Do's and Don'ts
 
 ### Do:
-- **Do** keep homepage work inside `.bb-home` tokens (canvas `#F4F0E8`, brand `#2457E6`, amber `#E8A317`, mint `#9FE8C8`).
+- **Do** keep homepage and work/story pages inside `.bb-home` tokens (canvas `#F4F0E8`, brand `#2457E6`, amber `#E8A317`, mint `#9FE8C8`).
 - **Do** use Archivo for reading and Barlow Condensed for magnets, board titles, and labels.
 - **Do** treat the swimlane board as the hero thesis and let Book clear lanes into flow.
 - **Do** prefer rail borders + soft magnet shadows over glow or heavy card elevation.
@@ -269,4 +269,4 @@ Form language is **squared magnets**: button radius `0.55rem`, chips `0.375rem`â
 - **Don't** use capsule pills for CTAs or status chips.
 - **Don't** ship neon AI chrome, glassmorphism stacks, or decorative card malls in the first viewport.
 - **Don't** invent section kickers/eyebrows as system chrome (banned; CSS hides them).
-- **Don't** copy this token set onto `/projects` dark portfolio chrome without an explicit world migration.
+- **Don't** leave dark cinematic chrome (`#050505`, capsule pills, neon glow) on work/story routes that use `.bb-home`.

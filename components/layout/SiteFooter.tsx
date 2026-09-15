@@ -38,7 +38,7 @@ export function SiteFooter({ compact = false, showLegalInfo = false, tone = 'dar
         <div className="max-w-md">
           <p className={cn('font-semibold', light ? 'text-[#111]' : 'text-white')}>BitBLabs</p>
           <p className="mt-2 leading-relaxed">
-            Paid AI Strategy Session for founder-led service businesses.
+            AI workflow strategy and implementation for growing service businesses.
           </p>
           <p className={cn('mt-4 text-xs', light ? 'text-[#111]/35' : 'text-white/35')}>
             © {year} BitBLabs
