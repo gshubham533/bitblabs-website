@@ -16,9 +16,12 @@ export const PAY_BOOK_URL =
 
 export const BOOK_HREF = PAY_BOOK_URL
 export const BOOK_NAV_LABEL = 'Book — $2,000'
-export const BOOK_CTA_LABEL = 'Book the AI Strategy Session — $2,000'
-export const BOOK_FINAL_CTA_LABEL = 'Book & pay for the AI Strategy Session'
+export const BOOK_CTA_LABEL = 'Book Your Strategy Session'
+export const BOOK_FINAL_CTA_LABEL = 'Book Your AI Workflow Strategy Session'
+export const BOOK_OFFER_CTA_LABEL = 'Book the Strategy Session'
 export const PROJECTS_CTA_LABEL = 'Work'
+export const HOW_IT_WORKS_HREF = '#how-it-works'
+export const DELIVERABLES_HREF = '#deliverables'
 
 export const LEGAL_NAME = 'BitB Labs LLP'
 

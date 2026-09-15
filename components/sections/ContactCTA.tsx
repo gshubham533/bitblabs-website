@@ -7,7 +7,7 @@ export function ContactCTA() {
     <section className="border-t border-[#111]/10 bg-[#f3f2ee] px-5 py-16 text-[#111] sm:px-8">
       <div className="mx-auto max-w-3xl">
         <h2 className="text-3xl font-semibold tracking-tight">{FINAL_CTA.headline}</h2>
-        <p className="mt-4 text-base leading-relaxed text-[#111]/60">{FINAL_CTA.subhead}</p>
+        <p className="mt-4 text-base leading-relaxed text-[#111]/60">{FINAL_CTA.body}</p>
         <a
           href={PAY_BOOK_URL}
           className="mt-8 inline-flex min-h-12 items-center justify-center bg-[#111] px-5 text-sm font-semibold text-white"

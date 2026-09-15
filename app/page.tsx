@@ -11,16 +11,25 @@ export const metadata: Metadata = {
     canonical: '/',
   },
   openGraph: {
-    title: LANDING_SEO.title,
-    description: LANDING_SEO.description,
+    title: LANDING_SEO.ogTitle,
+    description: LANDING_SEO.ogDescription,
     url: '/',
-    siteName: 'BitBLabs',
+    siteName: 'BitBlabs',
     type: 'website',
+    images: [
+      {
+        url: '/og/homepage.png',
+        width: 1200,
+        height: 630,
+        alt: 'BitBlabs AI Workflow Strategy Session',
+      },
+    ],
   },
   twitter: {
-    card: 'summary',
-    title: LANDING_SEO.title,
-    description: LANDING_SEO.description,
+    card: 'summary_large_image',
+    title: LANDING_SEO.ogTitle,
+    description: LANDING_SEO.ogDescription,
+    images: ['/og/homepage.png'],
   },
 }
 
