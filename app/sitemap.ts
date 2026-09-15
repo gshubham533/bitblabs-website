@@ -1,14 +1,28 @@
 import type { MetadataRoute } from 'next'
-
-const BASE = 'https://bitblabs.com'
+import { caseStudies } from '@/lib/data'
+import { portfolioProjects } from '@/lib/portfolio-data'
+import { SITE_URL } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
-  const now = new Date()
-  return [
-    { url: `${BASE}/`, lastModified: now, changeFrequency: 'weekly', priority: 1 },
-    { url: `${BASE}/projects`, lastModified: now, changeFrequency: 'monthly', priority: 0.7 },
-    { url: `${BASE}/case-studies`, lastModified: now, changeFrequency: 'monthly', priority: 0.6 },
-    { url: `${BASE}/privacy`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
-    { url: `${BASE}/terms`, lastModified: now, changeFrequency: 'yearly', priority: 0.2 },
+  const lastModified = new Date('2026-09-15')
+
+  const core: MetadataRoute.Sitemap = [
+    { url: `${SITE_URL}/`, lastModified },
+    { url: `${SITE_URL}/projects`, lastModified },
+    { url: `${SITE_URL}/case-studies`, lastModified },
+    { url: `${SITE_URL}/privacy`, lastModified },
+    { url: `${SITE_URL}/terms`, lastModified },
   ]
+
+  const projects = portfolioProjects.map((project) => ({
+    url: `${SITE_URL}/projects/${project.slug}`,
+    lastModified,
+  }))
+
+  const studies = caseStudies.map((study) => ({
+    url: `${SITE_URL}/case-studies/${study.slug}`,
+    lastModified,
+  }))
+
+  return [...core, ...projects, ...studies]
 }

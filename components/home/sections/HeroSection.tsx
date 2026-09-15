@@ -32,6 +32,9 @@ export function HeroSection() {
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:mt-5 sm:text-lg">
             {HERO.supporting[0]}
           </p>
+          <p className="mt-3 max-w-2xl text-base leading-relaxed text-[var(--bb-ink)] sm:text-lg">
+            {HERO.supporting[1]}
+          </p>
           <div className="mt-6 flex flex-col gap-2.5 sm:mt-7 sm:flex-row sm:items-center sm:gap-3">
             <BookButton
               location="hero"

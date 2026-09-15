@@ -1,15 +1,16 @@
 import type { Metadata } from 'next'
+import { LANDING_SEO } from '@/lib/landing'
+import { SITE_NAME, SITE_URL } from '@/lib/site'
 import './globals.css'
 import { LinkedInInsightTag } from '@/components/LinkedInInsightTag'
 import { googleSansFlex } from '@/lib/fonts'
 import { Analytics } from '@vercel/analytics/next'
-import { LANDING_SEO } from '@/lib/landing'
 
 export const metadata: Metadata = {
-  metadataBase: new URL('https://bitblabs.com'),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: LANDING_SEO.title,
-    template: '%s | BitBlabs',
+    template: `%s | ${SITE_NAME}`,
   },
   description: LANDING_SEO.description,
   icons: {
@@ -17,7 +18,7 @@ export const metadata: Metadata = {
     apple: '/logos/bitblabs-logo.svg',
   },
   openGraph: {
-    siteName: 'BitBlabs',
+    siteName: SITE_NAME,
     type: 'website',
     locale: 'en_US',
   },

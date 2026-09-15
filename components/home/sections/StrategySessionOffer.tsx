@@ -19,6 +19,9 @@ export function StrategySessionOffer() {
               <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:text-lg">
                 {OFFER.body}
               </p>
+              <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink)] sm:text-[17px]">
+                {OFFER.definition}
+              </p>
               <p className="mt-8 text-sm font-semibold text-[var(--bb-ink)]">{OFFER.duringLabel}</p>
               <ol className="mt-4 space-y-2.5">
                 {OFFER.steps.map((step, i) => (

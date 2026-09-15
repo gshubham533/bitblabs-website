@@ -26,11 +26,22 @@ export const OFFER_ABSOLUTE_HREF = '/#offer'
 export const CASE_STUDY_ABSOLUTE_HREF = '/#case-study'
 export const CASE_STUDIES_PATH = '/case-studies'
 
+export const SITE_URL = 'https://bitblabs.com'
+export const SITE_NAME = 'BitBlabs'
+export const ORG_ID = `${SITE_URL}/#organization`
+export const WEBSITE_ID = `${SITE_URL}/#website`
+
 export const LEGAL_NAME = 'BitB Labs LLP'
 
 export const LEGAL_ADDRESS_LINES = [
   'Pune, Maharashtra, India',
 ] as const
+
+export const LEGAL_ADDRESS = {
+  addressLocality: 'Pune',
+  addressRegion: 'Maharashtra',
+  addressCountry: 'IN',
+} as const
 
 export const CONTACT_PHONE = '+917219605788'
 export const CONTACT_PHONE_DISPLAY = '+91 72196 05788'

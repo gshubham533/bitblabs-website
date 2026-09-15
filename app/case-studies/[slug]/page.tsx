@@ -1,33 +1,21 @@
-'use client'
-
-import { useParams } from 'next/navigation'
-import {
-  CaseStudyNotFound,
-  CaseStudyPageLayout,
-} from '@/components/showcase/CaseStudyPageLayout'
+import { WorkJsonLd } from '@/components/seo/WorkJsonLd'
+import { WorkDetailView } from '@/components/showcase/WorkDetailView'
 import { fromLegacyCaseStudy } from '@/lib/case-study-project'
 import { caseStudies } from '@/lib/data'
 
-export default function CaseStudyDetailPage() {
-  const params = useParams()
-  const slug = params.slug as string
-  const study = caseStudies.find((s) => s.slug === slug)
-
-  if (!study) {
-    return (
-      <CaseStudyNotFound
-        title="Case study not found"
-        backHref="/case-studies"
-        backLabel="Back to case studies"
-      />
-    )
-  }
+export default function CaseStudyDetailPage({ params }: { params: { slug: string } }) {
+  const study = caseStudies.find((item) => item.slug === params.slug)
+  const mapped = study ? fromLegacyCaseStudy(study) : null
 
   return (
-    <CaseStudyPageLayout
-      project={fromLegacyCaseStudy(study)}
-      backHref="/case-studies"
-      backLabel="Back to case studies"
-    />
+    <>
+      {mapped ? <WorkJsonLd kind="case-study" project={mapped} /> : null}
+      <WorkDetailView
+        project={mapped}
+        backHref="/case-studies"
+        backLabel="Back to case studies"
+        notFoundTitle="Case study not found"
+      />
+    </>
   )
 }

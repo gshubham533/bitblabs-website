@@ -19,7 +19,10 @@ export function WorkflowMethod() {
           <h2 className="mt-4 max-w-3xl text-[clamp(2rem,4vw,3.5rem)] font-semibold leading-[1.08] tracking-tight">
             {METHOD.headline}
           </h2>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:text-lg">
+          <p className="mt-5 max-w-2xl text-xl font-semibold leading-snug tracking-tight text-[var(--bb-ink)] sm:text-2xl">
+            {METHOD.lead}
+          </p>
+          <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:text-lg">
             {METHOD.supporting}
           </p>
 

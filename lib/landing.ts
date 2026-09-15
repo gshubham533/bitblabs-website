@@ -14,7 +14,7 @@ export const HERO = {
   headline: 'Find where work gets stuck. Then redesign that workflow.',
   supporting: [
     'If follow-ups wait on an inbox, status lives in a spreadsheet, and growth adds coordination instead of capacity, fix the process before you buy another AI tool.',
-    'BitBlabs maps one high-impact workflow, redesigns how it should move, and builds the system when you want us to implement.',
+    'BitBlabs is an AI workflow consultancy for growing service businesses. We map one stuck process in a paid 90-minute strategy session, redesign the handoffs, and build the system when you want us to implement.',
   ] as const,
   primaryCta: 'Book Your Strategy Session',
   secondaryCta: 'See How It Works',
@@ -70,7 +70,8 @@ export const POINT_OF_VIEW = {
 
 export const METHOD = {
   eyebrow: 'What we actually do',
-  headline: 'Find the stuck handoff. Redesign the path. Build only what earns its place.',
+  headline: 'How does BitBlabs redesign a stuck workflow?',
+  lead: 'Find the stuck handoff. Redesign the path. Build only what earns its place.',
   supporting:
     'Map the real process, pick the bottleneck worth fixing first, redesign what people and systems each own, then build if you want BitBlabs to implement.',
   stages: [
@@ -127,6 +128,8 @@ export const OFFER = {
   eyebrow: 'Not sure what to automate first?',
   headline: 'Start with one important workflow.',
   body: 'A 90-minute working session for owners and ops leaders who know something is stuck, and will not fund the wrong build.',
+  definition:
+    'An AI Workflow Strategy Session is a paid 90-minute working session for owners and operations leaders of growing service businesses, typically teams of about 20 to 80 people. BitBlabs uses the session to map one high-impact workflow as it actually runs today: who owns each step, which inboxes and spreadsheets it touches, where work stalls, and what still needs human judgment. You leave with a current-state map, a bottleneck analysis, ranked opportunities, a future-state design with human checkpoints, and a 30/60/90-day roadmap you can run with BitBlabs, your internal team, or another partner. The session costs $2,000. Implementation is not included. If you start a BitBlabs build within 30 days, the session fee is credited toward that project. If AI is not the right fix, BitBlabs will say so and recommend process design or ordinary automation instead. You do not need a finished automation idea to book. You need to show how the work happens today.',
   duringLabel: 'In the session we will:',
   steps: [
     'Select one high-impact workflow',
