@@ -51,12 +51,12 @@ export function StickyMobileCTA() {
             90-min strategy session · $2,000
           </p>
         </div>
-        <BookButton location="sticky_mobile" className="min-h-10 shrink-0 px-4 text-sm">
+        <BookButton location="sticky_mobile" className="min-h-11 shrink-0 px-4 text-sm">
           Book
         </BookButton>
         <button
           type="button"
-          className="inline-flex h-10 w-10 shrink-0 items-center justify-center rounded-md text-[var(--bb-ink-muted)]"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-[var(--bb-ink-muted)]"
           aria-label="Dismiss booking bar"
           onClick={() => {
             try {

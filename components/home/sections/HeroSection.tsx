@@ -2,32 +2,15 @@
 
 import { BookButton } from '@/components/home/BookButton'
 import { SecondaryCtaLink } from '@/components/home/SecondaryCtaLink'
-import {
-  SwimlaneBoard,
-  SwimlaneBoardProvider,
-  useSwimlaneBoard,
-} from '@/components/home/visuals/SwimlaneBoard'
 import { bbEaseNarrative } from '@/components/home/motion'
+import { SwimlaneBoard, type BoardPhase } from '@/components/home/visuals/SwimlaneBoard'
 import { HERO } from '@/lib/landing'
 import { motion, useReducedMotion } from 'framer-motion'
+import { useState } from 'react'
 
-function HeroBook() {
-  const { clearLane } = useSwimlaneBoard()
-  return (
-    <BookButton
-      location="hero"
-      large
-      className="group w-full sm:w-auto"
-      onNavigate={clearLane}
-      clearBeatMs={850}
-    >
-      {HERO.primaryCta}
-    </BookButton>
-  )
-}
-
-function HeroInner() {
+export function HeroSection() {
   const reduce = useReducedMotion()
+  const [phase, setPhase] = useState<BoardPhase>('stuck')
 
   return (
     <section className="relative overflow-hidden pb-6 pt-[4.75rem] sm:pb-10 sm:pt-24 lg:pb-12 lg:pt-28">
@@ -43,14 +26,22 @@ function HeroInner() {
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, ease: bbEaseNarrative }}
         >
-          <h1 className="max-w-4xl text-[clamp(2.4rem,7.2vw,5.4rem)] font-semibold leading-[0.94] tracking-tight text-[var(--bb-ink)]">
+          <h1 className="max-w-4xl text-[clamp(2.1rem,6.5vw,5.4rem)] font-semibold leading-[1.02] tracking-tight text-[var(--bb-ink)] sm:leading-[0.96]">
             {HERO.headline}
           </h1>
           <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:mt-5 sm:text-lg">
             {HERO.supporting[0]}
           </p>
           <div className="mt-6 flex flex-col gap-2.5 sm:mt-7 sm:flex-row sm:items-center sm:gap-3">
-            <HeroBook />
+            <BookButton
+              location="hero"
+              large
+              className="group w-full sm:w-auto"
+              onNavigate={() => setPhase('flow')}
+              clearBeatMs={850}
+            >
+              {HERO.primaryCta}
+            </BookButton>
             <SecondaryCtaLink location="hero" className="bb-btn-secondary w-full sm:w-auto">
               {HERO.secondaryCta}
             </SecondaryCtaLink>
@@ -61,22 +52,14 @@ function HeroInner() {
         </motion.div>
 
         <motion.div
-          className="relative mt-7 w-screen max-w-[100vw] left-1/2 -translate-x-1/2 sm:mt-9"
+          className="bb-full-bleed mt-7 sm:mt-9"
           initial={reduce ? false : { opacity: 0.01, y: 24 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.7, delay: reduce ? 0 : 0.08, ease: bbEaseNarrative }}
         >
-          <SwimlaneBoard title="BitBlabs" bleed />
+          <SwimlaneBoard title="BitBlabs" bleed phase={phase} onPhaseChange={setPhase} />
         </motion.div>
       </div>
     </section>
-  )
-}
-
-export function HeroSection() {
-  return (
-    <SwimlaneBoardProvider>
-      <HeroInner />
-    </SwimlaneBoardProvider>
   )
 }

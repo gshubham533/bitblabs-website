@@ -14,7 +14,7 @@ export const founders: Founder[] = [
     initials: 'SG',
     role: 'Business, Product & Go-to-Market',
     bio: 'Worked across SaaS products, AI systems, and business software execution with direct exposure to scaling product workflows and solving operational inefficiencies.',
-    linkedIn: 'https://www.linkedin.com/in/gshubham',
+    linkedIn: 'https://www.linkedin.com/in/gshubham533',
   },
   {
     id: 'shlok',

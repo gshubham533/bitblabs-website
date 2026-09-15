@@ -2,32 +2,30 @@
 
 import { BookButton } from '@/components/home/BookButton'
 import { SecondaryCtaLink } from '@/components/home/SecondaryCtaLink'
-import {
-  SwimlaneBoard,
-  SwimlaneBoardProvider,
-  useSwimlaneBoard,
-} from '@/components/home/visuals/SwimlaneBoard'
+import { SwimlaneBoard, type BoardPhase } from '@/components/home/visuals/SwimlaneBoard'
 import { FINAL_CTA } from '@/lib/landing'
-import { DELIVERABLES_HREF } from '@/lib/site'
-import { useEffect } from 'react'
+import { HOW_IT_WORKS_HREF } from '@/lib/site'
+import { useState } from 'react'
 
-function FinalInner() {
-  const { clearLane, setPhase } = useSwimlaneBoard()
-
-  useEffect(() => {
-    setPhase('flow')
-  }, [setPhase])
+export function FinalCTA() {
+  const [phase, setPhase] = useState<BoardPhase>('flow')
 
   return (
     <section id="book" className="bb-home-section">
       <div className="bb-home-container">
-        <div className="relative overflow-hidden rounded-[1.15rem] border border-[var(--bb-rail)] bg-[var(--bb-board)] px-0 py-0 sm:px-0">
+        <div className="relative overflow-hidden rounded-[1.15rem] border border-[var(--bb-rail)] bg-[var(--bb-board)]">
           <div
             aria-hidden
             className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_0%,rgba(36,87,230,0.16),transparent_45%)]"
           />
-          <div className="relative">
-            <SwimlaneBoard title="BitBlabs" showControls={false} bleed />
+          <div className="relative px-0 pt-0">
+            <SwimlaneBoard
+              title="BitBlabs"
+              showControls={false}
+              autoPlay={false}
+              phase={phase}
+              onPhaseChange={setPhase}
+            />
           </div>
           <div className="relative mx-auto max-w-3xl px-5 py-10 text-center sm:px-10 sm:py-14">
             <p className="text-base leading-relaxed text-[var(--bb-ink-muted)]">{FINAL_CTA.intro}</p>
@@ -43,13 +41,14 @@ function FinalInner() {
                 location="final_cta"
                 large
                 className="group w-full sm:w-auto"
-                onNavigate={clearLane}
+                onNavigate={() => setPhase('flow')}
+                clearBeatMs={850}
               >
                 {FINAL_CTA.primaryCta}
               </BookButton>
               <SecondaryCtaLink
                 location="final_cta"
-                href={DELIVERABLES_HREF}
+                href={HOW_IT_WORKS_HREF}
                 className="bb-btn-secondary w-full sm:w-auto"
               >
                 {FINAL_CTA.secondaryCta}
@@ -62,13 +61,5 @@ function FinalInner() {
         </div>
       </div>
     </section>
-  )
-}
-
-export function FinalCTA() {
-  return (
-    <SwimlaneBoardProvider autoPlay={false}>
-      <FinalInner />
-    </SwimlaneBoardProvider>
   )
 }

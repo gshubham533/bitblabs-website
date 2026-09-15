@@ -13,15 +13,13 @@ export function FrictionGrid() {
           <p className="mt-3 max-w-2xl text-base text-[var(--bb-ink-muted)] sm:text-lg">
             {FRICTION.eyebrow}
           </p>
-        </SoftReveal>
 
-        <SoftReveal delay={0.05} className="mt-8">
-          <div className="overflow-hidden rounded-[1.1rem] border border-[var(--bb-rail)] bg-[var(--bb-board)]">
-            <div className="flex items-center justify-between gap-3 border-b border-[var(--bb-rail)] px-4 py-3 sm:px-5">
+          <div className="mt-8 overflow-hidden rounded-[1.1rem] border border-[var(--bb-rail)] bg-[var(--bb-board)]">
+            <div className="flex flex-col gap-2 border-b border-[var(--bb-rail)] px-4 py-3 sm:flex-row sm:items-center sm:justify-between sm:gap-3 sm:px-5">
               <p className="font-[family-name:var(--font-barlow-condensed)] text-sm font-semibold uppercase tracking-[0.14em] text-[var(--bb-ink)]">
                 Recognition rail
               </p>
-              <span className="rounded-md bg-[var(--bb-amber)] px-2 py-0.5 font-[family-name:var(--font-barlow-condensed)] text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--bb-ink)]">
+              <span className="w-fit rounded-md bg-[var(--bb-amber)] px-2 py-0.5 font-[family-name:var(--font-barlow-condensed)] text-[10px] font-semibold uppercase tracking-[0.14em] text-[var(--bb-ink)]">
                 Blockers on the board
               </span>
             </div>
@@ -31,11 +29,9 @@ export function FrictionGrid() {
                   key={card.title}
                   className={cn(
                     'border-[var(--bb-rail)] p-4 sm:p-5',
-                    index % 2 === 0 ? 'sm:border-r' : '',
-                    index < 4 ? 'border-b' : index < 5 ? 'border-b lg:border-b-0' : '',
-                    index === 2 || index === 5 ? 'sm:border-r-0 lg:border-r' : '',
-                    index === 2 ? 'lg:border-r-0' : '',
-                    index >= 3 ? 'lg:border-b-0' : ''
+                    'border-b last:border-b-0',
+                    'sm:border-r sm:[&:nth-child(2n)]:border-r-0 sm:[&:nth-child(n+5)]:border-b-0',
+                    'lg:border-r lg:[&:nth-child(2n)]:border-r lg:[&:nth-child(3n)]:border-r-0 lg:[&:nth-child(n+4)]:border-b-0'
                   )}
                 >
                   <div className="mb-3 flex items-center gap-2">
@@ -57,9 +53,7 @@ export function FrictionGrid() {
               ))}
             </ul>
           </div>
-        </SoftReveal>
 
-        <SoftReveal delay={0.1}>
           <p className="mt-6 max-w-4xl rounded-md border border-dashed border-[var(--bb-rail)] bg-[var(--bb-board)] px-4 py-3 text-base font-medium leading-relaxed text-[var(--bb-ink)] sm:px-5 sm:py-4 sm:text-lg">
             {FRICTION.closing}
           </p>
