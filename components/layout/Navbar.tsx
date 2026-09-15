@@ -1,26 +1,20 @@
 'use client'
 
 import { cn } from '@/lib/utils'
-import { BOOKING_URL } from '@/lib/site'
+import { BOOK_HREF, BOOK_NAV_LABEL, PORTFOLIO_SECTION_HREF } from '@/lib/site'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
-const navLinks = [
-  { href: '/projects', label: 'Work' },
-  { href: BOOKING_URL, label: 'Contact', external: true },
-] as const
-
 interface NavbarProps {
   theme?: 'light' | 'dark'
-  /** fixed = viewport; absolute = hero overlay; static = scrolls with page */
   position?: 'fixed' | 'absolute' | 'static'
+  solid?: boolean
 }
 
-export function Navbar({ theme = 'dark', position = 'fixed' }: NavbarProps) {
+export function Navbar({ theme = 'dark', position = 'fixed', solid = false }: NavbarProps) {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
   const light = theme === 'light'
-  const heroTypography = !light && position === 'absolute'
 
   const headerPositionClass =
     position === 'fixed'
@@ -31,67 +25,63 @@ export function Navbar({ theme = 'dark', position = 'fixed' }: NavbarProps) {
 
   useEffect(() => {
     document.body.style.overflow = mobileMenuOpen ? 'hidden' : ''
-    return () => { document.body.style.overflow = '' }
+    return () => {
+      document.body.style.overflow = ''
+    }
   }, [mobileMenuOpen])
 
   return (
     <>
-      <header className={headerPositionClass}>
-        <nav className="w-full bg-transparent">
-          <div className="w-full px-6 md:px-12 lg:px-16">
-            <div className="flex h-16 items-center justify-between sm:h-20">
-              <Link href="/" className="flex items-center gap-3 group" onClick={() => setMobileMenuOpen(false)}>
-                <Image
-                  src="/logos/bitblabs-logo.svg"
-                  alt="BitBLabs"
-                  width={32}
-                  height={32}
-                  className="h-8 w-8 object-contain opacity-90 transition-opacity group-hover:opacity-100"
-                />
-                <span
-                  className={cn(
-                    'font-display text-sm font-bold tracking-tight transition-colors',
-                    light ? 'text-zinc-950' : 'text-white'
-                  )}
-                >
-                  BitBLabs
-                </span>
+      <header
+        className={cn(
+          headerPositionClass,
+          solid && (light ? 'border-b border-[#111]/10 bg-[#f3f2ee]/92 backdrop-blur-md' : 'border-b border-white/10 bg-[#050505]/92 backdrop-blur')
+        )}
+      >
+        <nav className="w-full bg-transparent" aria-label="Primary">
+          <div className="mx-auto flex h-14 max-w-6xl items-center justify-between px-5 sm:h-16 sm:px-8">
+            <Link href="/" className="flex items-center gap-2.5" onClick={() => setMobileMenuOpen(false)}>
+              <Image
+                src="/logos/bitblabs-logo.svg"
+                alt=""
+                width={28}
+                height={28}
+                className={cn('h-7 w-7 object-contain opacity-90', light && 'hidden')}
+              />
+              <span
+                className={cn(
+                  'text-sm font-semibold tracking-tight',
+                  light ? 'text-zinc-950' : 'text-white'
+                )}
+              >
+                BitBLabs
+              </span>
+            </Link>
+
+            <div className="flex items-center gap-5">
+              <Link
+                href={PORTFOLIO_SECTION_HREF}
+                className={cn(
+                  'hidden text-sm sm:inline',
+                  light ? 'text-zinc-500 hover:text-zinc-950' : 'text-white/45 hover:text-white'
+                )}
+              >
+                Work
               </Link>
-
-              <ul className="hidden items-center gap-8 md:flex">
-                {navLinks.map((link) => (
-                  <li key={link.href}>
-                    {'external' in link && link.external ? (
-                      <a
-                        href={link.href}
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className={cn(
-                          'font-heading text-sm transition-colors duration-300',
-                          light ? 'text-zinc-500 hover:text-zinc-950' : 'text-zinc-500 hover:text-white'
-                        )}
-                      >
-                        {link.label}
-                      </a>
-                    ) : (
-                      <Link
-                        href={link.href}
-                        className={cn(
-                          'font-heading text-sm transition-colors duration-300',
-                          light ? 'text-zinc-500 hover:text-zinc-950' : 'text-zinc-500 hover:text-white'
-                        )}
-                      >
-                        {link.label}
-                      </Link>
-                    )}
-                  </li>
-                ))}
-              </ul>
-
+              <a
+                href={BOOK_HREF}
+                className={cn(
+                  'inline-flex min-h-9 items-center px-3 text-[13px] font-semibold',
+                  light ? 'bg-zinc-950 text-white' : 'bg-white text-black'
+                )}
+              >
+                {BOOK_NAV_LABEL}
+              </a>
               <button
                 onClick={() => setMobileMenuOpen(!mobileMenuOpen)}
-                className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 md:hidden"
+                className="flex h-10 w-10 flex-col items-center justify-center gap-1.5 sm:hidden"
                 aria-label="Toggle menu"
+                aria-expanded={mobileMenuOpen}
               >
                 <span
                   className={cn(
@@ -122,38 +112,29 @@ export function Navbar({ theme = 'dark', position = 'fixed' }: NavbarProps) {
 
       <div
         className={cn(
-          'fixed inset-0 z-[90] bg-base/98 backdrop-blur-xl transition-all duration-300 md:hidden',
+          'fixed inset-0 z-[90] transition-all duration-300 sm:hidden',
+          light ? 'bg-[#f3f2ee]' : 'bg-[#050505]',
           mobileMenuOpen ? 'visible opacity-100' : 'invisible opacity-0'
         )}
       >
         <ul className="flex h-full flex-col items-center justify-center gap-8">
-          {navLinks.map((link) => (
-            <li key={link.href}>
-              {'external' in link && link.external ? (
-                <a
-                  href={link.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    'font-display text-3xl font-bold text-white transition-colors hover:text-zinc-400'
-                  )}
-                >
-                  {link.label}
-                </a>
-              ) : (
-                <Link
-                  href={link.href}
-                  onClick={() => setMobileMenuOpen(false)}
-                  className={cn(
-                    'font-display text-3xl font-bold text-white transition-colors hover:text-zinc-400'
-                  )}
-                >
-                  {link.label}
-                </Link>
-              )}
-            </li>
-          ))}
+          <li>
+            <Link
+              href={PORTFOLIO_SECTION_HREF}
+              onClick={() => setMobileMenuOpen(false)}
+              className={cn('text-2xl font-semibold', light ? 'text-[#111]' : 'text-white')}
+            >
+              Work
+            </Link>
+          </li>
+          <li>
+            <a
+              href={BOOK_HREF}
+              className={cn('text-2xl font-semibold', light ? 'text-[#111]' : 'text-white')}
+            >
+              {BOOK_NAV_LABEL}
+            </a>
+          </li>
         </ul>
       </div>
     </>

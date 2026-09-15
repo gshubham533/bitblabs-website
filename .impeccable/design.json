@@ -1,0 +1,296 @@
+{
+  "schemaVersion": 2,
+  "generatedAt": "2026-09-15T11:20:00.000Z",
+  "title": "Design System: BitBlabs Homepage",
+  "extensions": {
+    "colorMeta": {
+      "canvas": {
+        "role": "neutral",
+        "displayName": "Matte Whiteboard",
+        "canonical": "#F4F0E8",
+        "tonalRamp": ["#1C1A16", "#3A3630", "#5C564C", "#7E7668", "#A09686", "#C2B6A4", "#DED6C8", "#F4F0E8"]
+      },
+      "board": {
+        "role": "neutral",
+        "displayName": "Board Field",
+        "canonical": "#EBE4D8",
+        "tonalRamp": ["#1A1814", "#38342C", "#585248", "#787064", "#988E80", "#B8AC9C", "#D4CBBC", "#EBE4D8"]
+      },
+      "surface": {
+        "role": "neutral",
+        "displayName": "Paper Magnet",
+        "canonical": "#FFFCF7",
+        "tonalRamp": ["#1C1B18", "#3D3B36", "#5E5B54", "#807B72", "#A19C92", "#C2BDB2", "#E3DFD6", "#FFFCF7"]
+      },
+      "surface-soft": {
+        "role": "neutral",
+        "displayName": "Lane Mist",
+        "canonical": "#E4ECFF",
+        "tonalRamp": ["#0F1A3A", "#1A2F6E", "#2457A8", "#3B6FD4", "#5B8AE8", "#8AABF2", "#B8CCFA", "#E4ECFF"]
+      },
+      "ink": {
+        "role": "neutral",
+        "displayName": "War-Room Ink",
+        "canonical": "#141820",
+        "tonalRamp": ["#141820", "#2A303A", "#444B58", "#616876", "#808794", "#A2A8B2", "#C6CAD2", "#E8EAEE"]
+      },
+      "ink-muted": {
+        "role": "neutral",
+        "displayName": "Muted Olive Ink",
+        "canonical": "#5A6159",
+        "tonalRamp": ["#1C1E1B", "#333632", "#4A4F48", "#5A6159", "#757C73", "#959C93", "#B8BEB6", "#DEE1DC"]
+      },
+      "line": {
+        "role": "neutral",
+        "displayName": "Hairline",
+        "canonical": "#D5CDC0",
+        "tonalRamp": ["#3A362E", "#5A5448", "#7A7264", "#9A9080", "#B8AE9E", "#C9C0B2", "#D5CDC0", "#EDE8E0"]
+      },
+      "rail": {
+        "role": "neutral",
+        "displayName": "Magnetic Rail",
+        "canonical": "#CFC5B5",
+        "tonalRamp": ["#383228", "#564E40", "#746A58", "#928670", "#B0A28A", "#C0B4A0", "#CFC5B5", "#E8E2D6"]
+      },
+      "brand": {
+        "role": "primary",
+        "displayName": "Cobalt Flow Tape",
+        "canonical": "#2457E6",
+        "tonalRamp": ["#0C1A4A", "#142E7A", "#1A3FB0", "#2457E6", "#3D6EEF", "#6A90F5", "#A3BCFA", "#DCE6FF"]
+      },
+      "brand-dark": {
+        "role": "primary",
+        "displayName": "Cobalt Depth",
+        "canonical": "#1A3FB0",
+        "tonalRamp": ["#091232", "#0F1F5A", "#142E7A", "#1A3FB0", "#2457E6", "#4A74EC", "#8AA6F4", "#D0DCFF"]
+      },
+      "brand-soft": {
+        "role": "primary",
+        "displayName": "Cobalt Wash",
+        "canonical": "#DCE6FF",
+        "tonalRamp": ["#1A3FB0", "#2457E6", "#3D6EEF", "#6A90F5", "#8AA6F4", "#B0C4FA", "#DCE6FF", "#F0F4FF"]
+      },
+      "mint": {
+        "role": "secondary",
+        "displayName": "Cleared Mint",
+        "canonical": "#9FE8C8",
+        "tonalRamp": ["#0A3D2A", "#0F6B48", "#1A9A68", "#34C08A", "#5FD4A6", "#9FE8C8", "#C5F2DE", "#E8FAF2"]
+      },
+      "amber": {
+        "role": "secondary",
+        "displayName": "Blocker Amber",
+        "canonical": "#E8A317",
+        "tonalRamp": ["#4A3208", "#7A520C", "#A87410", "#E8A317", "#F0B83A", "#F5CC6A", "#F9DEA0", "#FDF0D4"]
+      },
+      "on-brand": {
+        "role": "neutral",
+        "displayName": "On Brand",
+        "canonical": "#FFFFFF",
+        "tonalRamp": ["#1C1C1C", "#3D3D3D", "#5E5E5E", "#808080", "#A1A1A1", "#C2C2C2", "#E3E3E3", "#FFFFFF"]
+      }
+    },
+    "typographyMeta": {
+      "display": {
+        "displayName": "Display",
+        "purpose": "Hero H1 only — Barlow Condensed, tight leading, sentence case."
+      },
+      "headline": {
+        "displayName": "Headline",
+        "purpose": "Board wordmark and major condensed titles; often uppercase."
+      },
+      "title": {
+        "displayName": "Title / Magnet",
+        "purpose": "Primary and secondary CTA magnets — uppercase Barlow Condensed."
+      },
+      "body": {
+        "displayName": "Body",
+        "purpose": "Operational reading copy in Archivo."
+      },
+      "label": {
+        "displayName": "Label",
+        "purpose": "Phase badges, lane meta, CTA microcopy — uppercase tracking."
+      }
+    },
+    "shadows": [
+      {
+        "name": "board-lift",
+        "value": "0 14px 36px rgba(20, 24, 32, 0.08)",
+        "purpose": "Contained swimlane boards and scrolled nav tray."
+      },
+      {
+        "name": "chip-magnet",
+        "value": "0 1px 0 rgba(20, 24, 32, 0.06), 0 6px 16px rgba(20, 24, 32, 0.05)",
+        "purpose": "Magnetic chips, primary buttons at rest, cards."
+      },
+      {
+        "name": "primary-hover",
+        "value": "0 16px 36px rgba(20, 24, 32, 0.12)",
+        "purpose": "Primary magnet lift on hover with 1px translateY."
+      }
+    ],
+    "motion": [
+      {
+        "name": "ease-ui",
+        "value": "cubic-bezier(0.2, 0.8, 0.2, 1)",
+        "purpose": "Button, accordion, friction, and method-stage state transitions (~180–220ms)."
+      },
+      {
+        "name": "ease-narrative",
+        "value": "cubic-bezier(0.16, 1, 0.3, 1)",
+        "purpose": "Hero reveal, SoftReveal, swimlane phase swap, chip slide-in."
+      },
+      {
+        "name": "board-cycle",
+        "value": "4200ms interval stuck↔flow",
+        "purpose": "Autoplay board narrative; paused on interaction or prefers-reduced-motion."
+      },
+      {
+        "name": "clear-lane-beat",
+        "value": "850ms",
+        "purpose": "Hero Book clears lane to flow before opening booking URL."
+      }
+    ],
+    "breakpoints": [
+      { "name": "sm", "value": "640px" },
+      { "name": "md", "value": "768px" },
+      { "name": "lg", "value": "1024px" }
+    ]
+  },
+  "components": [
+    {
+      "name": "Primary Magnet",
+      "kind": "button",
+      "refersTo": "button-primary",
+      "description": "Cobalt squared magnet CTA — Book Your Strategy Session.",
+      "html": "<button class=\"ds-btn-primary\" type=\"button\">Book Your Strategy Session <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-primary { display: inline-flex; min-height: 3rem; align-items: center; justify-content: center; gap: 0.5rem; border: none; border-radius: 0.55rem; background: var(--bb-brand, #2457E6); padding: 0.75rem 1.35rem; font-family: \"Barlow Condensed\", Archivo, sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; box-shadow: 0 1px 0 rgba(20, 24, 32, 0.06), 0 6px 16px rgba(20, 24, 32, 0.05); transition: background 180ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 180ms cubic-bezier(0.2, 0.8, 0.2, 1); cursor: pointer; } .ds-btn-primary:hover { background: var(--bb-brand-dark, #1A3FB0); transform: translateY(-1px); box-shadow: 0 16px 36px rgba(20, 24, 32, 0.12); } .ds-btn-primary:active { transform: translateY(0); box-shadow: 0 1px 0 rgba(20, 24, 32, 0.06), 0 6px 16px rgba(20, 24, 32, 0.05); } .ds-btn-primary:focus-visible { outline: 2px solid var(--bb-brand, #2457E6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Primary Magnet Large",
+      "kind": "button",
+      "refersTo": "button-primary-lg",
+      "description": "Hero / final CTA size — 3.5rem min-height.",
+      "html": "<button class=\"ds-btn-primary-lg\" type=\"button\">Book Your Strategy Session <span aria-hidden=\"true\">→</span></button>",
+      "css": ".ds-btn-primary-lg { display: inline-flex; min-height: 3.5rem; align-items: center; justify-content: center; gap: 0.5rem; border: none; border-radius: 0.55rem; background: var(--bb-brand, #2457E6); padding: 0.75rem 1.6rem; font-family: \"Barlow Condensed\", Archivo, sans-serif; font-size: 1.0625rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; box-shadow: 0 1px 0 rgba(20, 24, 32, 0.06), 0 6px 16px rgba(20, 24, 32, 0.05); transition: background 180ms cubic-bezier(0.2, 0.8, 0.2, 1), transform 180ms cubic-bezier(0.2, 0.8, 0.2, 1), box-shadow 180ms cubic-bezier(0.2, 0.8, 0.2, 1); cursor: pointer; } .ds-btn-primary-lg:hover { background: var(--bb-brand-dark, #1A3FB0); transform: translateY(-1px); box-shadow: 0 16px 36px rgba(20, 24, 32, 0.12); } .ds-btn-primary-lg:focus-visible { outline: 2px solid var(--bb-brand, #2457E6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Secondary Magnet",
+      "kind": "button",
+      "refersTo": "button-secondary",
+      "description": "Paper magnet with rail border — See How It Works.",
+      "html": "<button class=\"ds-btn-secondary\" type=\"button\">See How It Works</button>",
+      "css": ".ds-btn-secondary { display: inline-flex; min-height: 3rem; align-items: center; justify-content: center; gap: 0.5rem; border-radius: 0.55rem; border: 1px solid var(--bb-rail, #CFC5B5); background: var(--bb-surface, #FFFCF7); padding: 0.75rem 1.35rem; font-family: \"Barlow Condensed\", Archivo, sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: var(--bb-ink, #141820); transition: background 180ms cubic-bezier(0.2, 0.8, 0.2, 1), border-color 180ms cubic-bezier(0.2, 0.8, 0.2, 1); cursor: pointer; } .ds-btn-secondary:hover { background: var(--bb-brand-soft, #DCE6FF); border-color: transparent; } .ds-btn-secondary:focus-visible { outline: 2px solid var(--bb-brand, #2457E6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Stuck Chip",
+      "kind": "chip",
+      "refersTo": "chip-stuck",
+      "description": "Amber blocker magnet on a swimlane.",
+      "html": "<span class=\"ds-chip-stuck\">Owner waiting</span>",
+      "css": ".ds-chip-stuck { display: inline-block; border-radius: 0.375rem; border: 1px solid color-mix(in srgb, var(--bb-amber, #E8A317) 70%, transparent); background: var(--bb-amber, #E8A317); padding: 0.5rem 0.625rem; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 1.35; color: var(--bb-ink, #141820); box-shadow: 0 1px 0 rgba(20, 24, 32, 0.06), 0 6px 16px rgba(20, 24, 32, 0.05); }"
+    },
+    {
+      "name": "Moving Chip",
+      "kind": "chip",
+      "refersTo": "chip-moving",
+      "description": "Cobalt-wash chip in transit on the board.",
+      "html": "<span class=\"ds-chip-moving\">Routed</span>",
+      "css": ".ds-chip-moving { display: inline-block; border-radius: 0.375rem; border: 1px solid color-mix(in srgb, var(--bb-brand, #2457E6) 45%, transparent); background: var(--bb-brand-soft, #DCE6FF); padding: 0.5rem 0.625rem; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 1.35; color: var(--bb-brand-dark, #1A3FB0); box-shadow: 0 1px 0 rgba(20, 24, 32, 0.06), 0 6px 16px rgba(20, 24, 32, 0.05); }"
+    },
+    {
+      "name": "Cleared Chip",
+      "kind": "chip",
+      "refersTo": "chip-cleared",
+      "description": "Mint cleared magnet after lane flow.",
+      "html": "<span class=\"ds-chip-cleared\">Status visible</span>",
+      "css": ".ds-chip-cleared { display: inline-block; border-radius: 0.375rem; border: 1px solid color-mix(in srgb, var(--bb-mint, #9FE8C8) 80%, transparent); background: var(--bb-mint, #9FE8C8); padding: 0.5rem 0.625rem; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 13px; font-weight: 500; line-height: 1.35; color: var(--bb-ink, #141820); box-shadow: 0 1px 0 rgba(20, 24, 32, 0.06), 0 6px 16px rgba(20, 24, 32, 0.05); }"
+    },
+    {
+      "name": "Surface Card",
+      "kind": "card",
+      "refersTo": "card-surface",
+      "description": "Rail-bordered paper card for interactive or structured content.",
+      "html": "<div class=\"ds-card\"><h3 class=\"ds-card-title\">Handoff redesign</h3><p class=\"ds-card-body\">Find where work gets stuck, then rebuild the path — not another tool stack.</p></div>",
+      "css": ".ds-card { border: 1px solid var(--bb-rail, #CFC5B5); border-radius: 0.85rem; background: var(--bb-surface, #FFFCF7); box-shadow: 0 1px 0 rgba(20, 24, 32, 0.06), 0 6px 16px rgba(20, 24, 32, 0.05); padding: 1.25rem 1.5rem; color: var(--bb-ink, #141820); } .ds-card-title { margin: 0 0 0.5rem; font-family: \"Barlow Condensed\", Archivo, sans-serif; font-size: 1.125rem; font-weight: 600; letter-spacing: 0.02em; text-transform: uppercase; } .ds-card-body { margin: 0; font-family: Archivo, ui-sans-serif, system-ui, sans-serif; font-size: 0.9375rem; line-height: 1.625; color: var(--bb-ink-muted, #5A6159); }"
+    },
+    {
+      "name": "Nav Tray",
+      "kind": "nav",
+      "refersTo": "nav-bar",
+      "description": "Fixed war-room nav — board wash at rest, paper + rail when scrolled.",
+      "html": "<nav class=\"ds-nav\" aria-label=\"Primary\"><span class=\"ds-nav-brand\">BitBlabs</span><div class=\"ds-nav-links\"><a href=\"#recognition\">Problems</a><a href=\"#how-it-works\">How it works</a><a href=\"#offer\">Session</a></div><button class=\"ds-nav-cta\" type=\"button\">Book</button></nav>",
+      "css": ".ds-nav { display: flex; height: 3.5rem; align-items: center; justify-content: space-between; gap: 1rem; border: 1px solid var(--bb-rail, #CFC5B5); border-radius: 0.75rem; background: color-mix(in srgb, var(--bb-surface, #FFFCF7) 95%, transparent); padding: 0 1rem; box-shadow: 0 14px 36px rgba(20, 24, 32, 0.08); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; } .ds-nav-brand { font-family: \"Barlow Condensed\", Archivo, sans-serif; font-size: 1rem; font-weight: 600; letter-spacing: 0.08em; text-transform: uppercase; color: var(--bb-ink, #141820); } .ds-nav-links { display: flex; gap: 1.5rem; } .ds-nav-links a { font-size: 0.875rem; color: var(--bb-ink-muted, #5A6159); text-decoration: none; transition: color 180ms cubic-bezier(0.2, 0.8, 0.2, 1); } .ds-nav-links a:hover { color: var(--bb-ink, #141820); } .ds-nav-cta { border: none; border-radius: 0.55rem; background: var(--bb-brand, #2457E6); padding: 0.5rem 1rem; font-family: \"Barlow Condensed\", Archivo, sans-serif; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.04em; text-transform: uppercase; color: #fff; cursor: pointer; } .ds-nav-cta:hover { background: var(--bb-brand-dark, #1A3FB0); } .ds-nav-cta:focus-visible { outline: 2px solid var(--bb-brand, #2457E6); outline-offset: 3px; }"
+    },
+    {
+      "name": "Swimlane Board",
+      "kind": "custom",
+      "refersTo": "panel-board",
+      "description": "Signature ops war-room board — BitBlabs title, phase badge, lane magnets, cobalt flow tape.",
+      "html": "<div class=\"ds-board\"><div class=\"ds-board-head\"><div><p class=\"ds-board-title\">BitBlabs</p><p class=\"ds-board-sub\">Ops war-room · live lanes</p></div><span class=\"ds-board-badge\">Work stuck</span></div><div class=\"ds-board-tape\" aria-hidden=\"true\"></div><div class=\"ds-lanes\"><div class=\"ds-lane\"><div class=\"ds-lane-head\"><span>Inbox</span><span>02</span></div><span class=\"ds-chip-stuck\">Unassigned</span></div><div class=\"ds-lane\"><div class=\"ds-lane-head\"><span>Handoff</span><span>04</span></div><span class=\"ds-chip-stuck\">Chase update</span></div></div></div>",
+      "css": ".ds-board { position: relative; overflow: hidden; border: 1px solid var(--bb-rail, #CFC5B5); border-radius: 1.1rem; background: var(--bb-board, #EBE4D8); box-shadow: 0 14px 36px rgba(20, 24, 32, 0.08); font-family: Archivo, ui-sans-serif, system-ui, sans-serif; color: var(--bb-ink, #141820); } .ds-board-head { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: space-between; gap: 0.75rem; border-bottom: 1px solid var(--bb-rail, #CFC5B5); padding: 1rem 1.5rem; } .ds-board-title { margin: 0; font-family: \"Barlow Condensed\", Archivo, sans-serif; font-size: clamp(1.75rem, 4vw, 2.75rem); font-weight: 600; line-height: 1; letter-spacing: 0.04em; text-transform: uppercase; } .ds-board-sub { margin: 0.25rem 0 0; font-family: \"Barlow Condensed\", Archivo, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.16em; text-transform: uppercase; color: var(--bb-ink-muted, #5A6159); } .ds-board-badge { border-radius: 0.25rem; background: var(--bb-amber, #E8A317); padding: 0.25rem 0.5rem; font-family: \"Barlow Condensed\", Archivo, sans-serif; font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase; } .ds-board-tape { height: 12px; margin: 1rem 1.25rem 0; border-radius: 0.25rem; background: repeating-linear-gradient(90deg, var(--bb-brand, #2457E6) 0 18px, transparent 18px 28px); opacity: 0.55; box-shadow: inset 0 1px 0 rgba(255,255,255,0.28), 0 2px 0 rgba(20,24,32,0.2); } .ds-lanes { display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; padding: 1rem 1.25rem 1.25rem; } .ds-lane { min-height: 8rem; border: 1px solid var(--bb-rail, #CFC5B5); border-radius: 0.5rem; background: color-mix(in srgb, var(--bb-surface, #FFFCF7) 90%, transparent); padding: 0.625rem; box-shadow: 0 1px 0 rgba(20, 24, 32, 0.06), 0 6px 16px rgba(20, 24, 32, 0.05); } .ds-lane-head { display: flex; justify-content: space-between; margin-bottom: 0.5rem; padding-bottom: 0.5rem; border-bottom: 1px dashed var(--bb-rail, #CFC5B5); font-family: \"Barlow Condensed\", Archivo, sans-serif; font-size: 0.875rem; font-weight: 600; letter-spacing: 0.12em; text-transform: uppercase; } .ds-lane-head span:last-child { font-size: 10px; font-weight: 500; color: var(--bb-ink-muted, #5A6159); } .ds-board .ds-chip-stuck { display: block; margin-top: 0.5rem; border-radius: 0.375rem; border: 1px solid color-mix(in srgb, var(--bb-amber, #E8A317) 70%, transparent); background: var(--bb-amber, #E8A317); padding: 0.5rem 0.625rem; font-size: 13px; font-weight: 500; box-shadow: 0 1px 0 rgba(20, 24, 32, 0.06), 0 6px 16px rgba(20, 24, 32, 0.05); }"
+    }
+  ],
+  "narrative": {
+    "northStar": "Ops War-Room Swimlanes",
+    "overview": "The homepage reads as a live operations whiteboard, not a SaaS marketing template. Matte warm paper carries a faint 48px grid; work lives as squared magnetic chips on rail-bordered lanes; cobalt flow tape marks continuity when blockers clear. Density is operational and legible — instrument caps for hierarchy, documentation sans for reading — never neon AI chrome or soft stacked card malls.\n\nPersonality is calm, specific, and process-first: stuck work is visible before the offer. Brand signal in the first viewport is the board titled BitBlabs, with one headline, one supporting line, and Book / See How It Works. Primary Book clears the lane into flow before navigation completes.",
+    "keyCharacteristics": [
+      "Matte whiteboard canvas with subtle grid atmosphere",
+      "Cobalt flow tape + amber stuck / mint cleared chip states",
+      "Archivo body + Barlow Condensed display/labels (uppercase magnets)",
+      "Squared magnet radii — not capsule pills",
+      "Soft board and chip shadows only; no glow stacks",
+      "Homepage-scoped .bb-home tokens; separate from portfolio chrome"
+    ],
+    "rules": [
+      {
+        "name": "The Flow Tape Rule",
+        "body": "Cobalt is continuous flow and primary commitment — ≤ ~10% of a screen. Amber and mint own status; do not recolor whole sections cobalt.",
+        "section": "colors"
+      },
+      {
+        "name": "The Whiteboard Ground Rule",
+        "body": "Page atmosphere is matte paper + grid + soft radial washes (amber / cobalt at low opacity). Flat single-color fills and purple neon gradients are out of world.",
+        "section": "colors"
+      },
+      {
+        "name": "The Magnet Caps Rule",
+        "body": "Interactive magnets and lane chrome use Barlow Condensed uppercase. Body copy stays Archivo sentence case — do not all-caps paragraphs.",
+        "section": "typography"
+      },
+      {
+        "name": "The No-Kicker Rule",
+        "body": "Section kickers / eyebrows are craft-floor banned on this surface (CSS forces them hidden). Lead with the section H2; do not invent eyebrow styles for future sections.",
+        "section": "typography"
+      },
+      {
+        "name": "The Board-Is-Hero Rule",
+        "body": "The swimlane board is the thesis visual plane — full-bleed in the hero. Do not demote it to a side card or floating collage.",
+        "section": "layout"
+      },
+      {
+        "name": "The Soft Magnet Rule",
+        "body": "Shadows are quiet whiteboard depth. Prefer rail borders and tonal steps over stacked elevation.",
+        "section": "elevation"
+      },
+      {
+        "name": "The Squared Magnet Rule",
+        "body": "Interactive and status shapes stay short-radius rectangles. Capsule pills (999px / rounded-full) are not part of the brand vocabulary (skip-link focus chrome excepted).",
+        "section": "shapes"
+      }
+    ],
+    "dos": [
+      "Do keep homepage work inside `.bb-home` tokens (canvas `#F4F0E8`, brand `#2457E6`, amber `#E8A317`, mint `#9FE8C8`).",
+      "Do use Archivo for reading and Barlow Condensed for magnets, board titles, and labels.",
+      "Do treat the swimlane board as the hero thesis and let Book clear lanes into flow.",
+      "Do prefer rail borders + soft magnet shadows over glow or heavy card elevation.",
+      "Do honor `prefers-reduced-motion` (board autoplay off; SoftReveal / PanelSwap static)."
+    ],
+    "donts": [
+      "Don't revive Manrope, indigo `#4F46E5`, cream-serif terracotta, or purple-on-white SaaS gradients on this surface.",
+      "Don't use capsule pills for CTAs or status chips.",
+      "Don't ship neon AI chrome, glassmorphism stacks, or decorative card malls in the first viewport.",
+      "Don't invent section kickers/eyebrows as system chrome (banned; CSS hides them).",
+      "Don't copy this token set onto `/projects` dark portfolio chrome without an explicit world migration."
+    ]
+  }
+}
