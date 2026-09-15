@@ -13,8 +13,8 @@ export default function CaseStudiesPage() {
             Case studies
           </h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:text-lg">
-            Deep dives into AI concepts, tools, and techniques, explained through engaging visual
-            stories.
+            First-hand notes from BitBlabs work on operational AI systems, including anonymized
+            recruitment coordination. Not a blog of generic AI takes.
           </p>
 
           <ul className="mt-12 grid gap-6 md:mt-16 md:grid-cols-2 lg:gap-8">
@@ -29,7 +29,13 @@ export default function CaseStudiesPage() {
                       {study.category}
                     </span>
                     <span className="rounded-md border border-[var(--bb-rail)] bg-[var(--bb-board)] px-2.5 py-1.5 font-[family-name:var(--font-barlow-condensed)] text-[11px] font-semibold uppercase tracking-[0.12em] text-[var(--bb-ink-muted)]">
-                      {study.readTime}
+                      {study.date
+                        ? new Intl.DateTimeFormat('en-GB', {
+                            day: 'numeric',
+                            month: 'short',
+                            year: 'numeric',
+                          }).format(new Date(study.date))
+                        : study.readTime}
                     </span>
                   </div>
                   <h2 className="font-[family-name:var(--font-barlow-condensed)] text-[clamp(1.5rem,3vw,2rem)] font-semibold leading-[1.05] tracking-[0.02em] text-[var(--bb-ink)]">

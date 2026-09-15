@@ -23,7 +23,7 @@ import {
   StatementScene,
   TestimonialScene,
 } from '@/components/showcase/case-study/CaseStudyScenes'
-import { PORTFOLIO_SECTION_HREF } from '@/lib/site'
+import { BOOK_CTA_LABEL, BOOK_HREF, PORTFOLIO_SECTION_HREF } from '@/lib/site'
 import {
   caseStudyHeroMedia,
   slideChapterLabel,
@@ -320,9 +320,32 @@ export function AgencyCaseStudy({
             <h1 className="mt-8 max-w-5xl font-[family-name:var(--font-barlow-condensed)] text-[clamp(2.4rem,7.2vw,5.4rem)] font-semibold leading-[0.94] tracking-[-0.01em] text-[var(--bb-ink)]">
               {project.title}
             </h1>
-            <p className="mt-6 max-w-3xl text-lg leading-relaxed text-[var(--bb-ink-muted)] md:text-xl">
-              {project.tagline}
-            </p>
+            {project.experienceNote ? (
+              <p className="mt-6 max-w-3xl text-base leading-relaxed text-[var(--bb-ink)] md:text-lg">
+                {project.experienceNote}
+              </p>
+            ) : null}
+
+            {project.authors?.length ? (
+              <p className="mt-4 max-w-3xl text-sm leading-relaxed text-[var(--bb-ink-muted)]">
+                Prepared by{' '}
+                {project.authors.map((author, index) => (
+                  <span key={author.id}>
+                    {index > 0 ? (index === project.authors!.length - 1 ? ' and ' : ', ') : null}
+                    <a
+                      href={author.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="font-medium text-[var(--bb-ink)] underline decoration-[var(--bb-rail)] underline-offset-2 hover:text-[var(--bb-brand-dark)]"
+                    >
+                      {author.name}
+                    </a>
+                  </span>
+                ))}
+                {project.publishedOn ? `. Published ${project.publishedOn}` : null}
+                {project.updatedOn ? `. Updated ${project.updatedOn}` : null}.
+              </p>
+            ) : null}
 
             {project.links?.live ? (
               <a
@@ -338,14 +361,26 @@ export function AgencyCaseStudy({
 
           <Reveal className="mt-12 grid gap-8 border-t border-[var(--bb-line)] pt-10 sm:grid-cols-2 lg:grid-cols-4">
             <MetaItem label="Industry" value={project.industry} />
-            <MetaItem label="Timeline" value={project.duration} />
-            <MetaItem label="Role" value={project.role} />
             <MetaItem
-              label="Stack"
+              label={project.proofKind === 'insight' ? 'Read time' : 'Timeline'}
+              value={project.duration}
+            />
+            <MetaItem
+              label={project.proofKind === 'insight' ? 'Published' : 'Role'}
               value={
-                project.tech.length > 0
-                  ? project.tech.slice(0, 3).join(' · ')
-                  : project.categoryLabel
+                project.proofKind === 'insight'
+                  ? (project.publishedOn ?? project.year)
+                  : project.role
+              }
+            />
+            <MetaItem
+              label={project.proofKind === 'insight' ? 'Updated' : 'Stack'}
+              value={
+                project.proofKind === 'insight'
+                  ? (project.updatedOn ?? project.publishedOn ?? project.year)
+                  : project.tech.length > 0
+                    ? project.tech.slice(0, 3).join(' · ')
+                    : project.categoryLabel
               }
             />
           </Reveal>
@@ -379,6 +414,66 @@ export function AgencyCaseStudy({
 
       {slideSections}
 
+      {project.takeaways?.length ? (
+        <section className="bb-home-section border-t border-[var(--bb-line)]">
+          <div className="bb-home-container">
+            <Reveal>
+              <h2 className="max-w-3xl font-[family-name:var(--font-barlow-condensed)] text-[clamp(1.75rem,4vw,2.75rem)] font-semibold leading-[1.02] tracking-[0.02em] text-[var(--bb-ink)]">
+                What this engagement taught us
+              </h2>
+              <ol className="mt-8 max-w-3xl space-y-4">
+                {project.takeaways.map((takeaway, index) => (
+                  <li
+                    key={takeaway}
+                    className="flex gap-4 text-base leading-relaxed text-[var(--bb-ink)] md:text-lg"
+                  >
+                    <span className="mt-0.5 font-[family-name:var(--font-barlow-condensed)] text-sm font-semibold tabular-nums text-[var(--bb-brand)]">
+                      {String(index + 1).padStart(2, '0')}
+                    </span>
+                    {takeaway}
+                  </li>
+                ))}
+              </ol>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
+
+      {project.authors?.length ? (
+        <section className="bb-home-section border-t border-[var(--bb-line)] bg-[var(--bb-surface)]">
+          <div className="bb-home-container">
+            <Reveal>
+              <h2 className="font-[family-name:var(--font-barlow-condensed)] text-[clamp(1.5rem,3vw,2rem)] font-semibold tracking-[0.02em] text-[var(--bb-ink)]">
+                Who prepared this
+              </h2>
+              <ul className="mt-8 grid gap-6 md:grid-cols-2">
+                {project.authors.map((author) => (
+                  <li key={author.id} className="bb-panel p-6">
+                    <p className="font-[family-name:var(--font-barlow-condensed)] text-xl font-semibold tracking-[0.02em] text-[var(--bb-ink)]">
+                      {author.name}
+                    </p>
+                    <p className="mt-1 text-sm font-medium text-[var(--bb-brand-dark)]">
+                      {author.role}
+                    </p>
+                    <p className="mt-3 text-sm leading-relaxed text-[var(--bb-ink-muted)]">
+                      {author.bio}
+                    </p>
+                    <a
+                      href={author.url}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="mt-4 inline-block text-sm font-medium text-[var(--bb-ink)] underline decoration-[var(--bb-rail)] underline-offset-2"
+                    >
+                      LinkedIn
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </Reveal>
+          </div>
+        </section>
+      ) : null}
+
       <MetricsShowcase
         chapterNumber={metricsChapter.number}
         chapterLabel={metricsChapter.label}
@@ -392,9 +487,16 @@ export function AgencyCaseStudy({
         <div className="bb-home-container text-center">
           <Reveal>
             <h2 className="font-[family-name:var(--font-barlow-condensed)] text-[clamp(1.75rem,4vw,2.75rem)] font-semibold tracking-[0.02em] text-[var(--bb-ink)]">
-              {nextProject?.title ?? conclusionSlide?.title ?? closingChapter.label}
+              {project.proofKind === 'insight'
+                ? 'Map one stuck workflow next'
+                : (nextProject?.title ?? conclusionSlide?.title ?? closingChapter.label)}
             </h2>
-            {conclusionSlide?.highlight ? (
+            {project.proofKind === 'insight' ? (
+              <p className="mx-auto mt-5 max-w-2xl text-lg text-[var(--bb-ink-muted)] md:text-xl">
+                Bring one important process. We will show where it stalls, where AI belongs, and
+                what to do in the next 90 days.
+              </p>
+            ) : conclusionSlide?.highlight ? (
               <p className="mx-auto mt-5 max-w-2xl text-lg text-[var(--bb-ink-muted)] md:text-xl">
                 {conclusionSlide.highlight}
               </p>
@@ -402,21 +504,34 @@ export function AgencyCaseStudy({
           </Reveal>
 
           <Reveal className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
-            {project.links?.live ? (
-              <a
-                href={project.links.live}
-                target="_blank"
-                rel="noopener noreferrer"
-                className="bb-btn-secondary"
-              >
-                View live product
-              </a>
-            ) : null}
-            {nextProject ? (
-              <Link href={`/projects/${nextProject.slug}`} className="bb-btn-primary">
-                Next: {nextProject.title}
-              </Link>
-            ) : null}
+            {project.proofKind === 'insight' ? (
+              <>
+                <a href={BOOK_HREF} className="bb-btn-primary">
+                  {BOOK_CTA_LABEL}
+                </a>
+                <Link href={PORTFOLIO_SECTION_HREF} className="bb-btn-secondary">
+                  See related work
+                </Link>
+              </>
+            ) : (
+              <>
+                {project.links?.live ? (
+                  <a
+                    href={project.links.live}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="bb-btn-secondary"
+                  >
+                    View live product
+                  </a>
+                ) : null}
+                {nextProject ? (
+                  <Link href={`/projects/${nextProject.slug}`} className="bb-btn-primary">
+                    Next: {nextProject.title}
+                  </Link>
+                ) : null}
+              </>
+            )}
           </Reveal>
         </div>
       </section>

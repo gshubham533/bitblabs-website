@@ -13,6 +13,8 @@ export interface CaseStudy {
   subtitle?: string
   author?: string
   date?: string
+  updated?: string
+  experienceNote?: string
   slides?: StorySlide[]
   takeaways?: string[]
   nextSlug?: string
@@ -31,8 +33,11 @@ export const caseStudies: CaseStudy[] = [
     thumbnail: '',
     color: '#3B82F6',
     featured: true,
-    author: 'BitB Labs',
-    date: 'Jan 29, 2026',
+    author: 'BitBlabs',
+    date: '2026-01-29',
+    updated: '2026-09-16',
+    experienceNote:
+      'This write-up draws on BitBlabs work redesigning recruitment coordination for an enterprise hiring team. Client identity stays anonymized. It is industry education from that engagement, not a named testimonial.',
     slides: [
       {
         id: 1,

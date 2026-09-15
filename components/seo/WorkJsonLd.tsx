@@ -7,7 +7,8 @@ type WorkJsonLdProps = {
   kind: 'project' | 'case-study'
 }
 
-function toIsoDate(value: string) {
+function toIsoDate(value: string | undefined) {
+  if (!value) return undefined
   const parsed = Date.parse(value)
   if (!Number.isNaN(parsed)) return new Date(parsed).toISOString().slice(0, 10)
   if (/^\d{4}$/.test(value)) return `${value}-01-01`
@@ -21,9 +22,19 @@ export function WorkJsonLd({ project, kind }: WorkJsonLdProps) {
   const image = project.cover
     ? `${SITE_URL}${project.cover.startsWith('/') ? project.cover : `/${project.cover}`}`
     : `${SITE_URL}/og/homepage.png`
-  const date = toIsoDate(project.year)
+  const published = toIsoDate(project.publishedIso) ?? toIsoDate(project.publishedOn) ?? toIsoDate(project.year)
+  const modified = toIsoDate(project.updatedIso) ?? toIsoDate(project.updatedOn) ?? published
   const parentName = kind === 'project' ? 'Work' : 'Case studies'
   const parentPath = kind === 'project' ? '/projects' : '/case-studies'
+  const authors = (project.authors ?? []).map((author) => ({
+    '@type': 'Person',
+    '@id': `${SITE_URL}/#person-${author.id}`,
+    name: author.name,
+    jobTitle: author.role,
+    url: author.url,
+    sameAs: [author.url],
+    worksFor: { '@id': ORG_ID },
+  }))
 
   const graph = {
     '@context': 'https://schema.org',
@@ -37,9 +48,12 @@ export function WorkJsonLd({ project, kind }: WorkJsonLdProps) {
         url,
         image,
         inLanguage: 'en-US',
-        ...(kind === 'case-study' && date ? { datePublished: date } : {}),
-        ...(kind === 'project' && project.year ? { dateCreated: project.year } : {}),
-        author: { '@id': ORG_ID },
+        ...(published ? { datePublished: published } : {}),
+        ...(modified ? { dateModified: modified } : {}),
+        ...(kind === 'project' && project.year && !published
+          ? { dateCreated: project.year }
+          : {}),
+        author: authors.length > 0 ? authors : { '@id': ORG_ID },
         publisher: {
           '@type': 'Organization',
           name: SITE_NAME,
@@ -47,6 +61,7 @@ export function WorkJsonLd({ project, kind }: WorkJsonLdProps) {
         },
         about: { '@id': ORG_ID },
       },
+      ...authors,
       {
         '@type': 'BreadcrumbList',
         itemListElement: [
