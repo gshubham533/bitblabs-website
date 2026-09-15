@@ -4,7 +4,7 @@ export const LANDING_SEO = {
   title: 'AI Workflow Strategy Session for Service Businesses | BitBlabs',
   description:
     'Find where work gets stuck between people, inboxes, and spreadsheets. Book a 90-minute AI Workflow Strategy Session ($2,000) and leave with a practical roadmap.',
-  ogTitle: 'Find where work gets stuck — then redesign that workflow',
+  ogTitle: 'Find where work gets stuck. Then redesign that workflow.',
   ogDescription:
     'A paid 90-minute session for owners and ops leaders: map one critical workflow, decide where AI belongs, and get a plan you can run.',
 } as const
@@ -13,7 +13,7 @@ export const HERO = {
   eyebrow: 'AI workflow strategy + implementation',
   headline: 'Find where work gets stuck. Then redesign that workflow.',
   supporting: [
-    'If follow-ups wait on an inbox, status lives in a spreadsheet, and growth adds coordination instead of capacity — fix the process before you buy another AI tool.',
+    'If follow-ups wait on an inbox, status lives in a spreadsheet, and growth adds coordination instead of capacity, fix the process before you buy another AI tool.',
     'BitBlabs maps one high-impact workflow, redesigns how it should move, and builds the system when you want us to implement.',
   ] as const,
   primaryCta: 'Book Your Strategy Session',
@@ -39,7 +39,7 @@ export const FRICTION = {
     },
     {
       title: 'Buried knowledge',
-      body: 'The answer exists — but only if you know whom to ask.',
+      body: 'The answer exists, but only if you know whom to ask.',
     },
     {
       title: 'Manual reporting',
@@ -76,7 +76,7 @@ export const METHOD = {
   stages: [
     {
       title: 'Understand',
-      body: 'Map how the work moves today — owners, tools, and handoffs.',
+      body: 'Map how the work moves today: owners, tools, and handoffs.',
       example: 'Current-state map',
     },
     {
@@ -118,7 +118,7 @@ export const HOW_WE_WORK = {
       number: '03',
       title: 'Build and deploy it',
       body: 'If you want BitBlabs to implement, we integrate, test, and put the system into real day-to-day use.',
-      outcome: 'A working system — not another deck.',
+      outcome: 'A working system, not another deck.',
     },
   ] as const,
 } as const
@@ -126,7 +126,7 @@ export const HOW_WE_WORK = {
 export const OFFER = {
   eyebrow: 'Not sure what to automate first?',
   headline: 'Start with one important workflow.',
-  body: 'A 90-minute working session for owners and ops leaders who know something is stuck — and will not fund the wrong build.',
+  body: 'A 90-minute working session for owners and ops leaders who know something is stuck, and will not fund the wrong build.',
   duringLabel: 'In the session we will:',
   steps: [
     'Select one high-impact workflow',
@@ -155,7 +155,7 @@ export const OFFER = {
 export const DELIVERABLES = {
   headline: 'What you leave with',
   supporting:
-    'You pay for a plan you can run — with BitBlabs, your team, or another partner.',
+    'You pay for a plan you can run with BitBlabs, your team, or another partner.',
   items: [
     {
       title: 'Current workflow map',
@@ -373,7 +373,7 @@ export const ABOUT = {
     'BitBlabs turns operational problems into working systems.',
     'We combine process design, conversational AI, workflow automation, and custom product work for problems off-the-shelf tools handle poorly.',
     'That includes voice and workflow systems in live operations, including enterprise recruitment coordination.',
-    'We care what happens after the demo — when real people use the system.',
+    'We care what happens after the demo, when real people use the system.',
   ] as const,
 } as const
 
@@ -415,7 +415,7 @@ export const FAQ = {
       id: 'ai-not-right',
       question: 'What if AI is not the right solution?',
       answer:
-        'We will say so. The session finds the right fix — process design, ordinary automation, or a clearer human workflow.',
+        'We will say so. The session finds the right fix: process design, ordinary automation, or a clearer human workflow.',
     },
     {
       id: 'existing-tools',
@@ -456,5 +456,5 @@ export const FINAL_CTA = {
 
 export const FOOTER = {
   positioning: 'AI workflow strategy and implementation for growing service businesses.',
-  emailPlaceholder: 'Business email — to be confirmed',
+  emailPlaceholder: 'Business email (to be confirmed)',
 } as const

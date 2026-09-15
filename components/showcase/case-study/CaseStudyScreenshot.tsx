@@ -62,7 +62,7 @@ interface CaseStudyScreenshotProps {
   aspectRatio?: string
   /** Content area tone inside device/minimal frames. */
   frameTheme?: 'light' | 'dark'
-  /** Surrounding section theme — drives minimal border styling. */
+  /** Surrounding section theme. Drives minimal border styling. */
   sectionTheme?: 'light' | 'dark'
   imageFit?: 'contain' | 'cover'
   frameVariant?: ImageFrameVariant
@@ -125,7 +125,7 @@ function MediaContent({
     )
 
     observer.observe(video)
-    // Hero videos are above the fold — start loading/playing immediately.
+    // Hero videos are above the fold, so start loading/playing immediately.
     if (priority) tryPlay()
 
     return () => {

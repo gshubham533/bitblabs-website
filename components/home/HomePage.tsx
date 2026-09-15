@@ -1,5 +1,5 @@
 /**
- * THESIS: Ops war-room homepage that makes stuck work visible on a live swimlane board and books a $2,000 strategy session — refusing neon AI chrome and soft SaaS card stacks.
+ * THESIS: Ops war-room homepage that makes stuck work visible on a live swimlane board and books a $2,000 strategy session, refusing neon AI chrome and soft SaaS card stacks.
  * OWN-WORLD: Matte whiteboard #F4F0E8, magnetic lane rails, amber blocker chips, cobalt flow tape #2457E6, mint cleared chips, Archivo + Barlow Condensed, squared magnets not capsule pills.
  * STORY: Visitor recognizes their stuck lanes, believes BitBlabs redesigns handoffs not tools, sees anonymized proof early, and books.
  * FIRST VIEWPORT: Full-bleed swimlane board as the thesis; BitBlabs as board title; one headline; one supporting line; Book + See How It Works; primary action clears a lane.

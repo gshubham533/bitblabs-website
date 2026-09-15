@@ -113,7 +113,7 @@ export const privacySections: LegalSection[] = [
         </p>
         <ul className="list-disc space-y-2 pl-5">
           <li>
-            <strong className="font-medium text-zinc-300">Calendly</strong> — appointment scheduling
+            <strong className="font-medium text-zinc-300">Calendly</strong>: appointment scheduling
             when you book a project discussion (
             <a
               href={BOOKING_URL}
@@ -127,7 +127,7 @@ export const privacySections: LegalSection[] = [
           </li>
           <li>
             <strong className="font-medium text-zinc-300">Hosting and infrastructure providers</strong>{' '}
-            — to deliver and secure the website
+            to deliver and secure the website
           </li>
         </ul>
         <p>

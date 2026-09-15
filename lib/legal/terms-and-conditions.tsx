@@ -106,8 +106,8 @@ export const termsSections: LegalSection[] = [
     body: (
       <>
         <p>
-          Unless otherwise stated, all content on this website — including text, graphics, logos,
-          images, layouts, code snippets displayed for demonstration, and design elements — is owned
+          Unless otherwise stated, all content on this website, including text, graphics, logos,
+          images, layouts, code snippets displayed for demonstration, and design elements, is owned
           by or licensed to {LEGAL_NAME} and is protected by applicable intellectual property laws.
         </p>
         <p>

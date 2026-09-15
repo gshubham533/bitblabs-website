@@ -16,15 +16,15 @@ const RYFT_GLOW =
 const RYFT_IMAGES = [
   {
     src: '/ryft-slide-hero.png',
-    alt: 'Ryft hero — workout tracker built by friends, with progress and squad app screens',
+    alt: 'Ryft hero: workout tracker built by friends, with progress and squad app screens',
   },
   {
     src: '/ryft-slide-progress.png',
-    alt: 'Ryft gamification — XP, levels, streaks, badges, and personal records',
+    alt: 'Ryft gamification: XP, levels, streaks, badges, and personal records',
   },
   {
     src: '/ryft-slide-features.png',
-    alt: 'Ryft features — workout builder, tracking, progress, live sessions, and smart rest timer',
+    alt: 'Ryft features: workout builder, tracking, progress, live sessions, and smart rest timer',
   },
 ] as const
 

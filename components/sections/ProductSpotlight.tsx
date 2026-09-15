@@ -84,8 +84,8 @@ export interface ProductSpotlightProps {
   backgroundVideoSrc?: string
   /**
    * Desktop composition.
-   * `default` — panel left, screenshot right (Rezonna).
-   * `mirrored` — screenshot left, panel right.
+   * `default`: panel left, screenshot right (Rezonna).
+   * `mirrored`: screenshot left, panel right.
    */
   layout?: 'default' | 'mirrored'
 }
@@ -589,7 +589,7 @@ export function ProductSpotlight({
         </>
       ) : null}
 
-      {/* Mobile — stacked, left-aligned within section padding */}
+      {/* Mobile: stacked, left-aligned within section padding */}
       <div
         className={cn(
           'relative z-[2] mx-auto flex w-full max-w-[min(100%,90rem)] flex-col gap-8 md:hidden',
@@ -617,7 +617,7 @@ export function ProductSpotlight({
         />
       </div>
 
-      {/* Desktop — layered absolute layout */}
+      {/* Desktop: layered absolute layout */}
       <div
         className={cn(
           'product-stage relative z-[2] mx-auto hidden w-full max-w-[min(100%,90rem)] md:block',

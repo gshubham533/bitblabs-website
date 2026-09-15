@@ -13,15 +13,15 @@ type RezonnaProductSpotlightProps = Pick<
 const REZONNA_IMAGES = [
   {
     src: '/rezonna-slide-hero.png',
-    alt: 'Rezonna hero — 24/7 AI sales caller for real estate leads with live call interface',
+    alt: 'Rezonna hero: 24/7 AI sales caller for real estate leads with live call interface',
   },
   {
     src: '/rezonna-slide-problem.png',
-    alt: 'Rezonna problem framing — late responses, wasted sales time, missed follow-up, and lower conversion',
+    alt: 'Rezonna problem framing: late responses, wasted sales time, missed follow-up, and lower conversion',
   },
   {
     src: '/rezonna-slide-comparison.png',
-    alt: 'Rezonna vs traditional IVR comparison — qualifies, answers, and books instead of routing menus',
+    alt: 'Rezonna vs traditional IVR comparison: qualifies, answers, and books instead of routing menus',
   },
 ] as const
 

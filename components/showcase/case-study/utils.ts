@@ -34,7 +34,7 @@ export function heroImage(project: CaseStudyProject): string | undefined {
   return project.thumbnail
 }
 
-/** Hero media for case study pages — excludes logo/thumbnail-only fallback. */
+/** Hero media for case study pages. Excludes logo/thumbnail-only fallback. */
 export function caseStudyHeroMedia(project: CaseStudyProject): string | undefined {
   if (project.cover) return project.cover
 

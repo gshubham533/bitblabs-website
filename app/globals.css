@@ -465,9 +465,9 @@ a {
   }
 }
 
-/* —— Homepage (brief-pinned light system). Scoped so inner routes stay untouched. —— */
+/* Homepage (brief-pinned light system). Scoped so inner routes stay untouched. */
 .bb-home {
-  /* Ops War-Room Swimlanes — whiteboard ground, magnetic rails, amber blockers, cobalt flow */
+  /* Ops War-Room Swimlanes: whiteboard ground, magnetic rails, amber blockers, cobalt flow */
   --bb-canvas: #f4f0e8;
   --bb-board: #ebe4d8;
   --bb-surface: #fffcf7;

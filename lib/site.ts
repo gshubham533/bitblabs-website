@@ -15,7 +15,7 @@ export const PAY_BOOK_URL =
   DEFAULT_PAY_BOOK_URL
 
 export const BOOK_HREF = PAY_BOOK_URL
-export const BOOK_NAV_LABEL = 'Book — $2,000'
+export const BOOK_NAV_LABEL = 'Book · $2,000'
 export const BOOK_CTA_LABEL = 'Book Your Strategy Session'
 export const BOOK_FINAL_CTA_LABEL = 'Book Your AI Workflow Strategy Session'
 export const BOOK_OFFER_CTA_LABEL = 'Book the Strategy Session'

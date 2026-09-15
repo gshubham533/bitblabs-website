@@ -1,6 +1,6 @@
 ---
 name: BitBlabs Homepage
-description: Ops war-room swimlanes — matte whiteboard, cobalt flow tape, amber blockers, Archivo + Barlow Condensed magnets.
+description: Ops war-room swimlanes: matte whiteboard, cobalt flow tape, amber blockers, Archivo + Barlow Condensed magnets.
 colors:
   canvas: "#F4F0E8"
   board: "#EBE4D8"
@@ -134,7 +134,7 @@ components:
 
 **Creative North Star: "Ops War-Room Swimlanes"**
 
-The homepage reads as a live operations whiteboard, not a SaaS marketing template. Matte warm paper carries a faint 48px grid; work lives as squared magnetic chips on rail-bordered lanes; cobalt flow tape marks continuity when blockers clear. Density is operational and legible — instrument caps for hierarchy, documentation sans for reading — never neon AI chrome or soft stacked card malls.
+The homepage reads as a live operations whiteboard, not a SaaS marketing template. Matte warm paper carries a faint 48px grid; work lives as squared magnetic chips on rail-bordered lanes; cobalt flow tape marks continuity when blockers clear. Density is operational and legible: instrument caps for hierarchy, documentation sans for reading. Never neon AI chrome or soft stacked card malls.
 
 Personality is calm, specific, and process-first: stuck work is visible before the offer. Brand signal in the first viewport is the board titled **BitBlabs**, with one headline, one supporting line, and Book / See How It Works. Primary Book clears the lane into flow before navigation completes.
 
@@ -142,7 +142,7 @@ Personality is calm, specific, and process-first: stuck work is visible before t
 - Matte whiteboard canvas with subtle grid atmosphere
 - Cobalt flow tape + amber stuck / mint cleared chip states
 - Archivo body + Barlow Condensed display/labels (uppercase magnets)
-- Squared magnet radii — not capsule pills
+- Squared magnet radii, not capsule pills
 - Soft board and chip shadows only; no glow stacks
 - Homepage-scoped `.bb-home` tokens; separate from portfolio chrome
 
@@ -151,7 +151,7 @@ Personality is calm, specific, and process-first: stuck work is visible before t
 Whiteboard neutrals carry the page; cobalt is the rare continuous-flow accent; amber and mint are status pigments on chips, not decoration washes.
 
 ### Primary
-- **Cobalt Flow Tape** (`brand` / `#2457E6`): Primary actions, focus rings, flow-phase tape and moving-chip borders. Scarcity matters — it marks motion and commitment, not every surface.
+- **Cobalt Flow Tape** (`brand` / `#2457E6`): Primary actions, focus rings, flow-phase tape and moving-chip borders. Scarcity matters: it marks motion and commitment, not every surface.
 - **Cobalt Depth** (`brand-dark` / `#1A3FB0`): Primary hover / pressed depth; moving-chip text.
 - **Cobalt Wash** (`brand-soft` / `#DCE6FF`): Soft hover fill for secondary magnets; moving chip field; selection highlight.
 
@@ -171,7 +171,7 @@ Whiteboard neutrals carry the page; cobalt is the rare continuous-flow accent; a
 - **On Brand** (`on-brand` / `#FFFFFF`): Text on primary cobalt magnets.
 
 ### Named Rules
-**The Flow Tape Rule.** Cobalt is continuous flow and primary commitment — ≤ ~10% of a screen. Amber and mint own status; do not recolor whole sections cobalt.
+**The Flow Tape Rule.** Cobalt is continuous flow and primary commitment: ≤ ~10% of a screen. Amber and mint own status; do not recolor whole sections cobalt.
 
 **The Whiteboard Ground Rule.** Page atmosphere is matte paper + grid + soft radial washes (amber / cobalt at low opacity). Flat single-color fills and purple neon gradients are out of world.
 
@@ -180,17 +180,17 @@ Whiteboard neutrals carry the page; cobalt is the rare continuous-flow accent; a
 **Display Font:** Barlow Condensed (with Archivo fallback)
 **Body Font:** Archivo (with ui-sans-serif / system-ui)
 
-**Character:** Condensed instrument caps for board titles, CTAs, and lane labels; Archivo for operational reading — documentation, not marketing flourish.
+**Character:** Condensed instrument caps for board titles, CTAs, and lane labels; Archivo for operational reading: documentation, not marketing flourish.
 
 ### Hierarchy
-- **Display** (600, `clamp(2.4rem, 7.2vw, 5.4rem)`, lh 0.94): Hero H1 only — sentence case, tight tracking.
+- **Display** (600, `clamp(2.4rem, 7.2vw, 5.4rem)`, lh 0.94): Hero H1 only. Sentence case, tight tracking.
 - **Headline** (600, `clamp(1.75rem, 4vw, 2.75rem)`, uppercase tracking ~0.04em): Board wordmark / major condensed titles.
 - **Title** (600, 1rem, uppercase tracking 0.04em): Primary and secondary magnet CTAs.
 - **Body** (400, 1rem–1.125rem, lh ~1.625): Supporting copy; keep lines readable (~65ch where constrained).
 - **Label** (600, ~11px, uppercase tracking 0.12–0.16em): Phase badges, lane meta, microcopy under CTAs.
 
 ### Named Rules
-**The Magnet Caps Rule.** Interactive magnets and lane chrome use Barlow Condensed uppercase. Body copy stays Archivo sentence case — do not all-caps paragraphs.
+**The Magnet Caps Rule.** Interactive magnets and lane chrome use Barlow Condensed uppercase. Body copy stays Archivo sentence case. Do not all-caps paragraphs.
 
 **The No-Kicker Rule.** Section kickers / eyebrows are craft-floor banned on this surface (CSS forces them hidden). Lead with the section H2; do not invent eyebrow styles for future sections.
 
@@ -198,10 +198,10 @@ Whiteboard neutrals carry the page; cobalt is the rare continuous-flow accent; a
 
 Container max `1240px` (`--bb-max`), optional wide `1400px`. Inline padding steps `1.125rem` → `1.5rem` (sm) → `2rem` (lg). Section block rhythm `4rem` / `5.5rem` / `7.5rem`.
 
-First viewport: copy block in container, then full-bleed swimlane board (edge-to-edge, no inset media card). Sticky mobile booking bar appears after hero exit; pad `.bb-home` bottom when active. Grid atmosphere is `48px` on canvas — structural, not decorative clutter.
+First viewport: copy block in container, then full-bleed swimlane board (edge-to-edge, no inset media card). Sticky mobile booking bar appears after hero exit; pad `.bb-home` bottom when active. Grid atmosphere is `48px` on canvas: structural, not decorative clutter.
 
 ### Named Rules
-**The Board-Is-Hero Rule.** The swimlane board is the thesis visual plane — full-bleed in the hero. Do not demote it to a side card or floating collage.
+**The Board-Is-Hero Rule.** The swimlane board is the thesis visual plane: full-bleed in the hero. Do not demote it to a side card or floating collage.
 
 ## Elevation & Depth
 
@@ -234,12 +234,12 @@ Form language is **squared magnets**: button radius `0.55rem`, chips `0.375rem`�
 - **Stuck:** Amber fill, amber-tinted border, ink text
 - **Moving:** Cobalt wash, cobalt border, brand-dark text
 - **Cleared:** Mint fill, mint border, ink text
-- **Shape:** Squared (`rounded-md`), chip shadow — never pills
+- **Shape:** Squared (`rounded-md`), chip shadow, never pills
 
 ### Cards / Containers
 - **Card:** Surface + rail border + chip shadow + `0.85rem` radius
 - **Panel:** Surface + rail border + larger radius (`1.15rem` / `1.35rem`)
-- **Use:** Interaction or structured content only — not decorative card stacks in hero
+- **Use:** Interaction or structured content only, not decorative card stacks in hero
 
 ### Navigation
 - Fixed top tray: board wash at rest; on scroll → surface/95 + rail border + board shadow

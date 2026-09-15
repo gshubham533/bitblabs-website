@@ -148,7 +148,7 @@ export function HeroContent() {
               'mt-6 mx-auto max-w-3xl text-lg leading-relaxed text-zinc-600 sm:mt-7 sm:text-xl md:mt-8 md:text-2xl md:leading-relaxed'
             )}
           >
-            Custom AI for mid-market ops — hiring, sales, support, supply chain — when{' '}
+            Custom AI for mid-market ops (hiring, sales, support, supply chain) when{' '}
             <span className="font-medium text-zinc-950">off-the-shelf tools</span> stop being enough.
           </motion.p>
         </motion.div>
