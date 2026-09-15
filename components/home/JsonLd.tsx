@@ -1,5 +1,5 @@
 import { FAQ, LANDING_SEO } from '@/lib/landing'
-import { LEGAL_NAME } from '@/lib/site'
+import { CONTACT_PHONE, LEGAL_NAME } from '@/lib/site'
 import { founders } from '@/lib/founders'
 
 export function JsonLd() {
@@ -12,7 +12,7 @@ export function JsonLd() {
     logo: 'https://bitblabs.com/logos/bitblabs-logo.svg',
     description:
       'BitBlabs helps growing service businesses find operational bottlenecks, redesign workflows, and build practical AI systems.',
-    telephone: '+918208901203',
+    telephone: CONTACT_PHONE,
     founder: founders.map((f) => ({
       '@type': 'Person',
       name: f.name,
