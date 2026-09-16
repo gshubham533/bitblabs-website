@@ -12,7 +12,7 @@ export const AccordionItem = forwardRef<
 >(({ className, ...props }, ref) => (
   <AccordionPrimitive.Item
     ref={ref}
-    className={cn('border-b border-[var(--bb-line)] last:border-b-0', className)}
+    className={cn('border-b border-[var(--bb-line)]', className)}
     {...props}
   />
 ))
@@ -26,8 +26,9 @@ export const AccordionTrigger = forwardRef<
     <AccordionPrimitive.Trigger
       ref={ref}
       className={cn(
-        'group flex flex-1 items-center justify-between gap-4 px-5 py-4 text-left text-[15px] font-semibold text-[var(--bb-ink)] transition-colors sm:px-6 sm:py-5 sm:text-base',
-        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bb-brand)] focus-visible:ring-offset-2',
+        'group flex flex-1 items-baseline justify-between gap-6 py-[26px] text-left text-[20px] font-bold tracking-[-0.01em] text-[var(--bb-ink)] transition-colors hover:text-[var(--bb-blue)]',
+        'data-[state=open]:text-[var(--bb-blue)]',
+        'focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-[var(--bb-blue)] focus-visible:ring-offset-2',
         className
       )}
       {...props}
@@ -35,7 +36,7 @@ export const AccordionTrigger = forwardRef<
       {children}
       <span
         aria-hidden
-        className="flex h-8 w-8 shrink-0 items-center justify-center rounded-md bg-[var(--bb-canvas)] text-lg transition-transform duration-200 group-data-[state=open]:rotate-45"
+        className="plus shrink-0 text-2xl font-normal leading-none text-[var(--bb-ink)] transition-transform duration-200 group-data-[state=open]:rotate-45"
       >
         +
       </span>
@@ -50,13 +51,10 @@ export const AccordionContent = forwardRef<
 >(({ className, children, ...props }, ref) => (
   <AccordionPrimitive.Content
     ref={ref}
-    className={cn(
-      'bb-accordion-content overflow-hidden',
-      className
-    )}
+    className={cn('bb-accordion-content overflow-hidden', className)}
     {...props}
   >
-    <div className="px-5 pb-5 text-sm leading-relaxed text-[var(--bb-ink-muted)] sm:px-6 sm:pb-6 sm:text-[15px]">
+    <div className="max-w-[640px] pb-[30px] text-[17px] leading-[1.7] text-[var(--bb-body-strong)]">
       {children}
     </div>
   </AccordionPrimitive.Content>

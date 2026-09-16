@@ -44,19 +44,19 @@ export function StickyMobileCTA() {
   if (!show) return null
 
   return (
-    <div className="fixed inset-x-0 bottom-0 z-[90] border-t border-[var(--bb-line)] bg-white/95 p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] shadow-[0_-8px_30px_rgba(18,20,26,0.08)] backdrop-blur-md sm:hidden">
+    <div className="fixed inset-x-0 bottom-0 z-[90] border-t border-[var(--bb-line)] bg-[var(--bb-canvas)] p-3 pb-[max(0.75rem,env(safe-area-inset-bottom))] sm:hidden">
       <div className="flex items-center gap-3">
         <div className="min-w-0 flex-1">
-          <p className="truncate text-xs font-semibold text-[var(--bb-ink)]">
+          <p className="truncate text-[13px] font-bold text-[var(--bb-ink)]">
             90-min strategy session · $2,000
           </p>
         </div>
-        <BookButton location="sticky_mobile" className="min-h-11 shrink-0 px-4 text-sm">
+        <BookButton location="sticky_mobile" className="shrink-0 px-5 py-3 text-[15px]">
           Book
         </BookButton>
         <button
           type="button"
-          className="inline-flex h-11 w-11 shrink-0 items-center justify-center rounded-md text-[var(--bb-ink-muted)]"
+          className="inline-flex h-11 w-11 shrink-0 items-center justify-center text-[var(--bb-ink-muted)]"
           aria-label="Dismiss booking bar"
           onClick={() => {
             try {

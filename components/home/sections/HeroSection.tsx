@@ -2,67 +2,66 @@
 
 import { BookButton } from '@/components/home/BookButton'
 import { SecondaryCtaLink } from '@/components/home/SecondaryCtaLink'
-import { bbEaseNarrative } from '@/components/home/motion'
-import { SwimlaneBoard, type BoardPhase } from '@/components/home/visuals/SwimlaneBoard'
-import { HERO } from '@/lib/landing'
-import { motion, useReducedMotion } from 'framer-motion'
-import { useState } from 'react'
+import { ColorBar } from '@/components/home/ui/Editorial'
+import { SoftReveal } from '@/components/home/motion'
+import { HERO, WORKFLOW_EXAMPLES } from '@/lib/landing'
+
+const STRIP_FILLS = [
+  'bg-[var(--bb-blue)]',
+  'bg-[var(--bb-green)]',
+  'bg-[var(--bb-amber-fill)]',
+  'bg-[var(--bb-red)]',
+  'bg-[var(--bb-blue)]',
+] as const
 
 export function HeroSection() {
-  const reduce = useReducedMotion()
-  const [phase, setPhase] = useState<BoardPhase>('stuck')
-
   return (
-    <section className="relative overflow-hidden pb-6 pt-[4.75rem] sm:pb-10 sm:pt-24 lg:pb-12 lg:pt-28">
-      <div
-        aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(ellipse_at_80%_0%,rgba(36,87,230,0.14),transparent_48%),radial-gradient(ellipse_at_8%_18%,rgba(232,163,23,0.16),transparent_42%)]"
-      />
-
-      <div className="relative">
-        <motion.div
-          className="bb-home-container"
-          initial={reduce ? false : { opacity: 0.01, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, ease: bbEaseNarrative }}
-        >
-          <h1 className="max-w-4xl text-[clamp(2.1rem,6.5vw,5.4rem)] font-semibold leading-[1.02] tracking-tight text-[var(--bb-ink)] sm:leading-[0.96]">
-            {HERO.headline}
-          </h1>
-          <p className="mt-4 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:mt-5 sm:text-lg">
-            {HERO.supporting[0]}
-          </p>
-          <p className="mt-3 max-w-2xl text-base leading-relaxed text-[var(--bb-ink)] sm:text-lg">
-            {HERO.supporting[1]}
-          </p>
-          <div className="mt-6 flex flex-col gap-2.5 sm:mt-7 sm:flex-row sm:items-center sm:gap-3">
-            <BookButton
-              location="hero"
-              large
-              className="group w-full sm:w-auto"
-              onNavigate={() => setPhase('flow')}
-              clearBeatMs={850}
-            >
-              {HERO.primaryCta}
-            </BookButton>
-            <SecondaryCtaLink location="hero" className="bb-btn-secondary w-full sm:w-auto">
-              {HERO.secondaryCta}
-            </SecondaryCtaLink>
+    <header className="border-b border-[var(--bb-line)]">
+      <div className="bb-home-container pb-16 pt-20 max-lg:pb-16 max-lg:pt-20 lg:pb-24 lg:pt-28">
+        <SoftReveal>
+          <div className="bb-labelgrid">
+            <p className="bb-label pt-3.5 text-[var(--bb-ink)]">
+              {HERO.eyebrow.split(' + ').map((line, i, arr) => (
+                <span key={line}>
+                  {line}
+                  {i < arr.length - 1 ? <br /> : null}
+                </span>
+              ))}
+            </p>
+            <div>
+              <h1 className="bb-display bb-h1 w-full max-w-[900px]">{HERO.headline}</h1>
+              <ColorBar className="mt-9 w-[132px]" height={6} />
+              <p className="mb-4 mt-7 max-w-[480px] text-[21px] leading-[1.55] text-[var(--bb-body-strong)]">
+                {HERO.supporting[0]}
+              </p>
+              <p className="mb-11 max-w-[540px] text-[17px] leading-relaxed text-[var(--bb-ink-muted)]">
+                {HERO.supporting[1]}
+              </p>
+              <div className="flex flex-col items-start gap-5 sm:flex-row sm:flex-wrap sm:items-center sm:gap-6">
+                <BookButton location="hero" large className="group">
+                  {HERO.primaryCta}
+                </BookButton>
+                <SecondaryCtaLink location="hero">{HERO.secondaryCta}</SecondaryCtaLink>
+              </div>
+              <p className="mt-4 text-[15px] text-[var(--bb-caption)]">{HERO.microcopy}</p>
+            </div>
           </div>
-          <p className="mt-3 font-[family-name:var(--font-barlow-condensed)] text-xs uppercase tracking-[0.12em] text-[var(--bb-ink-muted)] sm:text-sm">
-            {HERO.microcopy}
-          </p>
-        </motion.div>
-
-        <motion.div
-          className="bb-full-bleed mt-7 sm:mt-9"
-          initial={reduce ? false : { opacity: 0.01, y: 24 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.7, delay: reduce ? 0 : 0.08, ease: bbEaseNarrative }}
-        >
-          <SwimlaneBoard title="BitBlabs" bleed phase={phase} onPhaseChange={setPhase} />
-        </motion.div>
+        </SoftReveal>
       </div>
-    </section>
+      <div className="grid grid-cols-1 border-t border-[var(--bb-line)] lg:grid-cols-5">
+        {WORKFLOW_EXAMPLES.tabs.map((tab, index) => (
+          <div
+            key={tab.id}
+            className="bb-label flex items-center justify-center gap-3 border-b border-[var(--bb-line)] py-[18px] tracking-[0.16em] text-[var(--bb-caption)] last:border-b-0 lg:border-b-0 lg:border-r lg:last:border-r-0"
+          >
+            <span
+              className={`size-2 rounded-full ${STRIP_FILLS[index % STRIP_FILLS.length]}`}
+              aria-hidden
+            />
+            {tab.label}
+          </div>
+        ))}
+      </div>
+    </header>
   )
 }

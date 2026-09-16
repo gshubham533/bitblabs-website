@@ -27,11 +27,9 @@ export function WorkProjectsList({
 
   return (
     <div className="flex w-full flex-col">
-      <header className="bb-home-section pb-0 pt-28 sm:pt-32">
+      <header className="bb-home-section pb-0">
         <div className="bb-home-container">
-          <h1 className="max-w-3xl font-[family-name:var(--font-barlow-condensed)] text-[clamp(2.4rem,7.2vw,5.4rem)] font-semibold leading-[0.94] tracking-[-0.01em] text-[var(--bb-ink)]">
-            {title}
-          </h1>
+          <h1 className="bb-display bb-h1 max-w-3xl text-[var(--bb-ink)]">{title}</h1>
           <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:text-lg">
             {subtitle}
           </p>

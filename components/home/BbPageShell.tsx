@@ -1,6 +1,6 @@
+import { ColorBar } from '@/components/home/ui/Editorial'
 import { HomeFooter } from '@/components/home/HomeFooter'
 import { HomeHeader } from '@/components/home/HomeHeader'
-import { archivo, barlowCondensed } from '@/lib/fonts'
 import type { ReactNode } from 'react'
 
 type BbPageShellProps = {
@@ -10,15 +10,11 @@ type BbPageShellProps = {
   className?: string
 }
 
-/**
- * Shared ops war-room chrome for homepage-aligned inner routes.
- * Applies `.bb-home` tokens, Archivo + Barlow Condensed, and inner nav.
- */
+/** Shared editorial chrome for homepage-aligned inner routes. */
 export function BbPageShell({ children, showFooter = true, className }: BbPageShellProps) {
   return (
-    <div
-      className={`bb-home min-h-screen ${archivo.variable} ${barlowCondensed.variable} ${archivo.className}${className ? ` ${className}` : ''}`}
-    >
+    <div className={`bb-home min-h-screen${className ? ` ${className}` : ''}`}>
+      <ColorBar />
       <HomeHeader variant="inner" />
       <main id="main-content">{children}</main>
       {showFooter ? <HomeFooter /> : null}

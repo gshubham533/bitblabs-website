@@ -1,98 +1,88 @@
 'use client'
 
 import { BookButton } from '@/components/home/BookButton'
+import { ACCENT_TEXT, SectionIntro } from '@/components/home/ui/Editorial'
 import { SoftReveal } from '@/components/home/motion'
-import { SwimlaneBoard, type BoardPhase } from '@/components/home/visuals/SwimlaneBoard'
 import { trackEvent } from '@/lib/analytics'
 import { CASE_STUDY } from '@/lib/landing'
 import { cn } from '@/lib/utils'
 import { useState } from 'react'
 
 export function RecruitmentCaseStudy() {
-  const [phase, setPhase] = useState<BoardPhase>('stuck')
-  const state = phase === 'stuck' ? 'before' : 'after'
+  const [state, setState] = useState<'before' | 'after'>('before')
+  const nodes = state === 'before' ? CASE_STUDY.beforeNodes : CASE_STUDY.afterNodes
 
   return (
     <section id="case-study" className="bb-home-section">
       <div className="bb-home-container">
         <SoftReveal>
-          <h2 className="max-w-3xl text-[clamp(2.1rem,4.5vw,3.75rem)] font-semibold leading-[1.02] tracking-tight">
-            {CASE_STUDY.headline}
-          </h2>
-
-          <div className="bb-panel mt-10 overflow-hidden p-5 sm:p-8 lg:p-10">
-            <div
-              className="flex flex-wrap items-center gap-2"
-              role="group"
-              aria-label="Case study state"
-            >
-              {(['before', 'after'] as const).map((value) => {
-                const next: BoardPhase = value === 'before' ? 'stuck' : 'flow'
-                return (
-                  <button
-                    key={value}
-                    type="button"
-                    className={cn(
-                      'min-h-11 rounded-md px-4 py-2 font-[family-name:var(--font-barlow-condensed)] text-sm font-semibold uppercase tracking-[0.1em] transition',
-                      state === value
-                        ? 'bg-[var(--bb-brand)] text-white'
-                        : 'bg-[var(--bb-board)] text-[var(--bb-ink-muted)] hover:text-[var(--bb-ink)]'
-                    )}
-                    aria-pressed={state === value}
-                    onClick={() => {
-                      setPhase(next)
-                      trackEvent('case_study_toggle', { selected_state: value })
-                    }}
-                  >
-                    {value}
-                  </button>
-                )
-              })}
-            </div>
-
-            <div className="mt-6">
-              <SwimlaneBoard
-                title="BitBlabs · case board"
-                showControls={false}
-                autoPlay={false}
-                phase={phase}
-                onPhaseChange={setPhase}
-              />
-              <p className="mt-3 text-sm font-medium text-[var(--bb-ink-muted)]" aria-live="polite">
-                {state === 'before'
-                  ? 'Manual handoffs and scattered tools.'
-                  : 'Connected workflow with AI assist and human approval.'}
-              </p>
-            </div>
-
-            <p className="mt-8 max-w-3xl text-base leading-relaxed text-[var(--bb-ink-muted)]">
+          <SectionIntro number="02" kicker="Proof" title={CASE_STUDY.headline} accent={1} />
+          <div className="lg:pl-[260px]">
+            <p className="max-w-[640px] text-[17px] leading-relaxed text-[var(--bb-ink-muted)]">
               {CASE_STUDY.narrative}
             </p>
-            <p className="mt-6 font-[family-name:var(--font-barlow-condensed)] text-sm font-semibold uppercase tracking-[0.12em] text-[var(--bb-ink)]">
-              {CASE_STUDY.builtForLabel}
+
+            <div className="mt-10 flex flex-wrap gap-0 border border-[var(--bb-line)]" role="group" aria-label="Case study state">
+              {(['before', 'after'] as const).map((value) => (
+                <button
+                  key={value}
+                  type="button"
+                  className={cn(
+                    'min-h-11 flex-1 px-4 py-2 text-[15px] font-bold capitalize',
+                    state === value
+                      ? 'bg-[var(--bb-ink)] text-white'
+                      : 'bg-[var(--bb-canvas)] text-[var(--bb-ink)] hover:text-[var(--bb-blue)]'
+                  )}
+                  aria-pressed={state === value}
+                  onClick={() => {
+                    setState(value)
+                    trackEvent('case_study_toggle', { selected_state: value })
+                  }}
+                >
+                  {value}
+                </button>
+              ))}
+            </div>
+
+            <ol className="mt-8 grid list-none grid-cols-1 border-t border-[var(--bb-line)] p-0 sm:grid-cols-5">
+              {nodes.map((node, i) => (
+                <li
+                  key={`${state}-${node}`}
+                  className="border-b border-[var(--bb-line)] py-5 sm:border-b-0 sm:border-r sm:pr-4 sm:last:border-r-0"
+                >
+                  <span className={`mb-2 block text-xs font-bold tracking-[0.08em] ${ACCENT_TEXT[i % 4]}`}>
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="text-[17px] font-bold tracking-[-0.02em]">{node}</span>
+                </li>
+              ))}
+            </ol>
+            <p className="mt-3 text-[15px] text-[var(--bb-caption)]" aria-live="polite">
+              {state === 'before'
+                ? 'Manual handoffs and scattered tools.'
+                : 'Connected workflow with AI assist and human approval.'}
             </p>
-            <ul className="mt-3 grid gap-2 sm:grid-cols-2">
-              {CASE_STUDY.capabilities.map((item) => (
+
+            <p className="bb-label mt-12 text-[var(--bb-ink)]">{CASE_STUDY.builtForLabel}</p>
+            <ul className="mt-2 list-none border-t border-[var(--bb-line)] p-0">
+              {CASE_STUDY.capabilities.map((item, i) => (
                 <li
                   key={item}
-                  className="rounded-md border border-[var(--bb-rail)] bg-[var(--bb-board)] px-3 py-2.5 text-sm text-[var(--bb-ink)]"
+                  className="grid grid-cols-[44px_1fr] items-baseline border-b border-[var(--bb-line)] py-5 text-[18px] leading-normal"
                 >
-                  {item}
+                  <span className={`text-xs font-bold tracking-[0.06em] ${ACCENT_TEXT[i % 4]}`}>
+                    {String(i + 1).padStart(2, '0')}
+                  </span>
+                  <span className="font-medium">{item}</span>
                 </li>
               ))}
             </ul>
-            <p className="mt-8 max-w-3xl text-lg font-semibold leading-snug text-[var(--bb-ink)]">
+
+            <p className="mt-10 max-w-[640px] text-[22px] font-bold tracking-[-0.02em]">
               {CASE_STUDY.closing}
             </p>
-            <div className="mt-6">
-              <BookButton
-                location="case_study"
-                className="group w-full sm:w-auto"
-                onNavigate={() => setPhase('flow')}
-                clearBeatMs={850}
-              >
-                {CASE_STUDY.cta}
-              </BookButton>
+            <div className="mt-8">
+              <BookButton location="case_study">{CASE_STUDY.cta}</BookButton>
             </div>
           </div>
         </SoftReveal>

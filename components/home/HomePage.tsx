@@ -1,11 +1,8 @@
 /**
- * THESIS: Ops war-room homepage that makes stuck work visible on a live swimlane board and books a $2,000 strategy session, refusing neon AI chrome and soft SaaS card stacks.
- * OWN-WORLD: Matte whiteboard #F4F0E8, magnetic lane rails, amber blocker chips, cobalt flow tape #2457E6, mint cleared chips, Archivo + Barlow Condensed, squared magnets not capsule pills.
- * STORY: Visitor recognizes their stuck lanes, believes BitBlabs redesigns handoffs not tools, sees anonymized proof early, and books.
- * FIRST VIEWPORT: Full-bleed swimlane board as the thesis; BitBlabs as board title; one headline; one supporting line; Book + See How It Works; primary action clears a lane.
- * FORM: Ops War-Room Swimlanes · grounded list #1 · seed b34b492c
- * FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, DESIGN.md, and every shipping raster carrying its provenance
+ * Editorial consultancy homepage: hairline grids, numbered sections, square CTAs.
+ * Copy stays in lib/landing.ts.
  */
+import { ColorBar } from '@/components/home/ui/Editorial'
 import { HomeFooter } from '@/components/home/HomeFooter'
 import { HomeHeader } from '@/components/home/HomeHeader'
 import { JsonLd } from '@/components/home/JsonLd'
@@ -20,14 +17,12 @@ import { RecruitmentCaseStudy } from '@/components/home/sections/RecruitmentCase
 import { StickyMobileCTA } from '@/components/home/sections/StickyMobileCTA'
 import { StrategySessionOffer } from '@/components/home/sections/StrategySessionOffer'
 import { WorkflowMethod } from '@/components/home/sections/WorkflowMethod'
-import { archivo, barlowCondensed } from '@/lib/fonts'
 
 export function HomePage() {
   return (
-    <div
-      className={`bb-home min-h-screen ${archivo.variable} ${barlowCondensed.variable} ${archivo.className}`}
-    >
+    <div className="bb-home min-h-screen">
       <JsonLd />
+      <ColorBar />
       <HomeHeader />
       <main id="main-content">
         <div id="hero">

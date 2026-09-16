@@ -25,20 +25,18 @@ export function LegalPageLayout({
 
   return (
     <BbPageShell>
-      <section className="bb-home-section pt-28 sm:pt-32">
+      <section className="bb-home-section">
         <div className="bb-home-container">
           <article className="mx-auto max-w-3xl">
             <Link
               href="/"
-              className="text-sm text-[var(--bb-ink-muted)] transition-colors hover:text-[var(--bb-brand)]"
+              className="text-sm text-[var(--bb-ink-muted)] transition-colors hover:text-[var(--bb-blue)]"
             >
               ← Back to home
             </Link>
 
             <header className="mt-8 space-y-3 md:mt-10">
-              <h1 className="font-[family-name:var(--font-barlow-condensed)] text-[clamp(2.4rem,6vw,3.75rem)] font-semibold leading-[0.94] tracking-[-0.01em] text-[var(--bb-ink)]">
-                {title}
-              </h1>
+              <h1 className="bb-display bb-h2 text-[var(--bb-ink)]">{title}</h1>
               <p className="text-sm text-[var(--bb-ink-muted)]">Last updated: {lastUpdated}</p>
             </header>
 
@@ -47,9 +45,7 @@ export function LegalPageLayout({
 
               {sections.map((section) => (
                 <section key={section.title} className="space-y-3">
-                  <h2 className="font-[family-name:var(--font-barlow-condensed)] text-xs font-semibold uppercase tracking-[0.14em] text-[var(--bb-ink)]">
-                    {section.title}
-                  </h2>
+                  <h2 className="bb-label text-[var(--bb-ink)]">{section.title}</h2>
                   <div className="space-y-3">{section.body}</div>
                 </section>
               ))}

@@ -11,8 +11,9 @@ type BookButtonProps = {
   location: string
   label?: string
   large?: boolean
+  variant?: 'red' | 'ink'
   onNavigate?: () => void
-  /** Delay navigation so an authored beat (e.g. clear-lane) can play first. */
+  /** Delay navigation so an authored beat can play first. */
   clearBeatMs?: number
 }
 
@@ -22,6 +23,7 @@ export function BookButton({
   location,
   label,
   large,
+  variant = 'red',
   onNavigate,
   clearBeatMs = 0,
 }: BookButtonProps) {
@@ -33,16 +35,18 @@ export function BookButton({
     setPagePath(window.location.pathname || '/')
   }, [])
 
+  const base = variant === 'ink' ? 'bb-btn-ink' : large ? 'bb-btn-primary bb-btn-primary-lg' : 'bb-btn-primary'
+
   return (
     <a
       href={href}
       target="_blank"
       rel="noopener noreferrer"
-      className={cn(large ? 'bb-btn-primary bb-btn-primary-lg' : 'bb-btn-primary', className)}
+      className={cn(base, className)}
       onClick={(event) => {
         trackEvent('cta_click', {
           location,
-          label: label ?? String(children),
+          label: label ?? (typeof children === 'string' ? children : 'Book'),
           page: pagePath,
         })
         trackEvent('booking_open', { source_section: location })
@@ -56,9 +60,6 @@ export function BookButton({
       }}
     >
       {children}
-      <span aria-hidden className="inline-block transition-transform duration-200 group-hover:translate-x-1">
-        →
-      </span>
     </a>
   )
 }

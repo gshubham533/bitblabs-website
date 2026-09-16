@@ -21,7 +21,7 @@ export function CaseStudyPageLayout({
   return (
     <BbPageShell>
       <AgencyCaseStudy project={project} backHref={backHref} backLabel={backLabel} />
-      <FinalCTA />
+      <FinalCTA showIndex={false} />
     </BbPageShell>
   )
 }
@@ -39,10 +39,8 @@ export function CaseStudyNotFound({
 }: CaseStudyNotFoundProps) {
   return (
     <BbPageShell>
-      <div className="bb-home-section flex flex-col items-center px-6 pb-20 pt-32 text-center sm:pt-40">
-        <h1 className="mb-6 font-[family-name:var(--font-barlow-condensed)] text-[clamp(1.75rem,4vw,2.75rem)] font-semibold tracking-[0.02em] text-[var(--bb-ink)]">
-          {title}
-        </h1>
+      <div className="bb-home-section flex flex-col items-center px-6 pb-20 pt-16 text-center">
+        <h1 className="bb-display bb-h2 mb-6 text-[var(--bb-ink)]">{title}</h1>
         <Link href={backHref} className="bb-btn-secondary">
           <svg
             aria-hidden

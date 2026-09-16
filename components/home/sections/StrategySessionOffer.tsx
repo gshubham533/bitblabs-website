@@ -1,67 +1,51 @@
 import { BookButton } from '@/components/home/BookButton'
-import { CheckIcon } from '@/components/home/visuals/WorkflowDiagram'
+import { ACCENT_TEXT, ColorBar, SectionIntro } from '@/components/home/ui/Editorial'
 import { OFFER } from '@/lib/landing'
 
 export function StrategySessionOffer() {
   return (
     <section id="offer" className="bb-home-section">
       <div className="bb-home-container">
-        <div className="overflow-hidden rounded-[2rem] border border-[var(--bb-line)] bg-gradient-to-br from-[#eef2ff] via-white to-[#f7f8f5] p-6 sm:rounded-[2.5rem] sm:p-10 lg:p-12">
-          <div className="grid gap-10 lg:grid-cols-[minmax(0,1.25fr)_minmax(0,0.85fr)] lg:items-start">
-            <div>
-              <p className="bb-home-eyebrow">
-                <span className="bb-home-eyebrow-dot" aria-hidden />
-                {OFFER.eyebrow}
-              </p>
-              <h2 className="mt-4 text-[clamp(2rem,3.8vw,3.25rem)] font-semibold leading-[1.08] tracking-tight">
-                {OFFER.headline}
-              </h2>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:text-lg">
-                {OFFER.body}
-              </p>
-              <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink)] sm:text-[17px]">
-                {OFFER.definition}
-              </p>
-              <p className="mt-8 text-sm font-semibold text-[var(--bb-ink)]">{OFFER.duringLabel}</p>
-              <ol className="mt-4 space-y-2.5">
-                {OFFER.steps.map((step, i) => (
-                  <li
-                    key={step}
-                    className="flex gap-3 text-[15px] leading-relaxed text-[var(--bb-ink)]"
-                  >
-                    <span className="mt-0.5 flex h-6 w-6 shrink-0 items-center justify-center rounded-md bg-[var(--bb-brand)] text-[11px] font-bold text-white">
-                      {i + 1}
-                    </span>
-                    {step}
-                  </li>
-                ))}
-              </ol>
-            </div>
+        <SectionIntro number="04" kicker="The session" title={OFFER.headline} accent={3} />
+        <div className="lg:pl-[260px]">
+          <p className="max-w-[640px] text-[21px] leading-[1.55] text-[var(--bb-body-strong)]">
+            {OFFER.body}
+          </p>
+          <p className="mt-6 max-w-[720px] text-[17px] leading-relaxed text-[var(--bb-ink-muted)]">
+            {OFFER.definition}
+          </p>
 
-            <aside className="bb-card sticky top-28 p-6 sm:p-7">
-              <p className="text-xs font-semibold uppercase tracking-[0.16em] text-[var(--bb-ink-muted)]">
-                AI Workflow Strategy Session
-              </p>
-              <p className="mt-4 text-5xl font-semibold tracking-tight text-[var(--bb-ink)]">
-                {OFFER.price}
-              </p>
-              <p className="mt-2 text-sm text-[var(--bb-ink-muted)]">{OFFER.duration}</p>
-              <ul className="mt-6 space-y-2 border-t border-[var(--bb-line)] pt-5 text-sm text-[var(--bb-ink)]">
-                {OFFER.deliverablesSummary.map((item) => (
-                  <li key={item} className="flex gap-2">
-                    <CheckIcon className="mt-0.5" />
-                    {item}
-                  </li>
-                ))}
-              </ul>
-              <p className="mt-5 text-sm leading-relaxed text-[var(--bb-ink-muted)]">
-                {OFFER.creditNote}
-              </p>
-              <BookButton location="offer" large className="group mt-6 w-full">
-                {OFFER.primaryCta}
-              </BookButton>
-              <p className="mt-3 text-center text-xs text-[var(--bb-ink-muted)]">{OFFER.microcopy}</p>
-            </aside>
+          <p className="bb-label mt-14 text-[var(--bb-ink)]">{OFFER.duringLabel}</p>
+          <ol className="mt-2 list-none border-t border-[var(--bb-line)] p-0">
+            {OFFER.steps.map((step, i) => (
+              <li
+                key={step}
+                className="grid grid-cols-[44px_1fr] items-baseline border-b border-[var(--bb-line)] py-5 text-[18px] leading-normal"
+              >
+                <span className={`text-xs font-bold tracking-[0.06em] ${ACCENT_TEXT[i % 4]}`}>
+                  {String(i + 1).padStart(2, '0')}
+                </span>
+                <span className="font-medium">{step}</span>
+              </li>
+            ))}
+          </ol>
+
+          <div className="relative mt-11 bg-[var(--bb-ink)] px-8 py-7 text-white">
+            <ColorBar className="absolute inset-x-0 top-0" height={4} />
+            <p className="bb-label mb-2.5 text-[var(--bb-amber)]">
+              {OFFER.duration} · {OFFER.price}
+            </p>
+            <p className="text-[32px] font-bold tracking-[-0.03em]">{OFFER.price}</p>
+            <ul className="mt-5 space-y-2 text-[15px] leading-relaxed text-[var(--bb-on-ink)]">
+              {OFFER.deliverablesSummary.map((item) => (
+                <li key={item}>{item}</li>
+              ))}
+            </ul>
+            <p className="mt-5 text-[17px] leading-relaxed text-[var(--bb-on-ink)]">{OFFER.creditNote}</p>
+            <BookButton location="offer" large className="mt-6">
+              {OFFER.primaryCta}
+            </BookButton>
+            <p className="mt-3 text-[13px] text-[var(--bb-on-ink-deemph)]">{OFFER.microcopy}</p>
           </div>
         </div>
       </div>

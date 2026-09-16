@@ -290,7 +290,7 @@ export function AgencyCaseStudy({
 
   return (
     <article id="case-study-article" className="text-[var(--bb-ink)] antialiased">
-      <div className="bb-home-container flex items-center justify-between gap-4 pb-2 pt-28 sm:pt-32">
+      <div className="bb-home-container flex items-center justify-between gap-4 pb-2 pt-8">
         <CaseStudyBackLink href={backHref} label={backLabel} />
         <p className="truncate text-sm text-[var(--bb-ink-muted)]">{project.title}</p>
       </div>

@@ -1,4 +1,5 @@
 import { BookButton } from '@/components/home/BookButton'
+import { ColorBar } from '@/components/home/ui/Editorial'
 import { FOOTER } from '@/lib/landing'
 import { founders } from '@/lib/founders'
 import {
@@ -17,86 +18,110 @@ export function HomeFooter() {
   const year = new Date().getFullYear()
 
   return (
-    <footer className="border-t border-[var(--bb-line)] bg-[var(--bb-canvas)]">
-      <div className="bb-home-container py-12 sm:py-14">
-        <div className="grid gap-10 lg:grid-cols-[minmax(0,1.2fr)_minmax(0,1fr)]">
-          <div>
-            <p className="text-base font-semibold text-[var(--bb-ink)]">BitBlabs</p>
-            <p className="mt-2 max-w-md text-sm leading-relaxed text-[var(--bb-ink-muted)]">
-              {FOOTER.positioning}
-            </p>
-            <div className="mt-5">
-              <BookButton location="footer" className="min-h-11 text-sm">
-                Book Your Strategy Session
-              </BookButton>
-            </div>
-          </div>
-
-          <div className="grid gap-8 sm:grid-cols-2">
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--bb-ink-muted)]">
-                Explore
-              </p>
-              <nav className="mt-3 flex flex-col gap-2 text-sm" aria-label="Footer">
-                <Link
-                  href={HOW_IT_WORKS_ABSOLUTE_HREF}
-                  className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]"
+    <footer className="bg-[var(--bb-ink)] text-[var(--bb-on-ink)]">
+      <ColorBar />
+      <div className="bb-home-container grid grid-cols-1 gap-12 pb-16 pt-20 sm:grid-cols-2 lg:grid-cols-[1.4fr_1fr_1fr_1fr]">
+        <div>
+          <p className="mb-4 text-[17px] font-bold text-white">BitBlabs</p>
+          <p className="max-w-[280px] text-[15px] leading-relaxed text-[var(--bb-on-ink-deemph)]">
+            {FOOTER.positioning}
+          </p>
+        </div>
+        <div>
+          <p className="bb-label mb-5 text-[var(--bb-on-ink-caption)]">Explore</p>
+          <ul className="m-0 flex list-none flex-col gap-2.5 p-0">
+            <li>
+              <Link
+                className="text-[15px] text-[var(--bb-on-ink-muted)] hover:text-white"
+                href={HOW_IT_WORKS_ABSOLUTE_HREF}
+              >
+                How it works
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[15px] text-[var(--bb-on-ink-muted)] hover:text-white"
+                href={OFFER_ABSOLUTE_HREF}
+              >
+                AI Workflow Strategy Session
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[15px] text-[var(--bb-on-ink-muted)] hover:text-white"
+                href={CASE_STUDY_ABSOLUTE_HREF}
+              >
+                Case study
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[15px] text-[var(--bb-on-ink-muted)] hover:text-white"
+                href={PORTFOLIO_SECTION_HREF}
+              >
+                Work
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[15px] text-[var(--bb-on-ink-muted)] hover:text-white"
+                href={PRIVACY_PATH}
+              >
+                Privacy policy
+              </Link>
+            </li>
+            <li>
+              <Link
+                className="text-[15px] text-[var(--bb-on-ink-muted)] hover:text-white"
+                href={TERMS_PATH}
+              >
+                Terms and Conditions
+              </Link>
+            </li>
+          </ul>
+        </div>
+        <div>
+          <p className="bb-label mb-5 text-[var(--bb-on-ink-caption)]">Contact</p>
+          <ul className="m-0 flex list-none flex-col gap-2.5 p-0">
+            <li>
+              <a
+                href={`tel:${CONTACT_PHONE}`}
+                className="text-[15px] text-[var(--bb-on-ink-muted)] hover:text-white"
+              >
+                {CONTACT_PHONE_DISPLAY}
+              </a>
+            </li>
+            {founders.map((f) => (
+              <li key={f.id}>
+                <a
+                  href={f.linkedIn}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="text-[15px] text-[var(--bb-on-ink-muted)] hover:text-white"
                 >
-                  How it works
-                </Link>
-                <Link
-                  href={OFFER_ABSOLUTE_HREF}
-                  className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]"
-                >
-                  AI Workflow Strategy Session
-                </Link>
-                <Link
-                  href={CASE_STUDY_ABSOLUTE_HREF}
-                  className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]"
-                >
-                  Case study
-                </Link>
-                <Link
-                  href={PORTFOLIO_SECTION_HREF}
-                  className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]"
-                >
-                  Work
-                </Link>
-                <Link href={PRIVACY_PATH} className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]">
-                  Privacy Policy
-                </Link>
-                <Link href={TERMS_PATH} className="text-[var(--bb-ink)] hover:text-[var(--bb-brand-dark)]">
-                  Terms and Conditions
-                </Link>
-              </nav>
-            </div>
-            <div>
-              <p className="text-xs font-semibold uppercase tracking-[0.14em] text-[var(--bb-ink-muted)]">
-                Contact
-              </p>
-              <ul className="mt-3 space-y-2 text-sm text-[var(--bb-ink)]">
-                <li>
-                  <a href={`tel:${CONTACT_PHONE}`} className="hover:text-[var(--bb-brand-dark)]">
-                    {CONTACT_PHONE_DISPLAY}
-                  </a>
-                </li>
-                {founders.map((f) => (
-                  <li key={f.id}>
-                    <a
-                      href={f.linkedIn}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="hover:text-[var(--bb-brand-dark)]"
-                    >
-                      {f.name} on LinkedIn
-                    </a>
-                  </li>
-                ))}
-              </ul>
-            </div>
+                  {f.name} on LinkedIn
+                </a>
+              </li>
+            ))}
+          </ul>
+        </div>
+        <div>
+          <p className="bb-label mb-5 text-[var(--bb-on-ink-caption)]">Talk to us</p>
+          <BookButton location="footer" variant="ink" className="whitespace-nowrap px-[26px] py-3.5 shadow-[inset_0_0_0_1px_#555] hover:bg-white hover:text-[var(--bb-ink)]">
+            Book Your Strategy Session
+          </BookButton>
+        </div>
+      </div>
+      <div className="bb-home-container">
+        <div className="flex items-center justify-between border-t border-[var(--bb-hairline-on-ink)] pb-6 pt-5 max-sm:flex-col max-sm:items-start max-sm:gap-3">
+          <p className="text-[13px] text-[var(--bb-on-ink-deemph)]">© {year} BitBlabs</p>
+          <div className="flex items-center gap-2" aria-hidden>
+            <span className="size-2 rounded-full bg-[var(--bb-blue)]" />
+            <span className="size-2 rounded-full bg-[var(--bb-red)]" />
+            <span className="size-2 rounded-full bg-[var(--bb-amber-fill)]" />
+            <span className="size-2 rounded-full bg-[var(--bb-green)]" />
           </div>
         </div>
-        <p className="mt-10 text-xs text-[var(--bb-ink-muted)]">© {year} BitBlabs</p>
       </div>
     </footer>
   )
