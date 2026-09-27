@@ -10,6 +10,7 @@ import { Intro } from './Intro'
 import { OfferStats } from './OfferStats'
 import { QuoteWall, Results } from './Proof'
 import { SessionBento } from './SessionBento'
+import { Stack } from './Stack'
 import { Stories } from './Stories'
 import { WorkflowTabs } from './WorkflowTabs'
 
@@ -23,6 +24,7 @@ export function HomePage() {
       <Intro />
       <SessionBento />
       <WorkflowTabs />
+      <Stack />
       <Results />
       <OfferStats padTop={!hasResults} />
       <Assist />

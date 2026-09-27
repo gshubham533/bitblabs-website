@@ -1,5 +1,5 @@
 import { caseStudies } from '@/lib/data'
-import { LANDING_SEO } from '@/lib/landing'
+import { LANDING_SEO, STACK } from '@/lib/landing'
 import { portfolioProjects } from '@/lib/portfolio-data'
 import {
   CONTACT_PHONE_DISPLAY,
@@ -56,6 +56,7 @@ ${studies.join('\n')}
 - Approach: map the existing workflow, identify AI opportunities, redesign it with AI and human checkpoints, then implement it
 - Example use cases: AI voice agents for lead qualification, AI extraction of RFQ requirements, AI-drafted support replies with human approval, AI candidate screening
 - We do not start from a preselected AI tool. If AI is not the right fix, we say so.
+- Tools we build with (a sample, not a limit): ${STACK.groups.flatMap((g) => g.items.map((i) => i.name)).join(', ')}. We integrate with any system that has an API.
 
 ## Founders
 ${people.join('\n')}

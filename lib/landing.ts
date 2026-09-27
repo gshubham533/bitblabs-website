@@ -284,6 +284,62 @@ export const WORKFLOWS = {
   rhythm: ['#reporting', '#onboarding', '#approvals', '#document-intake', '#client-updates', '#internal-ops'],
 } as const
 
+/** `logo` is a file in /public/logos/stack; items without one render as a text wordmark. */
+export type StackItem = { name: string; logo?: string }
+
+export const STACK = {
+  eyebrow: 'Tools we build with',
+  headline: 'Model\u2011agnostic. Stack\u2011agnostic.',
+  body: 'We pick the model and tools that fit your workflow, data and budget, and build around the systems your team already runs.',
+  footnote: 'A sample of what we work with, not a limit. Logos are trademarks of their owners. No partnership implied.',
+  groups: [
+    {
+      label: 'AI models',
+      items: [
+        { name: 'OpenAI', logo: 'openai' },
+        { name: 'Google Gemini', logo: 'googlegemini' },
+        { name: 'Anthropic Claude', logo: 'claude' },
+        { name: 'Deepgram', logo: 'deepgram' },
+        { name: 'ElevenLabs', logo: 'elevenlabs' },
+      ],
+    },
+    {
+      label: 'AI orchestration and data',
+      items: [
+        { name: 'LangChain / LangGraph', logo: 'langchain' },
+        { name: 'LlamaIndex' },
+        { name: 'PostgreSQL + pgvector', logo: 'postgresql' },
+        { name: 'Pinecone' },
+        { name: 'Supabase', logo: 'supabase' },
+      ],
+    },
+    {
+      label: 'Build and deploy',
+      items: [
+        { name: 'Python', logo: 'python' },
+        { name: 'Django', logo: 'django' },
+        { name: 'FastAPI', logo: 'fastapi' },
+        { name: 'Next.js', logo: 'nextdotjs' },
+        { name: 'React', logo: 'react' },
+        { name: 'Node.js', logo: 'nodedotjs' },
+        { name: 'Docker', logo: 'docker' },
+        { name: 'AWS', logo: 'amazonwebservices' },
+      ],
+    },
+    {
+      label: 'Connects to your systems',
+      items: [
+        { name: 'HubSpot', logo: 'hubspot' },
+        { name: 'Salesforce', logo: 'salesforce' },
+        { name: 'Slack', logo: 'slack' },
+        { name: 'Google Workspace', logo: 'google' },
+        { name: 'Microsoft 365', logo: 'microsoft' },
+      ],
+    },
+  ] as { label: string; items: StackItem[] }[],
+  anySystem: '+ Any system with an API',
+}
+
 export const RESULTS = {
   headline: 'Workflows teams have made AI\u2011powered',
   trustLabel: 'Trusted by operators',
