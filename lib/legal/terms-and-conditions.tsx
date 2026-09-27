@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_HREF,
   CONTACT_PHONE,
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
@@ -9,7 +11,7 @@ import {
 } from '@/lib/site'
 import type { LegalSection } from '@/lib/legal/types'
 
-export const TERMS_LAST_UPDATED = 'September 15, 2026'
+export const TERMS_LAST_UPDATED = 'September 27, 2026'
 
 export const termsIntro = (
   <>
@@ -231,6 +233,15 @@ export const termsSections: LegalSection[] = [
           {LEGAL_ADDRESS_LINES.map((line) => (
             <p key={line}>{line}</p>
           ))}
+          <p>
+            Email:{' '}
+            <a
+              href={CONTACT_EMAIL_HREF}
+              className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]"
+            >
+              {CONTACT_EMAIL}
+            </a>
+          </p>
           <p>
             Phone:{' '}
             <a

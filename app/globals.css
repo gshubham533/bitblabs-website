@@ -21,7 +21,7 @@
 }
 
 html {
-  background-color: #fafaf9;
+  background-color: #f7f7f7;
   scroll-padding-top: 1rem;
 }
 
@@ -55,15 +55,16 @@ html.lenis body {
 }
 
 body {
-  background-color: #fafaf9;
+  background-color: #f7f7f7;
   color: #111111;
   font-family: var(--font-google-sans-flex), system-ui, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+  overflow-x: clip;
 }
 
 ::selection {
-  background-color: rgba(46, 92, 230, 0.18);
+  background-color: rgba(255, 76, 0, 0.18);
   color: #111;
 }
 
@@ -72,16 +73,175 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-  background: var(--bg-base);
+  background: #f7f7f7;
 }
 
 ::-webkit-scrollbar-thumb {
-  background: #27272a;
+  background: #d4d4d8;
   border-radius: 3px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-  background: #3f3f46;
+  background: #a1a1aa;
+}
+
+/* Habitline site shell. :where() keeps these at zero specificity so utilities still win. */
+.hl {
+  background-color: #f7f7f7;
+  color: #52525b;
+  font-size: 1.125rem;
+  line-height: 1.5;
+  font-weight: 500;
+}
+
+:where(.hl) :where(h1, h2, h3, h4, h5, h6) {
+  font-family: var(--font-stack-headline), var(--font-google-sans-flex), system-ui, sans-serif;
+  font-weight: 600;
+  line-height: 1.3;
+  color: #18181b;
+}
+
+:where(.hl) :focus-visible {
+  outline: 2px solid #ff4c00;
+  outline-offset: 3px;
+}
+
+.hl-container {
+  width: 100%;
+  max-width: 75rem;
+  margin-inline: auto;
+  padding-inline: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .hl-container {
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hl-container {
+    padding-inline: 0;
+  }
+}
+
+.hl-dot-grid {
+  background-image: radial-gradient(#e5e7eb 1.5px, transparent 1.5px);
+  background-size: 24px 24px;
+}
+
+.hl-marquee-mask {
+  -webkit-mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+  mask-image: linear-gradient(to right, transparent, #000 8%, #000 92%, transparent);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hl [class*='animate-hl-'],
+  .hl .animate-float {
+    animation: none !important;
+  }
+}
+
+/*
+ * Case-study and project components are styled through --bb-* tokens and bb-* classes.
+ * Inside the Habitline shell they resolve to Habitline's palette, type, and radii.
+ */
+.hl {
+  --bb-canvas: #f7f7f7;
+  --bb-board: #f4f4f5;
+  --bb-surface: #ffffff;
+  --bb-surface-soft: #f4f4f5;
+  --bb-ink: #18181b;
+  --bb-ink-muted: #52525b;
+  --bb-body-strong: #3f3f46;
+  --bb-caption: #71717a;
+  --bb-deemph: #71717a;
+  --bb-line: #e4e4e7;
+  --bb-rail: #e4e4e7;
+  --bb-hairline-on-ink: #3f3f46;
+  --bb-blue: #ff4c00;
+  --bb-red: #ff4c00;
+  --bb-red-text: #e04300;
+  --bb-amber: #f59e0b;
+  --bb-amber-fill: #f59e0b;
+  --bb-amber-text: #a16207;
+  --bb-green: #12a70a;
+  --bb-green-text: #0f8a08;
+  --bb-brand: #ff4c00;
+  --bb-brand-dark: #e04300;
+  --bb-brand-soft: rgba(255, 76, 0, 0.08);
+  --bb-mint: #12a70a;
+  --bb-on-ink: #e4e4e7;
+  --bb-on-ink-muted: #a1a1aa;
+  --bb-on-ink-deemph: #71717a;
+  --bb-on-ink-caption: #a1a1aa;
+  --bb-logo-ink: #18181b;
+  --bb-shadow: 0 10px 30px -12px rgba(24, 24, 27, 0.12);
+  --bb-chip-shadow: 0 1px 2px rgba(24, 24, 27, 0.05);
+  --bb-max: 75rem;
+  --bb-wide: 75rem;
+  --font-barlow-condensed: var(--font-stack-headline);
+}
+
+.hl .bb-home-container {
+  max-width: 75rem;
+  padding-inline: 0.875rem;
+}
+
+@media (min-width: 768px) {
+  .hl .bb-home-container {
+    padding-inline: 1.25rem;
+  }
+}
+
+@media (min-width: 1280px) {
+  .hl .bb-home-container {
+    padding-inline: 0;
+  }
+}
+
+.hl .bb-home-section {
+  border-bottom: 0;
+}
+
+.hl .bb-display,
+.hl .bb-h1,
+.hl .bb-h2 {
+  font-family: var(--font-stack-headline), var(--font-google-sans-flex), system-ui, sans-serif;
+  font-weight: 500;
+  letter-spacing: -0.02em;
+  line-height: 1.1;
+}
+
+.hl .bb-label {
+  letter-spacing: 0.08em;
+  font-weight: 600;
+}
+
+.hl .bb-panel,
+.hl .bb-card {
+  border-radius: 1.5rem;
+  border-color: transparent;
+  background: #ffffff;
+}
+
+.hl .bb-btn-primary,
+.hl .bb-btn-ink {
+  border-radius: 9999px;
+  background: #000000;
+  font-weight: 500;
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 8px 10px -6px rgba(0, 0, 0, 0.1);
+  transition: transform 0.3s ease, background-color 0.2s ease;
+}
+
+.hl .bb-btn-primary:hover,
+.hl .bb-btn-ink:hover {
+  background: #000000;
+  transform: scale(0.95);
+}
+
+.hl .bb-btn-secondary:hover {
+  color: #18181b;
 }
 
 a {

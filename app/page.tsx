@@ -1,5 +1,5 @@
 import type { Metadata } from 'next'
-import { HomePage } from '@/components/home/HomePage'
+import { HomePage } from '@/components/hl/home/HomePage'
 import { LANDING_SEO } from '@/lib/landing'
 
 export const metadata: Metadata = {

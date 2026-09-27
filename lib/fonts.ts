@@ -18,6 +18,19 @@ export const googleSansFlex = localFont({
   fallback: ['system-ui', 'sans-serif'],
 })
 
+/** Habitline headline face (SIL OFL, self-hosted: not in Next 14's Google font list). */
+export const stackSansHeadline = localFont({
+  src: [
+    { path: '../app/fonts/stack-sans-headline-400.woff2', weight: '400', style: 'normal' },
+    { path: '../app/fonts/stack-sans-headline-500.woff2', weight: '500', style: 'normal' },
+    { path: '../app/fonts/stack-sans-headline-600.woff2', weight: '600', style: 'normal' },
+    { path: '../app/fonts/stack-sans-headline-700.woff2', weight: '700', style: 'normal' },
+  ],
+  variable: '--font-stack-headline',
+  display: 'swap',
+  fallback: ['system-ui', 'sans-serif'],
+})
+
 /** Homepage body: ops documentation face for war-room reading. */
 export const archivo = Archivo({
   subsets: ['latin'],

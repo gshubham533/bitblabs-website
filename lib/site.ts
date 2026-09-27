@@ -13,7 +13,7 @@ export const PAY_BOOK_URL =
 
 export const BOOK_HREF = PAY_BOOK_URL
 export const BOOK_NAV_LABEL = 'Book · $2,000'
-export const BOOK_CTA_LABEL = 'Book Your Strategy Session'
+export const BOOK_CTA_LABEL = 'Book an AI Workflow Strategy Session'
 export const BOOK_FINAL_CTA_LABEL = 'Book Your AI Workflow Strategy Session'
 export const BOOK_OFFER_CTA_LABEL = 'Book the Strategy Session'
 export const PROJECTS_CTA_LABEL = 'Work'
@@ -42,6 +42,9 @@ export const LEGAL_ADDRESS = {
   addressRegion: 'Maharashtra',
   addressCountry: 'IN',
 } as const
+
+export const CONTACT_EMAIL = 'hey@bitblabs.com'
+export const CONTACT_EMAIL_HREF = `mailto:${CONTACT_EMAIL}`
 
 export const CONTACT_PHONE = '+917219605788'
 export const CONTACT_PHONE_DISPLAY = '+91 72196 05788'

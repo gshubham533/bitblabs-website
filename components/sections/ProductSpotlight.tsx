@@ -251,14 +251,21 @@ export function ProductSpotlight({
       id={id}
       className={cn(
         'relative w-full',
-        !stackContinuation && 'border-t border-[var(--bb-line)]',
-        embedded ? 'bb-home-section' : 'px-6 py-16 md:px-12 lg:px-16',
+        !stackContinuation && !embedded && 'border-t border-[var(--bb-line)]',
+        embedded ? 'pb-7.5' : 'px-6 py-16 md:px-12 lg:px-16',
         className
       )}
       style={style}
     >
       <div className={cn(embedded ? 'bb-home-container' : 'mx-auto max-w-[var(--bb-max)]')}>
-        {showHeadline ? <ProductHeadline className="mb-8 md:mb-10" /> : null}
+        {showHeadline ? (
+          <ProductHeadline
+            className={cn(
+              'mb-8 md:mb-10',
+              embedded && 'text-3xl font-medium normal-case tracking-tight text-zinc-900 md:text-4xl lg:text-5xl'
+            )}
+          />
+        ) : null}
 
         <div className="bb-panel overflow-hidden p-5 sm:p-7 lg:p-8">
           <div

@@ -1,6 +1,8 @@
 'use client'
 
 import type { ReactNode } from 'react'
+import { InnerHero } from '@/components/hl/PageShell'
+import { Eyebrow } from '@/components/hl/ui'
 import type { PortfolioProject } from '@/lib/portfolio-data'
 import { orderPortfolioProjects } from '@/lib/project-utils'
 import { WorkProjectCard } from '@/components/showcase/WorkProjectCard'
@@ -16,28 +18,17 @@ interface WorkProjectsListProps {
 export function WorkProjectsList({
   projects,
   title = 'Our work',
-  subtitle = (
-    <>
-      Built with workflows, systems, and production.
-    </>
-  ),
+  subtitle = <>Built with workflows, systems, and production.</>,
   trailingContent,
 }: WorkProjectsListProps) {
   const ordered = orderPortfolioProjects(projects)
 
   return (
     <div className="flex w-full flex-col">
-      <header className="bb-home-section pb-0">
-        <div className="bb-home-container">
-          <h1 className="bb-display bb-h1 max-w-3xl text-[var(--bb-ink)]">{title}</h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:text-lg">
-            {subtitle}
-          </p>
-        </div>
-      </header>
+      <InnerHero eyebrow={<Eyebrow>Selected work</Eyebrow>} title={title} description={subtitle} />
 
-      <div className="bb-home-section pt-10 sm:pt-14">
-        <div className="bb-home-container flex flex-col gap-8 md:gap-10">
+      <div className="pb-20 lg:pb-30">
+        <div className="hl-container flex flex-col gap-7.5">
           {ordered.map((project, index) => (
             <WorkProjectCard key={project.slug} project={project} index={index} />
           ))}

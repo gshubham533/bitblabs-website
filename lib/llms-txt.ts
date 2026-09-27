@@ -34,7 +34,7 @@ export function buildLlmsTxt() {
 
   return `# BitBlabs
 
-> BitBlabs is an AI workflow consultancy for growing service businesses. We find where work gets stuck between people, inboxes, and spreadsheets, redesign that workflow, and build practical AI systems around it.
+> BitBlabs helps growing service businesses put AI inside the workflows they already run. We identify repetitive, manual, and inefficient workflows, find where AI can remove manual effort or improve decisions, then design and implement the AI solution.
 
 The first paid step is a 90-minute AI Workflow Strategy Session ($2,000). The fee is credited toward a BitBlabs implementation started within 30 days. Implementation is scoped separately.
 
@@ -53,7 +53,8 @@ ${studies.join('\n')}
 - Phone: ${CONTACT_PHONE_DISPLAY}
 - Offer: AI Workflow Strategy Session, 90 minutes, $2,000 USD
 - Typical clients: growing service businesses, roughly 20–80 people
-- Approach: understand the current workflow, prioritise one bottleneck, redesign handoffs with human checkpoints, then build if asked
+- Approach: map the existing workflow, identify AI opportunities, redesign it with AI and human checkpoints, then implement it
+- Example use cases: AI voice agents for lead qualification, AI extraction of RFQ requirements, AI-drafted support replies with human approval, AI candidate screening
 - We do not start from a preselected AI tool. If AI is not the right fix, we say so.
 
 ## Founders

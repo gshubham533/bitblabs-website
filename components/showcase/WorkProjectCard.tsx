@@ -68,7 +68,16 @@ function ArticleFigure({
                 project.slug === 'axion-plan'
               }
             />
-          ) : null}
+          ) : (
+            <div className="absolute inset-0 flex flex-col items-center justify-center gap-5 bg-[radial-gradient(ellipse_at_center,rgba(255,76,0,0.22),transparent_65%)]">
+              <div className="flex h-16 items-center gap-1.5" aria-hidden>
+                {[28, 52, 36, 64, 44, 58, 24, 48, 62, 34, 54, 30, 46, 20].map((h, i) => (
+                  <span key={i} className="w-1.5 rounded-full bg-white/80" style={{ height: `${h}%` }} />
+                ))}
+              </div>
+              <p className="font-headline text-lg font-medium text-white md:text-2xl">{project.title}</p>
+            </div>
+          )}
           <div className="pointer-events-none absolute inset-0 ring-1 ring-inset ring-[rgba(20,24,32,0.06)]" />
         </div>
       </div>

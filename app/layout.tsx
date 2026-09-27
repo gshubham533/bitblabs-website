@@ -3,7 +3,7 @@ import { LANDING_SEO } from '@/lib/landing'
 import { SITE_NAME, SITE_URL } from '@/lib/site'
 import './globals.css'
 import { LinkedInInsightTag } from '@/components/LinkedInInsightTag'
-import { googleSansFlex } from '@/lib/fonts'
+import { googleSansFlex, stackSansHeadline } from '@/lib/fonts'
 import { Analytics } from '@vercel/analytics/next'
 
 export const metadata: Metadata = {
@@ -30,7 +30,7 @@ export default function RootLayout({
   children: React.ReactNode
 }) {
   return (
-    <html lang="en" className={googleSansFlex.variable}>
+    <html lang="en" className={`${googleSansFlex.variable} ${stackSansHeadline.variable}`}>
       <body className={`${googleSansFlex.className} antialiased`}>
         {children}
         <Analytics />

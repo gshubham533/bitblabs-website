@@ -1,8 +1,9 @@
 'use client'
 
-import Link from 'next/link'
-import { BbPageShell } from '@/components/home/BbPageShell'
-import { FinalCTA } from '@/components/home/sections/FinalCTA'
+import { FinalCta } from '@/components/hl/FinalCta'
+import { IconChevronLeft } from '@/components/hl/icons'
+import { InnerHero, PageShell } from '@/components/hl/PageShell'
+import { RollButton } from '@/components/hl/ui'
 import { AgencyCaseStudy } from '@/components/showcase/AgencyCaseStudy'
 import type { CaseStudyProject } from '@/lib/case-study-project'
 import { PORTFOLIO_SECTION_HREF } from '@/lib/site'
@@ -19,10 +20,10 @@ export function CaseStudyPageLayout({
   backLabel = 'Back to work',
 }: CaseStudyPageLayoutProps) {
   return (
-    <BbPageShell>
+    <PageShell>
       <AgencyCaseStudy project={project} backHref={backHref} backLabel={backLabel} />
-      <FinalCTA showIndex={false} />
-    </BbPageShell>
+      <FinalCta />
+    </PageShell>
   )
 }
 
@@ -38,27 +39,12 @@ export function CaseStudyNotFound({
   backLabel,
 }: CaseStudyNotFoundProps) {
   return (
-    <BbPageShell>
-      <div className="bb-home-section flex flex-col items-center px-6 pb-20 pt-16 text-center">
-        <h1 className="bb-display bb-h2 mb-6 text-[var(--bb-ink)]">{title}</h1>
-        <Link href={backHref} className="bb-btn-secondary">
-          <svg
-            aria-hidden
-            viewBox="0 0 16 16"
-            fill="none"
-            className="h-3.5 w-3.5 shrink-0"
-          >
-            <path
-              d="M10 3.5 5.5 8 10 12.5"
-              stroke="currentColor"
-              strokeWidth="1.6"
-              strokeLinecap="round"
-              strokeLinejoin="round"
-            />
-          </svg>
-          <span>{backLabel}</span>
-        </Link>
-      </div>
-    </BbPageShell>
+    <PageShell>
+      <InnerHero title={title} description="That page may have moved. The rest of our work is one click away.">
+        <RollButton href={backHref} variant="black" icon={<IconChevronLeft className="size-5" />}>
+          {backLabel}
+        </RollButton>
+      </InnerHero>
+    </PageShell>
   )
 }

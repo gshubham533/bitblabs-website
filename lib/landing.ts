@@ -1,412 +1,433 @@
-/** Homepage copy. Do not invent metrics, logos, testimonials, or SLAs. */
+/**
+ * Homepage copy, one export per section, in page order.
+ * Do not invent metrics, logos, ratings, or testimonials: every number here is a session fact.
+ * Customer proof lives in lib/proof.ts behind approval flags.
+ */
+
+import { BOOK_CTA_LABEL, CONTACT_EMAIL } from './site'
+
+export type Tone = 'orange' | 'green' | 'blue' | 'pink' | 'azure' | 'violet' | 'red' | 'teal'
+
+export type IconKey =
+  | 'clock'
+  | 'sheet'
+  | 'repeat'
+  | 'inbox'
+  | 'copy'
+  | 'file'
+  | 'help'
+  | 'userCheck'
+  | 'shield'
+  | 'route'
+  | 'eye'
+  | 'bell'
+  | 'lightbulb'
+  | 'briefcase'
+  | 'users'
+  | 'headset'
+  | 'truck'
+  | 'sparkles'
+  | 'gitBranch'
+  | 'layers'
+  | 'check'
+
+/** How a workflow step is owned in a redesigned workflow. */
+export type StepOwner = 'ai' | 'rule' | 'human'
+
+const BOOK_LABEL = BOOK_CTA_LABEL
 
 export const LANDING_SEO = {
-  title: 'AI Workflow Strategy Session for Service Businesses | BitBlabs',
+  title: 'AI Workflow Strategy & Implementation for Service Businesses | BitBlabs',
   description:
-    'Find where work gets stuck between people, inboxes, and spreadsheets. Book a 90-minute AI Workflow Strategy Session ($2,000) and leave with a practical roadmap.',
-  ogTitle: 'Find where work gets stuck. Then redesign that workflow.',
+    'BitBlabs finds where AI can improve the workflows your business already runs, then designs and implements it. Start with a 90-minute AI Workflow Strategy Session ($2,000).',
+  ogTitle: 'Find where work gets stuck. Put AI where it actually helps.',
   ogDescription:
-    'A paid 90-minute session for owners and ops leaders: map one critical workflow, decide where AI belongs, and get a plan you can run.',
+    'Your business already has workflows. We make them AI-powered, from identifying the right opportunities to designing and implementing AI inside your existing processes.',
 } as const
 
 export const HERO = {
-  eyebrow: 'AI workflow strategy + implementation',
-  headline: 'Find where work gets stuck. Then redesign that workflow.',
-  supporting: [
-    'If follow-ups wait on an inbox, status lives in a spreadsheet, and growth adds coordination instead of capacity, fix the process before you buy another AI tool.',
-    'BitBlabs is an AI workflow consultancy for growing service businesses. We map one stuck process in a paid 90-minute strategy session, redesign the handoffs, and build the system when you want us to implement.',
-  ] as const,
-  primaryCta: 'Book Your Strategy Session',
-  secondaryCta: 'See How It Works',
-  microcopy: '90 minutes · $2,000 · Fee credited toward implementation within 30 days',
+  badgeTag: 'New',
+  badgeText: 'AI workflow strategy + implementation',
+  headlineTop: 'Find where work gets stuck.',
+  headlineBottom: 'Put AI where it actually helps.',
+  subhead:
+    'We identify repetitive, manual, and inefficient workflows in your business, then design and implement practical AI solutions around them.',
+  primaryCta: BOOK_LABEL,
+  secondaryCta: 'See how it works',
+  illustrationLabel: 'Example workflow',
+  leftCard: { title: 'Lead waiting', value: '2 days' },
+  board: {
+    time: 'Mon, 09:12',
+    title: 'Lead follow-up',
+    subtitle: '3 AI opportunities found',
+    badge: 'AI review',
+    rows: [
+      { title: 'Enquiry received', meta: 'Web form', status: 'Flowing', tone: 'green' as Tone, done: true },
+      { title: 'Logged in CRM', meta: 'Copied by hand', status: 'AI: extract', tone: 'violet' as Tone, done: false },
+      { title: 'First reply sent', meta: 'Waits on shared inbox', status: 'AI: draft', tone: 'violet' as Tone, done: false },
+      { title: 'Quote follow-up', meta: 'No clear owner', status: 'AI: nudge', tone: 'violet' as Tone, done: false },
+    ],
+  },
+  rightCard: {
+    title: 'Human checkpoints',
+    subtitle: 'kept in this workflow',
+    items: [
+      { icon: 'userCheck' as IconKey, label: 'Approve' },
+      { icon: 'eye' as IconKey, label: 'Review' },
+      { icon: 'route' as IconKey, label: 'Escalate' },
+    ],
+  },
 } as const
 
-export const FRICTION = {
-  eyebrow: 'Does any of this sound familiar?',
-  headline: 'Your team is busy. The work still stalls.',
-  cards: [
-    {
-      title: 'Slow lead response',
-      body: 'A new enquiry sits until someone notices it and decides what happens next.',
-    },
-    {
-      title: 'Repeated coordination',
-      body: 'Candidates, clients, or teammates keep asking for the same status update.',
-    },
-    {
-      title: 'Disconnected systems',
-      body: 'People copy the same facts between inbox, spreadsheet, and software.',
-    },
-    {
-      title: 'Buried knowledge',
-      body: 'The answer exists, but only if you know whom to ask.',
-    },
-    {
-      title: 'Manual reporting',
-      body: 'Managers rebuild the same update every week from scattered sources.',
-    },
-    {
-      title: 'Growth creates admin',
-      body: 'More customers mean more chasing, not more leverage.',
-    },
-  ] as const,
-  closing:
-    'Hard work isn’t the bottleneck. The handoffs are.',
+export const INTRO = {
+  // Rendered as: before [image chips] middle [icon] after
+  lead: 'Your team is busy. The work still stalls.',
+  before: 'You don’t need AI',
+  middle: 'everywhere. You need it in the right',
+  after: 'workflows.',
+  sub: 'Built for service teams where growth adds manual work.',
+  tags: ['#Owners', '#OpsLeads', '#ServiceTeams', '#Recruiters'],
+  marquee: [
+    { label: 'Lead waiting 2 days', icon: 'clock' as IconKey, tone: 'teal' as Tone, image: 'strip-sticky' },
+    { label: 'Status lives in a sheet', icon: 'sheet' as IconKey, tone: 'orange' as Tone, image: 'strip-laptop' },
+    { label: 'Same update, five times', icon: 'repeat' as IconKey, tone: 'green' as Tone, image: 'strip-meeting' },
+    { label: 'Shared inbox triage', icon: 'inbox' as IconKey, tone: 'blue' as Tone, image: 'strip-reports' },
+    { label: 'Copy-paste between tools', icon: 'copy' as IconKey, tone: 'red' as Tone, image: 'strip-call' },
+    { label: 'Weekly report rebuild', icon: 'file' as IconKey, tone: 'violet' as Tone, image: 'strip-planner' },
+    { label: 'Who owns this step?', icon: 'help' as IconKey, tone: 'azure' as Tone, image: 'strip-sales' },
+    { label: 'Approval stuck in email', icon: 'userCheck' as IconKey, tone: 'pink' as Tone, image: 'strip-whiteboard' },
+  ],
+  laptop: {
+    title: 'From workflow to AI-powered workflow',
+    subtitle: 'How a BitBlabs engagement runs',
+    note: 'Strategy → Build',
+    steps: [
+      { label: 'Existing workflow', meta: 'Mapped as it runs today', tone: 'teal' as Tone, icon: 'gitBranch' as IconKey },
+      { label: 'Identify AI opportunities', meta: 'Manual effort, slow decisions', tone: 'violet' as Tone, icon: 'sparkles' as IconKey },
+      { label: 'Redesign with AI + automation', meta: 'Every step gets an owner', tone: 'blue' as Tone, icon: 'layers' as IconKey },
+      { label: 'Implement', meta: 'Built into your tools', tone: 'orange' as Tone, icon: 'check' as IconKey, highlight: true },
+      { label: 'AI\u2011powered workflow', meta: 'Live, with human checkpoints', tone: 'green' as Tone, icon: 'route' as IconKey },
+    ],
+  },
+  body:
+    'We analyze how your team works today, identify where AI can remove manual effort or improve decision-making, and turn those opportunities into working solutions.',
+  primaryCta: BOOK_LABEL,
+  secondaryCta: 'See how it works',
 } as const
 
-export const POINT_OF_VIEW = {
-  headline: 'You don’t need more AI. You need to know where it belongs.',
-  lead: '“What can we automate?” is the wrong first question.',
-  better: 'Ask these instead:',
-  questions: [
-    'Which process is actually costing us time or money?',
-    'Where does work repeatedly slow down?',
-    'What still needs human judgment?',
-    'How will a new system fit the tools we already use?',
-    'Is the fix worth building?',
-  ] as const,
-  closing: 'We start with the workflow, not the technology.',
+export const SESSION = {
+  eyebrow: 'Inside the session',
+  headline: 'Find the right workflow. Then make it AI\u2011powered.',
+  lead:
+    'In 90 minutes we map your existing workflow, identify AI opportunities, prioritize the highest-impact use cases, design the future-state workflow, and define how it gets implemented.',
+  checkpoints: {
+    title: 'AI opportunities, step by step',
+    body: 'We mark every step: where AI takes over, where a simple rule is enough, and where a person stays in the loop.',
+    cardTitle: '3 AI opportunities found',
+    cardBody: 'One step stays human, by design',
+    steps: [
+      { label: 'Intake', owner: 'ai' as StepOwner },
+      { label: 'Qualify', owner: 'ai' as StepOwner },
+      { label: 'Route', owner: 'rule' as StepOwner },
+      { label: 'Approve', owner: 'human' as StepOwner },
+      { label: 'Reply', owner: 'ai' as StepOwner },
+    ],
+    legend: [
+      { owner: 'ai' as StepOwner, label: 'AI' },
+      { owner: 'rule' as StepOwner, label: 'Rule' },
+      { owner: 'human' as StepOwner, label: 'Person' },
+    ],
+    pills: [
+      { label: 'AI drafts the first reply', tone: 'violet' as Tone, icon: 'sparkles' as IconKey },
+      { label: 'AI extracts RFQ details', tone: 'blue' as Tone, icon: 'file' as IconKey },
+      { label: 'AI qualifies inbound calls', tone: 'teal' as Tone, icon: 'headset' as IconKey },
+      { label: 'Person approves before send', tone: 'orange' as Tone, icon: 'userCheck' as IconKey },
+      { label: 'AI summarizes weekly status', tone: 'green' as Tone, icon: 'eye' as IconKey },
+      { label: 'Exceptions go to a person', tone: 'azure' as Tone, icon: 'help' as IconKey },
+      { label: 'Refunds stay human', tone: 'pink' as Tone, icon: 'shield' as IconKey },
+    ],
+  },
+  mapped: {
+    title: 'Your existing workflow, mapped',
+    body: 'We trace one process end to end: who starts it, which tools touch it, where it waits, and which steps are still manual.',
+    cardTitle: 'Lead follow-up',
+    cardSubtitle: 'Example map · current state',
+    badge: '2 stalls',
+    badgeLabel: 'Found',
+    rows: [
+      { time: 'Hour 0', title: 'Enquiry received', meta: 'Web form', ok: true },
+      { time: 'Hour 2', title: 'Logged in CRM', meta: 'Copied by hand', ok: true },
+      { time: 'Day 2', title: 'First reply sent', meta: 'Waits on inbox', ok: false },
+      { time: 'Day 5', title: 'Quote follow-up', meta: 'No clear owner', ok: false },
+    ],
+  },
+  grouped: {
+    title: 'The future-state workflow, designed',
+    body: 'Each stage gets an owner: an AI agent, a simple rule, or a person. You see exactly how the new workflow runs before anything is built.',
+    cta: 'Design your AI workflow',
+    footnote: '*Example design. Your blueprint reflects your real process.',
+    window: {
+      title: 'Who owns each stage',
+      subtitle: 'Future-state design',
+      badge: '4 stages',
+      groups: [
+        { label: 'Intake', meta: 'Details read from form and inbox', count: 'AI agent', tone: 'violet' as Tone },
+        { label: 'Qualify', meta: 'Fit scored, edge cases flagged', count: 'AI + review', tone: 'blue' as Tone },
+        { label: 'Kickoff', meta: 'Owner assigned, brief created', count: 'Rule', tone: 'green' as Tone },
+        { label: 'Approve', meta: 'Scope and pricing sign-off', count: 'Person', tone: 'orange' as Tone },
+      ],
+    },
+    floating: {
+      title: 'Intake',
+      badge: 'AI agent',
+      items: [
+        { label: 'Read enquiry details', done: true },
+        { label: 'Log it to the CRM', done: true },
+        { label: 'Draft the first reply', done: false },
+      ],
+    },
+  },
+  roadmap: {
+    title: 'A prioritized implementation plan',
+    body: 'Opportunities ranked by impact and effort, then sequenced into a 30/60/90-day build.',
+    cardTitle: 'Your plan at a glance',
+    rings: [
+      { value: '30', label: 'Quick wins', progress: 0.34, tone: 'orange' as Tone },
+      { value: '60', label: 'Core AI build', progress: 0.67, tone: 'violet' as Tone, large: true },
+      { value: '90', label: 'Scale & review', progress: 1, tone: 'orange' as Tone },
+    ],
+    stats: [
+      {
+        label: 'Deliverables\nyou keep',
+        value: '5',
+        note: 'Workflow map, AI opportunities, priorities, future-state design, implementation plan',
+      },
+      { label: 'Session length\nin minutes', value: '90', note: 'Recorded for your team' },
+    ],
+  },
+  honest: {
+    title: 'Where AI doesn’t belong',
+    body: 'If AI isn’t the right fix for a step, we say so and recommend a simple rule or a process change instead.',
+    meta: 'Recommendation · Step 3',
+    cardTitle: 'Keep this step human',
+    cardBody: 'Refund approvals need judgment. Let AI draft the reminder, not make the decision.',
+    accept: 'Makes sense',
+    later: 'Discuss',
+  },
 } as const
 
-export const METHOD = {
-  eyebrow: 'What we actually do',
-  headline: 'How does BitBlabs redesign a stuck workflow?',
-  lead: 'Find the stuck handoff. Redesign the path. Build only what earns its place.',
-  supporting:
-    'Map the real process, pick the bottleneck worth fixing first, redesign what people and systems each own, then build if you want BitBlabs to implement.',
-  stages: [
-    {
-      title: 'Understand',
-      body: 'Map how the work moves today: owners, tools, and handoffs.',
-      example: 'Current-state map',
-    },
-    {
-      title: 'Prioritise',
-      body: 'Choose the bottleneck that is worth solving first.',
-      example: 'One workflow selected',
-    },
-    {
-      title: 'Redesign',
-      body: 'Decide what AI, automation, and people each own.',
-      example: 'Human checkpoints defined',
-    },
-    {
-      title: 'Build',
-      body: 'Connect, test, and deploy into your operation.',
-      example: 'Live system in use',
-    },
-  ] as const,
-  closing:
-    'You don’t need a finished AI idea to start. You need to show how the work happens today.',
-} as const
-
-export const HOW_WE_WORK = {
-  headline: 'How we work together',
-  steps: [
-    {
-      number: '01',
-      title: 'Discover the real bottleneck',
-      body: 'We trace one workflow end to end: who starts it, which tools touch it, where information comes from, where it stalls, and what still needs judgment.',
-      outcome: 'The right problem, named clearly.',
-    },
-    {
-      number: '02',
-      title: 'Design the better workflow',
-      body: 'We decide what AI can handle, what ordinary automation can handle, what your team keeps, and where approvals stay human.',
-      outcome: 'A future-state path you can run.',
-    },
-    {
-      number: '03',
-      title: 'Build and deploy it',
-      body: 'If you want BitBlabs to implement, we integrate, test, and put the system into real day-to-day use.',
-      outcome: 'A working system, not another deck.',
-    },
-  ] as const,
-} as const
-
-export const OFFER = {
-  eyebrow: 'Not sure what to automate first?',
-  headline: 'Start with one important workflow.',
-  body: 'A 90-minute working session for owners and ops leaders who know something is stuck, and will not fund the wrong build.',
-  definition:
-    'An AI Workflow Strategy Session is a paid 90-minute working session for owners and operations leaders of growing service businesses, typically teams of about 20 to 80 people. BitBlabs uses the session to map one high-impact workflow as it actually runs today: who owns each step, which inboxes and spreadsheets it touches, where work stalls, and what still needs human judgment. You leave with a current-state map, a bottleneck analysis, ranked opportunities, a future-state design with human checkpoints, and a 30/60/90-day roadmap you can run with BitBlabs, your internal team, or another partner. The session costs $2,000. Implementation is not included. If you start a BitBlabs build within 30 days, the session fee is credited toward that project. If AI is not the right fix, BitBlabs will say so and recommend process design or ordinary automation instead. You do not need a finished automation idea to book. You need to show how the work happens today.',
-  duringLabel: 'In the session we will:',
-  steps: [
-    'Select one high-impact workflow',
-    'Map how it operates today',
-    'Mark delays, rework, and handoff leaks',
-    'Judge where AI and automation help',
-    'Separate quick wins from heavier builds',
-    'Design the future-state path',
-    'Set the next implementation steps',
-  ] as const,
-  price: '$2,000',
-  duration: '90 minutes',
-  primaryCta: 'Book Your Strategy Session',
-  microcopy: '90 minutes · Roadmap included · Pay securely through PayPal on TidyCal',
-  creditNote:
-    'Start a BitBlabs implementation within 30 days and your $2,000 session fee is credited toward that project.',
-  deliverablesSummary: [
-    'Current workflow map',
-    'Bottleneck analysis',
-    'Ranked opportunities',
-    'Future-state design',
-    '30/60/90-day roadmap',
-  ] as const,
-} as const
-
-export const DELIVERABLES = {
-  headline: 'What you leave with',
-  supporting:
-    'You pay for a plan you can run with BitBlabs, your team, or another partner.',
-  items: [
-    {
-      title: 'Current workflow map',
-      body: 'How work moves today: owners, tools, and handoffs.',
-      size: 'lg' as const,
-    },
-    {
-      title: '30/60/90-day roadmap',
-      body: 'A sequenced plan so you are not stuck waiting for a second discovery cycle.',
-      size: 'lg' as const,
-    },
-    {
-      title: 'Bottleneck analysis',
-      body: 'Where delay, rework, and coordination leak time and money.',
-      size: 'md' as const,
-    },
-    {
-      title: 'Ranked automation opportunities',
-      body: 'What to fix first, what to defer, and why.',
-      size: 'md' as const,
-    },
-    {
-      title: 'Recommended future workflow',
-      body: 'A redesigned path with clear human checkpoints.',
-      size: 'md' as const,
-    },
-    {
-      title: 'Tools & technical approach',
-      body: 'Suggested stack and how it fits systems you already use.',
-      size: 'sm' as const,
-    },
-    {
-      title: 'Risks & human checkpoints',
-      body: 'Dependencies, exceptions, and where judgment stays with people.',
-      size: 'sm' as const,
-    },
-    {
-      title: 'Session recording',
-      body: 'A record of the working session for your team.',
-      size: 'sm' as const,
-    },
-    {
-      title: 'Optional implementation proposal',
-      body: 'If you want BitBlabs to build, a clear next scope.',
-      size: 'sm' as const,
-    },
-  ] as const,
-} as const
-
-export const WORKFLOW_EXAMPLES = {
-  headline: 'Workflows teams ask us to fix',
+export const WORKFLOWS = {
+  eyebrow: 'Concrete AI use cases',
+  headlineTop: 'AI inside the workflows',
+  headlineBottom: 'your team already runs',
   tabs: [
     {
       id: 'sales',
       label: 'Sales',
-      workflows: [
-        'Lead intake and qualification',
-        'Follow-up sequencing',
-        'CRM updates after conversations',
-        'Handoff from sales to delivery',
+      icon: 'briefcase' as IconKey,
+      image: 'tab-sales',
+      alt: 'Sales lead on a call at his laptop',
+      text: 'New leads get called back, qualified, and logged without anyone copying details.',
+      flow: [
+        { label: 'Lead qualification', owner: 'rule' as StepOwner },
+        { label: 'AI voice agent', owner: 'ai' as StepOwner },
+        { label: 'CRM update', owner: 'ai' as StepOwner },
+        { label: 'Follow-up', owner: 'human' as StepOwner },
       ],
-      before: ['Enquiry', 'Shared inbox', 'Manual qualification', 'Delayed follow-up', 'CRM update'],
-      after: ['Enquiry', 'Immediate qualification', 'Routed follow-up', 'Human decision', 'CRM updated'],
     },
     {
-      id: 'recruitment',
-      label: 'Recruitment and HR',
-      workflows: [
-        'Candidate status updates',
-        'Interviewer coordination',
-        'Document collection',
-        'Offer follow-through',
-      ],
-      before: ['Candidate', 'Recruiter inbox', 'Spreadsheet', 'Interviewer chase', 'Manual status'],
-      after: [
-        'Candidate',
-        'Coordinated workflow',
-        'Interviewer prompt',
-        'Human decision',
-        'Candidate updated',
+      id: 'operations',
+      label: 'Operations',
+      icon: 'layers' as IconKey,
+      image: 'tab-delivery',
+      alt: 'Two operations leads planning at a whiteboard',
+      text: 'RFQs stop waiting in an inbox for someone to read the attachment.',
+      flow: [
+        { label: 'RFQ received', owner: 'rule' as StepOwner },
+        { label: 'AI extracts requirements', owner: 'ai' as StepOwner },
+        { label: 'Qualifies and scores', owner: 'ai' as StepOwner },
+        { label: 'Team reviews', owner: 'human' as StepOwner },
       ],
     },
     {
       id: 'support',
-      label: 'Customer Support',
-      workflows: [
-        'Repeated question handling',
-        'Ticket triage and routing',
-        'Escalation with context',
-        'Knowledge retrieval',
+      label: 'Customer support',
+      icon: 'headset' as IconKey,
+      image: 'tab-support',
+      alt: 'Support agent with a headset at his desk',
+      text: 'Routine questions arrive with a drafted answer. Your team approves instead of typing.',
+      flow: [
+        { label: 'Customer query', owner: 'rule' as StepOwner },
+        { label: 'AI classifies', owner: 'ai' as StepOwner },
+        { label: 'Retrieves information', owner: 'ai' as StepOwner },
+        { label: 'Drafts response', owner: 'ai' as StepOwner },
+        { label: 'Human approval', owner: 'human' as StepOwner },
       ],
-      before: ['Ticket', 'Shared queue', 'Manual triage', 'Ask around', 'Late reply'],
-      after: ['Ticket', 'Routed with context', 'Suggested answer', 'Human review', 'Resolved'],
     },
     {
-      id: 'delivery',
-      label: 'Service Delivery',
-      workflows: [
-        'Kickoff information gathering',
-        'Status reporting',
-        'Client update loops',
-        'Exception handling',
+      id: 'hr',
+      label: 'HR & hiring',
+      icon: 'users' as IconKey,
+      image: 'tab-recruitment',
+      alt: 'Recruiter reviewing candidate paperwork',
+      text: 'Recruiters spend their time on the right candidates, not the pile.',
+      flow: [
+        { label: 'Applications', owner: 'rule' as StepOwner },
+        { label: 'AI screening', owner: 'ai' as StepOwner },
+        { label: 'Candidate qualification', owner: 'ai' as StepOwner },
+        { label: 'Interview scheduling', owner: 'human' as StepOwner },
       ],
-      before: ['Request', 'Email thread', 'Spreadsheet', 'Status chase', 'Late update'],
-      after: ['Request', 'Structured intake', 'Visible status', 'Human checkpoint', 'Client updated'],
     },
-    {
-      id: 'ops',
-      label: 'Internal Operations',
-      workflows: [
-        'Recurring report assembly',
-        'Cross-team handoffs',
-        'Approval routing',
-        'Tool-to-tool data movement',
-      ],
-      before: ['Trigger', 'Inbox', 'Copy between tools', 'Manual chase', 'Report'],
-      after: ['Trigger', 'Connected steps', 'Automated assembly', 'Human approval', 'Report ready'],
-    },
-  ] as const,
+  ],
+  flowLabel: 'Example AI workflow',
+  rhythmLabel: 'And any workflow with manual effort in it',
+  rhythm: ['#reporting', '#onboarding', '#approvals', '#document-intake', '#client-updates', '#internal-ops'],
 } as const
 
-export const CASE_STUDY = {
-  eyebrow: 'One workflow we have already improved',
-  headline: 'Recruitment coordination without the endless chase.',
-  narrative:
-    'An enterprise recruitment team moved work across candidates, recruiters, interviewers, and internal systems. Progress depended on people checking status, pinging the next person, and pushing the process forward by hand.',
-  builtForLabel: 'BitBlabs redesigned the workflow and built a system to:',
-  capabilities: [
-    'Know the candidate’s current stage',
-    'Collect required information',
-    'Tell each person the next step',
-    'Coordinate follow-ups',
-    'Record important details',
-    'Escalate only what needs human attention',
-  ] as const,
-  closing:
-    'Not a chatbot demo. A connected path for the work to move.',
-  cta: 'Book Your Strategy Session',
-  beforeNodes: ['Candidate', 'Inbox', 'Spreadsheet', 'Chase', 'Update'],
-  afterNodes: ['Candidate', 'Workflow', 'Prompt', 'Human approval', 'Updated'],
+export const RESULTS = {
+  headline: 'Workflows teams have made AI\u2011powered',
+  trustLabel: 'Trusted by operators',
 } as const
 
-export const PRINCIPLES = {
-  headline: 'We will not sell you AI for its own sake.',
-  items: [
-    {
-      title: 'We examine the full process.',
-      body: 'Fixing one task fails if the surrounding handoffs stay broken.',
-    },
-    {
-      title: 'We design around your operation.',
-      body: 'Your team, customers, tools, rules, and constraints shape the solution.',
-    },
-    {
-      title: 'We keep people in control.',
-      body: 'Reviews, approvals, and escalations sit where judgment matters.',
-    },
-    {
-      title: 'We build past the demo.',
-      body: 'The system has to work with real users, messy inputs, exceptions, and existing tools.',
-    },
-  ] as const,
+export const OFFER_STATS = {
+  eyebrow: 'Strategy, then implementation',
+  headlineTop: 'Start with one session.',
+  headlineBottom: 'Then we build it.',
+  price: '$2,000',
+  badge: 'Credited toward your build within 30 days',
+  stats: [
+    { value: '90', unit: 'min', unitTone: 'violet' as Tone, label: 'Focused working session' },
+    { value: '5', label: 'Deliverables you keep' },
+    { value: '30', unit: 'days', unitTone: 'blue' as Tone, label: 'To use your fee as build credit' },
+  ],
+  buildTitle: 'Need us to build it?',
+  buildBody: 'We take the workflow you identified from blueprint to a working AI implementation.',
+  cta: BOOK_LABEL,
+  footnote: 'Implementation is scoped separately. Pay for the session securely through PayPal on TidyCal.',
 } as const
 
-export const FIT = {
-  headline: 'Is this worth booking?',
-  goodTitle: 'Book if:',
-  badTitle: 'Skip if:',
-  good: [
-    'You lead a growing service business',
-    'Your team is roughly 20–80 people',
-    'Key processes still run on email, spreadsheets, or manual follow-ups',
-    'Growth is creating more coordination work',
-    'You want a practical roadmap tied to business value',
-    'You may want a partner to implement after the plan',
-  ] as const,
-  bad: [
-    'You only want a list of popular AI tools',
-    'You want a free introductory consult',
-    'The process has no clear owner',
-    'You expect AI to replace every human decision',
-    'You are not ready to explain how the work happens today',
-  ] as const,
+export const ASSIST = {
+  eyebrow: 'What BitBlabs does',
+  headlineTop: 'Your business already has workflows.',
+  headlineBottom: 'We make them AI\u2011powered.',
+  body:
+    'From identifying the right opportunities to designing and implementing AI inside your existing processes, BitBlabs turns manual workflows into AI-powered ones.',
+  cta: 'See what’s inside the session',
+  window: {
+    title: 'Lead follow-up',
+    subtitle: 'Future state, AI-powered',
+    badge: 'AI-powered',
+    rows: [
+      { title: 'Enquiry qualified', meta: 'AI agent, on arrival', state: 'done' as const, tag: 'AI' },
+      { title: 'First reply drafted', meta: 'AI drafts, a person approves', state: 'human' as const, tag: 'Checkpoint' },
+      { title: 'Routed to owner', meta: 'By service type', state: 'todo' as const, tag: 'Rule' },
+      { title: 'CRM updated', meta: 'Written by the agent', state: 'todo' as const, tag: 'AI' },
+    ],
+  },
+  suggestions: [
+    { title: 'AI drafts the first reply', action: 'Suggested', dark: true },
+    { title: 'AI voice agent for missed calls', action: 'Plan: day 30' },
+    { title: 'Keep refund approval human', action: 'Human checkpoint' },
+  ],
+  illustrationLabel: 'Example recommendations',
+  cards: [
+    { title: 'AI voice agents', body: 'Answer, qualify, and log inbound calls.', icon: 'headset' as IconKey, tone: 'blue' as Tone },
+    { title: 'Document extraction', body: 'Pull requirements out of RFQs, CVs, and forms.', icon: 'file' as IconKey, tone: 'red' as Tone },
+    { title: 'Drafted replies', body: 'AI writes the response, your team approves it.', icon: 'sparkles' as IconKey, tone: 'violet' as Tone },
+    { title: 'Smart routing', body: 'Classifies requests and sends them to the right owner.', icon: 'route' as IconKey, tone: 'green' as Tone },
+  ],
 } as const
 
-export const JOURNEY = {
-  headline: 'What happens after you book',
-  steps: [
+export const STORIES = {
+  eyebrow: 'A closer look',
+  headlineTop: 'Inside the systems',
+  headlineBottom: 'we’ve built',
+  sub: 'The industries behind our builds, and what we shipped in each.',
+  linkLabel: 'View project',
+  clips: [
     {
-      title: 'Complete the assessment',
-      body: 'Tell us about the business, the workflow, current tools, and where work stalls.',
+      id: 'digipropass',
+      project: 'DigiProPass',
+      industry: 'Sustainable fashion',
+      summary: 'Digital product passports with QR codes and sustainability scoring',
+      video: '/videos/redesign/clip-digipropass.mp4',
+      poster: '/images/redesign/clip-digipropass.webp',
+      href: '/projects/digipropass',
     },
     {
-      title: 'Join the strategy session',
-      body: 'We examine and redesign one priority workflow together.',
+      id: 'healthy-fasal',
+      project: 'Healthy Fasal',
+      industry: 'Agri supply chain',
+      summary: 'Farm-to-vendor ordering, wallets, and collection centres in one platform',
+      video: '/videos/redesign/clip-healthy-fasal.mp4',
+      poster: '/images/redesign/clip-healthy-fasal.webp',
+      href: '/projects/healthy-fasal',
     },
     {
-      title: 'Receive your roadmap',
-      body: 'We turn the session into a structured implementation plan.',
+      id: 'axion-plan',
+      project: 'Axion Plan',
+      industry: 'Financial planning',
+      summary: 'Excel forecasting logic turned into an AI-assisted planning product',
+      video: '/videos/redesign/clip-axion-plan.mp4',
+      poster: '/images/redesign/clip-axion-plan.webp',
+      href: '/projects/axion-plan',
     },
     {
-      title: 'Choose how to proceed',
-      body: 'Run the roadmap internally or ask BitBlabs to build it.',
+      id: 'course-companion',
+      project: 'Course Companion',
+      industry: 'Higher education',
+      summary: 'A privacy-first AI teaching assistant for professors',
+      video: '/videos/redesign/clip-course-companion.mp4',
+      poster: '/images/redesign/clip-course-companion.webp',
+      href: '/projects/course-companion',
     },
     {
-      title: 'Build and deploy',
-      body: 'If we implement, we scope, build, test, and introduce the system into daily use.',
+      id: 'ryft',
+      project: 'Ryft',
+      industry: 'Fitness',
+      summary: 'A social workout tracker with streaks, XP, and squads',
+      video: '/videos/redesign/clip-ryft.mp4',
+      poster: '/images/redesign/clip-ryft.webp',
+      href: 'https://ryft.bitblabs.com/',
     },
-  ] as const,
-} as const
-
-export const ABOUT = {
-  headline: 'Who you are trusting with this workflow',
-  paragraphs: [
-    'BitBlabs turns operational problems into working systems.',
-    'We combine process design, conversational AI, workflow automation, and custom product work for problems off-the-shelf tools handle poorly.',
-    'That includes voice and workflow systems in live operations, including enterprise recruitment coordination.',
-    'We care what happens after the demo, when real people use the system.',
-  ] as const,
+  ],
 } as const
 
 export const FAQ = {
-  headline: 'Questions that usually come up before booking',
-  supportCta: 'Book Your Strategy Session',
+  eyebrow: 'Common Questions',
+  headline: 'Frequently asked questions',
+  contactTitle: 'Can’t find your answer?',
+  contactCta: 'Email us',
   items: [
     {
       id: 'know-what',
-      question: 'Do I need to know what I want to automate?',
+      question: 'Do I need to know where AI fits?',
       answer:
-        'No. Show us how an important workflow runs today. We help decide what is worth improving first.',
+        'No. Show us how an important workflow runs today. We find where AI can remove manual effort or improve decisions.',
+    },
+    {
+      id: 'implement',
+      question: 'Do you implement, or only advise?',
+      answer:
+        'Both. The session produces the blueprint. BitBlabs can then build the AI into your existing tools and processes.',
     },
     {
       id: 'entire-business',
       question: 'Can we cover my entire business in one session?',
       answer:
-        'We focus on one high-impact workflow so the roadmap stays usable. Broader mapping can follow.',
+        'We focus on one high-impact workflow so the plan stays usable. More workflows can follow.',
     },
     {
       id: 'only-recruitment',
       question: 'Is this only for recruitment?',
       answer:
-        'No. Recruitment is one workflow we have already improved. The same approach applies to sales, support, delivery, and internal ops.',
+        'No. Recruitment is one workflow we have already put AI into. The same approach applies to sales, operations, customer support, and HR.',
     },
     {
       id: 'implementation-included',
       question: 'Is implementation included in the $2,000?',
       answer:
-        'No. The $2,000 covers the strategy session and roadmap. Implementation is scoped separately if you want BitBlabs to build.',
+        'No. The $2,000 covers the strategy session and blueprint. If you want us to build it, implementation is scoped separately.',
     },
     {
       id: 'credit',
@@ -418,19 +439,19 @@ export const FAQ = {
       id: 'ai-not-right',
       question: 'What if AI is not the right solution?',
       answer:
-        'We will say so. The session finds the right fix: process design, ordinary automation, or a clearer human workflow.',
+        'We will say so. For some steps the right fix is a simple rule, a process change, or a clearer handoff between people.',
     },
     {
       id: 'existing-tools',
       question: 'Will you work with our existing tools?',
       answer:
-        'Yes. Fit with tools you already use is one of the questions we answer before recommending anything new.',
+        'Yes. We put AI into the tools you already use wherever we can, and only recommend something new when it clearly earns its place.',
     },
     {
       id: 'implementation-cost',
       question: 'How much does implementation cost?',
       answer:
-        'It depends on the workflow, integrations, and safeguards. The roadmap clarifies scope before you commit to a build.',
+        'It depends on the workflow, integrations, and safeguards. The plan clarifies scope before you commit to a build.',
     },
     {
       id: 'who-attends',
@@ -444,20 +465,22 @@ export const FAQ = {
       answer:
         'A short assessment: your business, the workflow to improve, current tools, and where work gets stuck.',
     },
-  ] as const,
+  ],
 } as const
 
 export const FINAL_CTA = {
-  intro: 'Your team already knows where work feels heavier than it should.',
-  feel: 'Delayed replies. Repeated follow-ups. Spreadsheets that need one more pass. Requests lost between people and systems.',
-  headline: 'Don’t automate the whole company. Start with the right workflow.',
-  body: 'Bring one important workflow. We will show what slows it down, where AI belongs, and what to do next.',
-  primaryCta: 'Book Your Strategy Session',
-  secondaryCta: 'See What You’ll Receive',
-  microcopy: '90 minutes · $2,000 · Practical roadmap included',
-} as const
-
-export const FOOTER = {
-  positioning: 'AI workflow strategy and implementation for growing service businesses.',
-  emailPlaceholder: 'Business email (to be confirmed)',
+  headline: 'Make one workflow AI\u2011powered',
+  body: 'Bring the process. Leave with the AI opportunities, the future-state design, and an implementation plan.',
+  primaryCta: BOOK_LABEL,
+  secondaryCta: `Email ${CONTACT_EMAIL}`,
+  qrTitle: 'Scan the QR code to book your session',
+  laptop: {
+    greeting: 'Your implementation plan',
+    name: 'Lead follow-up',
+    phases: [
+      { label: 'Days 1–30', title: 'Quick wins', tone: 'green' as Tone, items: ['AI drafts first replies', 'One owner per lead'] },
+      { label: 'Days 31–60', title: 'Core AI build', tone: 'violet' as Tone, items: ['AI voice agent + CRM sync', 'Human approval step'] },
+      { label: 'Days 61–90', title: 'Scale & review', tone: 'orange' as Tone, items: ['AI weekly status summary', 'Pick the next workflow'] },
+    ],
+  },
 } as const

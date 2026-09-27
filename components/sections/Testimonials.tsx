@@ -28,7 +28,7 @@ export function Testimonials({ accent = '#7c3aed' }: TestimonialsProps) {
   return (
     <section
       id="testimonials"
-      className="relative overflow-hidden border-t border-white/[0.06] bg-base py-24 text-white sm:py-32"
+      className="relative overflow-hidden border-t border-white/[0.06] bg-[#050505] py-24 text-white sm:py-32"
     >
       <div
         className="pointer-events-none absolute inset-0 opacity-40"

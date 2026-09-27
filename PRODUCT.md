@@ -34,10 +34,11 @@ BitBlabs starts with the business process, not a preselected AI tool. The first 
 - Confirmed founders: Shubham Gupta; Shlok Sawant (bios and LinkedIn in `lib/founders.ts`)
 - Live booking URL configured in `lib/site.ts`
 - Portfolio and project pages exist separately; homepage proof is qualitative and anonymized unless approved metrics are supplied
+- Company email: hey@bitblabs.com (`CONTACT_EMAIL` in `lib/site.ts`)
+- Newsletter: Kit, double opt-in, via `/api/subscribe` (`KIT_API_KEY` and `KIT_FORM_ID` env vars)
 
 ## Open Decisions
 
-- Company email for footer (placeholder until supplied)
 - Founder photography (omit until available)
 - Exact deliverable turnaround SLA (do not claim 48 hours until confirmed)
-- Client-named case study and measurable outcomes (gated on approval)
+- Client quotes, result cards, video stories, and rating: pre-wired in `lib/proof.ts` as `approved: false`; hidden in production until each entry is approved

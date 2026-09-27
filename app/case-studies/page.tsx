@@ -1,32 +1,32 @@
-'use client'
-
 import Link from 'next/link'
-import { BbPageShell } from '@/components/home/BbPageShell'
+import { FinalCta } from '@/components/hl/FinalCta'
+import { IconArrowRight } from '@/components/hl/icons'
+import { InnerHero, PageShell } from '@/components/hl/PageShell'
+import { Eyebrow } from '@/components/hl/ui'
 import { caseStudies } from '@/lib/data'
 
 export default function CaseStudiesPage() {
   return (
-    <BbPageShell>
-      <section className="bb-home-section">
-        <div className="bb-home-container">
-          <h1 className="bb-display bb-h1 max-w-3xl text-[var(--bb-ink)]">Case studies</h1>
-          <p className="mt-5 max-w-2xl text-base leading-relaxed text-[var(--bb-ink-muted)] sm:text-lg">
-            First-hand notes from BitBlabs work on operational AI systems, including anonymized
-            recruitment coordination. Not a blog of generic AI takes.
-          </p>
-
-          <ul className="mt-12 grid gap-6 md:mt-16 md:grid-cols-2 lg:gap-8">
+    <PageShell>
+      <InnerHero
+        eyebrow={<Eyebrow>Field notes</Eyebrow>}
+        title="Case studies"
+        description="First-hand notes from BitBlabs work on operational AI systems, including anonymized recruitment coordination. Not a blog of generic AI takes."
+      />
+      <section className="pb-20 lg:pb-30">
+        <div className="hl-container">
+          <ul className="grid gap-5 md:grid-cols-2 lg:gap-7.5">
             {caseStudies.map((study) => (
               <li key={study.id}>
                 <Link
                   href={`/case-studies/${study.slug}`}
-                  className="bb-panel group flex h-full flex-col p-6 transition-colors hover:bg-[var(--bb-surface-soft)] md:p-8"
+                  className="group flex h-full flex-col rounded-3xl bg-white p-5 transition-shadow hover:shadow-xl md:p-7.5 lg:p-10"
                 >
-                  <div className="mb-4 flex flex-wrap items-center gap-2">
-                    <span className="bb-label border border-[var(--bb-line)] px-2.5 py-1.5 text-[var(--bb-ink)]">
+                  <div className="mb-5 flex flex-wrap items-center gap-2">
+                    <span className="rounded-full bg-zinc-200 px-3.5 py-1.5 text-sm font-semibold text-zinc-800">
                       {study.category}
                     </span>
-                    <span className="bb-label border border-[var(--bb-line)] px-2.5 py-1.5 text-[var(--bb-ink-muted)]">
+                    <span className="rounded-full border border-zinc-200 px-3.5 py-1.5 text-sm font-medium text-zinc-500">
                       {study.date
                         ? new Intl.DateTimeFormat('en-GB', {
                             day: 'numeric',
@@ -36,21 +36,19 @@ export default function CaseStudiesPage() {
                         : study.readTime}
                     </span>
                   </div>
-                  <h2 className="text-[22px] font-bold tracking-[-0.02em] text-[var(--bb-ink)]">
-                    {study.title}
-                  </h2>
-                  <p className="mt-3 flex-1 text-base leading-relaxed text-[var(--bb-ink-muted)]">
-                    {study.description}
-                  </p>
-                  <p className="mt-6 text-[15px] font-bold text-[var(--bb-blue)] transition-transform group-hover:translate-x-1.5">
-                    Read case study →
-                  </p>
+                  <h2 className="text-xl font-semibold text-zinc-900 md:text-2xl">{study.title}</h2>
+                  <p className="mt-2.5 flex-1 text-lg text-zinc-600">{study.description}</p>
+                  <span className="mt-7.5 inline-flex items-center gap-2 text-base font-medium text-zinc-900">
+                    Read case study
+                    <IconArrowRight className="size-4 transition-transform group-hover:translate-x-1.5" />
+                  </span>
                 </Link>
               </li>
             ))}
           </ul>
         </div>
       </section>
-    </BbPageShell>
+      <FinalCta />
+    </PageShell>
   )
 }

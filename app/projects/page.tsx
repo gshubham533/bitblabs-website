@@ -1,25 +1,21 @@
 'use client'
 
-import { BbPageShell } from '@/components/home/BbPageShell'
+import { FinalCta } from '@/components/hl/FinalCta'
+import { PageShell } from '@/components/hl/PageShell'
 import { WorkProjectsList } from '@/components/showcase/WorkProjectsList'
 import { StudioProducts } from '@/components/sections/StudioProducts'
 import { portfolioProjects } from '@/lib/portfolio-data'
 
 export default function ProjectsPage() {
   return (
-    <BbPageShell>
+    <PageShell>
       <WorkProjectsList
         projects={portfolioProjects}
         title="Our work"
-        subtitle={
-          <>
-            Built with <strong className="font-medium text-[var(--bb-ink)]">workflows</strong>,{' '}
-            <strong className="font-medium text-[var(--bb-ink)]">systems</strong>, and{' '}
-            <strong className="font-medium text-[var(--bb-ink)]">production</strong>.
-          </>
-        }
+        subtitle="Workflows, systems, and products we have taken into production."
         trailingContent={<StudioProducts embedded />}
       />
-    </BbPageShell>
+      <FinalCta />
+    </PageShell>
   )
 }

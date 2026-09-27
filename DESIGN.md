@@ -1,86 +1,88 @@
 ---
-name: BitBlabs Editorial
-description: Hairline consultancy system after Digitally Minded — stone canvas, ink rules, numbered sections, square CTAs, four-color stripe. Homepage and work/story routes.
+name: BitBlabs Habitline
+description: Soft, rounded, photo-led product-marketing system adapted from the Habitline template. Warm orange brand accent on a light grey ground, pill navigation, glass cards over photography, laptop/dashboard mockups instead of phones.
 colors:
-  canvas: "#FAFAF9"
-  ink: "#111111"
-  blue: "#2E5CE6"
-  red: "#E0301E"
-  amber: "#DE9B00"
-  amber-fill: "#E8A800"
-  green: "#188A52"
-  body: "#555555"
-  body-strong: "#444444"
-  caption: "#666666"
-  deemph: "#6F6F6F"
-  hairline: "#111111"
-  on-ink: "#DDDDDD"
+  ground: "#f7f7f7"
+  ink: "#18181b"
+  body: "#52525b"
+  muted: "#71717a"
+  surface: "#ffffff"
+  surface-soft: "#e4e4e7"
+  orange: "#ff4c00"
+  green: "#12a70a"
+  blue: "#0022ff"
+  pink: "#ff00a1"
+  azure: "#0059ff"
+  violet: "#9000ff"
+  red: "#ff0000"
+  teal: "#0283a7"
 typography:
-  display:
-    fontFamily: "system-ui, sans-serif"
-    fontWeight: 700
-    lineHeight: 0.98
-    letterSpacing: "-0.04em"
-  h1:
-    fontSize: "104px"
-  h2:
-    fontSize: "66px"
+  headline:
+    fontFamily: "Stack Sans Headline (self-hosted, --font-stack-headline)"
+    fontWeight: 500-600
+    lineHeight: 1.3
   body:
-    fontSize: "17px"
-    lineHeight: 1.6
+    fontFamily: "Google Sans Flex (--font-google-sans-flex)"
+    fontSize: "1.125rem"
+    fontWeight: 500
+    lineHeight: 1.5
 rounded:
-  none: "0"
+  card: "1.5rem"
+  large-card: "2rem"
+  button: "9999px"
 spacing:
-  container: "1280px"
-  container-inline-lg: "56px"
-  section-block-lg: "104px"
-  label-col: "220px"
+  container: "75rem"
+  container-inline: "0.875rem / 1.25rem / 0"
 ---
 
-# Design System: BitBlabs Editorial
+# Design System: BitBlabs Habitline
 
-**Surface boundary:** Tokens apply inside `.bb-home` (homepage, `/projects`, `/case-studies`, legal). Visual language follows [Digitally Minded](https://digitallyminded.co/): stone canvas, 1px ink hairlines, numbered sections, square buttons, four-color stripe. Copy stays BitBlabs (`lib/landing.ts`).
+**Surface boundary:** Every public route renders inside `PageShell` (`components/hl/PageShell.tsx`), which applies the `.hl` wrapper, the fixed pill header and the footer. Homepage sections live in `components/hl/home/`; copy lives in `lib/landing.ts`; gated proof lives in `lib/proof.ts`.
 
 ## Overview
 
-Editorial consultancy layout. No webfonts on this surface (system-ui). No swimlane board, no rounded magnets, no paper grid.
+A faithful adaptation of the Habitline template. Structure, spacing, motion and component shapes follow the template; only copy, imagery and branding changed. Phone mockups are replaced with `Laptop` and `AppWindow` frames (`components/hl/mockups.tsx`).
 
-**Key Characteristics:**
-- Canvas `#FAFAF9`, ink `#111`, hairline borders
-- Four-color stripe: blue `#2E5CE6` / red `#E0301E` / amber `#E8A800` / green `#188A52`
-- Label grid: 220px index column + content
-- Square primary CTA (red, hover ink)
-- Header CTA ink (hover blue)
-- Dark ink footer with the same stripe
+**Key characteristics:**
+- Light grey ground `#f7f7f7`, white rounded cards, zinc text
+- Warm orange `#ff4c00` is the brand accent (price, icons, focus ring)
+- Full-bleed photographic hero with glass cards and a curved fade into the ground
+- Soft clouds (`clouds.webp`) anchor the intro, offer and final CTA sections
+- Every figure shown is a session fact ($2,000, 90 min, 5 deliverables, 30-day credit, 30/60/90 roadmap); dashboards are labelled "Example"
 
 ## Colors
 
-- **Blue** — section index 01, links, focus
-- **Red** — primary booking CTA, index 02
-- **Amber** — index 03, guarantee labels
-- **Green** — index 04, CTA superscript
+Palette colours (`hl-green`, `hl-blue`, `hl-violet`, `hl-pink`, `hl-azure`, `hl-red`, `hl-teal`) are used only for small icon dots, status pills and stat units, mapped through `toneBg` / `toneText` in `components/hl/tokens.tsx`. Do not wash whole sections in a palette colour.
 
-Cycle accents in document order. Do not wash whole sections in brand color.
+Legacy `--bb-*` variables used by case-study and project components are re-pointed to this palette inside `.hl` (`app/globals.css`).
 
 ## Typography
 
-System UI stack. Display 700 / tracking -0.04em / lh 0.98. H1 104 / 72 / 48. H2 66 / 48 / 38. Body 17px / 1.6. Labels 12px uppercase tracking 0.22em. Big numbers 17px tracking 0.06em (process steps 44px).
+Headings use Stack Sans Headline. Inner-page h1 is `text-4xl md:text-5xl lg:text-[90px]` medium; section h2 is `text-3xl md:text-4xl lg:text-5xl`. Body is 1.125rem / 500 / zinc-600.
+
+Tailwind colour keys must never collide with font-size keys (for example, a colour named `base` would turn every `text-base` into a colour).
 
 ## Layout
 
-Container max 1280px, padding 56 / 32 / 20. Sections 104 / 72 / 56 with a bottom hairline. First viewport: left eyebrow, display headline, 132×6px stripe, supporting copy, red CTA. Workflow labels sit in a hairline strip under the hero.
+`.hl-container` is 75rem wide with 0.875rem / 1.25rem / 0 inline padding. Sections use generous vertical rhythm (`py-20 lg:py-40` is typical). The header is a fixed three-pill bar (logo, links with a Pages dropdown, actions) that tightens after 100px of scroll.
 
 ## Components
 
-- **Buttons:** square, 17px/700, red or ink, no arrows on primary
-- **FAQ:** hairline rows, 20px bold trigger, rotating +
-- **Process:** 4 columns, oversized 01–04
-- **Guarantee / price:** ink block with 4px stripe on top
-- **Nav:** 76px, hairline bottom, not a floating pill
+- **RollButton / BookRollButton** (`components/hl/ui.tsx`): rounded-full, label rolls up on hover; variants white, black, gray, glass. BookRollButton adds TidyCal UTM passthrough and analytics.
+- **Eyebrow:** white pill with a zinc border above section headings.
+- **Bento cards:** `rounded-3xl`, either grey, dark or photo-backed with glass overlays.
+- **Marquees:** 40s and 65s linear loops, edge-masked; disabled under reduced motion.
+- **FAQ:** white rounded rows, grid-rows accordion, contact card on the left.
+- **FinalCta:** headline + buttons, laptop roadmap, QR code to the booking page.
+- **ComingSoon:** pulsing badge, title, newsletter form, FinalCta.
+
+## Proof gating
+
+Proof sections (results, video stories, quote wall, rating) render only entries with `approved: true` in production. In development all entries show with a dashed "Placeholder · needs approval" tag. A section with no visible entries renders nothing.
 
 ## Do's and Don'ts
 
-- **Do** keep BitBlabs copy, booking URL, and section IDs.
-- **Do** use hairlines and the four-color cycle for structure.
-- **Don't** bring back Archivo/Barlow, cobalt magnets, or the swimlane hero.
-- **Don't** round CTAs or cards.
+- **Do** keep the template's section order, shapes and motion.
+- **Do** use real photography or clearly illustrative imagery; label example dashboards.
+- **Don't** invent metrics, ratings, logos or testimonials.
+- **Don't** reintroduce hairline editorial styling, square CTAs or the old `.bb-home` system.

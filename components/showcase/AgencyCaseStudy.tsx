@@ -50,7 +50,7 @@ function CaseStudyBackLink({
   label?: string
 }) {
   return (
-    <Link href={href} className="bb-btn-secondary min-h-10 px-3.5 py-2 text-sm">
+    <Link href={href} className="bb-btn-secondary min-h-10 shrink-0 whitespace-nowrap px-3.5 py-2 text-sm">
       <svg
         aria-hidden
         viewBox="0 0 16 16"
@@ -290,7 +290,7 @@ export function AgencyCaseStudy({
 
   return (
     <article id="case-study-article" className="text-[var(--bb-ink)] antialiased">
-      <div className="bb-home-container flex items-center justify-between gap-4 pb-2 pt-8">
+      <div className="bb-home-container flex items-center justify-between gap-4 pb-2 pt-28 md:pt-36 lg:pt-44">
         <CaseStudyBackLink href={backHref} label={backLabel} />
         <p className="truncate text-sm text-[var(--bb-ink-muted)]">{project.title}</p>
       </div>

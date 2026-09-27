@@ -1,5 +1,7 @@
 import Link from 'next/link'
 import {
+  CONTACT_EMAIL,
+  CONTACT_EMAIL_HREF,
   CONTACT_PHONE,
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
@@ -9,7 +11,7 @@ import {
 } from '@/lib/site'
 import type { LegalSection } from '@/lib/legal/types'
 
-export const PRIVACY_LAST_UPDATED = 'September 15, 2026'
+export const PRIVACY_LAST_UPDATED = 'September 27, 2026'
 
 export const privacyIntro = (
   <>
@@ -37,6 +39,11 @@ export const privacySections: LegalSection[] = [
             booking an AI Workflow Strategy Session (for example, your business, the workflow to
             improve, current tools, and where work stalls), plus any other details you share when
             contacting us.
+          </li>
+          <li>
+            <strong className="font-medium text-[var(--bb-ink)]">Newsletter sign-ups:</strong> the email
+            address you enter in the newsletter form, the page you signed up from, and whether you
+            confirmed your subscription.
           </li>
           <li>
             <strong className="font-medium text-[var(--bb-ink)]">Session materials:</strong> notes,
@@ -74,6 +81,7 @@ export const privacySections: LegalSection[] = [
           <li>Consider a later implementation engagement if you request one</li>
           <li>Provide, operate, and improve our website and services</li>
           <li>Communicate with prospective and existing clients</li>
+          <li>Send the newsletter you subscribed to</li>
           <li>Measure site performance and advertising conversions</li>
           <li>Maintain security, prevent fraud, and troubleshoot technical issues</li>
           <li>Comply with applicable laws, regulations, and legal requests</li>
@@ -146,6 +154,10 @@ export const privacySections: LegalSection[] = [
             the strategy session fee
           </li>
           <li>
+            <strong className="font-medium text-[var(--bb-ink)]">Kit</strong> (formerly ConvertKit):
+            newsletter sign-ups and delivery
+          </li>
+          <li>
             <strong className="font-medium text-[var(--bb-ink)]">Vercel</strong>: website hosting and
             analytics
           </li>
@@ -166,7 +178,30 @@ export const privacySections: LegalSection[] = [
     ),
   },
   {
-    title: '6. Data retention',
+    title: '6. Newsletter',
+    body: (
+      <>
+        <p>
+          If you subscribe to our newsletter, we collect only your email address. Kit (formerly
+          ConvertKit) stores it and sends the emails on our behalf. You will receive a confirmation
+          email first, and we only send the newsletter after you confirm.
+        </p>
+        <p>
+          Every newsletter includes an unsubscribe link. You can also email{' '}
+          <a
+            href={CONTACT_EMAIL_HREF}
+            className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]"
+          >
+            {CONTACT_EMAIL}
+          </a>{' '}
+          and we will remove your address. We do not sell or share newsletter subscribers with
+          anyone else.
+        </p>
+      </>
+    ),
+  },
+  {
+    title: '7. Data retention',
     body: (
       <p>
         We retain personal information only for as long as necessary to fulfill the purposes described
@@ -177,7 +212,7 @@ export const privacySections: LegalSection[] = [
     ),
   },
   {
-    title: '7. Data security',
+    title: '8. Data security',
     body: (
       <p>
         We implement reasonable administrative, technical, and organizational safeguards designed to
@@ -188,7 +223,7 @@ export const privacySections: LegalSection[] = [
     ),
   },
   {
-    title: '8. Your rights',
+    title: '9. Your rights',
     body: (
       <>
         <p>
@@ -210,7 +245,7 @@ export const privacySections: LegalSection[] = [
     ),
   },
   {
-    title: '9. Children’s privacy',
+    title: '10. Children’s privacy',
     body: (
       <p>
         Our website is not directed to individuals under 18 years of age. We do not knowingly
@@ -220,7 +255,7 @@ export const privacySections: LegalSection[] = [
     ),
   },
   {
-    title: '10. International visitors',
+    title: '11. International visitors',
     body: (
       <p>
         If you access our website from outside India, your information may be transferred to,
@@ -230,7 +265,7 @@ export const privacySections: LegalSection[] = [
     ),
   },
   {
-    title: '11. Changes to this policy',
+    title: '12. Changes to this policy',
     body: (
       <p>
         We may update this Privacy Policy from time to time. The &ldquo;Last updated&rdquo; date at
@@ -241,7 +276,7 @@ export const privacySections: LegalSection[] = [
     ),
   },
   {
-    title: '12. Contact us',
+    title: '13. Contact us',
     body: (
       <>
         <p>
@@ -252,6 +287,15 @@ export const privacySections: LegalSection[] = [
           {LEGAL_ADDRESS_LINES.map((line) => (
             <p key={line}>{line}</p>
           ))}
+          <p>
+            Email:{' '}
+            <a
+              href={CONTACT_EMAIL_HREF}
+              className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]"
+            >
+              {CONTACT_EMAIL}
+            </a>
+          </p>
           <p>
             Phone:{' '}
             <a
