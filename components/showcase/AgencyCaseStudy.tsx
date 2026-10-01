@@ -23,7 +23,8 @@ import {
   StatementScene,
   TestimonialScene,
 } from '@/components/showcase/case-study/CaseStudyScenes'
-import { BOOK_CTA_LABEL, BOOK_HREF, PORTFOLIO_SECTION_HREF } from '@/lib/site'
+import { TrackedBookLink } from '@/components/hl/TrackedBookLink'
+import { BOOK_CTA_LABEL, PORTFOLIO_SECTION_HREF } from '@/lib/site'
 import {
   caseStudyHeroMedia,
   slideChapterLabel,
@@ -506,9 +507,9 @@ export function AgencyCaseStudy({
           <Reveal className="mt-10 flex flex-col items-center justify-center gap-3 sm:flex-row">
             {project.proofKind === 'insight' ? (
               <>
-                <a href={BOOK_HREF} className="bb-btn-primary">
+                <TrackedBookLink location="case_study" className="bb-btn-primary" newTab={false}>
                   {BOOK_CTA_LABEL}
-                </a>
+                </TrackedBookLink>
                 <Link href={PORTFOLIO_SECTION_HREF} className="bb-btn-secondary">
                   See related work
                 </Link>

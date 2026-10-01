@@ -1,7 +1,6 @@
 import { FinalCta } from '../FinalCta'
 import { JsonLd } from '../JsonLd'
 import { PageShell } from '../PageShell'
-import { ScrollDepthTracker } from '../ScrollDepthTracker'
 import { RESULT_CARDS, visible } from '@/lib/proof'
 import { Assist } from './Assist'
 import { Faq } from './Faq'
@@ -32,7 +31,6 @@ export function HomePage() {
       <QuoteWall />
       <Faq />
       <FinalCta />
-      <ScrollDepthTracker />
     </PageShell>
   )
 }

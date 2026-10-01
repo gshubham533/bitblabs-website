@@ -2,6 +2,7 @@
 
 import Image from 'next/image'
 import { useRef, useState, type KeyboardEvent } from 'react'
+import { trackEvent } from '@/lib/analytics'
 import { WORKFLOWS } from '@/lib/landing'
 import { cn } from '@/lib/utils'
 import { img, KeyIcon, OwnerIcon, ownerBg } from '../tokens'
@@ -10,6 +11,13 @@ import { Eyebrow } from '../ui'
 export function WorkflowTabs() {
   const [active, setActive] = useState(0)
   const tabRefs = useRef<(HTMLButtonElement | null)[]>([])
+
+  const select = (i: number) => {
+    if (i === active) return
+    const tab = WORKFLOWS.tabs[i]
+    setActive(i)
+    if (tab) trackEvent('workflow_tab_select', { category: tab.id })
+  }
 
   const onKeyDown = (e: KeyboardEvent<HTMLButtonElement>, i: number) => {
     const n = WORKFLOWS.tabs.length
@@ -20,7 +28,7 @@ export function WorkflowTabs() {
     if (e.key === 'End') next = n - 1
     if (next >= 0) {
       e.preventDefault()
-      setActive(next)
+      select(next)
       tabRefs.current[next]?.focus()
     }
   }
@@ -49,7 +57,7 @@ export function WorkflowTabs() {
                 aria-selected={active === i}
                 aria-controls={`wf-panel-${tab.id}`}
                 tabIndex={active === i ? 0 : -1}
-                onClick={() => setActive(i)}
+                onClick={() => select(i)}
                 onKeyDown={(e) => onKeyDown(e, i)}
                 className={cn(
                   'inline-flex items-center gap-x-2.5 rounded-xl border px-5 py-2.5 text-base font-medium transition-all md:text-lg',

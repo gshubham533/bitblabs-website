@@ -2,6 +2,8 @@ import type { Metadata } from 'next'
 import { LANDING_SEO } from '@/lib/landing'
 import { SITE_NAME, SITE_URL } from '@/lib/site'
 import './globals.css'
+import { GoogleAnalytics } from '@/components/GoogleAnalytics'
+import { SiteAnalytics } from '@/components/SiteAnalytics'
 import { LinkedInInsightTag } from '@/components/LinkedInInsightTag'
 import { googleSansFlex, stackSansHeadline } from '@/lib/fonts'
 import { Analytics } from '@vercel/analytics/next'
@@ -34,6 +36,8 @@ export default function RootLayout({
       <body className={`${googleSansFlex.className} antialiased`}>
         {children}
         <Analytics />
+        <GoogleAnalytics />
+        <SiteAnalytics />
         <LinkedInInsightTag />
       </body>
     </html>

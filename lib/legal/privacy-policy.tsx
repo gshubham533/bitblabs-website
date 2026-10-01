@@ -116,6 +116,11 @@ export const privacySections: LegalSection[] = [
             how visitors use the site (for example, pages viewed and conversion events).
           </li>
           <li>
+            <strong className="font-medium text-[var(--bb-ink)]">Google Analytics</strong> to measure
+            site visits and how the site is used, including booking clicks, contact clicks, and
+            which work pages people open.
+          </li>
+          <li>
             <strong className="font-medium text-[var(--bb-ink)]">LinkedIn Insight Tag</strong> for
             advertising measurement, conversion tracking, and retargeting.
           </li>
@@ -160,6 +165,10 @@ export const privacySections: LegalSection[] = [
           <li>
             <strong className="font-medium text-[var(--bb-ink)]">Vercel</strong>: website hosting and
             analytics
+          </li>
+          <li>
+            <strong className="font-medium text-[var(--bb-ink)]">Google Analytics</strong>: measurement
+            of site visits, booking clicks, contact clicks, and content views
           </li>
           <li>
             <strong className="font-medium text-[var(--bb-ink)]">LinkedIn</strong>: advertising

@@ -1,7 +1,6 @@
 import Link from 'next/link'
 import { founders } from '@/lib/founders'
 import {
-  BOOK_HREF,
   CASE_STUDIES_PATH,
   CONTACT_EMAIL,
   CONTACT_EMAIL_HREF,
@@ -14,6 +13,7 @@ import {
 import { IconLinkedIn, IconMail, IconPhone } from './icons'
 import { Logo } from './Logo'
 import { NewsletterForm } from './NewsletterForm'
+import { TrackedBookLink } from './TrackedBookLink'
 import { RollIcon } from './ui'
 
 const linkClass =
@@ -73,9 +73,9 @@ export function SiteFooter() {
 
           <div className="flex flex-col gap-2">
             <h3 className="mb-5 text-base font-medium text-zinc-900 lg:mb-7.5">Other links</h3>
-            <a href={BOOK_HREF} target="_blank" rel="noopener noreferrer" className={linkClass}>
+            <TrackedBookLink location="footer" className={linkClass}>
               Book a session
-            </a>
+            </TrackedBookLink>
             {OTHER.map((l) => (
               <Link key={l.href} href={l.href} className={linkClass}>
                 {l.label}

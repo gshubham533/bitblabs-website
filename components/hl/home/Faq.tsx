@@ -1,6 +1,7 @@
 'use client'
 
 import { useState } from 'react'
+import { trackEvent } from '@/lib/analytics'
 import { FAQ } from '@/lib/landing'
 import { CONTACT_EMAIL, CONTACT_EMAIL_HREF } from '@/lib/site'
 import { cn } from '@/lib/utils'
@@ -61,7 +62,11 @@ export function Faq() {
                       id={`faq-q-${item.id}`}
                       aria-expanded={isOpen}
                       aria-controls={`faq-a-${item.id}`}
-                      onClick={() => setOpen(isOpen ? null : item.id)}
+                      onClick={() => {
+                        const next = isOpen ? null : item.id
+                        setOpen(next)
+                        if (next) trackEvent('faq_open', { question_id: next })
+                      }}
                       className="inline-flex w-full items-center justify-between gap-4 p-3.5 text-start text-zinc-900 transition hover:text-zinc-500 lg:p-5"
                     >
                       <span className="text-base font-medium md:text-xl">{item.question}</span>
