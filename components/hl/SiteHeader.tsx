@@ -2,7 +2,7 @@
 
 import Link from 'next/link'
 import { useEffect, useRef, useState } from 'react'
-import { bookingHrefWithUtm, trackEvent } from '@/lib/analytics'
+import { bookingHrefWithUtm, trackBookingClick } from '@/lib/analytics'
 import { BOOK_HREF, BOOK_NAV_LABEL, CONTACT_EMAIL, CONTACT_EMAIL_HREF } from '@/lib/site'
 import { cn } from '@/lib/utils'
 import { IconCalendar, IconChevronDown, IconMail, IconMenu, IconX } from './icons'
@@ -77,8 +77,7 @@ export function SiteHeader() {
   }
 
   const onBook = (location: string) => {
-    trackEvent('cta_click', { location, label: BOOK_NAV_LABEL, page: window.location.pathname || '/' })
-    trackEvent('booking_open', { source_section: location })
+    trackBookingClick(location, 'fit', BOOK_NAV_LABEL)
   }
 
   const spacer = cn(
@@ -179,7 +178,7 @@ export function SiteHeader() {
                 </span>
               </a>
               <span className="md:hidden">
-                <IconPill href={bookHref} label="Book your strategy session" external onClick={() => onBook('nav_mobile')}>
+                <IconPill href={bookHref} label={BOOK_NAV_LABEL} external onClick={() => onBook('nav_mobile')}>
                   <IconCalendar className="size-full" />
                 </IconPill>
               </span>

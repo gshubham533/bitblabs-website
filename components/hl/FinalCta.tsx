@@ -82,7 +82,7 @@ export function FinalCta() {
                 <div className="flex items-center justify-center rounded-2xl bg-zinc-200 p-2">
                   <Image
                     src="/images/redesign/qr-book.svg"
-                    alt="QR code that opens the BitBlabs strategy session booking page"
+                    alt="QR code that opens the BitBlabs 20-minute fit call booking page"
                     width={184}
                     height={184}
                     className="size-36 lg:size-46"

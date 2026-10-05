@@ -36,7 +36,7 @@ export function buildLlmsTxt() {
 
 > BitBlabs helps growing service businesses put AI inside the workflows they already run. We identify repetitive, manual, and inefficient workflows, find where AI can remove manual effort or improve decisions, then design and implement the AI solution.
 
-The first paid step is a 90-minute AI Workflow Strategy Session ($2,000). The fee is credited toward a BitBlabs implementation started within 30 days. Implementation is scoped separately.
+The first step on the website is a free 20-minute fit call. The first paid step is a 90-minute AI Workflow Strategy Session ($2,000), booked after the call if it is a fit. The fee is credited toward a BitBlabs implementation started within 30 days. Implementation is scoped separately.
 
 ## Main pages
 ${pages.join('\n')}
@@ -51,7 +51,8 @@ ${studies.join('\n')}
 - Legal name: ${LEGAL_NAME}
 - Location: ${LEGAL_ADDRESS_LINES.join(', ')}
 - Phone: ${CONTACT_PHONE_DISPLAY}
-- Offer: AI Workflow Strategy Session, 90 minutes, $2,000 USD
+- First step: 20-minute fit call. The call checks fit and does not produce the roadmap.
+- Offer: AI Workflow Strategy Session, 90 minutes, $2,000 USD, booked and paid after the fit call
 - Typical clients: growing service businesses, roughly 20–80 people
 - Approach: map the existing workflow, identify AI opportunities, redesign it with AI and human checkpoints, then implement it
 - Example use cases: AI voice agents for lead qualification, AI extraction of RFQ requirements, AI-drafted support replies with human approval, AI candidate screening

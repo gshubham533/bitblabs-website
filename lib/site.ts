@@ -1,9 +1,17 @@
 /**
- * Launch v1 primary conversion: TidyCal (slot + questions + PayPal $2,000) in one flow.
- * Override with NEXT_PUBLIC_PAY_BOOK_URL, NEXT_PUBLIC_TIDYCAL_BOOKING_URL, or TIDYCAL_BOOKING_URL.
+ * Primary website action: a free 20-minute fit call.
+ * The $2,000 session stays a separate TidyCal + PayPal flow, used after the call.
+ * Override with NEXT_PUBLIC_FIT_CALL_URL, NEXT_PUBLIC_PAY_BOOK_URL,
+ * NEXT_PUBLIC_TIDYCAL_BOOKING_URL, or TIDYCAL_BOOKING_URL.
  */
+export const DEFAULT_FIT_CALL_URL =
+  'https://tidycal.com/shubhamgupta/ai-workflow-fit-call'
+
 export const DEFAULT_PAY_BOOK_URL =
   'https://tidycal.com/shubhamgupta/ai-workflow-strategy-session'
+
+export const FIT_CALL_URL =
+  process.env.NEXT_PUBLIC_FIT_CALL_URL || DEFAULT_FIT_CALL_URL
 
 export const PAY_BOOK_URL =
   process.env.NEXT_PUBLIC_PAY_BOOK_URL ||
@@ -11,11 +19,13 @@ export const PAY_BOOK_URL =
   process.env.TIDYCAL_BOOKING_URL ||
   DEFAULT_PAY_BOOK_URL
 
-export const BOOK_HREF = PAY_BOOK_URL
-export const BOOK_NAV_LABEL = 'Book a session'
-export const BOOK_CTA_LABEL = 'Book an AI Workflow Strategy Session'
-export const BOOK_FINAL_CTA_LABEL = 'Book Your AI Workflow Strategy Session'
-export const BOOK_OFFER_CTA_LABEL = 'Book the Strategy Session'
+/** Primary booking href: the fit call. */
+export const BOOK_HREF = FIT_CALL_URL
+export const BOOK_NAV_LABEL = 'Book a fit call'
+export const BOOK_CTA_LABEL = 'Book a 20-min fit call'
+export const BOOK_PAY_CTA_LABEL = 'Already ready? Book and pay for the session'
+export const BOOK_FINAL_CTA_LABEL = BOOK_CTA_LABEL
+export const BOOK_OFFER_CTA_LABEL = BOOK_CTA_LABEL
 export const PROJECTS_CTA_LABEL = 'Work'
 export const HOW_IT_WORKS_HREF = '#how-it-works'
 export const DELIVERABLES_HREF = '#offer'

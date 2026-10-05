@@ -53,6 +53,7 @@ export function Hero() {
               {HERO.secondaryCta}
             </RollButton>
           </div>
+          <p className="mt-4 max-w-md text-sm text-white/75">{HERO.primaryNote}</p>
 
           <div
             className="relative mt-6 flex w-full max-w-5xl items-start justify-center gap-8 md:mt-16 md:gap-5 lg:mt-20 lg:gap-10"

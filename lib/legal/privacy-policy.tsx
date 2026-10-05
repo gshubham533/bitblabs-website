@@ -6,12 +6,13 @@ import {
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
   LEGAL_NAME,
+  FIT_CALL_URL,
   PAY_BOOK_URL,
   TERMS_PATH,
 } from '@/lib/site'
 import type { LegalSection } from '@/lib/legal/types'
 
-export const PRIVACY_LAST_UPDATED = 'September 27, 2026'
+export const PRIVACY_LAST_UPDATED = 'October 5, 2026'
 
 export const privacyIntro = (
   <>
@@ -35,10 +36,10 @@ export const privacySections: LegalSection[] = [
         <ul className="list-disc space-y-2 pl-5">
           <li>
             <strong className="font-medium text-[var(--bb-ink)]">Information you provide:</strong> name,
-            email address, phone number, company name, role, and assessment answers you submit when
-            booking an AI Workflow Strategy Session (for example, your business, the workflow to
-            improve, current tools, and where work stalls), plus any other details you share when
-            contacting us.
+            email address, phone number, company name, role, and answers you submit when booking a
+            20-minute fit call or an AI Workflow Strategy Session (for example, your business, the
+            workflow to improve, current tools, and where work stalls), plus any other details you
+            share when contacting us.
           </li>
           <li>
             <strong className="font-medium text-[var(--bb-ink)]">Newsletter sign-ups:</strong> the email
@@ -143,7 +144,16 @@ export const privacySections: LegalSection[] = [
         <ul className="list-disc space-y-2 pl-5">
           <li>
             <strong className="font-medium text-[var(--bb-ink)]">TidyCal</strong>: scheduling and intake
-            when you book an AI Workflow Strategy Session (
+            when you book a{' '}
+            <a
+              href={FIT_CALL_URL}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]"
+            >
+              20-minute fit call
+            </a>{' '}
+            or an AI Workflow Strategy Session (
             <a
               href={PAY_BOOK_URL}
               target="_blank"

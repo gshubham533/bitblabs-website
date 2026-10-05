@@ -1,7 +1,7 @@
 # Product Marketing Context
 
-**Document version:** v1
-**Last updated:** 2026-09-15
+**Document version:** v2
+**Last updated:** 2026-10-05
 
 ## Product Overview
 **One-liner:** BitBlabs finds where work gets stuck in your operation, redesigns that workflow, and builds practical AI systems around it.
@@ -111,9 +111,10 @@
 
 ## Goals
 **Business goal:** Book paid AI Workflow Strategy Sessions; qualify fit for optional implementation
-**Conversion action:** Book Your Strategy Session (TidyCal + PayPal)
+**Conversion action:** Book a 20-min fit call (TidyCal). The $2,000 session is paid on TidyCal after the call, for people who fit.
 **Current metrics:** Not tracked in this doc yet
 
 ## Changelog
 *Newest first. One line per revision: what changed and why.*
+- v2 (2026-10-05): First website action is a 20-minute fit call; the $2,000 session stays the paid product, booked after fit.
 - v1 (2026-09-15): Initial context auto-drafted from PRODUCT.md, lib/landing.ts, founders, and homepage positioning constraints.

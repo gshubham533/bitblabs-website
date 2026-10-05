@@ -53,6 +53,7 @@ export const HERO = {
   subhead:
     'We identify repetitive, manual, and inefficient workflows in your business, then design and implement practical AI solutions around them.',
   primaryCta: BOOK_LABEL,
+  primaryNote: 'A fit check. The $2,000 session is booked after.',
   secondaryCta: 'See how it works',
   illustrationLabel: 'Example workflow',
   leftCard: { title: 'Lead waiting', value: '2 days' },
@@ -359,7 +360,9 @@ export const OFFER_STATS = {
   buildTitle: 'Need us to build it?',
   buildBody: 'We take the workflow you identified from blueprint to a working AI implementation.',
   cta: BOOK_LABEL,
-  footnote: 'Implementation is scoped separately. Pay for the session securely through PayPal on TidyCal.',
+  payCta: 'Already ready? Book and pay for the session',
+  footnote:
+    'The 20-minute call confirms fit. You pay $2,000 on TidyCal before the 90-minute session. Implementation is scoped separately.',
 } as const
 
 export const ASSIST = {
@@ -456,6 +459,18 @@ export const FAQ = {
   contactCta: 'Email us',
   items: [
     {
+      id: 'fit-call',
+      question: 'What happens on the 20-minute fit call?',
+      answer:
+        'We confirm your role, company size, the workflow that gets stuck, and whether a $2,000 session is the right spend. The call does not map the workflow or produce a roadmap.',
+    },
+    {
+      id: 'when-pay',
+      question: 'When do I pay the $2,000?',
+      answer:
+        'After the fit call, if we both agree the session is the right next step. You book and pay on TidyCal before the 90 minutes. The fee covers the session and blueprint, and it is credited toward a BitBlabs implementation started within 30 days.',
+    },
+    {
       id: 'know-what',
       question: 'Do I need to know where AI fits?',
       answer:
@@ -529,7 +544,7 @@ export const FINAL_CTA = {
   body: 'Bring the process. Leave with the AI opportunities, the future-state design, and an implementation plan.',
   primaryCta: BOOK_LABEL,
   secondaryCta: `Email ${CONTACT_EMAIL}`,
-  qrTitle: 'Scan the QR code to book your session',
+  qrTitle: 'Scan the QR code to book a fit call',
   laptop: {
     greeting: 'Your implementation plan',
     name: 'Lead follow-up',

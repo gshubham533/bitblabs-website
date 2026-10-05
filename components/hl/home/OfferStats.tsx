@@ -3,6 +3,7 @@ import { OFFER_STATS } from '@/lib/landing'
 import { cn } from '@/lib/utils'
 import { IconCalendar } from '../icons'
 import { toneText } from '../tokens'
+import { TrackedBookLink } from '../TrackedBookLink'
 import { BookRollButton, Eyebrow } from '../ui'
 
 /** `padTop` restores the spacing the results section normally provides when that section is hidden. */
@@ -96,6 +97,13 @@ export function OfferStats({ padTop }: { padTop?: boolean }) {
           >
             {OFFER_STATS.cta}
           </BookRollButton>
+          <TrackedBookLink
+            location="offer_pay"
+            intent="paid"
+            className="mt-4 text-sm font-medium text-zinc-900 underline decoration-zinc-300 underline-offset-4 hover:decoration-zinc-900"
+          >
+            {OFFER_STATS.payCta}
+          </TrackedBookLink>
         </div>
         <p className="relative z-40 mt-6 text-center text-sm text-zinc-500">{OFFER_STATS.footnote}</p>
       </div>

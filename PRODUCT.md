@@ -12,7 +12,7 @@ Owners and operational leaders at growing service businesses with approximately 
 
 ## Product Purpose
 
-BitBlabs finds where work gets stuck, redesigns the workflow, and builds practical AI systems around it. The homepage’s primary conversion is booking a paid 90-minute AI Workflow Strategy Session ($2,000) that produces a usable roadmap. Implementation is optional and separate.
+BitBlabs finds where work gets stuck, redesigns the workflow, and builds practical AI systems around it. The homepage’s primary conversion is a 20-minute fit call. The paid product remains a 90-minute AI Workflow Strategy Session ($2,000) that produces a usable roadmap, booked after the call if it is a fit. Implementation is optional and separate.
 
 ## Positioning
 
@@ -21,8 +21,8 @@ BitBlabs starts with the business process, not a preselected AI tool. The first 
 ## Brand Commitments
 
 - Legal name: BitB Labs LLP (branded as BitBlabs / BitBLabs)
-- Primary CTA: Book Your Strategy Session (consistent wording)
-- Booking: TidyCal + PayPal at the configured pay-book URL
+- Primary CTA: Book a 20-min fit call
+- Booking: fit call on TidyCal; the $2,000 session is a separate TidyCal + PayPal link after fit
 - Session: 90 minutes, $2,000
 - Implementation credit: $2,000 credited toward a BitBlabs build started within 30 days
 - Do not invent client outcomes, metrics, logos, or testimonials

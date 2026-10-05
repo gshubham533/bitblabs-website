@@ -1,7 +1,7 @@
 import { FAQ, LANDING_SEO } from '@/lib/landing'
 import { jsonLdScript } from '@/lib/seo'
 import {
-  BOOK_HREF,
+  PAY_BOOK_URL,
   CONTACT_EMAIL,
   CONTACT_PHONE,
   LEGAL_ADDRESS,
@@ -107,7 +107,7 @@ export function JsonLd() {
           '@type': 'Offer',
           price: '2000',
           priceCurrency: 'USD',
-          url: BOOK_HREF,
+          url: PAY_BOOK_URL,
           availability: 'https://schema.org/InStock',
         },
       },

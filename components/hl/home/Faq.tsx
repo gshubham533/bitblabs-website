@@ -3,7 +3,7 @@
 import { useState } from 'react'
 import { trackEvent } from '@/lib/analytics'
 import { FAQ } from '@/lib/landing'
-import { CONTACT_EMAIL, CONTACT_EMAIL_HREF } from '@/lib/site'
+import { BOOK_NAV_LABEL, CONTACT_EMAIL, CONTACT_EMAIL_HREF } from '@/lib/site'
 import { cn } from '@/lib/utils'
 import { IconHeadset, IconMail, IconPlus } from '../icons'
 import { BookRollButton, Eyebrow, RollButton } from '../ui'
@@ -38,7 +38,7 @@ export function Faq() {
                     {FAQ.contactCta}
                   </RollButton>
                   <BookRollButton location="faq" variant="gray">
-                    Book a session
+                    {BOOK_NAV_LABEL}
                   </BookRollButton>
                 </div>
               </div>

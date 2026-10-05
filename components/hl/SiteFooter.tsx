@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { founders } from '@/lib/founders'
 import {
+  BOOK_NAV_LABEL,
   CASE_STUDIES_PATH,
   CONTACT_EMAIL,
   CONTACT_EMAIL_HREF,
@@ -74,7 +75,7 @@ export function SiteFooter() {
           <div className="flex flex-col gap-2">
             <h3 className="mb-5 text-base font-medium text-zinc-900 lg:mb-7.5">Other links</h3>
             <TrackedBookLink location="footer" className={linkClass}>
-              Book a session
+              {BOOK_NAV_LABEL}
             </TrackedBookLink>
             {OTHER.map((l) => (
               <Link key={l.href} href={l.href} className={linkClass}>

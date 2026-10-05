@@ -1,8 +1,8 @@
 'use client'
 
 import { useEffect, useState, type ReactNode } from 'react'
-import { bookingHrefWithUtm, trackEvent } from '@/lib/analytics'
-import { BOOK_HREF } from '@/lib/site'
+import { bookingHrefWithUtm, trackBookingClick } from '@/lib/analytics'
+import { FIT_CALL_URL, PAY_BOOK_URL } from '@/lib/site'
 
 /** Booking link that records the same click events as the main Book buttons. */
 export function TrackedBookLink({
@@ -10,14 +10,18 @@ export function TrackedBookLink({
   className,
   children,
   newTab = true,
+  intent = 'fit',
 }: {
   location: string
   className?: string
   children: ReactNode
   newTab?: boolean
+  /** `paid` opens the $2,000 session checkout. Default is the fit call. */
+  intent?: 'fit' | 'paid'
 }) {
-  const [href, setHref] = useState(BOOK_HREF)
-  useEffect(() => setHref(bookingHrefWithUtm(BOOK_HREF)), [])
+  const base = intent === 'paid' ? PAY_BOOK_URL : FIT_CALL_URL
+  const [href, setHref] = useState(base)
+  useEffect(() => setHref(bookingHrefWithUtm(base)), [base])
 
   return (
     <a
@@ -25,12 +29,7 @@ export function TrackedBookLink({
       className={className}
       {...(newTab ? { target: '_blank', rel: 'noopener noreferrer' } : {})}
       onClick={() => {
-        trackEvent('cta_click', {
-          location,
-          label: typeof children === 'string' ? children : 'Book',
-          page: window.location.pathname || '/',
-        })
-        trackEvent('booking_open', { source_section: location })
+        trackBookingClick(location, intent, typeof children === 'string' ? children : 'Book')
       }}
     >
       {children}

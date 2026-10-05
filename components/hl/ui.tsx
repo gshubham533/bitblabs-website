@@ -2,8 +2,8 @@
 
 import Link from 'next/link'
 import { useEffect, useState, type ReactNode } from 'react'
-import { bookingHrefWithUtm, trackEvent } from '@/lib/analytics'
-import { BOOK_CTA_LABEL, BOOK_HREF } from '@/lib/site'
+import { bookingHrefWithUtm, trackBookingClick } from '@/lib/analytics'
+import { BOOK_CTA_LABEL, FIT_CALL_URL, PAY_BOOK_URL } from '@/lib/site'
 import { cn } from '@/lib/utils'
 
 export function Eyebrow({ children, className }: { children: ReactNode; className?: string }) {
@@ -107,17 +107,20 @@ export function RollButton({
   )
 }
 
-/** Booking CTA: RollButton wired to TidyCal with UTM passthrough and conversion events. */
+/** Booking CTA. Defaults to the fit call. `intent="paid"` opens the $2,000 TidyCal checkout. */
 export function BookRollButton({
   location,
+  intent = 'fit',
   children = BOOK_CTA_LABEL,
   ...rest
 }: Omit<RollButtonProps, 'href' | 'external' | 'onClick' | 'children'> & {
   location: string
+  intent?: 'fit' | 'paid'
   children?: ReactNode
 }) {
-  const [href, setHref] = useState(BOOK_HREF)
-  useEffect(() => setHref(bookingHrefWithUtm(BOOK_HREF)), [])
+  const base = intent === 'paid' ? PAY_BOOK_URL : FIT_CALL_URL
+  const [href, setHref] = useState(base)
+  useEffect(() => setHref(bookingHrefWithUtm(base)), [base])
 
   return (
     <RollButton
@@ -125,12 +128,7 @@ export function BookRollButton({
       href={href}
       external
       onClick={() => {
-        trackEvent('cta_click', {
-          location,
-          label: typeof children === 'string' ? children : 'Book',
-          page: window.location.pathname || '/',
-        })
-        trackEvent('booking_open', { source_section: location })
+        trackBookingClick(location, intent, typeof children === 'string' ? children : 'Book')
       }}
     >
       {children}

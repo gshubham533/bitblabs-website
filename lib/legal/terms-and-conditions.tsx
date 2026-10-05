@@ -6,12 +6,13 @@ import {
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
   LEGAL_NAME,
+  FIT_CALL_URL,
   PAY_BOOK_URL,
   PRIVACY_PATH,
 } from '@/lib/site'
 import type { LegalSection } from '@/lib/legal/types'
 
-export const TERMS_LAST_UPDATED = 'September 27, 2026'
+export const TERMS_LAST_UPDATED = 'October 5, 2026'
 
 export const termsIntro = (
   <>
@@ -102,7 +103,16 @@ export const termsSections: LegalSection[] = [
             TidyCal
           </a>
           , with payment processed by PayPal. Completing that booking creates a paid engagement for
-          the strategy session only. Any later implementation requires a separate written agreement,
+          the strategy session only. The{' '}
+          <a
+            href={FIT_CALL_URL}
+            target="_blank"
+            rel="noopener noreferrer"
+            className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]"
+          >
+            20-minute fit call
+          </a>{' '}
+          is unpaid and does not start an engagement. Any later implementation requires a separate written agreement,
           statement of work, or contract that defines scope, deliverables, timelines, fees, and
           other commercial terms. In the event of any conflict between these Terms and a signed
           client agreement, the signed agreement will prevail for that engagement.
