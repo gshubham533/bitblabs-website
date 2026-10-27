@@ -44,12 +44,15 @@ export const WEBSITE_ID = `${SITE_URL}/#website`
 export const LEGAL_NAME = 'BitB Labs LLP'
 
 export const LEGAL_ADDRESS_LINES = [
-  'Pune, Maharashtra, India',
+  'SR NO 45/4B H NO 236, Near Samarth Sports Club, Chandan Nagar',
+  'Pune, Maharashtra 411014, India',
 ] as const
 
 export const LEGAL_ADDRESS = {
+  streetAddress: 'SR NO 45/4B H NO 236, Near Samarth Sports Club, Chandan Nagar',
   addressLocality: 'Pune',
   addressRegion: 'Maharashtra',
+  postalCode: '411014',
   addressCountry: 'IN',
 } as const
 
@@ -58,6 +61,10 @@ export const CONTACT_EMAIL_HREF = `mailto:${CONTACT_EMAIL}`
 
 export const CONTACT_PHONE = '+917219605788'
 export const CONTACT_PHONE_DISPLAY = '+91 72196 05788'
+
+/** Phone number shown in the site footer. */
+export const FOOTER_PHONE = '+918208901203'
+export const FOOTER_PHONE_DISPLAY = '+91 82089 01203'
 
 export const PRIVACY_PATH = '/privacy'
 export const TERMS_PATH = '/terms'
