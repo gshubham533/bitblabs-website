@@ -5,9 +5,7 @@ import {
   CASE_STUDIES_PATH,
   CONTACT_EMAIL,
   CONTACT_EMAIL_HREF,
-  FOOTER_PHONE,
-  FOOTER_PHONE_DISPLAY,
-  LEGAL_ADDRESS_LINES,
+  CONTACT_PHONE,
   LEGAL_NAME,
   PORTFOLIO_SECTION_HREF,
   PRIVACY_PATH,
@@ -42,7 +40,7 @@ export function SiteFooter() {
 
   const socials = [
     { label: `Email ${CONTACT_EMAIL}`, href: CONTACT_EMAIL_HREF, icon: <IconMail className="size-4" /> },
-    { label: 'Call BitBlabs', href: `tel:${FOOTER_PHONE}`, icon: <IconPhone className="size-4" /> },
+    { label: 'Call BitBlabs', href: `tel:${CONTACT_PHONE}`, icon: <IconPhone className="size-4" /> },
     ...(linkedIn
       ? [{ label: 'BitBlabs founder on LinkedIn', href: linkedIn, icon: <IconLinkedIn className="size-4" />, external: true }]
       : []),
@@ -87,16 +85,8 @@ export function SiteFooter() {
             <a href={CONTACT_EMAIL_HREF} className={linkClass}>
               {CONTACT_EMAIL}
             </a>
-            <a href={`tel:${FOOTER_PHONE}`} className={linkClass}>
-              {FOOTER_PHONE_DISPLAY}
-            </a>
           </div>
         </div>
-
-        <address className="mt-10 text-base not-italic text-zinc-600 md:text-lg">
-          <span className="font-medium text-zinc-900">Registered address: </span>
-          {LEGAL_NAME}, {LEGAL_ADDRESS_LINES.join(', ')}
-        </address>
 
         <div className="mt-6 flex flex-col items-center justify-start gap-5 border-t border-zinc-200 pt-5 md:mt-8 md:flex-row md:justify-between md:gap-6 md:pt-7.5 lg:mt-16">
           <p className="text-base text-zinc-600 md:text-lg">
