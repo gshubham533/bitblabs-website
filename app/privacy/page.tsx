@@ -5,7 +5,7 @@ import {
   privacyIntro,
   privacySections,
 } from '@/lib/legal/privacy-policy'
-import { LEGAL_NAME } from '@/lib/site'
+import { CANCELLATION_PATH, LEGAL_NAME, SUPPORT_PATH } from '@/lib/site'
 
 export const metadata: Metadata = {
   title: 'Privacy Policy',
@@ -22,6 +22,10 @@ export default function PrivacyPage() {
       intro={privacyIntro}
       sections={privacySections}
       relatedPage="privacy"
+      extraLinks={[
+        { href: CANCELLATION_PATH, label: 'Cancellation & Refund Policy' },
+        { href: SUPPORT_PATH, label: 'Contact & support' },
+      ]}
     />
   )
 }

@@ -1,7 +1,7 @@
 import type { MetadataRoute } from 'next'
 import { caseStudies } from '@/lib/data'
 import { portfolioProjects } from '@/lib/portfolio-data'
-import { SITE_URL } from '@/lib/site'
+import { CANCELLATION_PATH, SITE_URL, SUPPORT_PATH } from '@/lib/site'
 
 export default function sitemap(): MetadataRoute.Sitemap {
   const lastModified = new Date('2026-09-15')
@@ -12,6 +12,8 @@ export default function sitemap(): MetadataRoute.Sitemap {
     { url: `${SITE_URL}/case-studies`, lastModified },
     { url: `${SITE_URL}/privacy`, lastModified },
     { url: `${SITE_URL}/terms`, lastModified },
+    { url: `${SITE_URL}${SUPPORT_PATH}`, lastModified: new Date('2026-11-17') },
+    { url: `${SITE_URL}${CANCELLATION_PATH}`, lastModified: new Date('2026-11-17') },
   ]
 
   const projects = portfolioProjects.map((project) => ({

@@ -1,4 +1,11 @@
-import { CASE_STUDIES_PATH, PORTFOLIO_SECTION_HREF, PRIVACY_PATH, TERMS_PATH } from '@/lib/site'
+import {
+  CANCELLATION_PATH,
+  CASE_STUDIES_PATH,
+  PORTFOLIO_SECTION_HREF,
+  PRIVACY_PATH,
+  SUPPORT_PATH,
+  TERMS_PATH,
+} from '@/lib/site'
 
 export const NAV_LINKS = [
   { label: 'How it works', href: '/#how-it-works' },
@@ -14,6 +21,8 @@ export const PAGE_LINKS = [
   { label: 'FAQs', href: '/#faq' },
   { label: 'Brain stuff', href: '/brain-stuff' },
   { label: 'Side quests', href: '/side-quests' },
+  { label: 'Contact & support', href: SUPPORT_PATH },
   { label: 'Privacy Policy', href: PRIVACY_PATH },
   { label: 'Terms', href: TERMS_PATH },
+  { label: 'Cancellation & Refund', href: CANCELLATION_PATH },
 ] as const

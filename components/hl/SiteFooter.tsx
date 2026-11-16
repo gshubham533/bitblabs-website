@@ -2,6 +2,7 @@ import Link from 'next/link'
 import { founders } from '@/lib/founders'
 import {
   BOOK_NAV_LABEL,
+  CANCELLATION_PATH,
   CASE_STUDIES_PATH,
   CONTACT_EMAIL,
   CONTACT_EMAIL_HREF,
@@ -9,6 +10,7 @@ import {
   LEGAL_NAME,
   PORTFOLIO_SECTION_HREF,
   PRIVACY_PATH,
+  SUPPORT_PATH,
   TERMS_PATH,
 } from '@/lib/site'
 import { IconLinkedIn, IconMail, IconPhone } from './icons'
@@ -30,8 +32,10 @@ const PAGES = [
 
 const OTHER = [
   { label: 'FAQs', href: '/#faq' },
+  { label: 'Contact & support', href: SUPPORT_PATH },
   { label: 'Privacy Policy', href: PRIVACY_PATH },
   { label: 'Terms', href: TERMS_PATH },
+  { label: 'Cancellation & Refund', href: CANCELLATION_PATH },
 ]
 
 export function SiteFooter() {

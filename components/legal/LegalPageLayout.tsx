@@ -5,18 +5,32 @@ import { PageShell } from '@/components/hl/PageShell'
 import type { LegalSection } from '@/lib/legal/types'
 import { PRIVACY_PATH, TERMS_PATH } from '@/lib/site'
 
+export interface LegalRelatedLink {
+  href: string
+  label: string
+}
+
 interface LegalPageLayoutProps {
   title: string
   lastUpdated: string
   intro: ReactNode
   sections: LegalSection[]
   relatedPage: 'privacy' | 'terms'
+  extraLinks?: LegalRelatedLink[]
 }
 
 /** The template's Privacy Policy page: big centered title, then a max-w-4xl reading column. */
-export function LegalPageLayout({ title, lastUpdated, intro, sections, relatedPage }: LegalPageLayoutProps) {
+export function LegalPageLayout({
+  title,
+  lastUpdated,
+  intro,
+  sections,
+  relatedPage,
+  extraLinks = [],
+}: LegalPageLayoutProps) {
   const relatedHref = relatedPage === 'privacy' ? TERMS_PATH : PRIVACY_PATH
   const relatedLabel = relatedPage === 'privacy' ? 'Terms & Conditions' : 'Privacy Policy'
+  const relatedLinks = [{ href: relatedHref, label: relatedLabel }, ...extraLinks]
 
   return (
     <PageShell>
@@ -41,12 +55,17 @@ export function LegalPageLayout({ title, lastUpdated, intro, sections, relatedPa
                   </section>
                 ))}
 
-                <nav aria-label="Related legal page" className="border-t border-zinc-200 pt-10">
+                <nav aria-label="Related pages" className="border-t border-zinc-200 pt-10">
                   <p className="text-base text-zinc-600">
                     See also:{' '}
-                    <Link href={relatedHref} className="font-medium text-zinc-900 underline underline-offset-4">
-                      {relatedLabel}
-                    </Link>
+                    {relatedLinks.map((link, index) => (
+                      <span key={link.href}>
+                        {index > 0 ? <span className="text-zinc-400"> · </span> : null}
+                        <Link href={link.href} className="font-medium text-zinc-900 underline underline-offset-4">
+                          {link.label}
+                        </Link>
+                      </span>
+                    ))}
                   </p>
                 </nav>
               </div>

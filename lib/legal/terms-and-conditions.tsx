@@ -6,6 +6,7 @@ import {
   CONTACT_PHONE_DISPLAY,
   LEGAL_ADDRESS_LINES,
   LEGAL_NAME,
+  CANCELLATION_PATH,
   FIT_CALL_URL,
   PAY_BOOK_URL,
   PRIVACY_PATH,
@@ -121,16 +122,24 @@ export const termsSections: LegalSection[] = [
     ),
   },
   {
-    title: '5. Payment, refunds, and rescheduling',
+    title: '5. Payment, cancellation, and refunds',
     body: (
       <>
         <p>
-          The AI Workflow Strategy Session fee is non-refundable except where a refund is required
-          by applicable law.
+          Cancellation, rescheduling, and refunds for the AI Workflow Strategy Session, and for any
+          later implementation, are set out in our{' '}
+          <Link
+            href={CANCELLATION_PATH}
+            className="font-medium text-[var(--bb-brand)] transition-colors hover:text-[var(--bb-brand-dark)]"
+          >
+            Cancellation &amp; Refund Policy
+          </Link>
+          . That policy is part of these Terms. If this section and that policy differ, the
+          Cancellation &amp; Refund Policy applies.
         </p>
         <p>
-          Rescheduling is handled through TidyCal using the tools and policies available for your
-          booking.
+          The 20-minute fit call is free. You pay the strategy session fee when you book it. Nothing
+          in these Terms limits a refund that mandatory Indian law requires.
         </p>
       </>
     ),

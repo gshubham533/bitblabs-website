@@ -61,6 +61,8 @@ export const CONTACT_PHONE_DISPLAY = '+91 72196 05788'
 
 export const PRIVACY_PATH = '/privacy'
 export const TERMS_PATH = '/terms'
+export const SUPPORT_PATH = '/support'
+export const CANCELLATION_PATH = '/cancellation'
 
 /** Full work listing */
 export const PORTFOLIO_SECTION_HREF = '/projects'

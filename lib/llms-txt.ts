@@ -14,8 +14,10 @@ export function buildLlmsTxt() {
     `- [Home](${SITE_URL}/): ${LANDING_SEO.description}`,
     `- [Work](${SITE_URL}/projects): Selected workflow, product, and AI systems BitBlabs has built.`,
     `- [Case studies](${SITE_URL}/case-studies): First-hand write-ups of operational AI work.`,
+    `- [Contact and support](${SITE_URL}/support): Phone, email, and business address for BitB Labs LLP.`,
     `- [Privacy policy](${SITE_URL}/privacy)`,
     `- [Terms](${SITE_URL}/terms)`,
+    `- [Cancellation and refund policy](${SITE_URL}/cancellation): How to cancel a strategy session or implementation, and when a refund is due.`,
   ]
 
   const projects = portfolioProjects.map(
