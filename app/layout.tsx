@@ -1,45 +1,52 @@
-import type { Metadata } from 'next'
-import { LANDING_SEO } from '@/lib/landing'
-import { SITE_NAME, SITE_URL } from '@/lib/site'
-import './globals.css'
-import { GoogleAnalytics } from '@/components/GoogleAnalytics'
-import { SiteAnalytics } from '@/components/SiteAnalytics'
-import { LinkedInInsightTag } from '@/components/LinkedInInsightTag'
-import { googleSansFlex, stackSansHeadline } from '@/lib/fonts'
-import { Analytics } from '@vercel/analytics/next'
+import type { Metadata, Viewport } from 'next';
+import { DM_Sans } from 'next/font/google';
+import localFont from 'next/font/local';
+import './globals.css';
+
+const dmSans = DM_Sans({
+  subsets: ['latin'],
+  weight: ['400', '500', '700'],
+  variable: '--font-dm-sans',
+  display: 'swap',
+});
+
+// Display face: Stack Sans Headline (OFL), the studio's earlier headline font.
+const stackHeadline = localFont({
+  src: [
+    { path: './fonts/stack-sans-headline-500.woff2', weight: '500', style: 'normal' },
+    { path: './fonts/stack-sans-headline-600.woff2', weight: '600', style: 'normal' },
+  ],
+  variable: '--font-display',
+  display: 'swap',
+});
 
 export const metadata: Metadata = {
-  metadataBase: new URL(SITE_URL),
-  title: {
-    default: LANDING_SEO.title,
-    template: `%s | ${SITE_NAME}`,
-  },
-  description: LANDING_SEO.description,
-  icons: {
-    icon: '/logos/bitblabs-logo.svg',
-    apple: '/logos/bitblabs-logo.svg',
-  },
+  metadataBase: new URL('https://bitblabs.com'),
+  title: 'BitBLabs — Digital Product Studio',
+  description:
+    'BitBLabs designs and builds exceptional digital products — AI platforms, web applications, and premium user experiences.',
   openGraph: {
-    siteName: SITE_NAME,
-    type: 'website',
-    locale: 'en_US',
+    title: 'BitBLabs — Digital Product Studio',
+    description:
+      'BitBLabs designs and builds exceptional digital products — AI platforms, web applications, and premium user experiences.',
   },
-}
+};
 
-export default function RootLayout({
-  children,
-}: {
-  children: React.ReactNode
-}) {
+export const viewport: Viewport = {
+  themeColor: '#000000',
+};
+
+// Runs before paint: hides reveal targets only when JS + motion will run, with a
+// fail-safe that shows everything if the motion engine never reports ready.
+const boot = `(function(){var d=document.documentElement;if(matchMedia('(prefers-reduced-motion: reduce)').matches){d.classList.add('reduced');return}d.classList.add('js');setTimeout(function(){if(!window.__motionReady)d.classList.remove('js')},4000)})();`;
+
+export default function RootLayout({ children }: { children: React.ReactNode }) {
   return (
-    <html lang="en" className={`${googleSansFlex.variable} ${stackSansHeadline.variable}`}>
-      <body className={`${googleSansFlex.className} antialiased`}>
-        {children}
-        <Analytics />
-        <GoogleAnalytics />
-        <SiteAnalytics />
-        <LinkedInInsightTag />
-      </body>
+    <html lang="en" className={`${dmSans.variable} ${stackHeadline.variable}`} suppressHydrationWarning>
+      <head>
+        <script dangerouslySetInnerHTML={{ __html: boot }} />
+      </head>
+      <body>{children}</body>
     </html>
-  )
+  );
 }
