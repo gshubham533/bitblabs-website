@@ -5,15 +5,11 @@ import { useId, useState } from 'react';
 /**
  * Buyer-side estimate. The only number we supply is the 35–45% reduction in
  * manual follow-ups measured at Natsoft; everything else is the buyer's input.
+ * Currency is USD only.
  */
 const LOW = 0.35;
 const HIGH = 0.45;
-
-const CURRENCIES = {
-  INR: { symbol: '₹', rate: 400, locale: 'en-IN' },
-  USD: { symbol: '$', rate: 25, locale: 'en-US' },
-} as const;
-type Cur = keyof typeof CURRENCIES;
+const USD = { symbol: '$', rate: 25, locale: 'en-US' } as const;
 
 function Field({
   label,
@@ -43,7 +39,7 @@ function Field({
         <span>{label}</span>
         <output htmlFor={id}>
           {prefix}
-          {value.toLocaleString('en-IN')}
+          {value.toLocaleString(USD.locale)}
           {suffix}
         </output>
       </label>
@@ -63,34 +59,20 @@ function Field({
 }
 
 export function RoiEstimator() {
-  const [cur, setCur] = useState<Cur>('USD');
   const [calls, setCalls] = useState(3000);
   const [minutes, setMinutes] = useState(6);
-  const [rate, setRate] = useState<number>(CURRENCIES.USD.rate);
-  const c = CURRENCIES[cur];
+  const [rate, setRate] = useState(USD.rate);
 
   const hours = (calls * minutes) / 60;
   const fmt = (n: number) =>
-    `${c.symbol}${Math.round(n).toLocaleString(c.locale)}`;
+    `${USD.symbol}${Math.round(n).toLocaleString(USD.locale)}`;
   const savedHours = [hours * LOW, hours * HIGH];
   const savedMonth = savedHours.map((h) => h * rate);
   const savedYear = savedMonth.map((m) => m * 12);
 
-  const switchCur = (next: Cur) => {
-    setCur(next);
-    setRate(CURRENCIES[next].rate);
-  };
-
   return (
     <div className="roi">
       <div className="roi__inputs">
-        <div className="roi__cur" role="radiogroup" aria-label="Currency">
-          {(Object.keys(CURRENCIES) as Cur[]).map((k) => (
-            <button key={k} type="button" role="radio" aria-checked={cur === k} className={cur === k ? 'is-on' : ''} onClick={() => switchCur(k)}>
-              {k}
-            </button>
-          ))}
-        </div>
         <Field
           label="Follow-up calls your team makes each month"
           hint="Confirmations, reminders, qualification, feedback calls."
@@ -111,21 +93,21 @@ export function RoiEstimator() {
           suffix=" min"
         />
         <Field
-          label="Loaded cost of an agent hour"
+          label="Loaded cost of an agent hour (USD)"
           hint="Salary plus overhead, per hour."
           value={rate}
           onChange={setRate}
-          min={cur === 'INR' ? 100 : 5}
-          max={cur === 'INR' ? 3000 : 120}
-          step={cur === 'INR' ? 50 : 1}
-          prefix={c.symbol}
+          min={5}
+          max={120}
+          step={1}
+          prefix={USD.symbol}
         />
       </div>
 
       <div className="roi__out" aria-live="polite">
         <p className="roi__lead">If voice AI removes 35–45% of that manual work, as it did at Natsoft:</p>
         <div className="roi__big">
-          <span>Saved per year</span>
+          <span>Saved per year (USD)</span>
           <b>
             {fmt(savedYear[0])} – {fmt(savedYear[1])}
           </b>
@@ -134,7 +116,8 @@ export function RoiEstimator() {
           <div>
             <dt>Team hours freed / month</dt>
             <dd>
-              {Math.round(savedHours[0]).toLocaleString('en-IN')} – {Math.round(savedHours[1]).toLocaleString('en-IN')}
+              {Math.round(savedHours[0]).toLocaleString(USD.locale)} –{' '}
+              {Math.round(savedHours[1]).toLocaleString(USD.locale)}
             </dd>
           </div>
           <div>
@@ -145,7 +128,7 @@ export function RoiEstimator() {
           </div>
           <div>
             <dt>Manual calling today</dt>
-            <dd>{Math.round(hours).toLocaleString('en-IN')} hrs / month</dd>
+            <dd>{Math.round(hours).toLocaleString(USD.locale)} hrs / month</dd>
           </div>
         </dl>
         <p className="roi__fine">

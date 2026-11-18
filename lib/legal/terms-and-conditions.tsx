@@ -203,7 +203,7 @@ export const termsSections: LegalSection[] = [
         punitive damages, or any loss of profits, revenue, data, or goodwill, arising out of or
         related to your use of or inability to use this website, even if we have been advised of the
         possibility of such damages. Our total liability for any claim arising from your use of the
-        website shall not exceed INR 10,000 or the amount you paid us directly for services in the
+        website shall not exceed USD 120 or the amount you paid us directly for services in the
         twelve months preceding the claim, whichever is greater, except where liability cannot be
         limited under applicable law. Paid strategy sessions and implementation engagements remain
         governed by these Terms and any later signed statement of work; where a signed agreement

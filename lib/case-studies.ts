@@ -123,7 +123,7 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     results: [
-      { v: '₹1Cr+', k: 'monthly turnover' },
+      { v: '$120K+', k: 'monthly turnover' },
       { v: '1,000+', k: 'orders processed' },
       { v: 'Live', k: 'multiple collection centers in production' },
     ],

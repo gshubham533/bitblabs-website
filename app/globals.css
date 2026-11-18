@@ -3279,25 +3279,6 @@ html.is-booking {
   gap: 30px;
   align-content: start;
 }
-.roi__cur {
-  display: inline-flex;
-  justify-self: start;
-  gap: 4px;
-  padding: 4px;
-  border-radius: 999px;
-  background: var(--gray-100);
-}
-.roi__cur button {
-  padding: 7px 14px;
-  border-radius: 999px;
-  font-size: 13px;
-  font-weight: 500;
-  color: var(--muted-light);
-}
-.roi__cur button.is-on {
-  background: var(--ink);
-  color: var(--white);
-}
 .roi__field label {
   display: flex;
   justify-content: space-between;

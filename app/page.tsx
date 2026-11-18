@@ -50,7 +50,7 @@ export default function Home() {
             <p className="hero__lede body-md" data-s="para" data-now="" data-delay="0.5">
               We turn what founders know into products that run in production: an investment banker’s
               forecasting model, a farmer’s supply chain, an EU compliance workflow. One of them now moves
-              ₹1 crore a month; another answers calls in about 300 ms.
+              $120K+ a month; another answers calls in about 300 ms.
             </p>
             <div className="hero__ctas" data-s="fade" data-now="" data-delay="0.7">
               <Cta href="#work">See the work</Cta>

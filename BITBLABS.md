@@ -269,7 +269,7 @@ Sales workflow, built for grocery distribution where relationships are physical:
 
 Zero-inventory outcomes claimed: near-zero wastage, fully fresh produce, no capital locked in stock, and farmer supply aligned to actual orders.
 
-Traction claimed: more than ₹1 crore monthly turnover, live in production, multiple collection centers, 1,000+ orders processed. The site copy calls this a working revenue-generating system, not a concept.
+Traction claimed: more than $120K monthly turnover (USD), live in production, multiple collection centers, 1,000+ orders processed. The site copy calls this a working revenue-generating system, not a concept.
 
 Why it is in the portfolio: a ground-level problem, a founder with domain depth, operational logic that matches the software, a model that reduces inventory risk, and revenue that validates it.
 
