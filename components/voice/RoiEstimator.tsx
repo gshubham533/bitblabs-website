@@ -61,7 +61,7 @@ function Field({
 export function RoiEstimator() {
   const [calls, setCalls] = useState(3000);
   const [minutes, setMinutes] = useState(6);
-  const [rate, setRate] = useState(USD.rate);
+  const [rate, setRate] = useState<number>(USD.rate);
 
   const hours = (calls * minutes) / 60;
   const fmt = (n: number) =>
