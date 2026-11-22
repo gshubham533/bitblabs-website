@@ -52,7 +52,7 @@ export const clientLogos = [
 
 /** Every number names the product it came from. */
 export const stats = [
-  { value: '$120K+', label: 'monthly turnover, live in production', source: 'Healthy Fasal' },
+  { value: '3x', label: 'monthly order volume in 6 months', source: 'Healthy Fasal' },
   { value: '~300ms', label: 'voice response, down from ~2s', source: 'Natvoiz for Natsoft' },
   { value: '35–45%', label: 'fewer manual recruiter follow-ups', source: 'Natvoiz for Natsoft' },
   { value: '1,000+', label: 'orders processed', source: 'Healthy Fasal' },
@@ -111,7 +111,7 @@ export const projects: Project[] = [
     name: 'Healthy Fasal',
     industry: 'AgriTech',
     status: 'Live',
-    line: 'Zero-inventory farm-to-vendor supply, $120K+ a month.',
+    line: 'A B2B ordering portal that tripled monthly order volume in 6 months.',
     live: 'https://healthyfasal.com/',
     host: 'healthyfasal.com',
     bg: 'linear-gradient(160deg,#0b2e1a 0%,#1f7a45 100%)',
@@ -241,7 +241,7 @@ export const voices: Voice[] = [
   },
   {
     id: 'healthy-fasal',
-    text: 'Our zero-inventory model needed software that could keep up: vendor wallets, collection centers, sales onboarding, all in sync. The platform now runs real volume across cities with over $120K in monthly turnover.',
+    text: 'Our zero-inventory model needed software that could keep up: vendor wallets, collection centers, sales onboarding, all in sync. The platform has processed ₹15.95L+ in orders, and our monthly GMV grew 205.9% in six months.',
     name: 'Mr. Kamlesh',
     role: 'Founder',
     company: 'Healthy Fasal',
@@ -297,7 +297,7 @@ export const stories = [
     logo: '/brand/clients/healthy-fasal.png',
     logoH: 20,
     text: 'A farmer who also runs a logistics business, referred in through a trusted network, with a supply chain that wasted produce.',
-    outcome: '$120K+ monthly turnover, live',
+    outcome: '3x monthly order volume in 6 months',
   },
   {
     slug: 'axion-plan',

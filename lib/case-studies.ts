@@ -123,8 +123,8 @@ export const caseStudies: CaseStudy[] = [
       },
     ],
     results: [
-      { v: '$120K+', k: 'monthly turnover' },
-      { v: '1,000+', k: 'orders processed' },
+      { v: '3x', k: 'monthly order volume, GMV up 205.9% in 6 months' },
+      { v: '₹15.95L+', k: 'in orders processed' },
       { v: 'Live', k: 'multiple collection centers in production' },
     ],
     why: 'A ground-level problem, a founder with domain depth, and operational logic encoded in software, validated by revenue.',
